@@ -17,6 +17,26 @@ app = Flask(__name__)
 DATA_LOCK = threading.Lock()
 RAW_CSV = "tv_all_raw.csv"
 COMPARISON_CSV = "tv_comparison.csv"
+STORE_NAMES = ["Setec", "Tehnomarket", "Neptun", "Galerija"]
+STORE_PREFIX = {
+    "Setec": "setec",
+    "Tehnomarket": "tehnomarket",
+    "Neptun": "neptun",
+    "Galerija": "galerija",
+}
+
+
+def parse_int_param(value: str, default: int = 0) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def unique_non_empty_values(series: pd.Series) -> list[str]:
+    vals = {str(v).strip() for v in series.fillna("")}
+    vals.discard("")
+    return sorted(vals)
 
 
 def load_raw_data() -> pd.DataFrame:
@@ -192,40 +212,143 @@ def analytics():
 def api_analytics_data():
     raw_df = load_raw_data()
     if raw_df.empty:
-        return jsonify({})
+        return jsonify({
+            "filter_options": {
+                "brands": [],
+                "stores": STORE_NAMES,
+                "techs": [],
+                "resolutions": [],
+                "years": [],
+            },
+            "active_filters": {},
+            "price_by_store": {},
+            "tech_counts": {},
+            "resolution_counts": {},
+            "brand_counts": {},
+            "year_counts": {},
+            "size_counts": {},
+            "price_buckets": {"Under 10K": 0, "10-20K": 0, "20-40K": 0, "40-80K": 0, "80-150K": 0, "150K+": 0},
+            "avg_price_by_tech": {},
+            "avg_price_by_brand": {},
+            "cheapest_per_tech": {},
+            "biggest_savings": [],
+            "store_offer_analytics": [],
+            "best_average_store": {},
+            "total_models": 0,
+            "multi_store_count": 0,
+            "filtered_listing_count": 0,
+        })
 
-    data = build_comparison_table(raw_df)
+    year_series = pd.to_numeric(raw_df.get("year", pd.Series(dtype=float)), errors="coerce").dropna()
+    filter_options = {
+        "brands": unique_non_empty_values(raw_df.get("brand", pd.Series(dtype=str))),
+        "stores": STORE_NAMES,
+        "techs": unique_non_empty_values(raw_df.get("display_tech", pd.Series(dtype=str))),
+        "resolutions": unique_non_empty_values(raw_df.get("resolution", pd.Series(dtype=str))),
+        "years": sorted({int(y) for y in year_series.tolist() if int(y) > 0}),
+    }
+
+    brand = request.args.get("brand", "").strip()
+    store = request.args.get("store", "").strip()
+    tech = request.args.get("tech", "").strip()
+    resolution = request.args.get("resolution", "").strip()
+    year_min = parse_int_param(request.args.get("year_min", ""), 0)
+    year_max = parse_int_param(request.args.get("year_max", ""), 0)
+    size_min = parse_int_param(request.args.get("size_min", ""), 0)
+    size_max = parse_int_param(request.args.get("size_max", ""), 0)
+    price_min = parse_int_param(request.args.get("price_min", ""), 0)
+    price_max = parse_int_param(request.args.get("price_max", ""), 0)
+    multi_store_only = request.args.get("multi_store_only", "").strip() == "1"
+    offers_only = request.args.get("offers_only", "").strip() == "1"
+
+    active_filters = {
+        "brand": brand,
+        "store": store,
+        "tech": tech,
+        "resolution": resolution,
+        "year_min": year_min,
+        "year_max": year_max,
+        "size_min": size_min,
+        "size_max": size_max,
+        "price_min": price_min,
+        "price_max": price_max,
+        "multi_store_only": multi_store_only,
+        "offers_only": offers_only,
+    }
+
+    filtered_raw = raw_df.copy()
+    if brand:
+        filtered_raw = filtered_raw[filtered_raw["brand"] == brand]
+    if store:
+        filtered_raw = filtered_raw[filtered_raw["store"] == store]
+    if tech:
+        filtered_raw = filtered_raw[filtered_raw["display_tech"] == tech]
+    if resolution:
+        filtered_raw = filtered_raw[filtered_raw["resolution"] == resolution]
+    if year_min > 0:
+        filtered_raw = filtered_raw[filtered_raw["year"] >= year_min]
+    if year_max > 0:
+        filtered_raw = filtered_raw[filtered_raw["year"] <= year_max]
+    if size_min > 0:
+        filtered_raw = filtered_raw[filtered_raw["screen_size"] >= size_min]
+    if size_max > 0:
+        filtered_raw = filtered_raw[filtered_raw["screen_size"] <= size_max]
+    if price_min > 0:
+        filtered_raw = filtered_raw[filtered_raw["price"] >= price_min]
+    if price_max > 0:
+        filtered_raw = filtered_raw[filtered_raw["price"] <= price_max]
+    if offers_only:
+        filtered_raw = filtered_raw[
+            (filtered_raw["price"] > 0) &
+            (filtered_raw["old_price"] > 0) &
+            (filtered_raw["old_price"] > filtered_raw["price"])
+        ]
+
+    data = build_comparison_table(filtered_raw)
+    if multi_store_only:
+        data = [r for r in data if r["store_count"] >= 2]
 
     price_by_store = {}
-    for store in ["Setec", "Tehnomarket", "Neptun", "Galerija"]:
-        sub = raw_df[raw_df["store"] == store]
-        prices = sub[sub["price"] > 0]["price"].tolist()
-        price_by_store[store] = {
-            "count": len(sub),
+    for store_name in STORE_NAMES:
+        sub = filtered_raw[filtered_raw["store"] == store_name]
+        priced_sub = sub[sub["price"] > 0]
+        prices = priced_sub["price"].tolist()
+
+        offers = sub[(sub["price"] > 0) & (sub["old_price"] > sub["price"])]
+        discount_pcts = (
+            ((offers["old_price"] - offers["price"]) * 100 / offers["old_price"]).tolist()
+            if not offers.empty else []
+        )
+
+        price_by_store[store_name] = {
+            "count": int(len(sub)),
             "prices": prices,
-            "avg": int(sub[sub["price"] > 0]["price"].mean()) if prices else 0,
-            "median": int(sub[sub["price"] > 0]["price"].median()) if prices else 0,
+            "avg": int(priced_sub["price"].mean()) if prices else 0,
+            "median": int(priced_sub["price"].median()) if prices else 0,
             "min": int(min(prices)) if prices else 0,
             "max": int(max(prices)) if prices else 0,
+            "offer_count": int(len(offers)),
+            "offer_share_pct": round((len(offers) * 100 / len(sub)), 2) if len(sub) > 0 else 0,
+            "avg_discount_pct": round(float(sum(discount_pcts) / len(discount_pcts)), 2) if discount_pcts else 0,
+            "max_discount_pct": round(float(max(discount_pcts)), 2) if discount_pcts else 0,
         }
 
-    tech_counts = raw_df["display_tech"].value_counts().to_dict()
-    resolution_counts = raw_df.get("resolution", pd.Series(dtype=str)).value_counts().to_dict()
-    brand_counts = raw_df["brand"].value_counts().to_dict()
+    tech_counts = filtered_raw["display_tech"].value_counts().to_dict()
+    resolution_counts = filtered_raw.get("resolution", pd.Series(dtype=str)).value_counts().to_dict()
+    brand_counts = filtered_raw["brand"].value_counts().to_dict()
 
     year_counts = {}
-    if "year" in raw_df.columns:
-        ydf = raw_df[raw_df["year"] > 0]
+    if "year" in filtered_raw.columns:
+        ydf = filtered_raw[filtered_raw["year"] > 0]
         year_counts = ydf["year"].value_counts().sort_index().to_dict()
-        year_counts = {str(k): v for k, v in year_counts.items()}
+        year_counts = {str(k): int(v) for k, v in year_counts.items()}
 
-    size_counts = {}
-    sdf = raw_df[raw_df["screen_size"] > 0]
+    sdf = filtered_raw[filtered_raw["screen_size"] > 0]
     size_counts = sdf["screen_size"].value_counts().sort_index().to_dict()
-    size_counts = {str(k): v for k, v in size_counts.items()}
+    size_counts = {str(k): int(v) for k, v in size_counts.items()}
 
     price_buckets = {"Under 10K": 0, "10-20K": 0, "20-40K": 0, "40-80K": 0, "80-150K": 0, "150K+": 0}
-    for p in raw_df[raw_df["price"] > 0]["price"]:
+    for p in filtered_raw[filtered_raw["price"] > 0]["price"]:
         if p < 10000:
             price_buckets["Under 10K"] += 1
         elif p < 20000:
@@ -240,20 +363,25 @@ def api_analytics_data():
             price_buckets["150K+"] += 1
 
     avg_price_by_tech = {}
-    for tech, grp in raw_df[raw_df["price"] > 0].groupby("display_tech"):
-        avg_price_by_tech[tech] = int(grp["price"].mean())
+    for tech_name, grp in filtered_raw[filtered_raw["price"] > 0].groupby("display_tech"):
+        if tech_name:
+            avg_price_by_tech[tech_name] = int(grp["price"].mean())
 
     avg_price_by_brand = {}
-    for brand, grp in raw_df[raw_df["price"] > 0].groupby("brand"):
+    for brand_name, grp in filtered_raw[filtered_raw["price"] > 0].groupby("brand"):
         if len(grp) >= 3:
-            avg_price_by_brand[brand] = int(grp["price"].mean())
+            avg_price_by_brand[brand_name] = int(grp["price"].mean())
 
     cheapest_per_tech = {}
-    for tech, grp in raw_df[raw_df["price"] > 0].groupby("display_tech"):
+    for tech_name, grp in filtered_raw[filtered_raw["price"] > 0].groupby("display_tech"):
+        if not tech_name:
+            continue
         best = grp.loc[grp["price"].idxmin()]
-        cheapest_per_tech[tech] = {
-            "brand": best["brand"], "model": best["model"],
-            "price": int(best["price"]), "store": best["store"],
+        cheapest_per_tech[tech_name] = {
+            "brand": best["brand"],
+            "model": best["model"],
+            "price": int(best["price"]),
+            "store": best["store"],
             "size": int(best["screen_size"]),
         }
 
@@ -261,18 +389,20 @@ def api_analytics_data():
     biggest_savings = []
     for r in multi_store:
         store_prices = {}
-        for s in ["setec", "tehnomarket", "neptun", "galerija"]:
-            p = r.get(f"{s}_price", 0)
+        for store_name, prefix in STORE_PREFIX.items():
+            p = r.get(f"{prefix}_price", 0)
             if p and p > 0:
-                store_prices[s.capitalize()] = p
+                store_prices[store_name] = p
         if len(store_prices) >= 2:
             prices = list(store_prices.values())
             diff = max(prices) - min(prices)
             pct = round(diff * 100 / max(prices))
             if diff > 1000:
                 biggest_savings.append({
-                    "brand": r["brand"], "model": r["name"],
-                    "diff": diff, "pct": pct,
+                    "brand": r["brand"],
+                    "model": r["name"],
+                    "diff": diff,
+                    "pct": pct,
                     "cheapest": min(store_prices, key=store_prices.get),
                     "cheapest_price": min(prices),
                     "most_expensive": max(store_prices, key=store_prices.get),
@@ -280,7 +410,67 @@ def api_analytics_data():
                 })
     biggest_savings.sort(key=lambda x: -x["diff"])
 
+    store_comp = {
+        store_name: {"comparable_models": 0, "win_points": 0.0, "price_index_total": 0.0, "delta_pct_total": 0.0}
+        for store_name in STORE_NAMES
+    }
+    for row in multi_store:
+        row_prices = {}
+        for store_name, prefix in STORE_PREFIX.items():
+            p = row.get(f"{prefix}_price", 0)
+            if p and p > 0:
+                row_prices[store_name] = p
+        if len(row_prices) < 2:
+            continue
+
+        min_price = min(row_prices.values())
+        cheapest_stores = [s for s, p in row_prices.items() if p == min_price]
+        win_share = 1.0 / len(cheapest_stores)
+
+        for store_name, price in row_prices.items():
+            store_comp[store_name]["comparable_models"] += 1
+            store_comp[store_name]["price_index_total"] += price / min_price
+            store_comp[store_name]["delta_pct_total"] += (price - min_price) * 100 / min_price
+        for store_name in cheapest_stores:
+            store_comp[store_name]["win_points"] += win_share
+
+    store_offer_analytics = []
+    for store_name in STORE_NAMES:
+        comp = store_comp[store_name]
+        comp_models = comp["comparable_models"]
+        avg_price_index = round(comp["price_index_total"] / comp_models, 4) if comp_models > 0 else 0
+        avg_vs_cheapest = round(comp["delta_pct_total"] / comp_models, 2) if comp_models > 0 else 0
+        win_rate = round(comp["win_points"] * 100 / comp_models, 2) if comp_models > 0 else 0
+
+        store_offer_analytics.append({
+            "store": store_name,
+            "listings": price_by_store[store_name]["count"],
+            "comparable_models": comp_models,
+            "win_points": round(comp["win_points"], 2),
+            "win_rate_pct": win_rate,
+            "avg_price_index": avg_price_index,
+            "avg_vs_cheapest_pct": avg_vs_cheapest,
+            "avg_listed_price": price_by_store[store_name]["avg"],
+            "offer_count": price_by_store[store_name]["offer_count"],
+            "offer_share_pct": price_by_store[store_name]["offer_share_pct"],
+            "avg_discount_pct": price_by_store[store_name]["avg_discount_pct"],
+        })
+
+    store_offer_analytics.sort(
+        key=lambda x: (
+            x["avg_price_index"] if x["avg_price_index"] > 0 else 9999,
+            -x["win_rate_pct"],
+            -x["offer_share_pct"],
+        )
+    )
+    best_average_store = next(
+        (entry for entry in store_offer_analytics if entry["comparable_models"] > 0),
+        {},
+    )
+
     return jsonify({
+        "filter_options": filter_options,
+        "active_filters": active_filters,
         "price_by_store": price_by_store,
         "tech_counts": tech_counts,
         "resolution_counts": resolution_counts,
@@ -292,8 +482,11 @@ def api_analytics_data():
         "avg_price_by_brand": avg_price_by_brand,
         "cheapest_per_tech": cheapest_per_tech,
         "biggest_savings": biggest_savings[:20],
+        "store_offer_analytics": store_offer_analytics,
+        "best_average_store": best_average_store,
         "total_models": len(data),
         "multi_store_count": len(multi_store),
+        "filtered_listing_count": int(len(filtered_raw)),
     })
 
 
