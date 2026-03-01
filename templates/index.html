@@ -235,6 +235,26 @@
             color: var(--accent-light);
         }
 
+        .tech-badge {
+            display: inline-block;
+            padding: .15rem .45rem;
+            border-radius: 4px;
+            font-size: .72rem;
+            font-weight: 600;
+        }
+        .tech-oled { background: rgba(168,85,247,.2); color: #c084fc; }
+        .tech-qled { background: rgba(34,197,94,.15); color: #4ade80; }
+        .tech-miniled { background: rgba(251,146,60,.15); color: #fb923c; }
+        .tech-neoqled { background: rgba(56,189,248,.15); color: #38bdf8; }
+        .tech-qned { background: rgba(232,121,249,.15); color: #e879f9; }
+        .tech-led { background: var(--surface2); color: var(--text-muted); }
+        .tech-nano { background: rgba(45,212,191,.15); color: #2dd4bf; }
+
+        .info-muted {
+            color: var(--text-muted);
+            font-size: .8rem;
+        }
+
         .price-cell {
             text-align: right;
             white-space: nowrap;
@@ -434,6 +454,9 @@
                     <tr>
                         <th>TV Model</th>
                         <th>Size</th>
+                        <th>Tech</th>
+                        <th>Hz</th>
+                        <th>Year</th>
                         <th><span class="store-dot setec"></span>Setec</th>
                         <th><span class="store-dot tehno"></span>Tehnomarket</th>
                         <th><span class="store-dot neptun"></span>Neptun</th>
@@ -455,6 +478,14 @@
                             <span style="color:var(--text-muted)">—</span>
                             {% endif %}
                         </td>
+                        <td>
+                            {% if row.display_tech %}
+                            {% set tc = row.display_tech|lower|replace(' ','')|replace('-','') %}
+                            <span class="tech-badge tech-{{ 'oled' if 'oled' in tc and 'qd' not in tc else 'oled' if 'qdoled' in tc else 'neoqled' if 'neo' in tc else 'qled' if 'qled' in tc else 'miniled' if 'mini' in tc else 'qned' if 'qned' in tc else 'nano' if 'nano' in tc else 'led' }}">{{ row.display_tech }}</span>
+                            {% else %}<span class="info-muted">—</span>{% endif %}
+                        </td>
+                        <td class="info-muted">{{ row.refresh_rate if row.refresh_rate else '—' }}</td>
+                        <td class="info-muted">{{ row.year if row.year else '—' }}</td>
                         {% for s in [('setec', row.setec_price, row.setec_old, row.setec_url), ('tehnomarket', row.tehnomarket_price, row.tehnomarket_old, row.tehnomarket_url), ('neptun', row.neptun_price, row.neptun_old, row.neptun_url), ('galerija', row.galerija_price, row.galerija_old, row.galerija_url)] %}
                         <td class="price-cell {{ 'best' if s[1] > 0 and s[1] == row.min_price else '' }} {{ 'empty' if s[1] == 0 else '' }}">
                             {% if s[1] > 0 %}
@@ -538,6 +569,20 @@
                     ? `<span class="screen-badge">${r.screen_size}"</span>`
                     : `<span style="color:var(--text-muted)">—</span>`;
 
+                let techCls = 'led';
+                const dt = (r.display_tech || '').toLowerCase();
+                if (dt.includes('qd-oled') || dt.includes('oled')) techCls = 'oled';
+                else if (dt.includes('neo')) techCls = 'neoqled';
+                else if (dt.includes('mini')) techCls = 'miniled';
+                else if (dt.includes('qled')) techCls = 'qled';
+                else if (dt.includes('qned')) techCls = 'qned';
+                else if (dt.includes('nano')) techCls = 'nano';
+                const techHtml = r.display_tech
+                    ? `<span class="tech-badge tech-${techCls}">${r.display_tech}</span>`
+                    : '<span class="info-muted">—</span>';
+                const hzHtml = r.refresh_rate ? `${r.refresh_rate}` : '—';
+                const yearHtml = r.year ? `${r.year}` : '—';
+
                 const bestHtml = r.best_store
                     ? `<span class="best-badge">${r.best_store}</span>`
                     : '';
@@ -545,6 +590,9 @@
                 html += `<tr>
                     <td class="tv-name"><span class="brand-badge">${r.brand}</span>${r.name}</td>
                     <td>${sizeHtml}</td>
+                    <td>${techHtml}</td>
+                    <td class="info-muted">${hzHtml}</td>
+                    <td class="info-muted">${yearHtml}</td>
                     ${prices.map(priceCell).join('')}
                     <td>${bestHtml}</td>
                 </tr>`;

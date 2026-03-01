@@ -83,6 +83,9 @@ class TV:
     store: str = ""
     url: str = ""
     screen_size: int = 0  # inches
+    display_tech: str = ""  # LED, OLED, QLED, Mini LED, etc.
+    refresh_rate: int = 0   # Hz (e.g. 60, 100, 120, 144)
+    year: int = 0           # production year (e.g. 2024)
     normalized_key: str = ""
 
 
@@ -193,18 +196,210 @@ def extract_model_code(name: str, brand: str) -> str:
 
 
 def model_to_key(model: str) -> str:
-    """Collapse a model string to an alphanumeric key for matching.
-
-    "QE-65QN90DATXXH" → "QE65QN90DATXXH"
-    "85 ELU 720 GTV"  → "85ELU720GTV"
-    "55 PUS 9010"     → "55PUS9010"
-    """
+    """Collapse a model string to an alphanumeric key for matching."""
     return re.sub(r"[^A-Z0-9]", "", model.upper())
 
 
 def normalize_key(brand: str, model: str) -> str:
     """Build a normalized comparison key from brand + model code."""
     return f"{brand}_{model_to_key(model)}"
+
+
+# ---------------------------------------------------------------------------
+# Display tech / refresh rate / year extraction
+# ---------------------------------------------------------------------------
+
+def extract_display_tech(raw_name: str, brand: str, model_code: str) -> str:
+    """Extract display technology from raw name + model code."""
+    raw = raw_name.upper()
+    mkey = model_to_key(model_code).upper()
+
+    if re.search(r"\bQD[- ]?OLED\b", raw):
+        return "QD-OLED"
+    if re.search(r"\bNEO\s*QLED\b", raw):
+        return "Neo QLED"
+    if brand == "SAMSUNG" and re.search(r"QN\d{2}", mkey):
+        return "Neo QLED"
+    if re.search(r"\bMINI[- ]?LED\b", raw) or re.search(r"\bMLED\b", raw):
+        return "Mini LED"
+    if re.search(r"\bOLED\b", raw) or re.search(r"OLED", mkey):
+        return "OLED"
+    if re.search(r"\bQLED\b", raw):
+        return "QLED"
+    if re.search(r"\bNANO(?:CELL)?\b", raw) or "NANO" in mkey:
+        return "NanoCell"
+    if re.search(r"\bQNED\b", raw) or "QNED" in mkey:
+        return "QNED"
+    if re.search(r"\bDLED\b", raw):
+        return "DLED"
+
+    if brand == "SAMSUNG":
+        if re.search(r"S9[05]", mkey):
+            return "QD-OLED"
+        if re.search(r"QN\d{2}", mkey):
+            return "Neo QLED"
+        if re.search(r"LS03", mkey):
+            return "QLED"
+        if mkey.startswith("QE") or mkey.startswith("QA"):
+            return "QLED"
+        return "LED"
+    if brand == "LG":
+        if re.search(r"\bB\d|C\d|G\d", mkey):
+            return "OLED"
+        if "QNED" in mkey:
+            return "QNED"
+        if "NANO" in mkey:
+            return "NanoCell"
+        return "LED"
+    if brand == "SONY":
+        if re.search(r"XR[- ]?\d", mkey) or re.search(r"A\d{1,2}[A-Z]", mkey):
+            if re.search(r"XR8[AM]", mkey) or re.search(r"A\d", mkey):
+                return "OLED"
+        if re.search(r"X9[05]", mkey):
+            return "Mini LED"
+        return "LED"
+    if brand == "PHILIPS":
+        if re.search(r"PML|MLED", mkey):
+            return "Mini LED"
+        if "OLED" in mkey:
+            return "OLED"
+        return "LED"
+    if brand == "HISENSE":
+        if re.search(r"U[78]", mkey):
+            return "Mini LED"
+        if re.search(r"E7.*(?:NQ|Q)", mkey) or re.search(r"A\d.*Q", mkey):
+            return "QLED"
+        return "LED"
+    if brand == "TCL":
+        if re.search(r"C[89]\d{2}", mkey):
+            return "Mini LED"
+        if re.search(r"C[67]\d", mkey):
+            return "QLED"
+        return "LED"
+
+    if re.search(r"\bLED\b", raw) or re.search(r"\bЛЕД\b", raw):
+        return "LED"
+    return "LED"
+
+
+def extract_refresh_rate(raw_name: str, model_code: str) -> int:
+    """Extract refresh rate in Hz from raw name or model code."""
+    m = re.search(r"(\d{2,4})\s*Hz", raw_name, re.I)
+    if m:
+        val = int(m.group(1))
+        if val in (50, 60, 100, 120, 144, 165, 240):
+            return val
+    m = re.search(r"(\d{3,4})Hz", model_code, re.I)
+    if m:
+        return int(m.group(1))
+    return 0
+
+
+SAMSUNG_YEAR = {
+    "R": 2019, "T": 2020, "A": 2021, "B": 2022,
+    "C": 2023, "D": 2024, "F": 2025,
+}
+
+def extract_year(raw_name: str, brand: str, model_code: str) -> int:
+    """Infer production year from model code conventions."""
+    mkey = model_to_key(model_code).upper()
+
+    if brand == "SAMSUNG":
+        m = re.search(r"(?:QE|UE|QA|UA)\d{2}\w+?([RTABCDF])(?:[AUBT]XXH|[A-Z]{3,5}H)", mkey)
+        if m:
+            return SAMSUNG_YEAR.get(m.group(1), 0)
+        m = re.search(r"LS03([BCDF])", mkey)
+        if m:
+            return SAMSUNG_YEAR.get(m.group(1), 0)
+
+    if brand == "LG":
+        m = re.search(r"L([A-Z])$", mkey)
+        if m:
+            c = m.group(1)
+            lg_map = {"A": 2023, "B": 2024, "C": 2025, "K": 2024, "W": 2025}
+            return lg_map.get(c, 0)
+        if re.search(r"C5[1-4]", mkey):
+            return 2025
+        if re.search(r"G5[1-4]", mkey):
+            return 2025
+        if re.search(r"B5[1-4]", mkey):
+            return 2025
+
+    if brand == "SONY":
+        if mkey.startswith("K") and re.match(r"K\d{2}", mkey):
+            return 2025
+        if re.search(r"XR\d{2}[A-Z]\d{2}[A-Z]", mkey):
+            return 2025
+        m = re.search(r"X\d{2,3}([JKLW])", mkey)
+        if m:
+            c = m.group(1)
+            sony_map = {"J": 2021, "K": 2022, "L": 2023, "W": 2024}
+            return sony_map.get(c, 0)
+
+    if brand == "PHILIPS":
+        m = re.search(r"P[UFHML]S(\d{4})", mkey)
+        if m:
+            code = int(m.group(1))
+            if 5500 <= code < 5600:
+                return 2024
+            if 6000 <= code < 6100:
+                return 2025
+            if 6800 <= code < 6900:
+                return 2023
+            if 6900 <= code < 7000:
+                return 2024
+            if 7000 <= code < 7100:
+                return 2025
+            if 7600 <= code < 7700:
+                return 2023
+            if 7800 <= code < 7900:
+                return 2024
+            if 8000 <= code < 8100:
+                return 2024
+            if 8100 <= code < 8200:
+                return 2023
+            if 8200 <= code < 8300:
+                return 2025
+            if 8400 <= code < 8500:
+                return 2025
+            if 8500 <= code < 8600:
+                return 2023
+            if 8700 <= code < 8800:
+                return 2024
+            if 9000 <= code < 9100:
+                return 2025
+        if re.search(r"MLED820", mkey):
+            return 2025
+        if re.search(r"PML8709", mkey):
+            return 2024
+        if re.search(r"OLED8[0-5]\d", mkey):
+            return 2023
+
+    if brand == "HISENSE":
+        if re.search(r"NQ|NQ\s*PRO", mkey):
+            return 2025
+        if re.search(r"A\d[KQ]$", mkey):
+            return 2024
+
+    if brand == "TCL":
+        if re.search(r"[A-Z]\d{2,3}[K]$", mkey):
+            return 2024
+
+    m = re.search(r"\b(20[12]\d)\b", raw_name)
+    if m:
+        return int(m.group(1))
+
+    return 0
+
+
+def enrich_tv(tv: TV) -> None:
+    """Fill in display_tech, refresh_rate, year from name + model."""
+    if not tv.display_tech:
+        tv.display_tech = extract_display_tech(tv.name, tv.brand, tv.model)
+    if not tv.refresh_rate:
+        tv.refresh_rate = extract_refresh_rate(tv.name, tv.model)
+    if not tv.year:
+        tv.year = extract_year(tv.name, tv.brand, tv.model)
 
 
 # ---------------------------------------------------------------------------
@@ -633,6 +828,13 @@ def group_tvs(all_tvs: list[TV]) -> pd.DataFrame:
         models = [tv.model for tv in group]
         representative_model = max(models, key=len) if models else ""
 
+        techs = [tv.display_tech for tv in group if tv.display_tech]
+        display_tech = max(set(techs), key=techs.count) if techs else ""
+        rates = [tv.refresh_rate for tv in group if tv.refresh_rate > 0]
+        refresh_rate = max(set(rates), key=rates.count) if rates else 0
+        years = [tv.year for tv in group if tv.year > 0]
+        year = max(set(years), key=years.count) if years else 0
+
         store_prices: dict[str, int] = {}
         store_old: dict[str, int] = {}
         store_urls: dict[str, str] = {}
@@ -650,6 +852,9 @@ def group_tvs(all_tvs: list[TV]) -> pd.DataFrame:
             "Brand": brand,
             "Model": representative_model,
             "Screen": f'{screen_size}"' if screen_size else "?",
+            "Tech": display_tech,
+            "Hz": refresh_rate if refresh_rate else "",
+            "Year": year if year else "",
             "Setec (ден)": store_prices.get("Setec", ""),
             "Tehnomarket (ден)": store_prices.get("Tehnomarket", ""),
             "Neptun (ден)": store_prices.get("Neptun", ""),
@@ -744,6 +949,10 @@ def main():
 
     log.info(f"Total TVs scraped: {len(all_tvs)}")
 
+    for tv in all_tvs:
+        enrich_tv(tv)
+    log.info("Enriched all TVs with display_tech / refresh_rate / year")
+
     df = group_tvs(all_tvs)
 
     csv_path = "tv_comparison.csv"
@@ -758,6 +967,9 @@ def main():
             "name": tv.name,
             "model": tv.model,
             "screen_size": tv.screen_size,
+            "display_tech": tv.display_tech,
+            "refresh_rate": tv.refresh_rate,
+            "year": tv.year,
             "price": tv.price,
             "old_price": tv.old_price,
             "url": tv.url,

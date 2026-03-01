@@ -53,6 +53,16 @@ def build_comparison_table(raw_df: pd.DataFrame) -> list[dict]:
         if screen > 0 and groups[key]["screen_size"] == 0:
             groups[key]["screen_size"] = screen
 
+        dt = str(row.get("display_tech", ""))
+        if dt and not groups[key].get("display_tech"):
+            groups[key]["display_tech"] = dt
+        rr = int(row.get("refresh_rate", 0))
+        if rr > 0 and not groups[key].get("refresh_rate"):
+            groups[key]["refresh_rate"] = rr
+        yr = int(row.get("year", 0))
+        if yr > 0 and not groups[key].get("year"):
+            groups[key]["year"] = yr
+
         store = str(row.get("store", ""))
         price = int(row.get("price", 0))
         url = str(row.get("url", ""))
@@ -75,6 +85,9 @@ def build_comparison_table(raw_df: pd.DataFrame) -> list[dict]:
             "brand": gdata["brand"],
             "name": model,
             "screen_size": gdata["screen_size"],
+            "display_tech": gdata.get("display_tech", ""),
+            "refresh_rate": gdata.get("refresh_rate", 0),
+            "year": gdata.get("year", 0),
             "setec_price": stores.get("Setec", {}).get("price", 0),
             "setec_old": stores.get("Setec", {}).get("old_price", 0),
             "setec_url": stores.get("Setec", {}).get("url", ""),
