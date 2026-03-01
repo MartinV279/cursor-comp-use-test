@@ -1,182 +1,192 @@
 store,brand,name,model,screen_size,price,old_price,url,normalized_key
-Tehnomarket,ZEUS,"ZEUS ZE32T2 32"" HD DVB-T2 FRAMELESS TV",ZE32T2,32,6999,0,https://tehnomarket.com.mk/product/29404419/zeus-ze32t2-32-hd-dvb-t2-frameless-tv,ZEUS_ZE32T2
-Tehnomarket,FAVORIT,FAVORIT 32U20B-20D HD Led Smart TV Android 14,32U20B-20D,32,7999,0,https://tehnomarket.com.mk/product/29402187/favorit-32u20b-20d-hd-led-smart-tv-android-14,FAVORIT_32U20B20D
-Tehnomarket,NEO,NEO 32HD14F25 HD TV SMART ANDROID 14,32HD14F25,32,7999,0,https://tehnomarket.com.mk/product/29403643/neo-32hd14f25-hd-tv-smart-android-14,NEO_32HD14F25
-Tehnomarket,ZEUS,"ZEUS ZE32ST2 32"" HD ANDROID 14 SMART TV",ZE32ST2,32,7999,0,https://tehnomarket.com.mk/product/29404418/zeus-ze32st2-32-hd-android-14-smart-tv,ZEUS_ZE32ST2
-Tehnomarket,VIVAX,VIVAX A SERIES 32LE10K HD READY LED АНДРОИД ТЕЛЕВИЗОР,32LE10K,32,8999,0,https://tehnomarket.com.mk/product/29398212/vivax-a-series-32le10k-hd-ready-led-android-televizor,VIVAX_32LE10K
-Tehnomarket,VIVAX,VIVAX IMAGO LED TV-32LE21K HD ЛЕД ТЕЛЕВИЗОР ANDROID TV,IMAGO -32LE21K,0,9999,0,https://tehnomarket.com.mk/product/29402638/vivax-imago-led-tv-32le21k-hd-led-televizor-android-tv,VIVAX_IMAGO32LE21K
-Tehnomarket,VIVAX,"VIVAX 32LE110WO 32"" HD SMART TV webOS",32LE110WO,32,9999,0,https://tehnomarket.com.mk/product/29403662/vivax-32le110wo-32-hd-smart-tv-webos,VIVAX_32LE110WO
-Tehnomarket,VIVAX,"VIVAX 43LE110WO  43"" FHD SMART TV webOS",43LE110WO,43,9999,0,https://tehnomarket.com.mk/product/29403663/vivax-43le110wo-43-fhd-smart-tv-webos,VIVAX_43LE110WO
-Tehnomarket,JVC,JVC LT-32VH4300 HD READY LED TV,LT-32VH4300,32,10999,0,https://tehnomarket.com.mk/product/29399778/jvc-lt-32vh4300-hd-ready-led-tv,JVC_LT32VH4300
-Tehnomarket,FAVORIT,FAVORIT 43U20B-20D Full HD Led Smart TV Android 14,43U20B-20D,43,10999,0,https://tehnomarket.com.mk/product/29402188/favorit-43u20b-20d-full-hd-led-smart-tv-android-14,FAVORIT_43U20B20D
-Tehnomarket,JVC,"JVC LT-32VAH3300  32"" HD Smart Tv",LT-32VAH3300,32,10999,0,https://tehnomarket.com.mk/product/29402182/jvc-lt-32vah3300-32-hd-smart-tv,JVC_LT32VAH3300
-Tehnomarket,NEO,"NEO 40FHD14F25  40"" FHD TV SMART ANDROID 14",40FHD14F25,40,10999,0,https://tehnomarket.com.mk/product/29403644/neo-40fhd14f25-40-fhd-tv-smart-android-14,NEO_40FHD14F25
-Tehnomarket,VIVAX,VIVAX IMAGO LED TV-40LE114T2S2 FULL HD ЛЕД ТЕЛЕВИЗОР,IMAGO -40LE114T2S2,0,11399,0,https://tehnomarket.com.mk/product/29399245/vivax-imago-led-tv-40le114t2s2-full-hd-led-televizor,VIVAX_IMAGO40LE114T2S2
-Tehnomarket,HISENSE,HISENSE H32A5100F 32'' HD READY ЛЕД ТЕЛЕВИЗОР,H32A5100F,32,11499,0,https://tehnomarket.com.mk/product/29291572/hisense-h32a5100f-32-hd-ready-led-televizor,HISENSE_H32A5100F
-Tehnomarket,JVC,JVC LT-32VH5300 LED SMART TV,LT-32VH5300,32,11999,0,https://tehnomarket.com.mk/product/29399779/jvc-lt-32vh5300-led-smart-tv,JVC_LT32VH5300
-Tehnomarket,JVC,JVC LT-40VF4101 FULL HD LED TV,LT-40VF4101,40,11999,0,https://tehnomarket.com.mk/product/29400074/jvc-lt-40vf4101-full-hd-led-tv,JVC_LT40VF4101
-Tehnomarket,HISENSE,"HISENSE 32A4K 32"" HD READY SMART ЛЕД ТЕЛЕВИЗОР",32A4K,32,11999,0,https://tehnomarket.com.mk/product/29400658/hisense-32a4k-32-hd-ready-smart-led-televizor,HISENSE_32A4K
-Tehnomarket,JVC,JVC LT- 32VDF540W FULL HD DLED SMART WHITE TV VIDAA,LT- 32VDF540W DLED WHITE,32,11999,0,https://tehnomarket.com.mk/product/29402853/jvc-lt-32vdf540w-full-hd-dled-smart-white-tv-vidaa,JVC_LT32VDF540WDLEDWHITE
-Tehnomarket,PHILIPS,PHILIPS 32PHS5507/12 HD LED ТЕЛЕВИЗОР,32PHS5507,32,12999,0,https://tehnomarket.com.mk/product/29394473/philips-32phs550712-hd-led-televizor,PHILIPS_32PHS5507
-Tehnomarket,PHILIPS,PHILIPS 32PHS5500/12 HD LED ТЕЛЕВИЗОР,32PHS5500,32,12999,0,https://tehnomarket.com.mk/product/29403122/philips-32phs550012-hd-led-televizor,PHILIPS_32PHS5500
-Tehnomarket,HISENSE,HISENSE 32A4Q SMART HD Ready 32″ LED TV,32A4Q,32,12999,0,https://tehnomarket.com.mk/product/29403197/hisense-32a4q-smart-hd-ready-32-led-tv,HISENSE_32A4Q
-Tehnomarket,NEO,"NEO 43FHD14F25  43"" FHD SMART TV ANDROID 14",43FHD14F25,43,12999,0,https://tehnomarket.com.mk/product/29403610/neo-43fhd14f25-43-fhd-smart-tv-android-14,NEO_43FHD14F25
-Tehnomarket,JVC,JVC LT-43VF4400 FULL HD LED TV,LT-43VF4400,43,13999,0,https://tehnomarket.com.mk/product/29400599/jvc-lt-43vf4400-full-hd-led-tv,JVC_LT43VF4400
-Tehnomarket,NEO,NEO 43-VFS 924 FULL HD SMART  LED TV,43-VFS 924,43,13999,0,https://tehnomarket.com.mk/product/29400600/neo-43-vfs-924-full-hd-smart-led-tv,NEO_43VFS924
-Tehnomarket,PHILIPS,"PHILIPS 32PHS6000/12  32"" HD SMART TV",32PHS6000,32,13999,0,https://tehnomarket.com.mk/product/29402926/philips-32phs600012-32-hd-smart-tv,PHILIPS_32PHS6000
-Tehnomarket,VIVAX,"VIVAX IMAGO 40LE110WO 40"" FHD SMART TV webOS",IMAGO 40LE110WO,40,14999,0,https://tehnomarket.com.mk/product/29402679/vivax-imago-40le110wo-40-fhd-smart-tv-webos,VIVAX_IMAGO40LE110WO
-Tehnomarket,PHILIPS,PHILIPS 32PHS6808 HD SMART LED ТЕЛЕВИЗОР,32PHS6808,32,15999,0,https://tehnomarket.com.mk/product/29396534/philips-32phs6808-hd-smart-led-televizor,PHILIPS_32PHS6808
-Tehnomarket,JVC,JVC LT-40VAF3300 Full HD LED TV ANDROID TV,LT-40VAF3300,40,15999,0,https://tehnomarket.com.mk/product/29401357/jvc-lt-40vaf3300-full-hd-led-tv-android-tv,JVC_LT40VAF3300
-Tehnomarket,SAMSUNG,SAMSUNG UE-32H5002FKXXH HD LED SMART TV,UE-32H5002FKXXH,32,15999,0,https://tehnomarket.com.mk/product/29403215/samsung-ue-32h5002fkxxh-hd-led-smart-tv,SAMSUNG_UE32H5002FKXXH
-Tehnomarket,HISENSE,"HISENSE 40A4Q FULL HD 40"" Smart  TV",40A4Q,40,15999,0,https://tehnomarket.com.mk/product/29402776/hisense-40a4q-full-hd-40-smart-tv,HISENSE_40A4Q
-Tehnomarket,SAMSUNG,SAMSUNG UE-32T4302AEXXH HD LED SMART TV,UE-32T4302AEXXH,32,16999,0,https://tehnomarket.com.mk/product/29396372/samsung-ue-32t4302aexxh-hd-led-smart-tv,SAMSUNG_UE32T4302AEXXH
-Tehnomarket,JVC,JVC LT-43VAF3300 FULL HD LED ANDROID TV,LT-43VAF3300,43,17999,0,https://tehnomarket.com.mk/product/29399782/jvc-lt-43vaf3300-full-hd-led-android-tv,JVC_LT43VAF3300
-Tehnomarket,PHILIPS,PHILIPS 40PFS6009 FULL HD SMART TV,40PFS6009,40,17999,0,https://tehnomarket.com.mk/product/29400577/philips-40pfs6009-full-hd-smart-tv,PHILIPS_40PFS6009
-Tehnomarket,PHILIPS,PHILIPS 40PFS6000/12 FULL HD SMART TV,40PFS6000,40,17999,0,https://tehnomarket.com.mk/product/29402759/philips-40pfs600012-full-hd-smart-tv,PHILIPS_40PFS6000
-Tehnomarket,THOMSON,"THOMSON 43UG5C14 43"" UHD GOOGLE TV Frameless",43UG5C14,43,19499,0,https://tehnomarket.com.mk/product/29402745/thomson-43ug5c14-43-uhd-google-tv-frameless,THOMSON_43UG5C14
-Tehnomarket,HISENSE,"HISENSE 43A6Q UHD 4K VIDAA 43"" SMART TV",43A6Q,43,19999,0,https://tehnomarket.com.mk/product/29402777/hisense-43a6q-uhd-4k-vidaa-43-smart-tv,HISENSE_43A6Q
-Tehnomarket,PANASONIC,PANASONIC TX-32FS500E,TX-32FS500E,0,20899,0,https://tehnomarket.com.mk/product/5007320/panasonic-tx-32fs500e,PANASONIC_TX32FS500E
-Tehnomarket,PHILIPS,PHILIPS 43PUS7000/12 4K ULTRA HD SMART TV,43PUS7000,43,20999,0,https://tehnomarket.com.mk/product/29402762/philips-43pus700012-4k-ultra-hd-smart-tv,PHILIPS_43PUS7000
-Tehnomarket,PHILIPS,"PHILIPS 43PUS8200/12 43"" UHD LED SMART TV AMBILIGHT",43PUS8200,43,20999,0,https://tehnomarket.com.mk/product/29404267/philips-43pus820012-43-uhd-led-smart-tv-ambilight,PHILIPS_43PUS8200
-Tehnomarket,PHILIPS,"PHILIPS 43PUS8010/12 43"" UHD LED SMART TV AMBILIGHT",43PUS8010,43,22999,0,https://tehnomarket.com.mk/product/29403218/philips-43pus801012-43-uhd-led-smart-tv-ambilight,PHILIPS_43PUS8010
-Tehnomarket,PHILIPS,PHILIPS 43PUS7609 4K SMART Ultra HD LED TV,43PUS7609,43,23999,0,https://tehnomarket.com.mk/product/29401176/philips-43pus7609-4k-smart-ultra-hd-led-tv,PHILIPS_43PUS7609
-Tehnomarket,PHILIPS,PHILIPS 43PUS8009 4K ULTRA HD AMBILIGHT LED SMART TV,43PUS8009,43,23999,0,https://tehnomarket.com.mk/product/29401231/philips-43pus8009-4k-ultra-hd-ambilight-led-smart-tv,PHILIPS_43PUS8009
-Tehnomarket,SAMSUNG,SAMSUNG UE-43CU7092UXXH CRYSTAL 4K SMART LED TV,UE-43CU7092UXXH,43,26999,0,https://tehnomarket.com.mk/product/29400490/samsung-ue-43cu7092uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE43CU7092UXXH
-Tehnomarket,PHILIPS,PHILIPS 43PUS8079/12 4K Ambilight Smart TV,43PUS8079,43,26999,0,https://tehnomarket.com.mk/product/29400843/philips-43pus807912-4k-ambilight-smart-tv,PHILIPS_43PUS8079
-Tehnomarket,SAMSUNG,SAMSUNG UE43U8072FUXXH CRYSTAL 4K SMART LED TV,UE43U8072FUXXH,43,26999,0,https://tehnomarket.com.mk/product/29402841/samsung-ue43u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE43U8072FUXXH
-Tehnomarket,SAMSUNG,SAMSUNG UE-43DU7172UXXH CRYSTAL 4K SMART LED TV,UE-43DU7172UXXH,43,27999,0,https://tehnomarket.com.mk/product/29400540/samsung-ue-43du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE43DU7172UXXH
-Tehnomarket,PHILIPS,PHILIPS 43PUS8118/12 4K AMBILIGHT SMART TV,43PUS8118,43,29999,0,https://tehnomarket.com.mk/product/29398806/philips-43pus811812-4k-ambilight-smart-tv,PHILIPS_43PUS8118
-Tehnomarket,FAVORIT,FAVORIT 50U20B-20D FULL HD LED SMART TV Android 14,50U20B-20D,50,12999,0,https://tehnomarket.com.mk/product/29403339/favorit-50u20b-20d-full-hd-led-smart-tv-android-14,FAVORIT_50U20B20D
-Tehnomarket,NEO,"NEO 55UHD15F25  55"" UHD 4K SMART TV ANDROID 15",55UHD15F25,55,17999,0,https://tehnomarket.com.mk/product/29403649/neo-55uhd15f25-55-uhd-4k-smart-tv-android-15,NEO_55UHD15F25
-Tehnomarket,FAVORIT,FAVORIT D50F135R-F  Full HD Led Smart TV Android 14,D50F135R-F,0,19990,0,https://tehnomarket.com.mk/product/29402148/favorit-d50f135r-f-full-hd-led-smart-tv-android-14,FAVORIT_D50F135RF
-Tehnomarket,NEO,NEO 50-VUS 924 4K SMART LED TV,50-VUS 924,50,20999,0,https://tehnomarket.com.mk/product/29399785/neo-50-vus-924-4k-smart-led-tv,NEO_50VUS924
-Tehnomarket,JVC,JVC LT-50VA3300 4K ANDROID LED TV,LT-50VA3300,50,21999,0,https://tehnomarket.com.mk/product/29399783/jvc-lt-50va3300-4k-android-led-tv,JVC_LT50VA3300
-Tehnomarket,NEO,NEO 55-VUS 924 4K SMART LED TV,55-VUS 924,55,22999,0,https://tehnomarket.com.mk/product/29399787/neo-55-vus-924-4k-smart-led-tv,NEO_55VUS924
-Tehnomarket,HISENSE,"HISENSE 50A6Q UHD 4K VIDAA 50"" SMART TV",50A6Q,50,22999,0,https://tehnomarket.com.mk/product/29402778/hisense-50a6q-uhd-4k-vidaa-50-smart-tv,HISENSE_50A6Q
-Tehnomarket,PHILIPS,PHILIPS 50PUS7009/12 4K Smart TV,50PUS7009,50,23999,0,https://tehnomarket.com.mk/product/29400844/philips-50pus700912-4k-smart-tv,PHILIPS_50PUS7009
-Tehnomarket,VIVAX,VIVAX IMAGO LED TV-50UHDS62T2S2SM 4K LED АНДРОИД ТЕЛЕВИЗОР,IMAGO -50UHDS62T2S2SM,0,24999,0,https://tehnomarket.com.mk/product/29392441/vivax-imago-led-tv-50uhds62t2s2sm-4k-led-android-televizor,VIVAX_IMAGO50UHDS62T2S2SM
-Tehnomarket,JVC,JVC LT-55VA3300 4K ANDROID LED TV,LT-55VA3300,55,24999,0,https://tehnomarket.com.mk/product/29399357/jvc-lt-55va3300-4k-android-led-tv,JVC_LT55VA3300
-Tehnomarket,FAVORIT,"FAVORIT 55U20B-G1 55"" UHD Led Smart TV  Android 14",55U20B-G1,55,24999,0,https://tehnomarket.com.mk/product/29402653/favorit-55u20b-g1-55-uhd-led-smart-tv-android-14,FAVORIT_55U20BG1
-Tehnomarket,HISENSE,"HISENSE 50A6N UHD 4K VIDAA 50"" Smart TV",50A6N,50,24999,0,https://tehnomarket.com.mk/product/29401937/hisense-50a6n-uhd-4k-vidaa-50-smart-tv,HISENSE_50A6N
-Tehnomarket,PHILIPS,"PHILIPS 50PUS8010/12 50"" UHD LED SMART TV AMBILIGHT",50PUS8010,50,25999,0,https://tehnomarket.com.mk/product/29402438/philips-50pus801012-50-uhd-led-smart-tv-ambilight,PHILIPS_50PUS8010
-Tehnomarket,PHILIPS,PHILIPS 50PUS7000/12 4K ULTRA HD SMART TV,50PUS7000,50,25999,0,https://tehnomarket.com.mk/product/29402763/philips-50pus700012-4k-ultra-hd-smart-tv,PHILIPS_50PUS7000
-Tehnomarket,PHILIPS,"PHILIPS 55PUS8200/12 55"" UHD LED SMART TV AMBILIGHT",55PUS8200,55,25999,0,https://tehnomarket.com.mk/product/29404268/philips-55pus820012-55-uhd-led-smart-tv-ambilight,PHILIPS_55PUS8200
-Tehnomarket,VIVAX,VIVAX A SERIES 65UHD10K 4K LED АНДРОИД ТЕЛЕВИЗОР,65UHD10K,65,26999,0,https://tehnomarket.com.mk/product/29396422/vivax-a-series-65uhd10k-4k-led-android-televizor,VIVAX_65UHD10K
-Tehnomarket,PHILIPS,"PHILIPS 50PUS7609 50"" 4K Ultra HD LED SMART TV",50PUS7609,50,26999,0,https://tehnomarket.com.mk/product/29401232/philips-50pus7609-50-4k-ultra-hd-led-smart-tv,PHILIPS_50PUS7609
-Tehnomarket,PHILIPS,"PHILIPS 55PUS7000/12 55"" 4K ULTRA HD SMART TV",55PUS7000,55,26999,0,https://tehnomarket.com.mk/product/29402927/philips-55pus700012-55-4k-ultra-hd-smart-tv,PHILIPS_55PUS7000
-Tehnomarket,PHILIPS,"PHILIPS 55PUS8010/12 55"" UHD LED SMART TV AMBILIGHT",55PUS8010,55,26999,0,https://tehnomarket.com.mk/product/29403219/philips-55pus801012-55-uhd-led-smart-tv-ambilight,PHILIPS_55PUS8010
-Tehnomarket,PHILIPS,PHILIPS 55PUS7609 55`4K Ultra HD LED SMART TV,55PUS7609 55`,55,27999,0,https://tehnomarket.com.mk/product/29401242/philips-55pus7609-554k-ultra-hd-led-smart-tv,PHILIPS_55PUS760955
-Tehnomarket,FAVORIT,FAVORIT 65U20B-G1 UHD Led Smart TV  Android 14,65U20B-G1,65,27999,0,https://tehnomarket.com.mk/product/29402189/favorit-65u20b-g1-uhd-led-smart-tv-android-14,FAVORIT_65U20BG1
-Tehnomarket,THOMSON,"THOMSON 55UG4S14 55"" UHD GOOGLE TV Frameless",55UG4S14,55,27999,0,https://tehnomarket.com.mk/product/29402744/thomson-55ug4s14-55-uhd-google-tv-frameless,THOMSON_55UG4S14
-Tehnomarket,PHILIPS,PHILIPS 50PUS8009 50`4K Ambilight Smart TV,50PUS8009 50`,50,28999,0,https://tehnomarket.com.mk/product/29401241/philips-50pus8009-504k-ambilight-smart-tv,PHILIPS_50PUS800950
-Tehnomarket,HISENSE,"HISENSE 55A6Q UHD 4K VIDAA 55"" SMART TV",55A6Q,55,28999,0,https://tehnomarket.com.mk/product/29402779/hisense-55a6q-uhd-4k-vidaa-55-smart-tv,HISENSE_55A6Q
-Tehnomarket,HISENSE,"HISENSE 58A6Q UHD 4K 58"" Smart TV VIDAA",58A6Q,58,28999,0,https://tehnomarket.com.mk/product/29403198/hisense-58a6q-uhd-4k-58-smart-tv-vidaa,HISENSE_58A6Q
-Tehnomarket,VIVAX,VIVAX A SERIES 58UHD10K 4K LED АНДРОИД ТЕЛЕВИЗОР,58UHD10K,58,29699,0,https://tehnomarket.com.mk/product/29395034/vivax-a-series-58uhd10k-4k-led-android-televizor,VIVAX_58UHD10K
-Tehnomarket,PHILIPS,PHILIPS 55PUS7009/12 4K ULTRA HD SMART TV,55PUS7009,55,29699,0,https://tehnomarket.com.mk/product/29400579/philips-55pus700912-4k-ultra-hd-smart-tv,PHILIPS_55PUS7009
-Tehnomarket,SAMSUNG,SAMSUNG UE-50U8072FUXXH CRYSTAL 4K SMART LED TV,UE-50U8072FUXXH,50,31999,0,https://tehnomarket.com.mk/product/29402842/samsung-ue-50u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE50U8072FUXXH
-Tehnomarket,PHILIPS,PHILIPS 55PUS7409/12 4K  GOOGLE TV,55PUS7409,55,32999,0,https://tehnomarket.com.mk/product/29400645/philips-55pus740912-4k-google-tv,PHILIPS_55PUS7409
-Tehnomarket,PHILIPS,PHILIPS 55PUS8079/12 4K AMBILIGHT SMART TV,55PUS8079,55,32999,0,https://tehnomarket.com.mk/product/29400646/philips-55pus807912-4k-ambilight-smart-tv,PHILIPS_55PUS8079
-Tehnomarket,SAMSUNG,SAMSUNG UE-55U8072FUXXH CRYSTAL 4K SMART LED TV,UE-55U8072FUXXH,55,32999,0,https://tehnomarket.com.mk/product/29402656/samsung-ue-55u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55U8072FUXXH
-Tehnomarket,THOMSON,"THOMSON 65UG5C14 65"" UHD GOOGLE TV Frameless",65UG5C14,65,33999,0,https://tehnomarket.com.mk/product/29402746/thomson-65ug5c14-65-uhd-google-tv-frameless,THOMSON_65UG5C14
-Tehnomarket,PHILIPS,"PHILIPS 65PUS7000/12 65"" 4K ULTRA HD SMART TV",65PUS7000,65,33999,0,https://tehnomarket.com.mk/product/29403703/philips-65pus700012-65-4k-ultra-hd-smart-tv,PHILIPS_65PUS7000
-Tehnomarket,PHILIPS,"PHILIPS 65PUS8200/12 65"" UHD LED SMART TV AMBILIGHT",65PUS8200,65,33999,0,https://tehnomarket.com.mk/product/29404269/philips-65pus820012-65-uhd-led-smart-tv-ambilight,PHILIPS_65PUS8200
-Tehnomarket,SAMSUNG,SAMSUNG UE-50DU7172UXXH CRYSTAL 4K SMART LED TV,UE-50DU7172UXXH,50,34999,0,https://tehnomarket.com.mk/product/29400565/samsung-ue-50du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE50DU7172UXXH
-Tehnomarket,SAMSUNG,SAMSUNG UE-55DU7172UXXH CRYSTAL 4K SMART LED TV,UE-55DU7172UXXH,55,36999,0,https://tehnomarket.com.mk/product/29400608/samsung-ue-55du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55DU7172UXXH
-Tehnomarket,SAMSUNG,SAMSUNG UE-50DU8072UXXH CRYSTAL 4K SMART LED TV,UE-50DU8072UXXH,50,37999,0,https://tehnomarket.com.mk/product/29400541/samsung-ue-50du8072uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE50DU8072UXXH
-Tehnomarket,JVC,JVC LT-65VA3300 4k Ultra HD LED TV,LT-65VA3300,65,37999,0,https://tehnomarket.com.mk/product/29401359/jvc-lt-65va3300-4k-ultra-hd-led-tv,JVC_LT65VA3300
-Tehnomarket,FAVORIT,FAVORIT 75U20B-G1 UHD Led Smart TV Android 14,75U20B-G1,75,38999,0,https://tehnomarket.com.mk/product/29402190/favorit-75u20b-g1-uhd-led-smart-tv-android-14,FAVORIT_75U20BG1
-Tehnomarket,SAMSUNG,SAMSUNG UE-55CU7092UXXH CRYSTAL 4K SMART LED TV,UE-55CU7092UXXH,55,39999,0,https://tehnomarket.com.mk/product/29400397/samsung-ue-55cu7092uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55CU7092UXXH
-Tehnomarket,PHILIPS,PHILIPS 55PML8709 4K Ultra Slim UltraHD Mini-LED TV,55PML8709 Mini,55,39999,0,https://tehnomarket.com.mk/product/29401413/philips-55pml8709-4k-ultra-slim-ultrahd-mini-led-tv,PHILIPS_55PML8709MINI
-Tehnomarket,SAMSUNG,"SAMSUNG UE-65U8072FUXXH CRYSTAL 4K 65"" SMART LED TV",UE-65U8072FUXXH,65,42999,0,https://tehnomarket.com.mk/product/29402657/samsung-ue-65u8072fuxxh-crystal-4k-65-smart-led-tv,SAMSUNG_UE65U8072FUXXH
-Tehnomarket,HISENSE,"HISENSE 55U7Q UHD 4K MINI LED VIDAA 55"" SMART TV",55U7Q,55,42999,0,https://tehnomarket.com.mk/product/29402999/hisense-55u7q-uhd-4k-mini-led-vidaa-55-smart-tv,HISENSE_55U7Q
-Tehnomarket,PHILIPS,"PHILIPS 75PUS7000/12 75"" 4K ULTRA HD SMART TV",75PUS7000,75,42999,0,https://tehnomarket.com.mk/product/29403745/philips-75pus700012-75-4k-ultra-hd-smart-tv,PHILIPS_75PUS7000
-Tehnomarket,PHILIPS,PHILIPS 55PUS8118/12 4K AMBILIGHT SMART TV,55PUS8118,55,43999,0,https://tehnomarket.com.mk/product/29396920/philips-55pus811812-4k-ambilight-smart-tv,PHILIPS_55PUS8118
-Tehnomarket,PHILIPS,"PHILIPS 65PUS8010/12 65"" UHD LED SMART TV AMBILIGHT",65PUS8010,65,43999,0,https://tehnomarket.com.mk/product/29402764/philips-65pus801012-65-uhd-led-smart-tv-ambilight,PHILIPS_65PUS8010
-Tehnomarket,SAMSUNG,SAMSUNG UE-55DU8072UXXH CRYSTAL 4K SMART LED TV,UE-55DU8072UXXH,55,46999,0,https://tehnomarket.com.mk/product/29400543/samsung-ue-55du8072uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55DU8072UXXH
-Tehnomarket,PHILIPS,PHILIPS 65PUS8118/12 4K AMBILIGHT SMART TV,65PUS8118,65,49999,0,https://tehnomarket.com.mk/product/29398023/philips-65pus811812-4k-ambilight-smart-tv,PHILIPS_65PUS8118
-Tehnomarket,PHILIPS,PHILIPS 65PUS8009 65'' 4K Ambilight Smart TV,65PUS8009,65,49999,0,https://tehnomarket.com.mk/product/29401429/philips-65pus8009-65-4k-ambilight-smart-tv,PHILIPS_65PUS8009
-Tehnomarket,HISENSE,"HISENSE 65U7Q UHD 4K MINI LED VIDAA 65"" SMART TV",65U7Q,65,53999,0,https://tehnomarket.com.mk/product/29403000/hisense-65u7q-uhd-4k-mini-led-vidaa-65-smart-tv,HISENSE_65U7Q
-Tehnomarket,SONY,"TV Sony 55"" K55S35B 4K Smart Led TV",K55S35B,55,54999,0,https://tehnomarket.com.mk/product/29403141/tv-sony-55-k55s35b-4k-smart-led-tv,SONY_K55S35B
-Tehnomarket,PHILIPS,PHILIPS 70PUS7607/12 4K ULTRA HD SMART LED ТЕЛЕВИЗОР,70PUS7607,70,56999,0,https://tehnomarket.com.mk/product/29396921/philips-70pus760712-4k-ultra-hd-smart-led-televizor,PHILIPS_70PUS7607
-Tehnomarket,SONY,SONY KD-55X75WLPAEP TV 55'' 4K ULTRA HD GOOGLE TV,KD-55X75WLPAEP,55,56999,0,https://tehnomarket.com.mk/product/29396993/sony-kd-55x75wlpaep-tv-55-4k-ultra-hd-google-tv,SONY_KD55X75WLPAEP
-Tehnomarket,PHILIPS,PHILIPS 75PUS7608/12 4K ULTRA HD SMART LED ТЕЛЕВИЗОР,75PUS7608,75,60499,0,https://tehnomarket.com.mk/product/29397669/philips-75pus760812-4k-ultra-hd-smart-led-televizor,PHILIPS_75PUS7608
-Tehnomarket,SONY,"SONY KD-55X85J 55"" 4K Ultra HD Smart LED GOOGLE TV",KD-55X85J,55,66999,0,https://tehnomarket.com.mk/product/29387460/sony-kd-55x85j-55-4k-ultra-hd-smart-led-google-tv,SONY_KD55X85J
-Tehnomarket,SONY,"SONY KD-65X80KAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",KD-65X80KAEP,65,66999,0,https://tehnomarket.com.mk/product/29393153/sony-kd-65x80kaep-65-4k-ultra-hd-smart-led-google-tv,SONY_KD65X80KAEP
-Tehnomarket,SAMSUNG,SAMSUNG UE-75U8072FUXXH CRYSTAL 4K SMART LED TV,UE-75U8072FUXXH,75,66999,0,https://tehnomarket.com.mk/product/29402658/samsung-ue-75u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE75U8072FUXXH
-Tehnomarket,SONY,"TV Sony 65"" K65S35B 4K Smart Led TV",K65S35B,65,67999,0,https://tehnomarket.com.mk/product/29403142/tv-sony-65-k65s35b-4k-smart-led-tv,SONY_K65S35B
-Tehnomarket,SAMSUNG,SAMSUNG UE-75DU7172UXXH CRYSTAL 4K SMART LED TV,UE-75DU7172UXXH,75,68999,0,https://tehnomarket.com.mk/product/29400461/samsung-ue-75du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE75DU7172UXXH
-Tehnomarket,PHILIPS,PHILIPS 75PML8709 4K QD Mini-LED TV,75PML8709 QD Mini,75,69999,0,https://tehnomarket.com.mk/product/29401175/philips-75pml8709-4k-qd-mini-led-tv,PHILIPS_75PML8709QDMINI
-Tehnomarket,HISENSE,"HISENSE 85A6Q UHD 4K VIDAA 85"" Smart TV",85A6Q,85,69999,0,https://tehnomarket.com.mk/product/29402735/hisense-85a6q-uhd-4k-vidaa-85-smart-tv,HISENSE_85A6Q
-Tehnomarket,SONY,SONY KD-65X75WLPAEP TV 65'' 4K ULTRA HD GOOGLE TV,KD-65X75WLPAEP,65,71999,0,https://tehnomarket.com.mk/product/29396994/sony-kd-65x75wlpaep-tv-65-4k-ultra-hd-google-tv,SONY_KD65X75WLPAEP
-Tehnomarket,SONY,"SONY KD-65X80LAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",KD-65X80LAEP,65,82999,0,https://tehnomarket.com.mk/product/29402014/sony-kd-65x80laep-65-4k-ultra-hd-smart-led-google-tv,SONY_KD65X80LAEP
-Tehnomarket,SAMSUNG,SAMSUNG UE-75DU8072UXXH CRYSTAL 4K SMART LED TV,UE-75DU8072UXXH,75,84999,0,https://tehnomarket.com.mk/product/29400398/samsung-ue-75du8072uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE75DU8072UXXH
-Tehnomarket,SONY,"SONY  XR-55X90LAEP 55"" 4K ULTRA HD FULL ARRAY LED GOOGLE TV",XR-55X90LAEP FULL ARRAY,55,86999,0,https://tehnomarket.com.mk/product/29400584/sony-xr-55x90laep-55-4k-ultra-hd-full-array-led-google-tv,SONY_XR55X90LAEPFULLARRAY
-Tehnomarket,SONY,"SONY XR-65X92KAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",XR-65X92KAEP,65,88999,0,https://tehnomarket.com.mk/product/29394527/sony-xr-65x92kaep-65-4k-ultra-hd-smart-led-google-tv,SONY_XR65X92KAEP
-Tehnomarket,SONY,SONY KD-75X75WLPAEP TV 75'' 4K ULTRA HD GOOGLE TV,KD-75X75WLPAEP,75,94999,0,https://tehnomarket.com.mk/product/29396995/sony-kd-75x75wlpaep-tv-75-4k-ultra-hd-google-tv,SONY_KD75X75WLPAEP
-Tehnomarket,SONY,"SONY KD-65X85LAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",KD-65X85LAEP,65,94999,0,https://tehnomarket.com.mk/product/29399811/sony-kd-65x85laep-65-4k-ultra-hd-smart-led-google-tv,SONY_KD65X85LAEP
-Tehnomarket,SONY,"SONY  XR-65X90LAEP 65"" 4K ULTRA HD FULL ARRAY LED GOOGLE TV",XR-65X90LAEP FULL ARRAY,65,102499,0,https://tehnomarket.com.mk/product/29400585/sony-xr-65x90laep-65-4k-ultra-hd-full-array-led-google-tv,SONY_XR65X90LAEPFULLARRAY
+Tehnomarket,ZEUS,"ZEUS ZE32T2 32"" HD DVB-T2 FRAMELESS TV",ZE32T2,32,5699,6999,https://tehnomarket.com.mk/product/29404419/zeus-ze32t2-32-hd-dvb-t2-frameless-tv,ZEUS_ZE32T2
+Tehnomarket,FAVORIT,FAVORIT 32U20B-20D HD Led Smart TV Android 14,32U20B-20D,32,5999,7999,https://tehnomarket.com.mk/product/29402187/favorit-32u20b-20d-hd-led-smart-tv-android-14,FAVORIT_32U20B20D
+Tehnomarket,NEO,NEO 32HD14F25 HD TV SMART ANDROID 14,32HD14F25,32,6199,7999,https://tehnomarket.com.mk/product/29403643/neo-32hd14f25-hd-tv-smart-android-14,NEO_32HD14F25
+Tehnomarket,ZEUS,"ZEUS ZE32ST2 32"" HD ANDROID 14 SMART TV",ZE32ST2,32,6199,7999,https://tehnomarket.com.mk/product/29404418/zeus-ze32st2-32-hd-android-14-smart-tv,ZEUS_ZE32ST2
+Tehnomarket,VIVAX,VIVAX A SERIES 32LE10K HD READY LED АНДРОИД ТЕЛЕВИЗОР,32LE10K,32,6999,8999,https://tehnomarket.com.mk/product/29398212/vivax-a-series-32le10k-hd-ready-led-android-televizor,VIVAX_32LE10K
+Tehnomarket,VIVAX,VIVAX IMAGO LED TV-32LE21K HD ЛЕД ТЕЛЕВИЗОР ANDROID TV,IMAGO -32LE21K,0,5991,9999,https://tehnomarket.com.mk/product/29402638/vivax-imago-led-tv-32le21k-hd-led-televizor-android-tv,VIVAX_IMAGO32LE21K
+Tehnomarket,VIVAX,"VIVAX 32LE110WO 32"" HD SMART TV webOS",32LE110WO,32,6499,9999,https://tehnomarket.com.mk/product/29403662/vivax-32le110wo-32-hd-smart-tv-webos,VIVAX_32LE110WO
+Tehnomarket,VIVAX,"VIVAX 43LE110WO  43"" FHD SMART TV webOS",43LE110WO,43,9499,9999,https://tehnomarket.com.mk/product/29403663/vivax-43le110wo-43-fhd-smart-tv-webos,VIVAX_43LE110WO
+Tehnomarket,JVC,JVC LT-32VH4300 HD READY LED TV,LT-32VH4300,32,6499,10999,https://tehnomarket.com.mk/product/29399778/jvc-lt-32vh4300-hd-ready-led-tv,JVC_LT32VH4300
+Tehnomarket,JVC,"JVC LT-32VAH3300  32"" HD Smart Tv",LT-32VAH3300,32,7999,10999,https://tehnomarket.com.mk/product/29402182/jvc-lt-32vah3300-32-hd-smart-tv,JVC_LT32VAH3300
+Tehnomarket,NEO,"NEO 40FHD14F25  40"" FHD TV SMART ANDROID 14",40FHD14F25,40,9499,10999,https://tehnomarket.com.mk/product/29403644/neo-40fhd14f25-40-fhd-tv-smart-android-14,NEO_40FHD14F25
+Tehnomarket,FAVORIT,FAVORIT 43U20B-20D Full HD Led Smart TV Android 14,43U20B-20D,43,9499,10999,https://tehnomarket.com.mk/product/29402188/favorit-43u20b-20d-full-hd-led-smart-tv-android-14,FAVORIT_43U20B20D
+Tehnomarket,VIVAX,VIVAX IMAGO LED TV-40LE114T2S2 FULL HD ЛЕД ТЕЛЕВИЗОР,IMAGO -40LE114T2S2,0,8999,11399,https://tehnomarket.com.mk/product/29399245/vivax-imago-led-tv-40le114t2s2-full-hd-led-televizor,VIVAX_IMAGO40LE114T2S2
+Tehnomarket,HISENSE,HISENSE H32A5100F 32'' HD READY ЛЕД ТЕЛЕВИЗОР,H32A5100F,32,6999,11499,https://tehnomarket.com.mk/product/29291572/hisense-h32a5100f-32-hd-ready-led-televizor,HISENSE_H32A5100F
+Tehnomarket,JVC,JVC LT-32VH5300 LED SMART TV,LT-32VH5300,32,7999,11999,https://tehnomarket.com.mk/product/29399779/jvc-lt-32vh5300-led-smart-tv,JVC_LT32VH5300
+Tehnomarket,JVC,JVC LT-40VF4101 FULL HD LED TV,LT-40VF4101,40,7991,11999,https://tehnomarket.com.mk/product/29400074/jvc-lt-40vf4101-full-hd-led-tv,JVC_LT40VF4101
+Tehnomarket,HISENSE,"HISENSE 32A4K 32"" HD READY SMART ЛЕД ТЕЛЕВИЗОР",32A4K,32,5991,11999,https://tehnomarket.com.mk/product/29400658/hisense-32a4k-32-hd-ready-smart-led-televizor,HISENSE_32A4K
+Tehnomarket,JVC,JVC LT- 32VDF540W FULL HD DLED SMART WHITE TV VIDAA,LT- 32VDF540W DLED WHITE,32,9499,11999,https://tehnomarket.com.mk/product/29402853/jvc-lt-32vdf540w-full-hd-dled-smart-white-tv-vidaa,JVC_LT32VDF540WDLEDWHITE
+Tehnomarket,PHILIPS,PHILIPS 32PHS5507/12 HD LED ТЕЛЕВИЗОР,32PHS5507,32,6999,12999,https://tehnomarket.com.mk/product/29394473/philips-32phs550712-hd-led-televizor,PHILIPS_32PHS5507
+Tehnomarket,FAVORIT,FAVORIT 50U20B-20D FULL HD LED SMART TV Android 14,50U20B-20D,50,11999,12999,https://tehnomarket.com.mk/product/29403339/favorit-50u20b-20d-full-hd-led-smart-tv-android-14,FAVORIT_50U20B20D
+Tehnomarket,PHILIPS,PHILIPS 32PHS5500/12 HD LED ТЕЛЕВИЗОР,32PHS5500,32,9999,12999,https://tehnomarket.com.mk/product/29403122/philips-32phs550012-hd-led-televizor,PHILIPS_32PHS5500
+Tehnomarket,NEO,"NEO 43FHD14F25  43"" FHD SMART TV ANDROID 14",43FHD14F25,43,9999,12999,https://tehnomarket.com.mk/product/29403610/neo-43fhd14f25-43-fhd-smart-tv-android-14,NEO_43FHD14F25
+Tehnomarket,HISENSE,HISENSE 32A4Q SMART HD Ready 32″ LED TV,32A4Q,32,9599,12999,https://tehnomarket.com.mk/product/29403197/hisense-32a4q-smart-hd-ready-32-led-tv,HISENSE_32A4Q
+Tehnomarket,JVC,JVC LT-43VF4400 FULL HD LED TV,LT-43VF4400,43,9999,13999,https://tehnomarket.com.mk/product/29400599/jvc-lt-43vf4400-full-hd-led-tv,JVC_LT43VF4400
+Tehnomarket,NEO,NEO 43-VFS 924 FULL HD SMART  LED TV,43-VFS 924,43,6999,13999,https://tehnomarket.com.mk/product/29400600/neo-43-vfs-924-full-hd-smart-led-tv,NEO_43VFS924
+Tehnomarket,PHILIPS,"PHILIPS 32PHS6000/12  32"" HD SMART TV",32PHS6000,32,9999,13999,https://tehnomarket.com.mk/product/29402926/philips-32phs600012-32-hd-smart-tv,PHILIPS_32PHS6000
+Tehnomarket,THOMSON,"THOMSON 40QG4S14 40"" QLED FHD GOOGLE TV FRAMELESS",40QG4S14,40,11999,14499,https://tehnomarket.com.mk/product/29402747/thomson-40qg4s14-40-qled-fhd-google-tv-frameless,THOMSON_40QG4S14
+Tehnomarket,VIVAX,"VIVAX IMAGO 40LE110WO 40"" FHD SMART TV webOS",IMAGO 40LE110WO,40,8999,14999,https://tehnomarket.com.mk/product/29402679/vivax-imago-40le110wo-40-fhd-smart-tv-webos,VIVAX_IMAGO40LE110WO
+Tehnomarket,JVC,JVC LT-40VAF3300 Full HD LED TV ANDROID TV,LT-40VAF3300,40,9691,15999,https://tehnomarket.com.mk/product/29401357/jvc-lt-40vaf3300-full-hd-led-tv-android-tv,JVC_LT40VAF3300
+Tehnomarket,SAMSUNG,SAMSUNG UE-32H5002FKXXH HD LED SMART TV,UE-32H5002FKXXH,32,11999,15999,https://tehnomarket.com.mk/product/29403215/samsung-ue-32h5002fkxxh-hd-led-smart-tv,SAMSUNG_UE32H5002FKXXH
+Tehnomarket,PHILIPS,PHILIPS 32PHS6808 HD SMART LED ТЕЛЕВИЗОР,32PHS6808,32,9591,15999,https://tehnomarket.com.mk/product/29396534/philips-32phs6808-hd-smart-led-televizor,PHILIPS_32PHS6808
+Tehnomarket,HISENSE,"HISENSE 40A4Q FULL HD 40"" Smart  TV",40A4Q,40,11999,15999,https://tehnomarket.com.mk/product/29402776/hisense-40a4q-full-hd-40-smart-tv,HISENSE_40A4Q
+Tehnomarket,SAMSUNG,SAMSUNG UE-32T4302AEXXH HD LED SMART TV,UE-32T4302AEXXH,32,10999,16999,https://tehnomarket.com.mk/product/29396372/samsung-ue-32t4302aexxh-hd-led-smart-tv,SAMSUNG_UE32T4302AEXXH
+Tehnomarket,NEO,"NEO 55UHD15F25  55"" UHD 4K SMART TV ANDROID 15",55UHD15F25,55,15999,17999,https://tehnomarket.com.mk/product/29403649/neo-55uhd15f25-55-uhd-4k-smart-tv-android-15,NEO_55UHD15F25
+Tehnomarket,JVC,JVC LT-43VAF3300 FULL HD LED ANDROID TV,LT-43VAF3300,43,12999,17999,https://tehnomarket.com.mk/product/29399782/jvc-lt-43vaf3300-full-hd-led-android-tv,JVC_LT43VAF3300
+Tehnomarket,PHILIPS,PHILIPS 40PFS6009 FULL HD SMART TV,40PFS6009,40,12999,17999,https://tehnomarket.com.mk/product/29400577/philips-40pfs6009-full-hd-smart-tv,PHILIPS_40PFS6009
+Tehnomarket,PHILIPS,PHILIPS 40PFS6000/12 FULL HD SMART TV,40PFS6000,40,13499,17999,https://tehnomarket.com.mk/product/29402759/philips-40pfs600012-full-hd-smart-tv,PHILIPS_40PFS6000
+Tehnomarket,JVC,JVC LT-43VAQ3300 4k ULTRA HD QLED ANDROID TV,LT-43VAQ3300,43,14999,18999,https://tehnomarket.com.mk/product/29402848/jvc-lt-43vaq3300-4k-ultra-hd-qled-android-tv,JVC_LT43VAQ3300
+Tehnomarket,THOMSON,"THOMSON 43UG5C14 43"" UHD GOOGLE TV Frameless",43UG5C14,43,14999,19499,https://tehnomarket.com.mk/product/29402745/thomson-43ug5c14-43-uhd-google-tv-frameless,THOMSON_43UG5C14
+Tehnomarket,FAVORIT,FAVORIT D50F135R-F  Full HD Led Smart TV Android 14,D50F135R-F,0,11291,19990,https://tehnomarket.com.mk/product/29402148/favorit-d50f135r-f-full-hd-led-smart-tv-android-14,FAVORIT_D50F135RF
+Tehnomarket,PHILIPS,"PHILIPS 43PUS8400/12 43"" UHD LED SMART TV AMBILIGHT QLED",43PUS8400,43,17499,19999,https://tehnomarket.com.mk/product/29404014/philips-43pus840012-43-uhd-led-smart-tv-ambilight-qled,PHILIPS_43PUS8400
+Tehnomarket,HISENSE,"HISENSE 43A6Q UHD 4K VIDAA 43"" SMART TV",43A6Q,43,14999,19999,https://tehnomarket.com.mk/product/29402777/hisense-43a6q-uhd-4k-vidaa-43-smart-tv,HISENSE_43A6Q
+Tehnomarket,PANASONIC,PANASONIC TX-32FS500E,TX-32FS500E,0,10999,20899,https://tehnomarket.com.mk/product/5007320/panasonic-tx-32fs500e,PANASONIC_TX32FS500E
+Tehnomarket,JVC,JVC LT-50VAQ3300 4k ULTRA HD QLED ANDROID TV,LT-50VAQ3300,50,19999,20999,https://tehnomarket.com.mk/product/29401358/jvc-lt-50vaq3300-4k-ultra-hd-qled-android-tv,JVC_LT50VAQ3300
+Tehnomarket,NEO,NEO 50-VUS 924 4K SMART LED TV,50-VUS 924,50,11999,20999,https://tehnomarket.com.mk/product/29399785/neo-50-vus-924-4k-smart-led-tv,NEO_50VUS924
+Tehnomarket,PHILIPS,PHILIPS 43PUS7000/12 4K ULTRA HD SMART TV,43PUS7000,43,15999,20999,https://tehnomarket.com.mk/product/29402762/philips-43pus700012-4k-ultra-hd-smart-tv,PHILIPS_43PUS7000
+Tehnomarket,PHILIPS,"PHILIPS 43PUS8200/12 43"" UHD LED SMART TV AMBILIGHT",43PUS8200,43,17999,20999,https://tehnomarket.com.mk/product/29404267/philips-43pus820012-43-uhd-led-smart-tv-ambilight,PHILIPS_43PUS8200
+Tehnomarket,JVC,JVC LT-50VA3300 4K ANDROID LED TV,LT-50VA3300,50,16999,21999,https://tehnomarket.com.mk/product/29399783/jvc-lt-50va3300-4k-android-led-tv,JVC_LT50VA3300
+Tehnomarket,NEO,NEO 55-VUS 924 4K SMART LED TV,55-VUS 924,55,12991,22999,https://tehnomarket.com.mk/product/29399787/neo-55-vus-924-4k-smart-led-tv,NEO_55VUS924
+Tehnomarket,HISENSE,"HISENSE 50A6Q UHD 4K VIDAA 50"" SMART TV",50A6Q,50,18499,22999,https://tehnomarket.com.mk/product/29402778/hisense-50a6q-uhd-4k-vidaa-50-smart-tv,HISENSE_50A6Q
+Tehnomarket,PHILIPS,"PHILIPS 43PUS8010/12 43"" UHD LED SMART TV AMBILIGHT",43PUS8010,43,16999,22999,https://tehnomarket.com.mk/product/29403218/philips-43pus801012-43-uhd-led-smart-tv-ambilight,PHILIPS_43PUS8010
+Tehnomarket,PHILIPS,"PHILIPS 50PUS7810/12 50"" UHD QLED SMART TV",50PUS7810,50,17999,23999,https://tehnomarket.com.mk/product/29403472/philips-50pus781012-50-uhd-qled-smart-tv,PHILIPS_50PUS7810
+Tehnomarket,PHILIPS,PHILIPS 50PUS7009/12 4K Smart TV,50PUS7009,50,18999,23999,https://tehnomarket.com.mk/product/29400844/philips-50pus700912-4k-smart-tv,PHILIPS_50PUS7009
+Tehnomarket,PHILIPS,PHILIPS 43PUS7609 4K SMART Ultra HD LED TV,43PUS7609,43,14991,23999,https://tehnomarket.com.mk/product/29401176/philips-43pus7609-4k-smart-ultra-hd-led-tv,PHILIPS_43PUS7609
+Tehnomarket,PHILIPS,PHILIPS 43PUS8009 4K ULTRA HD AMBILIGHT LED SMART TV,43PUS8009,43,14991,23999,https://tehnomarket.com.mk/product/29401231/philips-43pus8009-4k-ultra-hd-ambilight-led-smart-tv,PHILIPS_43PUS8009
+Tehnomarket,VIVAX,VIVAX IMAGO LED TV-50UHDS62T2S2SM 4K LED АНДРОИД ТЕЛЕВИЗОР,IMAGO -50UHDS62T2S2SM,0,14991,24999,https://tehnomarket.com.mk/product/29392441/vivax-imago-led-tv-50uhds62t2s2sm-4k-led-android-televizor,VIVAX_IMAGO50UHDS62T2S2SM
+Tehnomarket,PHILIPS,"PHILIPS 55PUS7810/12 55"" UHD QLED SMART TV",55PUS7810,55,21999,24999,https://tehnomarket.com.mk/product/29403474/philips-55pus781012-55-uhd-qled-smart-tv,PHILIPS_55PUS7810
+Tehnomarket,JVC,JVC LT-55VA3300 4K ANDROID LED TV,LT-55VA3300,55,19999,24999,https://tehnomarket.com.mk/product/29399357/jvc-lt-55va3300-4k-android-led-tv,JVC_LT55VA3300
+Tehnomarket,FAVORIT,"FAVORIT 55U20B-G1 55"" UHD Led Smart TV  Android 14",55U20B-G1,55,15499,24999,https://tehnomarket.com.mk/product/29402653/favorit-55u20b-g1-55-uhd-led-smart-tv-android-14,FAVORIT_55U20BG1
+Tehnomarket,HISENSE,"HISENSE 50A6N UHD 4K VIDAA 50"" Smart TV",50A6N,50,15991,24999,https://tehnomarket.com.mk/product/29401937/hisense-50a6n-uhd-4k-vidaa-50-smart-tv,HISENSE_50A6N
+Tehnomarket,JVC,JVC LT-55VAQ3300 4K ANDROID QLED TV,LT-55VAQ3300,55,22999,25999,https://tehnomarket.com.mk/product/29400597/jvc-lt-55vaq3300-4k-android-qled-tv,JVC_LT55VAQ3300
+Tehnomarket,PHILIPS,"PHILIPS 50PUS8010/12 50"" UHD LED SMART TV AMBILIGHT",50PUS8010,50,19999,25999,https://tehnomarket.com.mk/product/29402438/philips-50pus801012-50-uhd-led-smart-tv-ambilight,PHILIPS_50PUS8010
+Tehnomarket,PHILIPS,PHILIPS 50PUS7000/12 4K ULTRA HD SMART TV,50PUS7000,50,16999,25999,https://tehnomarket.com.mk/product/29402763/philips-50pus700012-4k-ultra-hd-smart-tv,PHILIPS_50PUS7000
+Tehnomarket,PHILIPS,"PHILIPS 55PUS8200/12 55"" UHD LED SMART TV AMBILIGHT",55PUS8200,55,22999,25999,https://tehnomarket.com.mk/product/29404268/philips-55pus820012-55-uhd-led-smart-tv-ambilight,PHILIPS_55PUS8200
+Tehnomarket,JVC,JVC LT-50VAQ7200 ANDROID QLED TV,LT-50VAQ7200,50,21999,26999,https://tehnomarket.com.mk/product/29397325/jvc-lt-50vaq7200-android-qled-tv,JVC_LT50VAQ7200
+Tehnomarket,HISENSE,"HISENSE 55E7Q UHD 55"" QLED SMART TV",55E7Q,55,22999,26999,https://tehnomarket.com.mk/product/29402780/hisense-55e7q-uhd-55-qled-smart-tv,HISENSE_55E7Q
+Tehnomarket,VIVAX,VIVAX A SERIES 65UHD10K 4K LED АНДРОИД ТЕЛЕВИЗОР,65UHD10K,65,23999,26999,https://tehnomarket.com.mk/product/29396422/vivax-a-series-65uhd10k-4k-led-android-televizor,VIVAX_65UHD10K
+Tehnomarket,PHILIPS,"PHILIPS 50PUS7609 50"" 4K Ultra HD LED SMART TV",50PUS7609,50,16991,26999,https://tehnomarket.com.mk/product/29401232/philips-50pus7609-50-4k-ultra-hd-led-smart-tv,PHILIPS_50PUS7609
+Tehnomarket,SAMSUNG,SAMSUNG UE-43CU7092UXXH CRYSTAL 4K SMART LED TV,UE-43CU7092UXXH,43,15991,26999,https://tehnomarket.com.mk/product/29400490/samsung-ue-43cu7092uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE43CU7092UXXH
+Tehnomarket,PHILIPS,PHILIPS 43PUS8079/12 4K Ambilight Smart TV,43PUS8079,43,14991,26999,https://tehnomarket.com.mk/product/29400843/philips-43pus807912-4k-ambilight-smart-tv,PHILIPS_43PUS8079
+Tehnomarket,PHILIPS,"PHILIPS 55PUS7000/12 55"" 4K ULTRA HD SMART TV",55PUS7000,55,19999,26999,https://tehnomarket.com.mk/product/29402927/philips-55pus700012-55-4k-ultra-hd-smart-tv,PHILIPS_55PUS7000
+Tehnomarket,PHILIPS,"PHILIPS 55PUS8010/12 55"" UHD LED SMART TV AMBILIGHT",55PUS8010,55,23999,26999,https://tehnomarket.com.mk/product/29403219/philips-55pus801012-55-uhd-led-smart-tv-ambilight,PHILIPS_55PUS8010
+Tehnomarket,SAMSUNG,SAMSUNG UE43U8072FUXXH CRYSTAL 4K SMART LED TV,UE43U8072FUXXH,43,17999,26999,https://tehnomarket.com.mk/product/29402841/samsung-ue43u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE43U8072FUXXH
+Tehnomarket,VIVAX,VIVAX Q SERIES 55Q10C 4K QLED АНДРОИД ТЕЛЕВИЗОР,Q 55Q10C,0,19999,27999,https://tehnomarket.com.mk/product/29395036/vivax-q-series-55q10c-4k-qled-android-televizor,VIVAX_Q55Q10C
+Tehnomarket,PHILIPS,PHILIPS 55PUS7609 55`4K Ultra HD LED SMART TV,55PUS7609 55`,55,19999,27999,https://tehnomarket.com.mk/product/29401242/philips-55pus7609-554k-ultra-hd-led-smart-tv,PHILIPS_55PUS760955
+Tehnomarket,FAVORIT,FAVORIT 65U20B-G1 UHD Led Smart TV  Android 14,65U20B-G1,65,22999,27999,https://tehnomarket.com.mk/product/29402189/favorit-65u20b-g1-uhd-led-smart-tv-android-14,FAVORIT_65U20BG1
+Tehnomarket,THOMSON,"THOMSON 55UG4S14 55"" UHD GOOGLE TV Frameless",55UG4S14,55,19999,27999,https://tehnomarket.com.mk/product/29402744/thomson-55ug4s14-55-uhd-google-tv-frameless,THOMSON_55UG4S14
+Tehnomarket,SAMSUNG,SAMSUNG UE-43DU7172UXXH CRYSTAL 4K SMART LED TV,UE-43DU7172UXXH,43,14991,27999,https://tehnomarket.com.mk/product/29400540/samsung-ue-43du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE43DU7172UXXH
+Tehnomarket,JVC,JVC LT-55VAQ3200 4K ANDROID QLED TV,LT-55VAQ3200,55,15991,28499,https://tehnomarket.com.mk/product/29399356/jvc-lt-55vaq3200-4k-android-qled-tv,JVC_LT55VAQ3200
+Tehnomarket,PHILIPS,PHILIPS 50PUS8009 50`4K Ambilight Smart TV,50PUS8009 50`,50,18999,28999,https://tehnomarket.com.mk/product/29401241/philips-50pus8009-504k-ambilight-smart-tv,PHILIPS_50PUS800950
+Tehnomarket,HISENSE,"HISENSE 55A6Q UHD 4K VIDAA 55"" SMART TV",55A6Q,55,19999,28999,https://tehnomarket.com.mk/product/29402779/hisense-55a6q-uhd-4k-vidaa-55-smart-tv,HISENSE_55A6Q
+Tehnomarket,HISENSE,"HISENSE 58A6Q UHD 4K 58"" Smart TV VIDAA",58A6Q,58,24999,28999,https://tehnomarket.com.mk/product/29403198/hisense-58a6q-uhd-4k-58-smart-tv-vidaa,HISENSE_58A6Q
+Tehnomarket,VIVAX,VIVAX A SERIES 58UHD10K 4K LED АНДРОИД ТЕЛЕВИЗОР,58UHD10K,58,19591,29699,https://tehnomarket.com.mk/product/29395034/vivax-a-series-58uhd10k-4k-led-android-televizor,VIVAX_58UHD10K
+Tehnomarket,PHILIPS,PHILIPS 55PUS7009/12 4K ULTRA HD SMART TV,55PUS7009,55,19791,29699,https://tehnomarket.com.mk/product/29400579/philips-55pus700912-4k-ultra-hd-smart-tv,PHILIPS_55PUS7009
+Tehnomarket,PHILIPS,PHILIPS 43PUS8118/12 4K AMBILIGHT SMART TV,43PUS8118,43,14999,29999,https://tehnomarket.com.mk/product/29398806/philips-43pus811812-4k-ambilight-smart-tv,PHILIPS_43PUS8118
+Tehnomarket,SAMSUNG,SAMSUNG UE-50U8072FUXXH CRYSTAL 4K SMART LED TV,UE-50U8072FUXXH,50,20499,31999,https://tehnomarket.com.mk/product/29402842/samsung-ue-50u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE50U8072FUXXH
+Tehnomarket,VIVAX,VIVAX Q SERIES 50Q10C 4K QLED АНДРОИД ТЕЛЕВИЗОР,Q 50Q10C,0,18991,32999,https://tehnomarket.com.mk/product/29395035/vivax-q-series-50q10c-4k-qled-android-televizor,VIVAX_Q50Q10C
+Tehnomarket,PHILIPS,PHILIPS 55PUS7409/12 4K  GOOGLE TV,55PUS7409,55,19491,32999,https://tehnomarket.com.mk/product/29400645/philips-55pus740912-4k-google-tv,PHILIPS_55PUS7409
+Tehnomarket,PHILIPS,PHILIPS 55PUS8079/12 4K AMBILIGHT SMART TV,55PUS8079,55,21499,32999,https://tehnomarket.com.mk/product/29400646/philips-55pus807912-4k-ambilight-smart-tv,PHILIPS_55PUS8079
+Tehnomarket,SAMSUNG,SAMSUNG UE-55U8072FUXXH CRYSTAL 4K SMART LED TV,UE-55U8072FUXXH,55,21999,32999,https://tehnomarket.com.mk/product/29402656/samsung-ue-55u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55U8072FUXXH
+Tehnomarket,JVC,JVC LT-55VAQ8100 4K ANDROID QLED TV,LT-55VAQ8100,55,19999,33999,https://tehnomarket.com.mk/product/29393195/jvc-lt-55vaq8100-4k-android-qled-tv,JVC_LT55VAQ8100
+Tehnomarket,THOMSON,"THOMSON 65UG5C14 65"" UHD GOOGLE TV Frameless",65UG5C14,65,25999,33999,https://tehnomarket.com.mk/product/29402746/thomson-65ug5c14-65-uhd-google-tv-frameless,THOMSON_65UG5C14
+Tehnomarket,PHILIPS,"PHILIPS 65PUS7000/12 65"" 4K ULTRA HD SMART TV",65PUS7000,65,27999,33999,https://tehnomarket.com.mk/product/29403703/philips-65pus700012-65-4k-ultra-hd-smart-tv,PHILIPS_65PUS7000
+Tehnomarket,PHILIPS,"PHILIPS 65PUS8200/12 65"" UHD LED SMART TV AMBILIGHT",65PUS8200,65,29999,33999,https://tehnomarket.com.mk/product/29404269/philips-65pus820012-65-uhd-led-smart-tv-ambilight,PHILIPS_65PUS8200
+Tehnomarket,SAMSUNG,SAMSUNG UE-50DU7172UXXH CRYSTAL 4K SMART LED TV,UE-50DU7172UXXH,50,18991,34999,https://tehnomarket.com.mk/product/29400565/samsung-ue-50du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE50DU7172UXXH
+Tehnomarket,HISENSE,HISENSE 65E7Q QLED 4K  UHD 65″ Smart TV VIDAA,65E7Q,65,31999,35999,https://tehnomarket.com.mk/product/29403002/hisense-65e7q-qled-4k-uhd-65-smart-tv-vidaa,HISENSE_65E7Q
+Tehnomarket,PHILIPS,"PHILIPS 55MLED820/12 55"" 4K UHD MiniLED Titan OS",55MLED820,55,29999,35999,https://tehnomarket.com.mk/product/29403604/philips-55mled82012-55-4k-uhd-miniled-titan-os,PHILIPS_55MLED820
+Tehnomarket,SAMSUNG,SAMSUNG QE-50Q7F2AAUXXH QLED TV UHD SMART TV TIZEN OS,QE-50Q7F2AAUXXH,50,23999,35999,https://tehnomarket.com.mk/product/29403978/samsung-qe-50q7f2aauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE50Q7F2AAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-43Q7FAAUXXH QLED TV UHD SMART TV TIZEN OS,QE-43Q7FAAUXXH,43,23999,36999,https://tehnomarket.com.mk/product/29402924/samsung-qe-43q7faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE43Q7FAAUXXH
+Tehnomarket,PHILIPS,"PHILIPS 65PUS7810/12 65"" UHD QLED SMART TV",65PUS7810,65,31999,36999,https://tehnomarket.com.mk/product/29403743/philips-65pus781012-65-uhd-qled-smart-tv,PHILIPS_65PUS7810
+Tehnomarket,SAMSUNG,SAMSUNG QE-43Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-43Q7F2AUXXH,43,20999,36999,https://tehnomarket.com.mk/product/29403738/samsung-qe-43q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE43Q7F2AUXXH
+Tehnomarket,SAMSUNG,SAMSUNG UE-55DU7172UXXH CRYSTAL 4K SMART LED TV,UE-55DU7172UXXH,55,19991,36999,https://tehnomarket.com.mk/product/29400608/samsung-ue-55du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55DU7172UXXH
+Tehnomarket,SAMSUNG,SAMSUNG UE-50DU8072UXXH CRYSTAL 4K SMART LED TV,UE-50DU8072UXXH,50,19991,37999,https://tehnomarket.com.mk/product/29400541/samsung-ue-50du8072uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE50DU8072UXXH
+Tehnomarket,JVC,JVC LT-65VA3300 4k Ultra HD LED TV,LT-65VA3300,65,24991,37999,https://tehnomarket.com.mk/product/29401359/jvc-lt-65va3300-4k-ultra-hd-led-tv,JVC_LT65VA3300
+Tehnomarket,SAMSUNG,"SAMSUNG QE-50Q67DAUXXH 4K 50"" QLED Q67D Tizen OS Smart TV",QE-50Q67DAUXXH Q67D,50,25991,38999,https://tehnomarket.com.mk/product/29400979/samsung-qe-50q67dauxxh-4k-50-qled-q67d-tizen-os-smart-tv,SAMSUNG_QE50Q67DAUXXHQ67D
+Tehnomarket,FAVORIT,FAVORIT 75U20B-G1 UHD Led Smart TV Android 14,75U20B-G1,75,32999,38999,https://tehnomarket.com.mk/product/29402190/favorit-75u20b-g1-uhd-led-smart-tv-android-14,FAVORIT_75U20BG1
+Tehnomarket,SAMSUNG,SAMSUNG QE-50Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-50Q8FAAUXXH,50,30999,39999,https://tehnomarket.com.mk/product/29403442/samsung-qe-50q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE50Q8FAAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG UE-55CU7092UXXH CRYSTAL 4K SMART LED TV,UE-55CU7092UXXH,55,21999,39999,https://tehnomarket.com.mk/product/29400397/samsung-ue-55cu7092uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55CU7092UXXH
+Tehnomarket,PHILIPS,PHILIPS 55PML8709 4K Ultra Slim UltraHD Mini-LED TV,55PML8709 Mini,55,24491,39999,https://tehnomarket.com.mk/product/29401413/philips-55pml8709-4k-ultra-slim-ultrahd-mini-led-tv,PHILIPS_55PML8709MINI
+Tehnomarket,SAMSUNG,"SAMSUNG QE-55Q67DAUXXH 55"" QLED 4K Q67D Tizen OS Smart TV",QE-55Q67DAUXXH Q67D,55,26991,42999,https://tehnomarket.com.mk/product/29400980/samsung-qe-55q67dauxxh-55-qled-4k-q67d-tizen-os-smart-tv,SAMSUNG_QE55Q67DAUXXHQ67D
+Tehnomarket,SAMSUNG,SAMSUNG QE-50Q7FAAUXXH QLED TV UHD  SMART TV TIZEN OS,QE-50Q7FAAUXXH,50,26999,42999,https://tehnomarket.com.mk/product/29402843/samsung-qe-50q7faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE50Q7FAAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-55Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-55Q7F2AUXXH,55,25999,42999,https://tehnomarket.com.mk/product/29403739/samsung-qe-55q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE55Q7F2AUXXH
+Tehnomarket,SAMSUNG,"SAMSUNG UE-65U8072FUXXH CRYSTAL 4K 65"" SMART LED TV",UE-65U8072FUXXH,65,29999,42999,https://tehnomarket.com.mk/product/29402657/samsung-ue-65u8072fuxxh-crystal-4k-65-smart-led-tv,SAMSUNG_UE65U8072FUXXH
+Tehnomarket,HISENSE,"HISENSE 55U7Q UHD 4K MINI LED VIDAA 55"" SMART TV",55U7Q,55,35999,42999,https://tehnomarket.com.mk/product/29402999/hisense-55u7q-uhd-4k-mini-led-vidaa-55-smart-tv,HISENSE_55U7Q
+Tehnomarket,PHILIPS,"PHILIPS 75PUS7000/12 75"" 4K ULTRA HD SMART TV",75PUS7000,75,37999,42999,https://tehnomarket.com.mk/product/29403745/philips-75pus700012-75-4k-ultra-hd-smart-tv,PHILIPS_75PUS7000
+Tehnomarket,PHILIPS,PHILIPS 55PUS8118/12 4K AMBILIGHT SMART TV,55PUS8118,55,25999,43999,https://tehnomarket.com.mk/product/29396920/philips-55pus811812-4k-ambilight-smart-tv,PHILIPS_55PUS8118
+Tehnomarket,PHILIPS,"PHILIPS 65PUS8010/12 65"" UHD LED SMART TV AMBILIGHT",65PUS8010,65,31999,43999,https://tehnomarket.com.mk/product/29402764/philips-65pus801012-65-uhd-led-smart-tv-ambilight,PHILIPS_65PUS8010
+Tehnomarket,HISENSE,"HISENSE 65E7Q PRO QLED 4K UHD 65"" Smart TV VIDAA",65E7Q PRO,65,37991,45999,https://tehnomarket.com.mk/product/29403199/hisense-65e7q-pro-qled-4k-uhd-65-smart-tv-vidaa,HISENSE_65E7QPRO
+Tehnomarket,SAMSUNG,SAMSUNG UE-55DU8072UXXH CRYSTAL 4K SMART LED TV,UE-55DU8072UXXH,55,21999,46999,https://tehnomarket.com.mk/product/29400543/samsung-ue-55du8072uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55DU8072UXXH
+Tehnomarket,HISENSE,HISENSE 75E7Q  QLED 4K UHD 75″ SMART TV,75E7Q,75,41999,47999,https://tehnomarket.com.mk/product/29402786/hisense-75e7q-qled-4k-uhd-75-smart-tv,HISENSE_75E7Q
+Tehnomarket,PHILIPS,"PHILIPS 65MLED820/12  65"" 4K UHD MiniLED Titan OS",65MLED820,65,32999,47999,https://tehnomarket.com.mk/product/29403605/philips-65mled82012-65-4k-uhd-miniled-titan-os,PHILIPS_65MLED820
+Tehnomarket,SAMSUNG,SAMSUNG QE-55Q7FAAUXXH QLED TV UltraHD Smart TV Tizen OS,QE-55Q7FAAUXXH,55,29999,48999,https://tehnomarket.com.mk/product/29402654/samsung-qe-55q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE55Q7FAAUXXH
+Tehnomarket,JVC,JVC LT-70VAQ7200 4K ANDROID QLED TV,LT-70VAQ7200,70,32999,49999,https://tehnomarket.com.mk/product/29400076/jvc-lt-70vaq7200-4k-android-qled-tv,JVC_LT70VAQ7200
+Tehnomarket,PHILIPS,PHILIPS 65PUS8209 4K QLED Ambilight Smart TV,65PUS8209,65,34999,49999,https://tehnomarket.com.mk/product/29401552/philips-65pus8209-4k-qled-ambilight-smart-tv,PHILIPS_65PUS8209
+Tehnomarket,SAMSUNG,SAMSUNG QE-55Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-55Q8FAAUXXH,55,32999,49999,https://tehnomarket.com.mk/product/29403444/samsung-qe-55q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE55Q8FAAUXXH
+Tehnomarket,PHILIPS,PHILIPS 65PUS8118/12 4K AMBILIGHT SMART TV,65PUS8118,65,29990,49999,https://tehnomarket.com.mk/product/29398023/philips-65pus811812-4k-ambilight-smart-tv,PHILIPS_65PUS8118
+Tehnomarket,PHILIPS,PHILIPS 65PUS8009 65'' 4K Ambilight Smart TV,65PUS8009,65,28991,49999,https://tehnomarket.com.mk/product/29401429/philips-65pus8009-65-4k-ambilight-smart-tv,PHILIPS_65PUS8009
+Tehnomarket,PHILIPS,PHILIPS 75MLED820/12 4K UHD MiniLED Titan OS,75MLED820,75,45999,53999,https://tehnomarket.com.mk/product/29403606/philips-75mled82012-4k-uhd-miniled-titan-os,PHILIPS_75MLED820
+Tehnomarket,HISENSE,"HISENSE 65U7Q UHD 4K MINI LED VIDAA 65"" SMART TV",65U7Q,65,49999,53999,https://tehnomarket.com.mk/product/29403000/hisense-65u7q-uhd-4k-mini-led-vidaa-65-smart-tv,HISENSE_65U7Q
+Tehnomarket,SONY,"TV Sony 55"" K55S35B 4K Smart Led TV",K55S35B,55,41999,54999,https://tehnomarket.com.mk/product/29403141/tv-sony-55-k55s35b-4k-smart-led-tv,SONY_K55S35B
+Tehnomarket,PHILIPS,"PHILIPS 75PUS7810/12 75"" UHD QLED SMART TV",75PUS7810,75,42999,55999,https://tehnomarket.com.mk/product/29403475/philips-75pus781012-75-uhd-qled-smart-tv,PHILIPS_75PUS7810
+Tehnomarket,PHILIPS,PHILIPS 70PUS7607/12 4K ULTRA HD SMART LED ТЕЛЕВИЗОР,70PUS7607,70,35991,56999,https://tehnomarket.com.mk/product/29396921/philips-70pus760712-4k-ultra-hd-smart-led-televizor,PHILIPS_70PUS7607
+Tehnomarket,SONY,SONY KD-55X75WLPAEP TV 55'' 4K ULTRA HD GOOGLE TV,KD-55X75WLPAEP,55,34999,56999,https://tehnomarket.com.mk/product/29396993/sony-kd-55x75wlpaep-tv-55-4k-ultra-hd-google-tv,SONY_KD55X75WLPAEP
+Tehnomarket,JVC,JVC LT-75VAQ3400 4K ANDROID QLED TV,LT-75VAQ3400,75,39991,59999,https://tehnomarket.com.mk/product/29400598/jvc-lt-75vaq3400-4k-android-qled-tv,JVC_LT75VAQ3400
+Tehnomarket,HISENSE,HISENSE 75E7Q PRO QLED 4K UHD 75″ SMART TV,75E7Q PRO,75,54999,59999,https://tehnomarket.com.mk/product/29402807/hisense-75e7q-pro-qled-4k-uhd-75-smart-tv,HISENSE_75E7QPRO
+Tehnomarket,SAMSUNG,SAMSUNG QE-65Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-65Q7F2AUXXH,65,32999,59999,https://tehnomarket.com.mk/product/29403740/samsung-qe-65q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE65Q7F2AUXXH
+Tehnomarket,PHILIPS,PHILIPS 75PUS7608/12 4K ULTRA HD SMART LED ТЕЛЕВИЗОР,75PUS7608,75,36999,60499,https://tehnomarket.com.mk/product/29397669/philips-75pus760812-4k-ultra-hd-smart-led-televizor,PHILIPS_75PUS7608
+Tehnomarket,SAMSUNG,SAMSUNG QE-55Q70DATXXH 4K SMART TV QLED TV,QE-55Q70DATXXH,55,33991,63999,https://tehnomarket.com.mk/product/29400567/samsung-qe-55q70datxxh-4k-smart-tv-qled-tv,SAMSUNG_QE55Q70DATXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-65Q7FAAUXXH QLED TV UltraHD  Smart TV Tizen OS,QE-65Q7FAAUXXH,65,39999,63999,https://tehnomarket.com.mk/product/29402655/samsung-qe-65q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE65Q7FAAUXXH
+Tehnomarket,SONY,"SONY KD-65X80KAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",KD-65X80KAEP,65,49990,66999,https://tehnomarket.com.mk/product/29393153/sony-kd-65x80kaep-65-4k-ultra-hd-smart-led-google-tv,SONY_KD65X80KAEP
+Tehnomarket,SONY,"SONY KD-55X85J 55"" 4K Ultra HD Smart LED GOOGLE TV",KD-55X85J,55,39999,66999,https://tehnomarket.com.mk/product/29387460/sony-kd-55x85j-55-4k-ultra-hd-smart-led-google-tv,SONY_KD55X85J
+Tehnomarket,SAMSUNG,SAMSUNG UE-75U8072FUXXH CRYSTAL 4K SMART LED TV,UE-75U8072FUXXH,75,43999,66999,https://tehnomarket.com.mk/product/29402658/samsung-ue-75u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE75U8072FUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-55QN70FAUXXH 4K SMART TV QLED TV,QE-55QN70FAUXXH,55,39999,67999,https://tehnomarket.com.mk/product/29402925/samsung-qe-55qn70fauxxh-4k-smart-tv-qled-tv,SAMSUNG_QE55QN70FAUXXH
+Tehnomarket,SONY,"TV Sony 65"" K65S35B 4K Smart Led TV",K65S35B,65,53999,67999,https://tehnomarket.com.mk/product/29403142/tv-sony-65-k65s35b-4k-smart-led-tv,SONY_K65S35B
+Tehnomarket,SAMSUNG,SAMSUNG UE-75DU7172UXXH CRYSTAL 4K SMART LED TV,UE-75DU7172UXXH,75,39999,68999,https://tehnomarket.com.mk/product/29400461/samsung-ue-75du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE75DU7172UXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-65Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-65Q8FAAUXXH,65,44999,69999,https://tehnomarket.com.mk/product/29403446/samsung-qe-65q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE65Q8FAAUXXH
+Tehnomarket,PHILIPS,PHILIPS 75PML8709 4K QD Mini-LED TV,75PML8709 QD Mini,75,49999,69999,https://tehnomarket.com.mk/product/29401175/philips-75pml8709-4k-qd-mini-led-tv,PHILIPS_75PML8709QDMINI
+Tehnomarket,HISENSE,"HISENSE 85A6Q UHD 4K VIDAA 85"" Smart TV",85A6Q,85,64999,69999,https://tehnomarket.com.mk/product/29402735/hisense-85a6q-uhd-4k-vidaa-85-smart-tv,HISENSE_85A6Q
+Tehnomarket,SONY,SONY KD-65X75WLPAEP TV 65'' 4K ULTRA HD GOOGLE TV,KD-65X75WLPAEP,65,46999,71999,https://tehnomarket.com.mk/product/29396994/sony-kd-65x75wlpaep-tv-65-4k-ultra-hd-google-tv,SONY_KD65X75WLPAEP
+Tehnomarket,SAMSUNG,SAMSUNG QE-75Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-75Q7F2AUXXH,75,46999,72999,https://tehnomarket.com.mk/product/29403741/samsung-qe-75q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE75Q7F2AUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-55LS03DAUXXH Q LED THE FRAME 4K SMART LED TV,QE-55LS03DAUXXH Q THE FRAME,55,39991,75999,https://tehnomarket.com.mk/product/29399887/samsung-qe-55ls03dauxxh-q-led-the-frame-4k-smart-led-tv,SAMSUNG_QE55LS03DAUXXHQTHEFRAME
+Tehnomarket,SONY,"SONY KD-65X80LAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",KD-65X80LAEP,65,65999,82999,https://tehnomarket.com.mk/product/29402014/sony-kd-65x80laep-65-4k-ultra-hd-smart-led-google-tv,SONY_KD65X80LAEP
+Tehnomarket,SAMSUNG,"SAMSUNG QE-65QN70FAUXXH 65"" QLED Tizen Os Tv",QE-65QN70FAUXXH,65,49999,83999,https://tehnomarket.com.mk/product/29402335/samsung-qe-65qn70fauxxh-65-qled-tizen-os-tv,SAMSUNG_QE65QN70FAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG UE-75DU8072UXXH CRYSTAL 4K SMART LED TV,UE-75DU8072UXXH,75,44999,84999,https://tehnomarket.com.mk/product/29400398/samsung-ue-75du8072uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE75DU8072UXXH
+Tehnomarket,PHILIPS,"PHILIPS 85PUS9010/12 85"" QLED AMBILIGHT SMART TV",85PUS9010,85,73999,84999,https://tehnomarket.com.mk/product/29403915/philips-85pus901012-85-qled-ambilight-smart-tv,PHILIPS_85PUS9010
+Tehnomarket,SONY,"SONY  XR-55X90LAEP 55"" 4K ULTRA HD FULL ARRAY LED GOOGLE TV",XR-55X90LAEP FULL ARRAY,55,69999,86999,https://tehnomarket.com.mk/product/29400584/sony-xr-55x90laep-55-4k-ultra-hd-full-array-led-google-tv,SONY_XR55X90LAEPFULLARRAY
+Tehnomarket,SONY,"SONY XR-65X92KAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",XR-65X92KAEP,65,64999,88999,https://tehnomarket.com.mk/product/29394527/sony-xr-65x92kaep-65-4k-ultra-hd-smart-led-google-tv,SONY_XR65X92KAEP
+Tehnomarket,SAMSUNG,SAMSUNG QE-65Q70DATXXH 4K SMART TV QLED TV,QE-65Q70DATXXH,65,33991,89999,https://tehnomarket.com.mk/product/29400639/samsung-qe-65q70datxxh-4k-smart-tv-qled-tv,SAMSUNG_QE65Q70DATXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-75Q7FAAUXXH QLED TV UltraHD  Smart TV Tizen OS,QE-75Q7FAAUXXH,75,49999,90999,https://tehnomarket.com.mk/product/29403280/samsung-qe-75q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE75Q7FAAUXXH
+Tehnomarket,SONY,SONY KD-75X75WLPAEP TV 75'' 4K ULTRA HD GOOGLE TV,KD-75X75WLPAEP,75,64999,94999,https://tehnomarket.com.mk/product/29396995/sony-kd-75x75wlpaep-tv-75-4k-ultra-hd-google-tv,SONY_KD75X75WLPAEP
+Tehnomarket,SONY,"SONY KD-65X85LAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",KD-65X85LAEP,65,76991,94999,https://tehnomarket.com.mk/product/29399811/sony-kd-65x85laep-65-4k-ultra-hd-smart-led-google-tv,SONY_KD65X85LAEP
+Tehnomarket,SAMSUNG,SAMSUNG QE-75Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-75Q8FAAUXXH,75,64999,99999,https://tehnomarket.com.mk/product/29403449/samsung-qe-75q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE75Q8FAAUXXH
+Tehnomarket,SONY,"SONY  XR-65X90LAEP 65"" 4K ULTRA HD FULL ARRAY LED GOOGLE TV",XR-65X90LAEP FULL ARRAY,65,79991,102499,https://tehnomarket.com.mk/product/29400585/sony-xr-65x90laep-65-4k-ultra-hd-full-array-led-google-tv,SONY_XR65X90LAEPFULLARRAY
 Tehnomarket,PHILIPS,"PHILIPS 65"" 65BDL4152E/00  INTERACTIVE DISPLAY",65BDL4152E,65,103565,0,https://tehnomarket.com.mk/product/29403251/philips-65-65bdl4152e00-interactive-display,PHILIPS_65BDL4152E
-Tehnomarket,SAMSUNG,"SAMSUNG UE-85U8072FUXXH 85"" CRYSTAL 4K SMART LED TV",UE-85U8072FUXXH,85,109999,0,https://tehnomarket.com.mk/product/29403092/samsung-ue-85u8072fuxxh-85-crystal-4k-smart-led-tv,SAMSUNG_UE85U8072FUXXH
-Tehnomarket,SAMSUNG,SAMSUNG UE-85DU8072 CRYSTAL 4K SMART LED TV,UE-85DU8072,85,129999,0,https://tehnomarket.com.mk/product/29400491/samsung-ue-85du8072-crystal-4k-smart-led-tv,SAMSUNG_UE85DU8072
-Tehnomarket,SONY,"SONY XR-85X80LAEP 85"" 4K Ultra HD Smart LED GOOGLE TV",XR-85X80LAEP,85,136999,0,https://tehnomarket.com.mk/product/29399315/sony-xr-85x80laep-85-4k-ultra-hd-smart-led-google-tv,SONY_XR85X80LAEP
-Tehnomarket,SONY,Sony XR-65X95KAEP 4K ULTRA HD MINI LED GOOGLE TV,XR-65X95KAEP,65,157999,0,https://tehnomarket.com.mk/product/29393828/sony-xr-65x95kaep-4k-ultra-hd-mini-led-google-tv,SONY_XR65X95KAEP
-Tehnomarket,SAMSUNG,"SAMSUNG UE-98DU9072UXXH LED TV , 4К UHD Smart TV",UE-98DU9072UXXH,98,199999,0,https://tehnomarket.com.mk/product/29400982/samsung-ue-98du9072uxxh-led-tv-4k-uhd-smart-tv,SAMSUNG_UE98DU9072UXXH
-Tehnomarket,THOMSON,"THOMSON 40QG4S14 40"" QLED FHD GOOGLE TV FRAMELESS",40QG4S14,40,14499,0,https://tehnomarket.com.mk/product/29402747/thomson-40qg4s14-40-qled-fhd-google-tv-frameless,THOMSON_40QG4S14
-Tehnomarket,JVC,JVC LT-43VAQ3300 4k ULTRA HD QLED ANDROID TV,LT-43VAQ3300,43,18999,0,https://tehnomarket.com.mk/product/29402848/jvc-lt-43vaq3300-4k-ultra-hd-qled-android-tv,JVC_LT43VAQ3300
-Tehnomarket,PHILIPS,"PHILIPS 43PUS8400/12 43"" UHD LED SMART TV AMBILIGHT QLED",43PUS8400,43,19999,0,https://tehnomarket.com.mk/product/29404014/philips-43pus840012-43-uhd-led-smart-tv-ambilight-qled,PHILIPS_43PUS8400
-Tehnomarket,JVC,JVC LT-50VAQ3300 4k ULTRA HD QLED ANDROID TV,LT-50VAQ3300,50,20999,0,https://tehnomarket.com.mk/product/29401358/jvc-lt-50vaq3300-4k-ultra-hd-qled-android-tv,JVC_LT50VAQ3300
-Tehnomarket,PHILIPS,"PHILIPS 50PUS7810/12 50"" UHD QLED SMART TV",50PUS7810,50,23999,0,https://tehnomarket.com.mk/product/29403472/philips-50pus781012-50-uhd-qled-smart-tv,PHILIPS_50PUS7810
-Tehnomarket,PHILIPS,"PHILIPS 55PUS7810/12 55"" UHD QLED SMART TV",55PUS7810,55,24999,0,https://tehnomarket.com.mk/product/29403474/philips-55pus781012-55-uhd-qled-smart-tv,PHILIPS_55PUS7810
-Tehnomarket,JVC,JVC LT-55VAQ3300 4K ANDROID QLED TV,LT-55VAQ3300,55,25999,0,https://tehnomarket.com.mk/product/29400597/jvc-lt-55vaq3300-4k-android-qled-tv,JVC_LT55VAQ3300
-Tehnomarket,JVC,JVC LT-50VAQ7200 ANDROID QLED TV,LT-50VAQ7200,50,26999,0,https://tehnomarket.com.mk/product/29397325/jvc-lt-50vaq7200-android-qled-tv,JVC_LT50VAQ7200
-Tehnomarket,HISENSE,"HISENSE 55E7Q UHD 55"" QLED SMART TV",55E7Q,55,26999,0,https://tehnomarket.com.mk/product/29402780/hisense-55e7q-uhd-55-qled-smart-tv,HISENSE_55E7Q
-Tehnomarket,VIVAX,VIVAX Q SERIES 55Q10C 4K QLED АНДРОИД ТЕЛЕВИЗОР,Q 55Q10C,0,27999,0,https://tehnomarket.com.mk/product/29395036/vivax-q-series-55q10c-4k-qled-android-televizor,VIVAX_Q55Q10C
-Tehnomarket,JVC,JVC LT-55VAQ3200 4K ANDROID QLED TV,LT-55VAQ3200,55,28499,0,https://tehnomarket.com.mk/product/29399356/jvc-lt-55vaq3200-4k-android-qled-tv,JVC_LT55VAQ3200
-Tehnomarket,VIVAX,VIVAX Q SERIES 50Q10C 4K QLED АНДРОИД ТЕЛЕВИЗОР,Q 50Q10C,0,32999,0,https://tehnomarket.com.mk/product/29395035/vivax-q-series-50q10c-4k-qled-android-televizor,VIVAX_Q50Q10C
-Tehnomarket,JVC,JVC LT-55VAQ8100 4K ANDROID QLED TV,LT-55VAQ8100,55,33999,0,https://tehnomarket.com.mk/product/29393195/jvc-lt-55vaq8100-4k-android-qled-tv,JVC_LT55VAQ8100
-Tehnomarket,HISENSE,HISENSE 65E7Q QLED 4K  UHD 65″ Smart TV VIDAA,65E7Q,65,35999,0,https://tehnomarket.com.mk/product/29403002/hisense-65e7q-qled-4k-uhd-65-smart-tv-vidaa,HISENSE_65E7Q
-Tehnomarket,PHILIPS,"PHILIPS 55MLED820/12 55"" 4K UHD MiniLED Titan OS",55MLED820,55,35999,0,https://tehnomarket.com.mk/product/29403604/philips-55mled82012-55-4k-uhd-miniled-titan-os,PHILIPS_55MLED820
-Tehnomarket,SAMSUNG,SAMSUNG QE-50Q7F2AAUXXH QLED TV UHD SMART TV TIZEN OS,QE-50Q7F2AAUXXH,50,35999,0,https://tehnomarket.com.mk/product/29403978/samsung-qe-50q7f2aauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE50Q7F2AAUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-43Q7FAAUXXH QLED TV UHD SMART TV TIZEN OS,QE-43Q7FAAUXXH,43,36999,0,https://tehnomarket.com.mk/product/29402924/samsung-qe-43q7faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE43Q7FAAUXXH
-Tehnomarket,PHILIPS,"PHILIPS 65PUS7810/12 65"" UHD QLED SMART TV",65PUS7810,65,36999,0,https://tehnomarket.com.mk/product/29403743/philips-65pus781012-65-uhd-qled-smart-tv,PHILIPS_65PUS7810
-Tehnomarket,SAMSUNG,SAMSUNG QE-43Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-43Q7F2AUXXH,43,36999,0,https://tehnomarket.com.mk/product/29403738/samsung-qe-43q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE43Q7F2AUXXH
-Tehnomarket,SAMSUNG,"SAMSUNG QE-50Q67DAUXXH 4K 50"" QLED Q67D Tizen OS Smart TV",QE-50Q67DAUXXH Q67D,50,38999,0,https://tehnomarket.com.mk/product/29400979/samsung-qe-50q67dauxxh-4k-50-qled-q67d-tizen-os-smart-tv,SAMSUNG_QE50Q67DAUXXHQ67D
-Tehnomarket,SAMSUNG,SAMSUNG QE-50Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-50Q8FAAUXXH,50,39999,0,https://tehnomarket.com.mk/product/29403442/samsung-qe-50q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE50Q8FAAUXXH
-Tehnomarket,SAMSUNG,"SAMSUNG QE-55Q67DAUXXH 55"" QLED 4K Q67D Tizen OS Smart TV",QE-55Q67DAUXXH Q67D,55,42999,0,https://tehnomarket.com.mk/product/29400980/samsung-qe-55q67dauxxh-55-qled-4k-q67d-tizen-os-smart-tv,SAMSUNG_QE55Q67DAUXXHQ67D
-Tehnomarket,SAMSUNG,SAMSUNG QE-50Q7FAAUXXH QLED TV UHD  SMART TV TIZEN OS,QE-50Q7FAAUXXH,50,42999,0,https://tehnomarket.com.mk/product/29402843/samsung-qe-50q7faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE50Q7FAAUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-55Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-55Q7F2AUXXH,55,42999,0,https://tehnomarket.com.mk/product/29403739/samsung-qe-55q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE55Q7F2AUXXH
-Tehnomarket,HISENSE,"HISENSE 65E7Q PRO QLED 4K UHD 65"" Smart TV VIDAA",65E7Q PRO,65,45999,0,https://tehnomarket.com.mk/product/29403199/hisense-65e7q-pro-qled-4k-uhd-65-smart-tv-vidaa,HISENSE_65E7QPRO
-Tehnomarket,HISENSE,HISENSE 75E7Q  QLED 4K UHD 75″ SMART TV,75E7Q,75,47999,0,https://tehnomarket.com.mk/product/29402786/hisense-75e7q-qled-4k-uhd-75-smart-tv,HISENSE_75E7Q
-Tehnomarket,PHILIPS,"PHILIPS 65MLED820/12  65"" 4K UHD MiniLED Titan OS",65MLED820,65,47999,0,https://tehnomarket.com.mk/product/29403605/philips-65mled82012-65-4k-uhd-miniled-titan-os,PHILIPS_65MLED820
-Tehnomarket,SAMSUNG,SAMSUNG QE-55Q7FAAUXXH QLED TV UltraHD Smart TV Tizen OS,QE-55Q7FAAUXXH,55,48999,0,https://tehnomarket.com.mk/product/29402654/samsung-qe-55q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE55Q7FAAUXXH
-Tehnomarket,JVC,JVC LT-70VAQ7200 4K ANDROID QLED TV,LT-70VAQ7200,70,49999,0,https://tehnomarket.com.mk/product/29400076/jvc-lt-70vaq7200-4k-android-qled-tv,JVC_LT70VAQ7200
-Tehnomarket,PHILIPS,PHILIPS 65PUS8209 4K QLED Ambilight Smart TV,65PUS8209,65,49999,0,https://tehnomarket.com.mk/product/29401552/philips-65pus8209-4k-qled-ambilight-smart-tv,PHILIPS_65PUS8209
-Tehnomarket,SAMSUNG,SAMSUNG QE-55Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-55Q8FAAUXXH,55,49999,0,https://tehnomarket.com.mk/product/29403444/samsung-qe-55q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE55Q8FAAUXXH
-Tehnomarket,PHILIPS,PHILIPS 75MLED820/12 4K UHD MiniLED Titan OS,75MLED820,75,53999,0,https://tehnomarket.com.mk/product/29403606/philips-75mled82012-4k-uhd-miniled-titan-os,PHILIPS_75MLED820
-Tehnomarket,PHILIPS,"PHILIPS 75PUS7810/12 75"" UHD QLED SMART TV",75PUS7810,75,55999,0,https://tehnomarket.com.mk/product/29403475/philips-75pus781012-75-uhd-qled-smart-tv,PHILIPS_75PUS7810
-Tehnomarket,JVC,JVC LT-75VAQ3400 4K ANDROID QLED TV,LT-75VAQ3400,75,59999,0,https://tehnomarket.com.mk/product/29400598/jvc-lt-75vaq3400-4k-android-qled-tv,JVC_LT75VAQ3400
-Tehnomarket,HISENSE,HISENSE 75E7Q PRO QLED 4K UHD 75″ SMART TV,75E7Q PRO,75,59999,0,https://tehnomarket.com.mk/product/29402807/hisense-75e7q-pro-qled-4k-uhd-75-smart-tv,HISENSE_75E7QPRO
-Tehnomarket,SAMSUNG,SAMSUNG QE-65Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-65Q7F2AUXXH,65,59999,0,https://tehnomarket.com.mk/product/29403740/samsung-qe-65q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE65Q7F2AUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-55Q70DATXXH 4K SMART TV QLED TV,QE-55Q70DATXXH,55,63999,0,https://tehnomarket.com.mk/product/29400567/samsung-qe-55q70datxxh-4k-smart-tv-qled-tv,SAMSUNG_QE55Q70DATXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-65Q7FAAUXXH QLED TV UltraHD  Smart TV Tizen OS,QE-65Q7FAAUXXH,65,63999,0,https://tehnomarket.com.mk/product/29402655/samsung-qe-65q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE65Q7FAAUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-55QN70FAUXXH 4K SMART TV QLED TV,QE-55QN70FAUXXH,55,67999,0,https://tehnomarket.com.mk/product/29402925/samsung-qe-55qn70fauxxh-4k-smart-tv-qled-tv,SAMSUNG_QE55QN70FAUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-65Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-65Q8FAAUXXH,65,69999,0,https://tehnomarket.com.mk/product/29403446/samsung-qe-65q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE65Q8FAAUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-75Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-75Q7F2AUXXH,75,72999,0,https://tehnomarket.com.mk/product/29403741/samsung-qe-75q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE75Q7F2AUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-55LS03DAUXXH Q LED THE FRAME 4K SMART LED TV,QE-55LS03DAUXXH Q THE FRAME,55,75999,0,https://tehnomarket.com.mk/product/29399887/samsung-qe-55ls03dauxxh-q-led-the-frame-4k-smart-led-tv,SAMSUNG_QE55LS03DAUXXHQTHEFRAME
-Tehnomarket,SAMSUNG,"SAMSUNG QE-65QN70FAUXXH 65"" QLED Tizen Os Tv",QE-65QN70FAUXXH,65,83999,0,https://tehnomarket.com.mk/product/29402335/samsung-qe-65qn70fauxxh-65-qled-tizen-os-tv,SAMSUNG_QE65QN70FAUXXH
-Tehnomarket,PHILIPS,"PHILIPS 85PUS9010/12 85"" QLED AMBILIGHT SMART TV",85PUS9010,85,84999,0,https://tehnomarket.com.mk/product/29403915/philips-85pus901012-85-qled-ambilight-smart-tv,PHILIPS_85PUS9010
-Tehnomarket,SAMSUNG,SAMSUNG QE-65Q70DATXXH 4K SMART TV QLED TV,QE-65Q70DATXXH,65,89999,0,https://tehnomarket.com.mk/product/29400639/samsung-qe-65q70datxxh-4k-smart-tv-qled-tv,SAMSUNG_QE65Q70DATXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-75Q7FAAUXXH QLED TV UltraHD  Smart TV Tizen OS,QE-75Q7FAAUXXH,75,90999,0,https://tehnomarket.com.mk/product/29403280/samsung-qe-75q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE75Q7FAAUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-75Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-75Q8FAAUXXH,75,99999,0,https://tehnomarket.com.mk/product/29403449/samsung-qe-75q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE75Q8FAAUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-75Q70DATXXH 4K SMART TV QLED TV,QE-75Q70DATXXH,75,109990,0,https://tehnomarket.com.mk/product/29400546/samsung-qe-75q70datxxh-4k-smart-tv-qled-tv,SAMSUNG_QE75Q70DATXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-65LS03DAUXXH Q LED THE FRAME 4K SMART LED TV,QE-65LS03DAUXXH Q THE FRAME,65,109999,0,https://tehnomarket.com.mk/product/29400489/samsung-qe-65ls03dauxxh-q-led-the-frame-4k-smart-led-tv,SAMSUNG_QE65LS03DAUXXHQTHEFRAME
-Tehnomarket,SAMSUNG,"SAMSUNG QE-75QN70FAUXXH 75"" QLED Tizen Os Tv",QE-75QN70FAUXXH,75,118999,0,https://tehnomarket.com.mk/product/29404427/samsung-qe-75qn70fauxxh-75-qled-tizen-os-tv,SAMSUNG_QE75QN70FAUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-85Q7FAAUXXH QLED TV UltraHD  Smart TV Tizen OS,QE-85Q7FAAUXXH,85,127999,0,https://tehnomarket.com.mk/product/29403281/samsung-qe-85q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE85Q7FAAUXXH
-Tehnomarket,HISENSE,"HISENSE 100E7Q PRO 4K  QLED 100"" Smart TV VIDAA",100E7Q PRO,100,139999,0,https://tehnomarket.com.mk/product/29403652/hisense-100e7q-pro-4k-qled-100-smart-tv-vidaa,HISENSE_100E7QPRO
-Tehnomarket,SAMSUNG,SAMSUNG QE-65QN90DATXXH QLED UHD 4K NEO SMART TV Mini LED,QE-65QN90DATXXH,65,155999,0,https://tehnomarket.com.mk/product/29400396/samsung-qe-65qn90datxxh-qled-uhd-4k-neo-smart-tv-mini-led,SAMSUNG_QE65QN90DATXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-85Q60CAUXXH 4K SMART QLED TV,QE-85Q60CAUXXH,85,179999,0,https://tehnomarket.com.mk/product/29399436/samsung-qe-85q60cauxxh-4k-smart-qled-tv,SAMSUNG_QE85Q60CAUXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE-65QN800DTXXH  8K QLED SMART TV Mini LED,QE-65QN800DTXXH,65,217999,0,https://tehnomarket.com.mk/product/29400399/samsung-qe-65qn800dtxxh-8k-qled-smart-tv-mini-led,SAMSUNG_QE65QN800DTXXH
-Tehnomarket,SAMSUNG,SAMSUNG QE75QN90DATXXH  QLED UHD 4K NEO SMART TV Mini Led,QE75QN90DATXXH,75,219999,0,https://tehnomarket.com.mk/product/29400643/samsung-qe75qn90datxxh-qled-uhd-4k-neo-smart-tv-mini-led,SAMSUNG_QE75QN90DATXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-75Q70DATXXH 4K SMART TV QLED TV,QE-75Q70DATXXH,75,64991,109990,https://tehnomarket.com.mk/product/29400546/samsung-qe-75q70datxxh-4k-smart-tv-qled-tv,SAMSUNG_QE75Q70DATXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-65LS03DAUXXH Q LED THE FRAME 4K SMART LED TV,QE-65LS03DAUXXH Q THE FRAME,65,63999,109999,https://tehnomarket.com.mk/product/29400489/samsung-qe-65ls03dauxxh-q-led-the-frame-4k-smart-led-tv,SAMSUNG_QE65LS03DAUXXHQTHEFRAME
+Tehnomarket,SAMSUNG,"SAMSUNG UE-85U8072FUXXH 85"" CRYSTAL 4K SMART LED TV",UE-85U8072FUXXH,85,79999,109999,https://tehnomarket.com.mk/product/29403092/samsung-ue-85u8072fuxxh-85-crystal-4k-smart-led-tv,SAMSUNG_UE85U8072FUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-55S90FAEXXH 55″ S90F OLED 4K Smart TV,QE-55S90FAEXXH S90F,55,71999,109999,https://tehnomarket.com.mk/product/29403091/samsung-qe-55s90faexxh-55-s90f-oled-4k-smart-tv,SAMSUNG_QE55S90FAEXXHS90F
+Tehnomarket,SONY,SONY XR-65A75KAEP 4K ULTRA HD OLED GOOGLE TV,XR-65A75KAEP,65,89999,113999,https://tehnomarket.com.mk/product/29393154/sony-xr-65a75kaep-4k-ultra-hd-oled-google-tv,SONY_XR65A75KAEP
+Tehnomarket,SAMSUNG,"SAMSUNG QE-75QN70FAUXXH 75"" QLED Tizen Os Tv",QE-75QN70FAUXXH,75,73999,118999,https://tehnomarket.com.mk/product/29404427/samsung-qe-75qn70fauxxh-75-qled-tizen-os-tv,SAMSUNG_QE75QN70FAUXXH
+Tehnomarket,PHILIPS,PHILIPS 65OLED820/12 4K UHD OLED ANDROID AMBILIGHT TV,65OLED820,65,94999,119999,https://tehnomarket.com.mk/product/29402765/philips-65oled82012-4k-uhd-oled-android-ambilight-tv,PHILIPS_65OLED820
+Tehnomarket,SAMSUNG,SAMSUNG QE-85Q7FAAUXXH QLED TV UltraHD  Smart TV Tizen OS,QE-85Q7FAAUXXH,85,89999,127999,https://tehnomarket.com.mk/product/29403281/samsung-qe-85q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE85Q7FAAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG UE-85DU8072 CRYSTAL 4K SMART LED TV,UE-85DU8072,85,76900,129999,https://tehnomarket.com.mk/product/29400491/samsung-ue-85du8072-crystal-4k-smart-led-tv,SAMSUNG_UE85DU8072
+Tehnomarket,SONY,"SONY K65-XR8APAEP OLED 65"" UHD GOOGLE TV",K65-XR8APAEP,65,109999,129999,https://tehnomarket.com.mk/product/29404304/sony-k65-xr8apaep-oled-65-uhd-google-tv,SONY_K65XR8APAEP
+Tehnomarket,SONY,"SONY XR-85X80LAEP 85"" 4K Ultra HD Smart LED GOOGLE TV",XR-85X80LAEP,85,92999,136999,https://tehnomarket.com.mk/product/29399315/sony-xr-85x80laep-85-4k-ultra-hd-smart-led-google-tv,SONY_XR85X80LAEP
+Tehnomarket,HISENSE,"HISENSE 100E7Q PRO 4K  QLED 100"" Smart TV VIDAA",100E7Q PRO,100,123999,139999,https://tehnomarket.com.mk/product/29403652/hisense-100e7q-pro-4k-qled-100-smart-tv-vidaa,HISENSE_100E7QPRO
+Tehnomarket,SONY,"SONY  XR-65A80LAEP 65"" 4K ULTRA HD FULL ARRAY LED GOOGLE TV",XR-65A80LAEP FULL ARRAY,65,108999,139999,https://tehnomarket.com.mk/product/29402015/sony-xr-65a80laep-65-4k-ultra-hd-full-array-led-google-tv,SONY_XR65A80LAEPFULLARRAY
+Tehnomarket,SAMSUNG,SAMSUNG QE-65S90FATXXH 65″ S90F OLED 4K Smart TV,QE-65S90FATXXH S90F,65,104999,142999,https://tehnomarket.com.mk/product/29402659/samsung-qe-65s90fatxxh-65-s90f-oled-4k-smart-tv,SAMSUNG_QE65S90FATXXHS90F
+Tehnomarket,SONY,"TV Sony K65XR80PAEP 65"" 4K OLED 4K HDR Google TV",K65XR80PAEP,65,115999,144999,https://tehnomarket.com.mk/product/29402486/tv-sony-k65xr80paep-65-4k-oled-4k-hdr-google-tv,SONY_K65XR80PAEP
+Tehnomarket,SAMSUNG,SAMSUNG QE-65QN90DATXXH QLED UHD 4K NEO SMART TV Mini LED,QE-65QN90DATXXH,65,91999,155999,https://tehnomarket.com.mk/product/29400396/samsung-qe-65qn90datxxh-qled-uhd-4k-neo-smart-tv-mini-led,SAMSUNG_QE65QN90DATXXH
+Tehnomarket,SONY,Sony XR-65X95KAEP 4K ULTRA HD MINI LED GOOGLE TV,XR-65X95KAEP,65,119990,157999,https://tehnomarket.com.mk/product/29393828/sony-xr-65x95kaep-4k-ultra-hd-mini-led-google-tv,SONY_XR65X95KAEP
+Tehnomarket,SAMSUNG,SAMSUNG QE-85Q60CAUXXH 4K SMART QLED TV,QE-85Q60CAUXXH,85,139999,179999,https://tehnomarket.com.mk/product/29399436/samsung-qe-85q60cauxxh-4k-smart-qled-tv,SAMSUNG_QE85Q60CAUXXH
+Tehnomarket,SONY,SONY XR-65A83KAEP 4K ULTRA HD OLED GOOGLE TV,XR-65A83KAEP,65,109999,182999,https://tehnomarket.com.mk/product/29393155/sony-xr-65a83kaep-4k-ultra-hd-oled-google-tv,SONY_XR65A83KAEP
+Tehnomarket,SAMSUNG,SAMSUNG QE-65S95DATXXH  4K ULTRA HD OLED SMART TV,QE-65S95DATXXH,65,99995,186999,https://tehnomarket.com.mk/product/29400394/samsung-qe-65s95datxxh-4k-ultra-hd-oled-smart-tv,SAMSUNG_QE65S95DATXXH
+Tehnomarket,SAMSUNG,"SAMSUNG UE-98DU9072UXXH LED TV , 4К UHD Smart TV",UE-98DU9072UXXH,98,134999,199999,https://tehnomarket.com.mk/product/29400982/samsung-ue-98du9072uxxh-led-tv-4k-uhd-smart-tv,SAMSUNG_UE98DU9072UXXH
+Tehnomarket,SONY,"SONY K77-XR8APAEP OLED 77"" UHD GOOGLE TV",K77-XR8APAEP,77,169999,199999,https://tehnomarket.com.mk/product/29404303/sony-k77-xr8apaep-oled-77-uhd-google-tv,SONY_K77XR8APAEP
+Tehnomarket,SAMSUNG,SAMSUNG QE-65QN800DTXXH  8K QLED SMART TV Mini LED,QE-65QN800DTXXH,65,89991,217999,https://tehnomarket.com.mk/product/29400399/samsung-qe-65qn800dtxxh-8k-qled-smart-tv-mini-led,SAMSUNG_QE65QN800DTXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE75QN90DATXXH  QLED UHD 4K NEO SMART TV Mini Led,QE75QN90DATXXH,75,107991,219999,https://tehnomarket.com.mk/product/29400643/samsung-qe75qn90datxxh-qled-uhd-4k-neo-smart-tv-mini-led,SAMSUNG_QE75QN90DATXXH
 Galerija,SONY,SONY K43S35B,K43S35B,43,36490,39990,https://galerija.com.mk/product/k43s35b/,SONY_K43S35B
 Galerija,SONY,SONY K50S35B,K50S35B,50,38990,45990,https://galerija.com.mk/product/k50s35b/,SONY_K50S35B
 Galerija,SONY,SONY K55S35B,K55S35B,55,41990,51990,https://galerija.com.mk/product/k55s35b/,SONY_K55S35B

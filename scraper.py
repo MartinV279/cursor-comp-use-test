@@ -212,29 +212,57 @@ def normalize_key(brand: str, model: str) -> str:
 # Scrapers
 # ---------------------------------------------------------------------------
 
+SETEC_BASE = (
+    "https://setec.mk/category/televizori-55"
+    "?sort=%25D0%259D%25D0%25B0%25D1%2598%25D0%25B5%25D0%25B2%25D1%2582%25D0%25B8%25D0%25BD%25D0%25BE"
+    "&page={page}&minPrice=4995&maxPrice=427799"
+)
+
+TEHNOMARKET_BASE = "https://tehnomarket.com.mk/category/4335/televizori"
+
+MIN_TV_PRICE = 5000
+
+NOT_A_TV = re.compile(
+    r"\b(tv\s*box|streaming\s*box|android\s*box|set[- ]?top|"
+    r"floor\s*stand|wall\s*mount|bracket|remote\s*control|"
+    r"cleaning\s*kit|screen\s*cleaner|projector\s*screen|"
+    r"soundbar|sound\s*bar|headphone|earphone|"
+    r"cable|adapter|hdmi\s*switch|splitter|extender)\b",
+    re.I,
+)
+
+
 def scrape_setec(pw_browser) -> list[TV]:
-    """Scrape all TVs from setec.mk using Playwright (JS-rendered)."""
+    """Scrape all TVs from setec.mk using Playwright (JS-rendered).
+
+    Setec has ~359 TVs. Uses the full category URL with sort/price
+    filters and paginates through every page until empty.
+    """
     log.info("Scraping setec.mk ...")
     tvs: list[TV] = []
     page_num = 1
-    max_pages = 25
 
     page = pw_browser.new_page()
 
-    while page_num <= max_pages:
-        url = f"https://setec.mk/category/televizori-55?page={page_num}"
+    while True:
+        url = SETEC_BASE.format(page=page_num)
         log.info(f"  setec.mk page {page_num} ...")
         try:
             page.goto(url, timeout=30000, wait_until="networkidle")
         except PlaywrightTimeout:
-            log.warning(f"  Timeout on page {page_num}, stopping.")
-            break
+            log.warning(f"  Timeout on page {page_num}, retrying once...")
+            try:
+                page.goto(url, timeout=30000, wait_until="networkidle")
+            except PlaywrightTimeout:
+                log.warning(f"  Timeout again on page {page_num}, stopping.")
+                break
 
         html = page.content()
         soup = BeautifulSoup(html, "lxml")
 
         links = soup.find_all("a", href=re.compile(r"^/products/"))
         if not links:
+            log.info(f"  No products on page {page_num}, done.")
             break
 
         for link in links:
@@ -288,102 +316,120 @@ def scrape_setec(pw_browser) -> list[TV]:
 
 
 def scrape_tehnomarket() -> list[TV]:
-    """Scrape all TVs from tehnomarket.com.mk (server-rendered HTML)."""
+    """Scrape all TVs from tehnomarket.com.mk (server-rendered HTML).
+
+    Uses the main /category/4335/televizori URL which contains ALL TVs
+    plus some accessories. Accessories are filtered out by price
+    (real TVs cost ≥ 4000 ден).
+
+    Captures both "Редовна Цена" (regular price) and "SMART цена"
+    (discounted price).
+    """
     log.info("Scraping tehnomarket.com.mk ...")
     tvs: list[TV] = []
     session = requests.Session()
     session.headers.update(HEADERS)
 
-    categories = [
-        ("https://tehnomarket.com.mk/category/4328/19-43-led-televizori", "19-43 LED"),
-        ("https://tehnomarket.com.mk/category/4327/46-85-led-televizori", "46-85 LED"),
-        ("https://tehnomarket.com.mk/category/4306/qled-tv", "QLED"),
-    ]
+    page_num = 1
+    while True:
+        url = f"{TEHNOMARKET_BASE}?page={page_num}" if page_num > 1 else TEHNOMARKET_BASE
+        log.info(f"  tehnomarket page {page_num} ...")
 
-    for cat_url, cat_label in categories:
-        page_num = 1
-        while True:
-            url = f"{cat_url}?page={page_num}" if page_num > 1 else cat_url
-            log.info(f"  tehnomarket {cat_label} page {page_num} ...")
+        try:
+            resp = session.get(url, timeout=15)
+            resp.raise_for_status()
+        except requests.RequestException as e:
+            log.warning(f"  Request error: {e}")
+            break
 
-            try:
-                resp = session.get(url, timeout=15)
-                resp.raise_for_status()
-            except requests.RequestException as e:
-                log.warning(f"  Request error: {e}")
+        soup = BeautifulSoup(resp.text, "lxml")
+        products = soup.select("li.span4.product-fix")
+        if not products:
+            break
+
+        for prod in products:
+            name_el = prod.select_one(".product-name a")
+            if not name_el:
+                continue
+            name = name_el.get_text(strip=True)
+            href = name_el.get("href", "")
+
+            price_section = prod.select_one(".product-price")
+            regular_price = 0
+            smart_price = 0
+
+            if price_section:
+                nm_els = price_section.select(".nm")
+                if nm_els:
+                    regular_price = parse_price(nm_els[0].get_text())
+                smart_el = price_section.select_one(".smart-products .nm")
+                if smart_el:
+                    smart_price = parse_price(smart_el.get_text())
+
+            best_price = smart_price if smart_price > 0 else regular_price
+
+            if best_price < MIN_TV_PRICE:
+                continue
+            if NOT_A_TV.search(name):
+                continue
+
+            brand = extract_brand(name)
+            model = extract_model_code(name, brand)
+            size = extract_screen_size(name)
+            if size == 0:
+                size = extract_screen_size(model)
+            if size == 0:
+                size = infer_screen_size(model_to_key(model))
+
+            tv = TV(
+                name=name,
+                brand=brand,
+                model=model,
+                price=best_price,
+                old_price=regular_price if smart_price > 0 else 0,
+                store="Tehnomarket",
+                url=href,
+                screen_size=size,
+            )
+            tv.normalized_key = normalize_key(tv.brand, tv.model)
+            tvs.append(tv)
+
+        total_match = soup.find(string=re.compile(r"од (\d+) производи"))
+        if total_match:
+            total = int(re.search(r"од (\d+)", total_match).group(1))
+            if page_num * 32 >= total:
+                break
+        else:
+            if len(products) < 32:
                 break
 
-            soup = BeautifulSoup(resp.text, "lxml")
-            products = soup.select("li.span4.product-fix")
-            if not products:
-                break
-
-            for prod in products:
-                name_el = prod.select_one(".product-name a")
-                if not name_el:
-                    continue
-                name = name_el.get_text(strip=True)
-                href = name_el.get("href", "")
-
-                price_el = prod.select_one(".nm")
-                price = parse_price(price_el.get_text()) if price_el else 0
-
-                old_price_el = prod.select_one(".text-decoration-line-through .nm, del .nm, s .nm")
-                old_price = 0
-                if old_price_el:
-                    old_price = parse_price(old_price_el.get_text())
-
-                brand = extract_brand(name)
-                model = extract_model_code(name, brand)
-                size = extract_screen_size(name)
-                if size == 0:
-                    size = extract_screen_size(model)
-                if size == 0:
-                    size = infer_screen_size(model_to_key(model))
-
-                tv = TV(
-                    name=name,
-                    brand=brand,
-                    model=model,
-                    price=price,
-                    old_price=old_price,
-                    store="Tehnomarket",
-                    url=href,
-                    screen_size=size,
-                )
-                tv.normalized_key = normalize_key(tv.brand, tv.model)
-                tvs.append(tv)
-
-            total_match = soup.find(string=re.compile(r"од (\d+) производи"))
-            if total_match:
-                total = int(re.search(r"од (\d+)", total_match).group(1))
-                if page_num * 32 >= total:
-                    break
-            else:
-                break
-
-            page_num += 1
-            time.sleep(0.5)
+        page_num += 1
+        time.sleep(0.3)
 
     log.info(f"  tehnomarket.com.mk: scraped {len(tvs)} TVs")
     return tvs
 
 
+NEPTUN_BASE = "https://www.neptun.mk/televizori.nspx"
+
+
 def scrape_neptun(pw_browser) -> list[TV]:
-    """Scrape all TVs from neptun.mk using Playwright (JS-rendered prices)."""
+    """Scrape all TVs from neptun.mk using Playwright (JS-rendered prices).
+
+    Uses /televizori.nspx which lists ALL TVs. Neptun repeats content
+    after the last real page, so we stop when we see no new products.
+
+    Captures both "Редовна цена" (regular) and "HaPPy цена" (discount).
+    """
     log.info("Scraping neptun.mk ...")
     tvs: list[TV] = []
     page_num = 1
-    max_pages = 15
+    seen_keys: set[str] = set()
 
     page = pw_browser.new_page()
 
-    while page_num <= max_pages:
-        url = (
-            f"https://www.neptun.mk/categories/tv-audio-video/televizori.nspx?page={page_num}"
-            if page_num > 1
-            else "https://www.neptun.mk/categories/tv-audio-video/televizori.nspx"
-        )
+    while True:
+        url = f"{NEPTUN_BASE}?page={page_num}" if page_num > 1 else NEPTUN_BASE
         log.info(f"  neptun.mk page {page_num} ...")
 
         try:
@@ -397,8 +443,10 @@ def scrape_neptun(pw_browser) -> list[TV]:
 
         cards = soup.find_all("div", class_="productCardBody")
         if not cards:
+            log.info(f"  No cards on page {page_num}, done.")
             break
 
+        new_on_page = 0
         for card in cards:
             title_el = card.find("h2")
             if not title_el:
@@ -456,47 +504,45 @@ def scrape_neptun(pw_browser) -> list[TV]:
                 screen_size=size,
             )
             tv.normalized_key = normalize_key(tv.brand, tv.model)
+
+            if tv.normalized_key in seen_keys:
+                continue
+            seen_keys.add(tv.normalized_key)
             tvs.append(tv)
+            new_on_page += 1
 
-        next_link = soup.find("a", string=re.compile(r">>|Следна|›"))
-        pagination_links = soup.find_all("a", href=re.compile(r"page=\d+"))
-        max_found = page_num
-        for pl in pagination_links:
-            m = re.search(r"page=(\d+)", pl.get("href", ""))
-            if m:
-                max_found = max(max_found, int(m.group(1)))
-
-        if page_num >= max_found and not next_link:
+        if new_on_page == 0:
+            log.info(f"  No new products on page {page_num}, done.")
             break
 
         page_num += 1
 
     page.close()
-    seen: dict[str, TV] = {}
-    for tv in tvs:
-        key = tv.normalized_key
-        if key not in seen or (tv.price > 0 and tv.price < seen[key].price):
-            seen[key] = tv
-    tvs = list(seen.values())
-    log.info(f"  neptun.mk: scraped {len(tvs)} TVs (after dedup)")
+    log.info(f"  neptun.mk: scraped {len(tvs)} unique TVs")
     return tvs
 
 
+GALERIJA_BASE = "https://galerija.com.mk/product-category/televizori-i-domasno-kino/televizori"
+
+
 def scrape_galerija() -> list[TV]:
-    """Scrape all TVs from galerija.com.mk (WooCommerce, server-rendered)."""
+    """Scrape all TVs from galerija.com.mk (WooCommerce, server-rendered).
+
+    Captures both sale price (ins) and original price (del).
+    Paginates until 404 or empty page.
+    """
     log.info("Scraping galerija.com.mk ...")
     tvs: list[TV] = []
     session = requests.Session()
     session.headers.update(HEADERS)
 
     page_num = 1
-    max_pages = 10
 
-    while page_num <= max_pages:
+    while True:
         url = (
-            f"https://galerija.com.mk/product-category/televizori-i-domasno-kino/televizori/page/{page_num}/"
+            f"{GALERIJA_BASE}/page/{page_num}/"
             if page_num > 1
-            else "https://galerija.com.mk/product-category/televizori-i-domasno-kino/televizori/"
+            else f"{GALERIJA_BASE}/"
         )
         log.info(f"  galerija.com.mk page {page_num} ...")
 

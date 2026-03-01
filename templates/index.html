@@ -262,6 +262,14 @@
             font-size: .8rem;
         }
 
+        .old-price {
+            color: var(--text-muted);
+            text-decoration: line-through;
+            font-size: .75rem;
+            display: block;
+            margin-top: 1px;
+        }
+
         .store-dot {
             display: inline-block;
             width: 8px;
@@ -447,26 +455,14 @@
                             <span style="color:var(--text-muted)">—</span>
                             {% endif %}
                         </td>
-                        <td class="price-cell {{ 'best' if row.setec_price > 0 and row.setec_price == row.min_price else '' }} {{ 'empty' if row.setec_price == 0 else '' }}">
-                            {% if row.setec_price > 0 %}
-                            <a href="{{ row.setec_url }}" target="_blank" rel="noopener">{{ "{:,}".format(row.setec_price) }} ден</a>
+                        {% for s in [('setec', row.setec_price, row.setec_old, row.setec_url), ('tehnomarket', row.tehnomarket_price, row.tehnomarket_old, row.tehnomarket_url), ('neptun', row.neptun_price, row.neptun_old, row.neptun_url), ('galerija', row.galerija_price, row.galerija_old, row.galerija_url)] %}
+                        <td class="price-cell {{ 'best' if s[1] > 0 and s[1] == row.min_price else '' }} {{ 'empty' if s[1] == 0 else '' }}">
+                            {% if s[1] > 0 %}
+                            <a href="{{ s[3] }}" target="_blank" rel="noopener">{{ "{:,}".format(s[1]) }} ден</a>
+                            {% if s[2] > 0 and s[2] != s[1] %}<span class="old-price">{{ "{:,}".format(s[2]) }}</span>{% endif %}
                             {% else %}—{% endif %}
                         </td>
-                        <td class="price-cell {{ 'best' if row.tehnomarket_price > 0 and row.tehnomarket_price == row.min_price else '' }} {{ 'empty' if row.tehnomarket_price == 0 else '' }}">
-                            {% if row.tehnomarket_price > 0 %}
-                            <a href="{{ row.tehnomarket_url }}" target="_blank" rel="noopener">{{ "{:,}".format(row.tehnomarket_price) }} ден</a>
-                            {% else %}—{% endif %}
-                        </td>
-                        <td class="price-cell {{ 'best' if row.neptun_price > 0 and row.neptun_price == row.min_price else '' }} {{ 'empty' if row.neptun_price == 0 else '' }}">
-                            {% if row.neptun_price > 0 %}
-                            <a href="{{ row.neptun_url }}" target="_blank" rel="noopener">{{ "{:,}".format(row.neptun_price) }} ден</a>
-                            {% else %}—{% endif %}
-                        </td>
-                        <td class="price-cell {{ 'best' if row.galerija_price > 0 and row.galerija_price == row.min_price else '' }} {{ 'empty' if row.galerija_price == 0 else '' }}">
-                            {% if row.galerija_price > 0 %}
-                            <a href="{{ row.galerija_url }}" target="_blank" rel="noopener">{{ "{:,}".format(row.galerija_price) }} ден</a>
-                            {% else %}—{% endif %}
-                        </td>
+                        {% endfor %}
                         <td>
                             {% if row.best_store %}
                             <span class="best-badge">{{ row.best_store }}</span>
@@ -519,17 +515,21 @@
             let html = '';
             for (const r of results) {
                 const prices = [
-                    { store: 'setec', price: r.setec_price, url: r.setec_url },
-                    { store: 'tehnomarket', price: r.tehnomarket_price, url: r.tehnomarket_url },
-                    { store: 'neptun', price: r.neptun_price, url: r.neptun_url },
-                    { store: 'galerija', price: r.galerija_price, url: r.galerija_url },
+                    { store: 'setec', price: r.setec_price, old: r.setec_old, url: r.setec_url },
+                    { store: 'tehnomarket', price: r.tehnomarket_price, old: r.tehnomarket_old, url: r.tehnomarket_url },
+                    { store: 'neptun', price: r.neptun_price, old: r.neptun_old, url: r.neptun_url },
+                    { store: 'galerija', price: r.galerija_price, old: r.galerija_old, url: r.galerija_url },
                 ];
 
                 function priceCell(p) {
                     const isBest = p.price > 0 && p.price === r.min_price;
                     const cls = `price-cell ${isBest ? 'best' : ''} ${p.price === 0 ? 'empty' : ''}`;
                     if (p.price > 0) {
-                        return `<td class="${cls}"><a href="${p.url}" target="_blank" rel="noopener">${p.price.toLocaleString()} ден</a></td>`;
+                        let oldHtml = '';
+                        if (p.old && p.old > 0 && p.old !== p.price) {
+                            oldHtml = `<span class="old-price">${p.old.toLocaleString()}</span>`;
+                        }
+                        return `<td class="${cls}"><a href="${p.url}" target="_blank" rel="noopener">${p.price.toLocaleString()} ден</a>${oldHtml}</td>`;
                     }
                     return `<td class="${cls}">—</td>`;
                 }

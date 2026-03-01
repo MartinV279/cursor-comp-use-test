@@ -79,10 +79,12 @@ def build_comparison_table(raw_df: pd.DataFrame) -> list[dict]:
         price = int(row.get("price", 0))
         url = str(row.get("url", ""))
 
+        old_price = int(row.get("old_price", 0))
+
         if store not in groups[gk]["stores"] or (price > 0 and (
             groups[gk]["stores"][store]["price"] == 0 or price < groups[gk]["stores"][store]["price"]
         )):
-            groups[gk]["stores"][store] = {"price": price, "url": url}
+            groups[gk]["stores"][store] = {"price": price, "old_price": old_price, "url": url}
 
     results = []
     for gk, gdata in groups.items():
@@ -97,12 +99,16 @@ def build_comparison_table(raw_df: pd.DataFrame) -> list[dict]:
             "name": model,
             "screen_size": gdata["screen_size"],
             "setec_price": stores.get("Setec", {}).get("price", 0),
+            "setec_old": stores.get("Setec", {}).get("old_price", 0),
             "setec_url": stores.get("Setec", {}).get("url", ""),
             "tehnomarket_price": stores.get("Tehnomarket", {}).get("price", 0),
+            "tehnomarket_old": stores.get("Tehnomarket", {}).get("old_price", 0),
             "tehnomarket_url": stores.get("Tehnomarket", {}).get("url", ""),
             "neptun_price": stores.get("Neptun", {}).get("price", 0),
+            "neptun_old": stores.get("Neptun", {}).get("old_price", 0),
             "neptun_url": stores.get("Neptun", {}).get("url", ""),
             "galerija_price": stores.get("Galerija", {}).get("price", 0),
+            "galerija_old": stores.get("Galerija", {}).get("old_price", 0),
             "galerija_url": stores.get("Galerija", {}).get("url", ""),
             "store_count": len(stores),
             "min_price": min_price,
