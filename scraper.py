@@ -1,0 +1,664 @@
+#!/usr/bin/env python3
+"""
+TV Price Scraper & Comparator for Macedonian E-Commerce Stores.
+
+Scrapes TVs from:
+  - setec.mk
+  - tehnomarket.com.mk
+  - neptun.mk
+  - galerija.com.mk
+
+Normalizes product names and compares prices across stores.
+"""
+
+import re
+import time
+import logging
+import sys
+from dataclasses import dataclass, field
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+from thefuzz import fuzz
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%H:%M:%S",
+)
+log = logging.getLogger(__name__)
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    )
+}
+
+KNOWN_BRANDS = [
+    "SAMSUNG", "LG", "SONY", "PHILIPS", "HISENSE", "TCL",
+    "TELEFUNKEN", "VIVAX", "VOX", "TESLA", "PANASONIC", "TOSHIBA",
+    "SHARP", "JVC", "THOMSON", "NEO", "FAVORIT", "ZEUS", "HOOBART",
+    "FOX", "GRUNDIG", "BEKO", "DAEWOO", "SKYWORTH", "XIAOMI",
+    "REALME", "NOKIA", "MOTOROLA", "CHiQ",
+]
+
+
+@dataclass
+class TV:
+    name: str
+    brand: str
+    model: str
+    price: int  # in MKD (ден.)
+    old_price: int = 0
+    store: str = ""
+    url: str = ""
+    screen_size: int = 0  # inches
+    normalized_key: str = ""
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def parse_price(text: str) -> int:
+    """Parse a Macedonian price string like '24.999' or '24,999' to int.
+
+    Handles formats:
+      - '24.999'       → 24999  (dot as thousands separator)
+      - '24,999'       → 24999  (comma as thousands separator)
+      - '36,490.00'    → 36490  (WooCommerce format with decimals)
+      - '36,490.00 ден' → 36490
+    """
+    text = re.sub(r"[^\d,.]", "", text.strip())
+    if re.match(r"^\d{1,3}(,\d{3})*\.\d{2}$", text):
+        text = text.rsplit(".", 1)[0]
+    cleaned = re.sub(r"[^\d]", "", text)
+    return int(cleaned) if cleaned else 0
+
+
+def extract_screen_size(text: str) -> int:
+    """Extract screen size in inches from a product name."""
+    m = re.search(r'(\d{2,3})\s*["\u201D\u2033]', text)
+    if m:
+        return int(m.group(1))
+    m = re.search(r'(?:^|\s)(\d{2,3})\s*(?:inch|инч)', text, re.I)
+    if m:
+        return int(m.group(1))
+    m = re.search(r'[\s/](\d{2,3})["\s]', text)
+    if m:
+        val = int(m.group(1))
+        if 19 <= val <= 120:
+            return val
+    m = re.search(r'(?:^|\s)(\d{2,3})\s+(?:[A-Z]{1,2}\d|QNED|NANO|OLED|QLED|UA)', text)
+    if m:
+        val = int(m.group(1))
+        if 19 <= val <= 120:
+            return val
+    m = re.search(r'[\s-](\d{2,3})\s*[A-Z]', text)
+    if m:
+        val = int(m.group(1))
+        if 24 <= val <= 120:
+            return val
+    return 0
+
+
+def extract_brand(name: str) -> str:
+    """Extract brand from product name."""
+    upper = name.upper()
+    for b in KNOWN_BRANDS:
+        if b in upper:
+            return b
+    tokens = name.split()
+    if tokens:
+        return tokens[0].upper()
+    return "UNKNOWN"
+
+
+def extract_model(name: str, brand: str) -> str:
+    """Extract model number from product name, removing the brand prefix."""
+    upper = name.upper()
+    idx = upper.find(brand)
+    if idx != -1:
+        model_part = name[idx + len(brand):].strip()
+    else:
+        model_part = name.strip()
+
+    model_part = re.sub(r"^[-–:\s]+", "", model_part)
+    model_part = re.sub(
+        r"\b(телевизор|tv|smart|android|google|led|oled|qled|uhd|fhd|hd|4k|8k|lcd|"
+        r"frameless|ambilight|ready|dvb[- ]?t2?|hdr|webos|tizen|vidaa|nanocell|"
+        r"neo\s*qled|mini\s*led|direct\s*led)\b",
+        "", model_part, flags=re.I,
+    )
+    model_part = re.sub(r"\s{2,}", " ", model_part).strip()
+    return model_part
+
+
+def normalize_key(brand: str, model: str, screen_size: int) -> str:
+    """Build a normalized comparison key."""
+    clean_model = re.sub(r"[^A-Z0-9]", "", model.upper())
+    return f"{brand}_{clean_model}_{screen_size}"
+
+
+# ---------------------------------------------------------------------------
+# Scrapers
+# ---------------------------------------------------------------------------
+
+def scrape_setec(pw_browser) -> list[TV]:
+    """Scrape all TVs from setec.mk using Playwright (JS-rendered)."""
+    log.info("Scraping setec.mk ...")
+    tvs: list[TV] = []
+    page_num = 1
+    max_pages = 25
+
+    page = pw_browser.new_page()
+
+    while page_num <= max_pages:
+        url = f"https://setec.mk/category/televizori-55?page={page_num}"
+        log.info(f"  setec.mk page {page_num} ...")
+        try:
+            page.goto(url, timeout=30000, wait_until="networkidle")
+        except PlaywrightTimeout:
+            log.warning(f"  Timeout on page {page_num}, stopping.")
+            break
+
+        html = page.content()
+        soup = BeautifulSoup(html, "lxml")
+
+        links = soup.find_all("a", href=re.compile(r"^/products/"))
+        if not links:
+            break
+
+        for link in links:
+            card = link.parent
+            if not card:
+                continue
+
+            h3 = card.find("h3")
+            name = h3.get_text(strip=True) if h3 else ""
+            if not name:
+                continue
+
+            p_tag = card.find("p")
+            brand_hint = p_tag.get_text(strip=True) if p_tag else ""
+
+            card_text = card.get_text(separator=" ", strip=True)
+            prices = re.findall(r"([\d,.]+)\s*ден", card_text)
+
+            club_price = parse_price(prices[0]) if prices else 0
+            regular_price = parse_price(prices[1]) if len(prices) > 1 else 0
+
+            href = link.get("href", "")
+            full_url = f"https://setec.mk{href}" if href.startswith("/") else href
+
+            brand = extract_brand(brand_hint or name)
+            model = extract_model(name, brand)
+            size = extract_screen_size(name)
+            if size == 0:
+                size = extract_screen_size(model)
+
+            tv = TV(
+                name=name,
+                brand=brand,
+                model=model,
+                price=club_price,
+                old_price=regular_price,
+                store="Setec",
+                url=full_url,
+                screen_size=size,
+            )
+            tv.normalized_key = normalize_key(tv.brand, tv.model, tv.screen_size)
+            tvs.append(tv)
+
+        page_num += 1
+
+    page.close()
+    log.info(f"  setec.mk: scraped {len(tvs)} TVs")
+    return tvs
+
+
+def scrape_tehnomarket() -> list[TV]:
+    """Scrape all TVs from tehnomarket.com.mk (server-rendered HTML)."""
+    log.info("Scraping tehnomarket.com.mk ...")
+    tvs: list[TV] = []
+    session = requests.Session()
+    session.headers.update(HEADERS)
+
+    categories = [
+        ("https://tehnomarket.com.mk/category/4328/19-43-led-televizori", "19-43 LED"),
+        ("https://tehnomarket.com.mk/category/4327/46-85-led-televizori", "46-85 LED"),
+        ("https://tehnomarket.com.mk/category/4306/qled-tv", "QLED"),
+    ]
+
+    for cat_url, cat_label in categories:
+        page_num = 1
+        while True:
+            url = f"{cat_url}?page={page_num}" if page_num > 1 else cat_url
+            log.info(f"  tehnomarket {cat_label} page {page_num} ...")
+
+            try:
+                resp = session.get(url, timeout=15)
+                resp.raise_for_status()
+            except requests.RequestException as e:
+                log.warning(f"  Request error: {e}")
+                break
+
+            soup = BeautifulSoup(resp.text, "lxml")
+            products = soup.select("li.span4.product-fix")
+            if not products:
+                break
+
+            for prod in products:
+                name_el = prod.select_one(".product-name a")
+                if not name_el:
+                    continue
+                name = name_el.get_text(strip=True)
+                href = name_el.get("href", "")
+
+                price_el = prod.select_one(".nm")
+                price = parse_price(price_el.get_text()) if price_el else 0
+
+                old_price_el = prod.select_one(".text-decoration-line-through .nm, del .nm, s .nm")
+                old_price = 0
+                if old_price_el:
+                    old_price = parse_price(old_price_el.get_text())
+
+                brand = extract_brand(name)
+                model = extract_model(name, brand)
+                size = extract_screen_size(name)
+
+                tv = TV(
+                    name=name,
+                    brand=brand,
+                    model=model,
+                    price=price,
+                    old_price=old_price,
+                    store="Tehnomarket",
+                    url=href,
+                    screen_size=size,
+                )
+                tv.normalized_key = normalize_key(tv.brand, tv.model, tv.screen_size)
+                tvs.append(tv)
+
+            total_match = soup.find(string=re.compile(r"од (\d+) производи"))
+            if total_match:
+                total = int(re.search(r"од (\d+)", total_match).group(1))
+                if page_num * 32 >= total:
+                    break
+            else:
+                break
+
+            page_num += 1
+            time.sleep(0.5)
+
+    log.info(f"  tehnomarket.com.mk: scraped {len(tvs)} TVs")
+    return tvs
+
+
+def scrape_neptun(pw_browser) -> list[TV]:
+    """Scrape all TVs from neptun.mk using Playwright (JS-rendered prices)."""
+    log.info("Scraping neptun.mk ...")
+    tvs: list[TV] = []
+    page_num = 1
+    max_pages = 15
+
+    page = pw_browser.new_page()
+
+    while page_num <= max_pages:
+        url = (
+            f"https://www.neptun.mk/categories/tv-audio-video/televizori.nspx?page={page_num}"
+            if page_num > 1
+            else "https://www.neptun.mk/categories/tv-audio-video/televizori.nspx"
+        )
+        log.info(f"  neptun.mk page {page_num} ...")
+
+        try:
+            page.goto(url, timeout=30000, wait_until="networkidle")
+        except PlaywrightTimeout:
+            log.warning(f"  Timeout on page {page_num}, stopping.")
+            break
+
+        html = page.content()
+        soup = BeautifulSoup(html, "lxml")
+
+        cards = soup.find_all("div", class_="productCardBody")
+        if not cards:
+            break
+
+        for card in cards:
+            title_el = card.find("h2")
+            if not title_el:
+                title_el = card.find(string=re.compile(r"Телевизор\s+\w+", re.I))
+                if title_el:
+                    name = title_el.strip()
+                else:
+                    continue
+            else:
+                name = title_el.get_text(strip=True)
+
+            name = re.sub(r"^Телевизор\s+", "", name, flags=re.I).strip()
+
+            link_el = card.find_parent("a") or card.find("a")
+            href = ""
+            if link_el:
+                href = link_el.get("href", "")
+                if href and not href.startswith("http"):
+                    href = f"https://www.neptun.mk{href}"
+
+            regular_price = 0
+            happy_price = 0
+
+            regular_spans = card.select(".regularPriceDisplay:not(.happyBgBox .regularPriceDisplay) .priceNum")
+            if not regular_spans:
+                regular_spans = card.select(".discountPrice .priceNum")
+            if regular_spans:
+                regular_price = parse_price(regular_spans[0].get_text())
+
+            happy_box = card.select_one(".happyBgBox")
+            if happy_box:
+                happy_spans = happy_box.select(".priceNum")
+                if happy_spans:
+                    happy_price = parse_price(happy_spans[0].get_text())
+
+            if happy_price == 0:
+                happy_price = regular_price
+
+            brand = extract_brand(name)
+            model = extract_model(name, brand)
+            size = extract_screen_size(name)
+            if size == 0:
+                size = extract_screen_size(model)
+
+            tv = TV(
+                name=name,
+                brand=brand,
+                model=model,
+                price=happy_price,
+                old_price=regular_price,
+                store="Neptun",
+                url=href,
+                screen_size=size,
+            )
+            tv.normalized_key = normalize_key(tv.brand, tv.model, tv.screen_size)
+            tvs.append(tv)
+
+        next_link = soup.find("a", string=re.compile(r">>|Следна|›"))
+        pagination_links = soup.find_all("a", href=re.compile(r"page=\d+"))
+        max_found = page_num
+        for pl in pagination_links:
+            m = re.search(r"page=(\d+)", pl.get("href", ""))
+            if m:
+                max_found = max(max_found, int(m.group(1)))
+
+        if page_num >= max_found and not next_link:
+            break
+
+        page_num += 1
+
+    page.close()
+    log.info(f"  neptun.mk: scraped {len(tvs)} TVs")
+    return tvs
+
+
+def scrape_galerija() -> list[TV]:
+    """Scrape all TVs from galerija.com.mk (WooCommerce, server-rendered)."""
+    log.info("Scraping galerija.com.mk ...")
+    tvs: list[TV] = []
+    session = requests.Session()
+    session.headers.update(HEADERS)
+
+    page_num = 1
+    max_pages = 10
+
+    while page_num <= max_pages:
+        url = (
+            f"https://galerija.com.mk/product-category/televizori-i-domasno-kino/televizori/page/{page_num}/"
+            if page_num > 1
+            else "https://galerija.com.mk/product-category/televizori-i-domasno-kino/televizori/"
+        )
+        log.info(f"  galerija.com.mk page {page_num} ...")
+
+        try:
+            resp = session.get(url, timeout=15)
+            if resp.status_code == 404:
+                break
+            resp.raise_for_status()
+        except requests.RequestException as e:
+            log.warning(f"  Request error: {e}")
+            break
+
+        soup = BeautifulSoup(resp.text, "lxml")
+        products = soup.select("div.product-grid-item")
+        if not products:
+            break
+
+        for prod in products:
+            name_el = prod.select_one(".wd-entities-title a")
+            if not name_el:
+                continue
+            name = name_el.get_text(strip=True)
+            href = name_el.get("href", "")
+
+            price_el = prod.select_one(".price")
+            price = 0
+            old_price = 0
+            if price_el:
+                ins_el = price_el.select_one("ins .woocommerce-Price-amount bdi")
+                del_el = price_el.select_one("del .woocommerce-Price-amount bdi")
+                regular_el = price_el.select_one(".woocommerce-Price-amount bdi")
+
+                if ins_el:
+                    price = parse_price(ins_el.get_text())
+                elif regular_el:
+                    price = parse_price(regular_el.get_text())
+
+                if del_el:
+                    old_price = parse_price(del_el.get_text())
+
+            brand = extract_brand(name)
+            model = extract_model(name, brand)
+            size = extract_screen_size(name)
+            if size == 0:
+                size = extract_screen_size(model)
+
+            tv = TV(
+                name=name,
+                brand=brand,
+                model=model,
+                price=price,
+                old_price=old_price,
+                store="Galerija",
+                url=href,
+                screen_size=size,
+            )
+            tv.normalized_key = normalize_key(tv.brand, tv.model, tv.screen_size)
+            tvs.append(tv)
+
+        page_num += 1
+        time.sleep(0.5)
+
+    log.info(f"  galerija.com.mk: scraped {len(tvs)} TVs")
+    return tvs
+
+
+# ---------------------------------------------------------------------------
+# Matching & Comparison
+# ---------------------------------------------------------------------------
+
+def fuzzy_match_tvs(all_tvs: list[TV], threshold: int = 75) -> pd.DataFrame:
+    """
+    Group TVs across stores by fuzzy-matching their normalized keys.
+    Returns a DataFrame with one row per unique TV model showing prices
+    from each store.
+    """
+    groups: dict[str, list[TV]] = {}
+
+    for tv in all_tvs:
+        matched = False
+        best_score = 0
+        best_key = None
+        for key in list(groups.keys()):
+            if tv.brand != groups[key][0].brand:
+                continue
+            if tv.screen_size > 0 and groups[key][0].screen_size > 0:
+                if tv.screen_size != groups[key][0].screen_size:
+                    continue
+            score = fuzz.ratio(tv.normalized_key, key)
+            token_score = fuzz.token_sort_ratio(tv.normalized_key, key)
+            combined = max(score, token_score)
+            if combined > best_score:
+                best_score = combined
+                best_key = key
+        if best_key and best_score >= threshold:
+            groups[best_key].append(tv)
+            matched = True
+        if not matched:
+            groups[tv.normalized_key] = [tv]
+
+    rows = []
+    for key, group in groups.items():
+        brands = set(tv.brand for tv in group)
+        brand = max(brands, key=lambda b: sum(1 for tv in group if tv.brand == b))
+        names = [tv.name for tv in group]
+        representative_name = max(names, key=len)
+
+        sizes = [tv.screen_size for tv in group if tv.screen_size > 0]
+        screen_size = sizes[0] if sizes else 0
+
+        store_prices: dict[str, int] = {}
+        store_urls: dict[str, str] = {}
+        for tv in group:
+            if tv.store not in store_prices or tv.price < store_prices[tv.store]:
+                store_prices[tv.store] = tv.price
+                store_urls[tv.store] = tv.url
+
+        row = {
+            "Brand": brand,
+            "Model": representative_name,
+            "Screen": f'{screen_size}"' if screen_size else "?",
+            "Setec (ден)": store_prices.get("Setec", ""),
+            "Tehnomarket (ден)": store_prices.get("Tehnomarket", ""),
+            "Neptun (ден)": store_prices.get("Neptun", ""),
+            "Galerija (ден)": store_prices.get("Galerija", ""),
+            "Stores": len(store_prices),
+            "Min Price": min(p for p in store_prices.values() if p > 0) if any(p > 0 for p in store_prices.values()) else 0,
+            "Best Store": min(
+                ((s, p) for s, p in store_prices.items() if p > 0),
+                key=lambda x: x[1],
+                default=("", 0),
+            )[0],
+        }
+        rows.append(row)
+
+    df = pd.DataFrame(rows)
+    if not df.empty:
+        df = df.sort_values(["Brand", "Screen", "Min Price"])
+    return df
+
+
+def print_summary(all_tvs: list[TV], df: pd.DataFrame):
+    """Print a summary of scraping results and price comparison."""
+    print("\n" + "=" * 80)
+    print("TV PRICE SCRAPER - RESULTS SUMMARY")
+    print("=" * 80)
+
+    store_counts = {}
+    for tv in all_tvs:
+        store_counts[tv.store] = store_counts.get(tv.store, 0) + 1
+
+    print("\n📊 Scraped TV counts per store:")
+    for store, count in sorted(store_counts.items()):
+        print(f"   {store:15s}: {count:4d} TVs")
+    print(f"   {'TOTAL':15s}: {len(all_tvs):4d} TVs")
+
+    if df.empty:
+        print("\nNo TVs found to compare.")
+        return
+
+    multi_store = df[df["Stores"] >= 2].copy()
+    print(f"\n🔄 TVs found in multiple stores: {len(multi_store)}")
+
+    if not multi_store.empty:
+        print("\n" + "=" * 80)
+        print("CROSS-STORE PRICE COMPARISON (TVs available in 2+ stores)")
+        print("=" * 80)
+        display_cols = [
+            "Brand", "Model", "Screen",
+            "Setec (ден)", "Tehnomarket (ден)", "Neptun (ден)", "Galerija (ден)",
+            "Best Store",
+        ]
+        existing = [c for c in display_cols if c in multi_store.columns]
+        print(multi_store[existing].to_string(index=False))
+
+    print("\n" + "=" * 80)
+    print("ALL SCRAPED TVs BY STORE")
+    print("=" * 80)
+    display_cols_all = [
+        "Brand", "Model", "Screen",
+        "Setec (ден)", "Tehnomarket (ден)", "Neptun (ден)", "Galerija (ден)",
+        "Min Price", "Best Store",
+    ]
+    existing_all = [c for c in display_cols_all if c in df.columns]
+    print(df[existing_all].head(80).to_string(index=False))
+    if len(df) > 80:
+        print(f"\n... and {len(df) - 80} more TVs (see tv_comparison.csv for full data)")
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main():
+    all_tvs: list[TV] = []
+
+    tehno_tvs = scrape_tehnomarket()
+    all_tvs.extend(tehno_tvs)
+
+    galerija_tvs = scrape_galerija()
+    all_tvs.extend(galerija_tvs)
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+
+        setec_tvs = scrape_setec(browser)
+        all_tvs.extend(setec_tvs)
+
+        neptun_tvs = scrape_neptun(browser)
+        all_tvs.extend(neptun_tvs)
+
+        browser.close()
+
+    log.info(f"Total TVs scraped: {len(all_tvs)}")
+
+    df = fuzzy_match_tvs(all_tvs)
+
+    csv_path = "tv_comparison.csv"
+    df.to_csv(csv_path, index=False)
+    log.info(f"Saved full comparison to {csv_path}")
+
+    raw_data = []
+    for tv in all_tvs:
+        raw_data.append({
+            "store": tv.store,
+            "brand": tv.brand,
+            "name": tv.name,
+            "model": tv.model,
+            "screen_size": tv.screen_size,
+            "price": tv.price,
+            "old_price": tv.old_price,
+            "url": tv.url,
+            "normalized_key": tv.normalized_key,
+        })
+    raw_df = pd.DataFrame(raw_data)
+    raw_csv = "tv_all_raw.csv"
+    raw_df.to_csv(raw_csv, index=False)
+    log.info(f"Saved raw data to {raw_csv}")
+
+    print_summary(all_tvs, df)
+
+
+if __name__ == "__main__":
+    main()
