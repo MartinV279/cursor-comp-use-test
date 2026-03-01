@@ -42,8 +42,36 @@ KNOWN_BRANDS = [
     "TELEFUNKEN", "VIVAX", "VOX", "TESLA", "PANASONIC", "TOSHIBA",
     "SHARP", "JVC", "THOMSON", "NEO", "FAVORIT", "ZEUS", "HOOBART",
     "FOX", "GRUNDIG", "BEKO", "DAEWOO", "SKYWORTH", "XIAOMI",
-    "REALME", "NOKIA", "MOTOROLA", "CHiQ",
+    "REALME", "NOKIA", "MOTOROLA", "CHIQ", "FUEGO", "HAIER",
+    "BAUTECH", "HORIZON",
 ]
+
+DESCRIPTOR_WORDS = re.compile(
+    r"\b("
+    r"телевизор|televizor|tv|smart|android\s*\d*|google|led|oled|qled|neo\s*qled|"
+    r"mini\s*led|direct\s*led|qd[- ]?mini\s*led|nanocell|uhd|fhd|hd|full\s*hd|"
+    r"hd\s*ready|4k|8k|4к|lcd|frameless|ambilight|ready|dvb[- ]?t2?|hdr\s*\d*|"
+    r"webos|tizen\s*os|tizen|vidaa|titan\s*os|crystal|ultra\s*hd|ultra|"
+    r"smart\s*tv|лед|андроид|"
+    r"wi-?fi|bluetooth|atsc|ntsc|curved|flat|slim|ultra\s*slim|"
+    r"premium|pro\s*display|interactive\s*display|"
+    r"neo(?=\s+qled|\s+smart|\s*$)|"
+    r"series|a\s+series|"
+    r"\d{3,5}\s*hz"
+    r")\b",
+    re.I,
+)
+
+SIZE_PATTERN = re.compile(
+    r"""
+    ,?\s*\d{2,3}\s*[""\u2033]\s*              |  # 55"
+    ,?\s*\d{2,3}\s*'{2}\s*                     |  # 55''
+    ,?\s*\(\s*\d+\.?\d*\s*c?m\s*\)            |  # (139cm) or (215.9cm)
+    \b\d{2,3}\s*(?:inch|инч)\b                 |  # 55 inch
+    \b\d{2,3}\s*[""\u2033]\s*\(\d+\.?\d*c?m\)    # 55"(139cm)
+    """,
+    re.I | re.X,
+)
 
 
 @dataclass
@@ -80,67 +108,104 @@ def parse_price(text: str) -> int:
 
 
 def extract_screen_size(text: str) -> int:
-    """Extract screen size in inches from a product name."""
-    m = re.search(r'(\d{2,3})\s*["\u201D\u2033]', text)
-    if m:
-        return int(m.group(1))
-    m = re.search(r'(?:^|\s)(\d{2,3})\s*(?:inch|инч)', text, re.I)
-    if m:
-        return int(m.group(1))
-    m = re.search(r'[\s/](\d{2,3})["\s]', text)
+    """Extract screen size in inches from a product name or model string."""
+    m = re.search(r'(\d{2,3})\s*["\u201C\u201D\u2033]', text)
     if m:
         val = int(m.group(1))
         if 19 <= val <= 120:
             return val
-    m = re.search(r'(?:^|\s)(\d{2,3})\s+(?:[A-Z]{1,2}\d|QNED|NANO|OLED|QLED|UA)', text)
+    m = re.search(r"(\d{2,3})\s*'{2}", text)
     if m:
         val = int(m.group(1))
         if 19 <= val <= 120:
             return val
-    m = re.search(r'[\s-](\d{2,3})\s*[A-Z]', text)
+    m = re.search(r"(?:^|\s)(\d{2,3})\s*(?:inch|инч)", text, re.I)
+    if m:
+        return int(m.group(1))
+    return 0
+
+
+def infer_screen_size(model_code: str) -> int:
+    """Try to infer screen size from a model code like '55PUS9010' or 'QE65QN90'."""
+    m = re.match(r"^(?:UE|QE|KD|XR|K|LT)?-?(\d{2})(?=[A-Z])", model_code, re.I)
     if m:
         val = int(m.group(1))
-        if 24 <= val <= 120:
+        if 19 <= val <= 98:
+            return val
+    m = re.search(r"(?:^|\s)(\d{2})\s*[A-Z]", model_code)
+    if m:
+        val = int(m.group(1))
+        if 24 <= val <= 98:
             return val
     return 0
 
 
 def extract_brand(name: str) -> str:
-    """Extract brand from product name."""
+    """Extract brand from product name. Scans for known brands anywhere."""
     upper = name.upper()
     for b in KNOWN_BRANDS:
-        if b in upper:
+        pattern = r"(?<![A-Z])" + re.escape(b) + r"(?![A-Z])"
+        if re.search(pattern, upper):
             return b
     tokens = name.split()
-    if tokens:
-        return tokens[0].upper()
-    return "UNKNOWN"
+    for t in tokens:
+        if re.match(r"^[A-Z][A-Za-z]{2,}$", t) and t.upper() not in {
+            "THE", "AND", "FOR", "PRO", "MAX", "PLUS", "ULTRA", "MINI",
+            "SMART", "CRYSTAL", "FRAME", "QLED", "OLED", "NANO",
+        }:
+            return t.upper()
+    return tokens[0].upper() if tokens else "UNKNOWN"
 
 
-def extract_model(name: str, brand: str) -> str:
-    """Extract model number from product name, removing the brand prefix."""
+def extract_model_code(name: str, brand: str) -> str:
+    """Extract the core model code from a product name.
+
+    Strategy: find the brand in the string, take everything after it,
+    strip all descriptive/marketing words and size info, then collapse
+    to a clean model identifier.
+
+    Examples:
+      "4K UHD Smart FUEGO 85 ELU 720 GTV 85\"(215.9cm)" → "85ELU720GTV"
+      "SAMSUNG QE-65QN90DATXXH QLED UHD 4K NEO SMART TV" → "QE65QN90DATXXH"
+      "PHILIPS 55 PUS 9010 Ambilight" → "55PUS9010"
+      "SONY K43S35B" → "K43S35B"
+    """
     upper = name.upper()
-    idx = upper.find(brand)
+    idx = upper.find(brand.upper())
     if idx != -1:
-        model_part = name[idx + len(brand):].strip()
+        after_brand = name[idx + len(brand):].strip()
     else:
-        model_part = name.strip()
+        after_brand = name.strip()
 
-    model_part = re.sub(r"^[-–:\s]+", "", model_part)
-    model_part = re.sub(
-        r"\b(телевизор|tv|smart|android|google|led|oled|qled|uhd|fhd|hd|4k|8k|lcd|"
-        r"frameless|ambilight|ready|dvb[- ]?t2?|hdr|webos|tizen|vidaa|nanocell|"
-        r"neo\s*qled|mini\s*led|direct\s*led)\b",
-        "", model_part, flags=re.I,
-    )
-    model_part = re.sub(r"\s{2,}", " ", model_part).strip()
-    return model_part
+    after_brand = re.sub(r"^[-–:\s]+", "", after_brand)
+
+    after_brand = SIZE_PATTERN.sub(" ", after_brand)
+    after_brand = DESCRIPTOR_WORDS.sub(" ", after_brand)
+
+    after_brand = re.sub(r"\.\w{2,4}$", "", after_brand)  # .CEI, .CEII
+    after_brand = re.sub(r"\s*/\s*\d{1,2}\b", "", after_brand)  # /12 suffix
+    after_brand = re.sub(r",.*$", "", after_brand)  # trailing comma descriptions
+    after_brand = re.sub(r"\(.*?\)", "", after_brand)  # parenthetical info
+    after_brand = re.sub(r"\b(Серија|Series|Модел|Model)\b", "", after_brand, flags=re.I)
+    after_brand = re.sub(r"\s{2,}", " ", after_brand).strip()
+    after_brand = re.sub(r"^[-–:\s]+|[-–:\s]+$", "", after_brand)
+
+    return after_brand
 
 
-def normalize_key(brand: str, model: str, screen_size: int) -> str:
-    """Build a normalized comparison key."""
-    clean_model = re.sub(r"[^A-Z0-9]", "", model.upper())
-    return f"{brand}_{clean_model}_{screen_size}"
+def model_to_key(model: str) -> str:
+    """Collapse a model string to an alphanumeric key for matching.
+
+    "QE-65QN90DATXXH" → "QE65QN90DATXXH"
+    "85 ELU 720 GTV"  → "85ELU720GTV"
+    "55 PUS 9010"     → "55PUS9010"
+    """
+    return re.sub(r"[^A-Z0-9]", "", model.upper())
+
+
+def normalize_key(brand: str, model: str) -> str:
+    """Build a normalized comparison key from brand + model code."""
+    return f"{brand}_{model_to_key(model)}"
 
 
 # ---------------------------------------------------------------------------
@@ -195,10 +260,12 @@ def scrape_setec(pw_browser) -> list[TV]:
             full_url = f"https://setec.mk{href}" if href.startswith("/") else href
 
             brand = extract_brand(brand_hint or name)
-            model = extract_model(name, brand)
+            model = extract_model_code(name, brand)
             size = extract_screen_size(name)
             if size == 0:
                 size = extract_screen_size(model)
+            if size == 0:
+                size = infer_screen_size(model_to_key(model))
 
             tv = TV(
                 name=name,
@@ -210,7 +277,7 @@ def scrape_setec(pw_browser) -> list[TV]:
                 url=full_url,
                 screen_size=size,
             )
-            tv.normalized_key = normalize_key(tv.brand, tv.model, tv.screen_size)
+            tv.normalized_key = normalize_key(tv.brand, tv.model)
             tvs.append(tv)
 
         page_num += 1
@@ -267,8 +334,12 @@ def scrape_tehnomarket() -> list[TV]:
                     old_price = parse_price(old_price_el.get_text())
 
                 brand = extract_brand(name)
-                model = extract_model(name, brand)
+                model = extract_model_code(name, brand)
                 size = extract_screen_size(name)
+                if size == 0:
+                    size = extract_screen_size(model)
+                if size == 0:
+                    size = infer_screen_size(model_to_key(model))
 
                 tv = TV(
                     name=name,
@@ -280,7 +351,7 @@ def scrape_tehnomarket() -> list[TV]:
                     url=href,
                     screen_size=size,
                 )
-                tv.normalized_key = normalize_key(tv.brand, tv.model, tv.screen_size)
+                tv.normalized_key = normalize_key(tv.brand, tv.model)
                 tvs.append(tv)
 
             total_match = soup.find(string=re.compile(r"од (\d+) производи"))
@@ -367,10 +438,12 @@ def scrape_neptun(pw_browser) -> list[TV]:
                 happy_price = regular_price
 
             brand = extract_brand(name)
-            model = extract_model(name, brand)
+            model = extract_model_code(name, brand)
             size = extract_screen_size(name)
             if size == 0:
                 size = extract_screen_size(model)
+            if size == 0:
+                size = infer_screen_size(model_to_key(model))
 
             tv = TV(
                 name=name,
@@ -382,7 +455,7 @@ def scrape_neptun(pw_browser) -> list[TV]:
                 url=href,
                 screen_size=size,
             )
-            tv.normalized_key = normalize_key(tv.brand, tv.model, tv.screen_size)
+            tv.normalized_key = normalize_key(tv.brand, tv.model)
             tvs.append(tv)
 
         next_link = soup.find("a", string=re.compile(r">>|Следна|›"))
@@ -399,7 +472,13 @@ def scrape_neptun(pw_browser) -> list[TV]:
         page_num += 1
 
     page.close()
-    log.info(f"  neptun.mk: scraped {len(tvs)} TVs")
+    seen: dict[str, TV] = {}
+    for tv in tvs:
+        key = tv.normalized_key
+        if key not in seen or (tv.price > 0 and tv.price < seen[key].price):
+            seen[key] = tv
+    tvs = list(seen.values())
+    log.info(f"  neptun.mk: scraped {len(tvs)} TVs (after dedup)")
     return tvs
 
 
@@ -459,10 +538,12 @@ def scrape_galerija() -> list[TV]:
                     old_price = parse_price(del_el.get_text())
 
             brand = extract_brand(name)
-            model = extract_model(name, brand)
+            model = extract_model_code(name, brand)
             size = extract_screen_size(name)
             if size == 0:
                 size = extract_screen_size(model)
+            if size == 0:
+                size = infer_screen_size(model_to_key(model))
 
             tv = TV(
                 name=name,
@@ -474,7 +555,7 @@ def scrape_galerija() -> list[TV]:
                 url=href,
                 screen_size=size,
             )
-            tv.normalized_key = normalize_key(tv.brand, tv.model, tv.screen_size)
+            tv.normalized_key = normalize_key(tv.brand, tv.model)
             tvs.append(tv)
 
         page_num += 1
@@ -488,7 +569,7 @@ def scrape_galerija() -> list[TV]:
 # Matching & Comparison
 # ---------------------------------------------------------------------------
 
-def fuzzy_match_tvs(all_tvs: list[TV], threshold: int = 75) -> pd.DataFrame:
+def fuzzy_match_tvs(all_tvs: list[TV], threshold: int = 80) -> pd.DataFrame:
     """
     Group TVs across stores by fuzzy-matching their normalized keys.
     Returns a DataFrame with one row per unique TV model showing prices
@@ -497,54 +578,53 @@ def fuzzy_match_tvs(all_tvs: list[TV], threshold: int = 75) -> pd.DataFrame:
     groups: dict[str, list[TV]] = {}
 
     for tv in all_tvs:
-        matched = False
         best_score = 0
         best_key = None
         for key in list(groups.keys()):
-            if tv.brand != groups[key][0].brand:
+            rep = groups[key][0]
+            if tv.brand != rep.brand:
                 continue
-            if tv.screen_size > 0 and groups[key][0].screen_size > 0:
-                if tv.screen_size != groups[key][0].screen_size:
-                    continue
             score = fuzz.ratio(tv.normalized_key, key)
-            token_score = fuzz.token_sort_ratio(tv.normalized_key, key)
-            combined = max(score, token_score)
-            if combined > best_score:
-                best_score = combined
+            if score > best_score:
+                best_score = score
                 best_key = key
         if best_key and best_score >= threshold:
             groups[best_key].append(tv)
-            matched = True
-        if not matched:
+        else:
             groups[tv.normalized_key] = [tv]
 
     rows = []
     for key, group in groups.items():
         brands = set(tv.brand for tv in group)
         brand = max(brands, key=lambda b: sum(1 for tv in group if tv.brand == b))
-        names = [tv.name for tv in group]
-        representative_name = max(names, key=len)
 
         sizes = [tv.screen_size for tv in group if tv.screen_size > 0]
-        screen_size = sizes[0] if sizes else 0
+        screen_size = max(set(sizes), key=sizes.count) if sizes else 0
+
+        models = [tv.model for tv in group]
+        representative_model = max(models, key=len) if models else ""
 
         store_prices: dict[str, int] = {}
         store_urls: dict[str, str] = {}
         for tv in group:
-            if tv.store not in store_prices or tv.price < store_prices[tv.store]:
+            if tv.store not in store_prices or (
+                tv.price > 0 and (store_prices[tv.store] == 0 or tv.price < store_prices[tv.store])
+            ):
                 store_prices[tv.store] = tv.price
                 store_urls[tv.store] = tv.url
 
+        positive_prices = [p for p in store_prices.values() if p > 0]
+
         row = {
             "Brand": brand,
-            "Model": representative_name,
+            "Model": representative_model,
             "Screen": f'{screen_size}"' if screen_size else "?",
             "Setec (ден)": store_prices.get("Setec", ""),
             "Tehnomarket (ден)": store_prices.get("Tehnomarket", ""),
             "Neptun (ден)": store_prices.get("Neptun", ""),
             "Galerija (ден)": store_prices.get("Galerija", ""),
             "Stores": len(store_prices),
-            "Min Price": min(p for p in store_prices.values() if p > 0) if any(p > 0 for p in store_prices.values()) else 0,
+            "Min Price": min(positive_prices) if positive_prices else 0,
             "Best Store": min(
                 ((s, p) for s, p in store_prices.items() if p > 0),
                 key=lambda x: x[1],

@@ -1,0 +1,714 @@
+store,brand,name,model,screen_size,price,old_price,url,normalized_key
+Tehnomarket,ZEUS,"ZEUS ZE32T2 32"" HD DVB-T2 FRAMELESS TV",ZE32T2,32,6999,0,https://tehnomarket.com.mk/product/29404419/zeus-ze32t2-32-hd-dvb-t2-frameless-tv,ZEUS_ZE32T2
+Tehnomarket,FAVORIT,FAVORIT 32U20B-20D HD Led Smart TV Android 14,32U20B-20D,32,7999,0,https://tehnomarket.com.mk/product/29402187/favorit-32u20b-20d-hd-led-smart-tv-android-14,FAVORIT_32U20B20D
+Tehnomarket,NEO,NEO 32HD14F25 HD TV SMART ANDROID 14,32HD14F25,32,7999,0,https://tehnomarket.com.mk/product/29403643/neo-32hd14f25-hd-tv-smart-android-14,NEO_32HD14F25
+Tehnomarket,ZEUS,"ZEUS ZE32ST2 32"" HD ANDROID 14 SMART TV",ZE32ST2,32,7999,0,https://tehnomarket.com.mk/product/29404418/zeus-ze32st2-32-hd-android-14-smart-tv,ZEUS_ZE32ST2
+Tehnomarket,VIVAX,VIVAX A SERIES 32LE10K HD READY LED АНДРОИД ТЕЛЕВИЗОР,32LE10K,32,8999,0,https://tehnomarket.com.mk/product/29398212/vivax-a-series-32le10k-hd-ready-led-android-televizor,VIVAX_32LE10K
+Tehnomarket,VIVAX,VIVAX IMAGO LED TV-32LE21K HD ЛЕД ТЕЛЕВИЗОР ANDROID TV,IMAGO -32LE21K,0,9999,0,https://tehnomarket.com.mk/product/29402638/vivax-imago-led-tv-32le21k-hd-led-televizor-android-tv,VIVAX_IMAGO32LE21K
+Tehnomarket,VIVAX,"VIVAX 32LE110WO 32"" HD SMART TV webOS",32LE110WO,32,9999,0,https://tehnomarket.com.mk/product/29403662/vivax-32le110wo-32-hd-smart-tv-webos,VIVAX_32LE110WO
+Tehnomarket,VIVAX,"VIVAX 43LE110WO  43"" FHD SMART TV webOS",43LE110WO,43,9999,0,https://tehnomarket.com.mk/product/29403663/vivax-43le110wo-43-fhd-smart-tv-webos,VIVAX_43LE110WO
+Tehnomarket,JVC,JVC LT-32VH4300 HD READY LED TV,LT-32VH4300,32,10999,0,https://tehnomarket.com.mk/product/29399778/jvc-lt-32vh4300-hd-ready-led-tv,JVC_LT32VH4300
+Tehnomarket,FAVORIT,FAVORIT 43U20B-20D Full HD Led Smart TV Android 14,43U20B-20D,43,10999,0,https://tehnomarket.com.mk/product/29402188/favorit-43u20b-20d-full-hd-led-smart-tv-android-14,FAVORIT_43U20B20D
+Tehnomarket,JVC,"JVC LT-32VAH3300  32"" HD Smart Tv",LT-32VAH3300,32,10999,0,https://tehnomarket.com.mk/product/29402182/jvc-lt-32vah3300-32-hd-smart-tv,JVC_LT32VAH3300
+Tehnomarket,NEO,"NEO 40FHD14F25  40"" FHD TV SMART ANDROID 14",40FHD14F25,40,10999,0,https://tehnomarket.com.mk/product/29403644/neo-40fhd14f25-40-fhd-tv-smart-android-14,NEO_40FHD14F25
+Tehnomarket,VIVAX,VIVAX IMAGO LED TV-40LE114T2S2 FULL HD ЛЕД ТЕЛЕВИЗОР,IMAGO -40LE114T2S2,0,11399,0,https://tehnomarket.com.mk/product/29399245/vivax-imago-led-tv-40le114t2s2-full-hd-led-televizor,VIVAX_IMAGO40LE114T2S2
+Tehnomarket,HISENSE,HISENSE H32A5100F 32'' HD READY ЛЕД ТЕЛЕВИЗОР,H32A5100F,32,11499,0,https://tehnomarket.com.mk/product/29291572/hisense-h32a5100f-32-hd-ready-led-televizor,HISENSE_H32A5100F
+Tehnomarket,JVC,JVC LT-32VH5300 LED SMART TV,LT-32VH5300,32,11999,0,https://tehnomarket.com.mk/product/29399779/jvc-lt-32vh5300-led-smart-tv,JVC_LT32VH5300
+Tehnomarket,JVC,JVC LT-40VF4101 FULL HD LED TV,LT-40VF4101,40,11999,0,https://tehnomarket.com.mk/product/29400074/jvc-lt-40vf4101-full-hd-led-tv,JVC_LT40VF4101
+Tehnomarket,HISENSE,"HISENSE 32A4K 32"" HD READY SMART ЛЕД ТЕЛЕВИЗОР",32A4K,32,11999,0,https://tehnomarket.com.mk/product/29400658/hisense-32a4k-32-hd-ready-smart-led-televizor,HISENSE_32A4K
+Tehnomarket,JVC,JVC LT- 32VDF540W FULL HD DLED SMART WHITE TV VIDAA,LT- 32VDF540W DLED WHITE,32,11999,0,https://tehnomarket.com.mk/product/29402853/jvc-lt-32vdf540w-full-hd-dled-smart-white-tv-vidaa,JVC_LT32VDF540WDLEDWHITE
+Tehnomarket,PHILIPS,PHILIPS 32PHS5507/12 HD LED ТЕЛЕВИЗОР,32PHS5507,32,12999,0,https://tehnomarket.com.mk/product/29394473/philips-32phs550712-hd-led-televizor,PHILIPS_32PHS5507
+Tehnomarket,PHILIPS,PHILIPS 32PHS5500/12 HD LED ТЕЛЕВИЗОР,32PHS5500,32,12999,0,https://tehnomarket.com.mk/product/29403122/philips-32phs550012-hd-led-televizor,PHILIPS_32PHS5500
+Tehnomarket,HISENSE,HISENSE 32A4Q SMART HD Ready 32″ LED TV,32A4Q,32,12999,0,https://tehnomarket.com.mk/product/29403197/hisense-32a4q-smart-hd-ready-32-led-tv,HISENSE_32A4Q
+Tehnomarket,NEO,"NEO 43FHD14F25  43"" FHD SMART TV ANDROID 14",43FHD14F25,43,12999,0,https://tehnomarket.com.mk/product/29403610/neo-43fhd14f25-43-fhd-smart-tv-android-14,NEO_43FHD14F25
+Tehnomarket,JVC,JVC LT-43VF4400 FULL HD LED TV,LT-43VF4400,43,13999,0,https://tehnomarket.com.mk/product/29400599/jvc-lt-43vf4400-full-hd-led-tv,JVC_LT43VF4400
+Tehnomarket,NEO,NEO 43-VFS 924 FULL HD SMART  LED TV,43-VFS 924,43,13999,0,https://tehnomarket.com.mk/product/29400600/neo-43-vfs-924-full-hd-smart-led-tv,NEO_43VFS924
+Tehnomarket,PHILIPS,"PHILIPS 32PHS6000/12  32"" HD SMART TV",32PHS6000,32,13999,0,https://tehnomarket.com.mk/product/29402926/philips-32phs600012-32-hd-smart-tv,PHILIPS_32PHS6000
+Tehnomarket,VIVAX,"VIVAX IMAGO 40LE110WO 40"" FHD SMART TV webOS",IMAGO 40LE110WO,40,14999,0,https://tehnomarket.com.mk/product/29402679/vivax-imago-40le110wo-40-fhd-smart-tv-webos,VIVAX_IMAGO40LE110WO
+Tehnomarket,PHILIPS,PHILIPS 32PHS6808 HD SMART LED ТЕЛЕВИЗОР,32PHS6808,32,15999,0,https://tehnomarket.com.mk/product/29396534/philips-32phs6808-hd-smart-led-televizor,PHILIPS_32PHS6808
+Tehnomarket,JVC,JVC LT-40VAF3300 Full HD LED TV ANDROID TV,LT-40VAF3300,40,15999,0,https://tehnomarket.com.mk/product/29401357/jvc-lt-40vaf3300-full-hd-led-tv-android-tv,JVC_LT40VAF3300
+Tehnomarket,SAMSUNG,SAMSUNG UE-32H5002FKXXH HD LED SMART TV,UE-32H5002FKXXH,32,15999,0,https://tehnomarket.com.mk/product/29403215/samsung-ue-32h5002fkxxh-hd-led-smart-tv,SAMSUNG_UE32H5002FKXXH
+Tehnomarket,HISENSE,"HISENSE 40A4Q FULL HD 40"" Smart  TV",40A4Q,40,15999,0,https://tehnomarket.com.mk/product/29402776/hisense-40a4q-full-hd-40-smart-tv,HISENSE_40A4Q
+Tehnomarket,SAMSUNG,SAMSUNG UE-32T4302AEXXH HD LED SMART TV,UE-32T4302AEXXH,32,16999,0,https://tehnomarket.com.mk/product/29396372/samsung-ue-32t4302aexxh-hd-led-smart-tv,SAMSUNG_UE32T4302AEXXH
+Tehnomarket,JVC,JVC LT-43VAF3300 FULL HD LED ANDROID TV,LT-43VAF3300,43,17999,0,https://tehnomarket.com.mk/product/29399782/jvc-lt-43vaf3300-full-hd-led-android-tv,JVC_LT43VAF3300
+Tehnomarket,PHILIPS,PHILIPS 40PFS6009 FULL HD SMART TV,40PFS6009,40,17999,0,https://tehnomarket.com.mk/product/29400577/philips-40pfs6009-full-hd-smart-tv,PHILIPS_40PFS6009
+Tehnomarket,PHILIPS,PHILIPS 40PFS6000/12 FULL HD SMART TV,40PFS6000,40,17999,0,https://tehnomarket.com.mk/product/29402759/philips-40pfs600012-full-hd-smart-tv,PHILIPS_40PFS6000
+Tehnomarket,THOMSON,"THOMSON 43UG5C14 43"" UHD GOOGLE TV Frameless",43UG5C14,43,19499,0,https://tehnomarket.com.mk/product/29402745/thomson-43ug5c14-43-uhd-google-tv-frameless,THOMSON_43UG5C14
+Tehnomarket,HISENSE,"HISENSE 43A6Q UHD 4K VIDAA 43"" SMART TV",43A6Q,43,19999,0,https://tehnomarket.com.mk/product/29402777/hisense-43a6q-uhd-4k-vidaa-43-smart-tv,HISENSE_43A6Q
+Tehnomarket,PANASONIC,PANASONIC TX-32FS500E,TX-32FS500E,0,20899,0,https://tehnomarket.com.mk/product/5007320/panasonic-tx-32fs500e,PANASONIC_TX32FS500E
+Tehnomarket,PHILIPS,PHILIPS 43PUS7000/12 4K ULTRA HD SMART TV,43PUS7000,43,20999,0,https://tehnomarket.com.mk/product/29402762/philips-43pus700012-4k-ultra-hd-smart-tv,PHILIPS_43PUS7000
+Tehnomarket,PHILIPS,"PHILIPS 43PUS8200/12 43"" UHD LED SMART TV AMBILIGHT",43PUS8200,43,20999,0,https://tehnomarket.com.mk/product/29404267/philips-43pus820012-43-uhd-led-smart-tv-ambilight,PHILIPS_43PUS8200
+Tehnomarket,PHILIPS,"PHILIPS 43PUS8010/12 43"" UHD LED SMART TV AMBILIGHT",43PUS8010,43,22999,0,https://tehnomarket.com.mk/product/29403218/philips-43pus801012-43-uhd-led-smart-tv-ambilight,PHILIPS_43PUS8010
+Tehnomarket,PHILIPS,PHILIPS 43PUS7609 4K SMART Ultra HD LED TV,43PUS7609,43,23999,0,https://tehnomarket.com.mk/product/29401176/philips-43pus7609-4k-smart-ultra-hd-led-tv,PHILIPS_43PUS7609
+Tehnomarket,PHILIPS,PHILIPS 43PUS8009 4K ULTRA HD AMBILIGHT LED SMART TV,43PUS8009,43,23999,0,https://tehnomarket.com.mk/product/29401231/philips-43pus8009-4k-ultra-hd-ambilight-led-smart-tv,PHILIPS_43PUS8009
+Tehnomarket,SAMSUNG,SAMSUNG UE-43CU7092UXXH CRYSTAL 4K SMART LED TV,UE-43CU7092UXXH,43,26999,0,https://tehnomarket.com.mk/product/29400490/samsung-ue-43cu7092uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE43CU7092UXXH
+Tehnomarket,PHILIPS,PHILIPS 43PUS8079/12 4K Ambilight Smart TV,43PUS8079,43,26999,0,https://tehnomarket.com.mk/product/29400843/philips-43pus807912-4k-ambilight-smart-tv,PHILIPS_43PUS8079
+Tehnomarket,SAMSUNG,SAMSUNG UE43U8072FUXXH CRYSTAL 4K SMART LED TV,UE43U8072FUXXH,43,26999,0,https://tehnomarket.com.mk/product/29402841/samsung-ue43u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE43U8072FUXXH
+Tehnomarket,SAMSUNG,SAMSUNG UE-43DU7172UXXH CRYSTAL 4K SMART LED TV,UE-43DU7172UXXH,43,27999,0,https://tehnomarket.com.mk/product/29400540/samsung-ue-43du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE43DU7172UXXH
+Tehnomarket,PHILIPS,PHILIPS 43PUS8118/12 4K AMBILIGHT SMART TV,43PUS8118,43,29999,0,https://tehnomarket.com.mk/product/29398806/philips-43pus811812-4k-ambilight-smart-tv,PHILIPS_43PUS8118
+Tehnomarket,FAVORIT,FAVORIT 50U20B-20D FULL HD LED SMART TV Android 14,50U20B-20D,50,12999,0,https://tehnomarket.com.mk/product/29403339/favorit-50u20b-20d-full-hd-led-smart-tv-android-14,FAVORIT_50U20B20D
+Tehnomarket,NEO,"NEO 55UHD15F25  55"" UHD 4K SMART TV ANDROID 15",55UHD15F25,55,17999,0,https://tehnomarket.com.mk/product/29403649/neo-55uhd15f25-55-uhd-4k-smart-tv-android-15,NEO_55UHD15F25
+Tehnomarket,FAVORIT,FAVORIT D50F135R-F  Full HD Led Smart TV Android 14,D50F135R-F,0,19990,0,https://tehnomarket.com.mk/product/29402148/favorit-d50f135r-f-full-hd-led-smart-tv-android-14,FAVORIT_D50F135RF
+Tehnomarket,NEO,NEO 50-VUS 924 4K SMART LED TV,50-VUS 924,50,20999,0,https://tehnomarket.com.mk/product/29399785/neo-50-vus-924-4k-smart-led-tv,NEO_50VUS924
+Tehnomarket,JVC,JVC LT-50VA3300 4K ANDROID LED TV,LT-50VA3300,50,21999,0,https://tehnomarket.com.mk/product/29399783/jvc-lt-50va3300-4k-android-led-tv,JVC_LT50VA3300
+Tehnomarket,NEO,NEO 55-VUS 924 4K SMART LED TV,55-VUS 924,55,22999,0,https://tehnomarket.com.mk/product/29399787/neo-55-vus-924-4k-smart-led-tv,NEO_55VUS924
+Tehnomarket,HISENSE,"HISENSE 50A6Q UHD 4K VIDAA 50"" SMART TV",50A6Q,50,22999,0,https://tehnomarket.com.mk/product/29402778/hisense-50a6q-uhd-4k-vidaa-50-smart-tv,HISENSE_50A6Q
+Tehnomarket,PHILIPS,PHILIPS 50PUS7009/12 4K Smart TV,50PUS7009,50,23999,0,https://tehnomarket.com.mk/product/29400844/philips-50pus700912-4k-smart-tv,PHILIPS_50PUS7009
+Tehnomarket,VIVAX,VIVAX IMAGO LED TV-50UHDS62T2S2SM 4K LED АНДРОИД ТЕЛЕВИЗОР,IMAGO -50UHDS62T2S2SM,0,24999,0,https://tehnomarket.com.mk/product/29392441/vivax-imago-led-tv-50uhds62t2s2sm-4k-led-android-televizor,VIVAX_IMAGO50UHDS62T2S2SM
+Tehnomarket,JVC,JVC LT-55VA3300 4K ANDROID LED TV,LT-55VA3300,55,24999,0,https://tehnomarket.com.mk/product/29399357/jvc-lt-55va3300-4k-android-led-tv,JVC_LT55VA3300
+Tehnomarket,FAVORIT,"FAVORIT 55U20B-G1 55"" UHD Led Smart TV  Android 14",55U20B-G1,55,24999,0,https://tehnomarket.com.mk/product/29402653/favorit-55u20b-g1-55-uhd-led-smart-tv-android-14,FAVORIT_55U20BG1
+Tehnomarket,HISENSE,"HISENSE 50A6N UHD 4K VIDAA 50"" Smart TV",50A6N,50,24999,0,https://tehnomarket.com.mk/product/29401937/hisense-50a6n-uhd-4k-vidaa-50-smart-tv,HISENSE_50A6N
+Tehnomarket,PHILIPS,"PHILIPS 50PUS8010/12 50"" UHD LED SMART TV AMBILIGHT",50PUS8010,50,25999,0,https://tehnomarket.com.mk/product/29402438/philips-50pus801012-50-uhd-led-smart-tv-ambilight,PHILIPS_50PUS8010
+Tehnomarket,PHILIPS,PHILIPS 50PUS7000/12 4K ULTRA HD SMART TV,50PUS7000,50,25999,0,https://tehnomarket.com.mk/product/29402763/philips-50pus700012-4k-ultra-hd-smart-tv,PHILIPS_50PUS7000
+Tehnomarket,PHILIPS,"PHILIPS 55PUS8200/12 55"" UHD LED SMART TV AMBILIGHT",55PUS8200,55,25999,0,https://tehnomarket.com.mk/product/29404268/philips-55pus820012-55-uhd-led-smart-tv-ambilight,PHILIPS_55PUS8200
+Tehnomarket,VIVAX,VIVAX A SERIES 65UHD10K 4K LED АНДРОИД ТЕЛЕВИЗОР,65UHD10K,65,26999,0,https://tehnomarket.com.mk/product/29396422/vivax-a-series-65uhd10k-4k-led-android-televizor,VIVAX_65UHD10K
+Tehnomarket,PHILIPS,"PHILIPS 50PUS7609 50"" 4K Ultra HD LED SMART TV",50PUS7609,50,26999,0,https://tehnomarket.com.mk/product/29401232/philips-50pus7609-50-4k-ultra-hd-led-smart-tv,PHILIPS_50PUS7609
+Tehnomarket,PHILIPS,"PHILIPS 55PUS7000/12 55"" 4K ULTRA HD SMART TV",55PUS7000,55,26999,0,https://tehnomarket.com.mk/product/29402927/philips-55pus700012-55-4k-ultra-hd-smart-tv,PHILIPS_55PUS7000
+Tehnomarket,PHILIPS,"PHILIPS 55PUS8010/12 55"" UHD LED SMART TV AMBILIGHT",55PUS8010,55,26999,0,https://tehnomarket.com.mk/product/29403219/philips-55pus801012-55-uhd-led-smart-tv-ambilight,PHILIPS_55PUS8010
+Tehnomarket,PHILIPS,PHILIPS 55PUS7609 55`4K Ultra HD LED SMART TV,55PUS7609 55`,55,27999,0,https://tehnomarket.com.mk/product/29401242/philips-55pus7609-554k-ultra-hd-led-smart-tv,PHILIPS_55PUS760955
+Tehnomarket,FAVORIT,FAVORIT 65U20B-G1 UHD Led Smart TV  Android 14,65U20B-G1,65,27999,0,https://tehnomarket.com.mk/product/29402189/favorit-65u20b-g1-uhd-led-smart-tv-android-14,FAVORIT_65U20BG1
+Tehnomarket,THOMSON,"THOMSON 55UG4S14 55"" UHD GOOGLE TV Frameless",55UG4S14,55,27999,0,https://tehnomarket.com.mk/product/29402744/thomson-55ug4s14-55-uhd-google-tv-frameless,THOMSON_55UG4S14
+Tehnomarket,PHILIPS,PHILIPS 50PUS8009 50`4K Ambilight Smart TV,50PUS8009 50`,50,28999,0,https://tehnomarket.com.mk/product/29401241/philips-50pus8009-504k-ambilight-smart-tv,PHILIPS_50PUS800950
+Tehnomarket,HISENSE,"HISENSE 55A6Q UHD 4K VIDAA 55"" SMART TV",55A6Q,55,28999,0,https://tehnomarket.com.mk/product/29402779/hisense-55a6q-uhd-4k-vidaa-55-smart-tv,HISENSE_55A6Q
+Tehnomarket,HISENSE,"HISENSE 58A6Q UHD 4K 58"" Smart TV VIDAA",58A6Q,58,28999,0,https://tehnomarket.com.mk/product/29403198/hisense-58a6q-uhd-4k-58-smart-tv-vidaa,HISENSE_58A6Q
+Tehnomarket,VIVAX,VIVAX A SERIES 58UHD10K 4K LED АНДРОИД ТЕЛЕВИЗОР,58UHD10K,58,29699,0,https://tehnomarket.com.mk/product/29395034/vivax-a-series-58uhd10k-4k-led-android-televizor,VIVAX_58UHD10K
+Tehnomarket,PHILIPS,PHILIPS 55PUS7009/12 4K ULTRA HD SMART TV,55PUS7009,55,29699,0,https://tehnomarket.com.mk/product/29400579/philips-55pus700912-4k-ultra-hd-smart-tv,PHILIPS_55PUS7009
+Tehnomarket,SAMSUNG,SAMSUNG UE-50U8072FUXXH CRYSTAL 4K SMART LED TV,UE-50U8072FUXXH,50,31999,0,https://tehnomarket.com.mk/product/29402842/samsung-ue-50u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE50U8072FUXXH
+Tehnomarket,PHILIPS,PHILIPS 55PUS7409/12 4K  GOOGLE TV,55PUS7409,55,32999,0,https://tehnomarket.com.mk/product/29400645/philips-55pus740912-4k-google-tv,PHILIPS_55PUS7409
+Tehnomarket,PHILIPS,PHILIPS 55PUS8079/12 4K AMBILIGHT SMART TV,55PUS8079,55,32999,0,https://tehnomarket.com.mk/product/29400646/philips-55pus807912-4k-ambilight-smart-tv,PHILIPS_55PUS8079
+Tehnomarket,SAMSUNG,SAMSUNG UE-55U8072FUXXH CRYSTAL 4K SMART LED TV,UE-55U8072FUXXH,55,32999,0,https://tehnomarket.com.mk/product/29402656/samsung-ue-55u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55U8072FUXXH
+Tehnomarket,THOMSON,"THOMSON 65UG5C14 65"" UHD GOOGLE TV Frameless",65UG5C14,65,33999,0,https://tehnomarket.com.mk/product/29402746/thomson-65ug5c14-65-uhd-google-tv-frameless,THOMSON_65UG5C14
+Tehnomarket,PHILIPS,"PHILIPS 65PUS7000/12 65"" 4K ULTRA HD SMART TV",65PUS7000,65,33999,0,https://tehnomarket.com.mk/product/29403703/philips-65pus700012-65-4k-ultra-hd-smart-tv,PHILIPS_65PUS7000
+Tehnomarket,PHILIPS,"PHILIPS 65PUS8200/12 65"" UHD LED SMART TV AMBILIGHT",65PUS8200,65,33999,0,https://tehnomarket.com.mk/product/29404269/philips-65pus820012-65-uhd-led-smart-tv-ambilight,PHILIPS_65PUS8200
+Tehnomarket,SAMSUNG,SAMSUNG UE-50DU7172UXXH CRYSTAL 4K SMART LED TV,UE-50DU7172UXXH,50,34999,0,https://tehnomarket.com.mk/product/29400565/samsung-ue-50du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE50DU7172UXXH
+Tehnomarket,SAMSUNG,SAMSUNG UE-55DU7172UXXH CRYSTAL 4K SMART LED TV,UE-55DU7172UXXH,55,36999,0,https://tehnomarket.com.mk/product/29400608/samsung-ue-55du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55DU7172UXXH
+Tehnomarket,SAMSUNG,SAMSUNG UE-50DU8072UXXH CRYSTAL 4K SMART LED TV,UE-50DU8072UXXH,50,37999,0,https://tehnomarket.com.mk/product/29400541/samsung-ue-50du8072uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE50DU8072UXXH
+Tehnomarket,JVC,JVC LT-65VA3300 4k Ultra HD LED TV,LT-65VA3300,65,37999,0,https://tehnomarket.com.mk/product/29401359/jvc-lt-65va3300-4k-ultra-hd-led-tv,JVC_LT65VA3300
+Tehnomarket,FAVORIT,FAVORIT 75U20B-G1 UHD Led Smart TV Android 14,75U20B-G1,75,38999,0,https://tehnomarket.com.mk/product/29402190/favorit-75u20b-g1-uhd-led-smart-tv-android-14,FAVORIT_75U20BG1
+Tehnomarket,SAMSUNG,SAMSUNG UE-55CU7092UXXH CRYSTAL 4K SMART LED TV,UE-55CU7092UXXH,55,39999,0,https://tehnomarket.com.mk/product/29400397/samsung-ue-55cu7092uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55CU7092UXXH
+Tehnomarket,PHILIPS,PHILIPS 55PML8709 4K Ultra Slim UltraHD Mini-LED TV,55PML8709 Mini,55,39999,0,https://tehnomarket.com.mk/product/29401413/philips-55pml8709-4k-ultra-slim-ultrahd-mini-led-tv,PHILIPS_55PML8709MINI
+Tehnomarket,SAMSUNG,"SAMSUNG UE-65U8072FUXXH CRYSTAL 4K 65"" SMART LED TV",UE-65U8072FUXXH,65,42999,0,https://tehnomarket.com.mk/product/29402657/samsung-ue-65u8072fuxxh-crystal-4k-65-smart-led-tv,SAMSUNG_UE65U8072FUXXH
+Tehnomarket,HISENSE,"HISENSE 55U7Q UHD 4K MINI LED VIDAA 55"" SMART TV",55U7Q,55,42999,0,https://tehnomarket.com.mk/product/29402999/hisense-55u7q-uhd-4k-mini-led-vidaa-55-smart-tv,HISENSE_55U7Q
+Tehnomarket,PHILIPS,"PHILIPS 75PUS7000/12 75"" 4K ULTRA HD SMART TV",75PUS7000,75,42999,0,https://tehnomarket.com.mk/product/29403745/philips-75pus700012-75-4k-ultra-hd-smart-tv,PHILIPS_75PUS7000
+Tehnomarket,PHILIPS,PHILIPS 55PUS8118/12 4K AMBILIGHT SMART TV,55PUS8118,55,43999,0,https://tehnomarket.com.mk/product/29396920/philips-55pus811812-4k-ambilight-smart-tv,PHILIPS_55PUS8118
+Tehnomarket,PHILIPS,"PHILIPS 65PUS8010/12 65"" UHD LED SMART TV AMBILIGHT",65PUS8010,65,43999,0,https://tehnomarket.com.mk/product/29402764/philips-65pus801012-65-uhd-led-smart-tv-ambilight,PHILIPS_65PUS8010
+Tehnomarket,SAMSUNG,SAMSUNG UE-55DU8072UXXH CRYSTAL 4K SMART LED TV,UE-55DU8072UXXH,55,46999,0,https://tehnomarket.com.mk/product/29400543/samsung-ue-55du8072uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE55DU8072UXXH
+Tehnomarket,PHILIPS,PHILIPS 65PUS8118/12 4K AMBILIGHT SMART TV,65PUS8118,65,49999,0,https://tehnomarket.com.mk/product/29398023/philips-65pus811812-4k-ambilight-smart-tv,PHILIPS_65PUS8118
+Tehnomarket,PHILIPS,PHILIPS 65PUS8009 65'' 4K Ambilight Smart TV,65PUS8009,65,49999,0,https://tehnomarket.com.mk/product/29401429/philips-65pus8009-65-4k-ambilight-smart-tv,PHILIPS_65PUS8009
+Tehnomarket,HISENSE,"HISENSE 65U7Q UHD 4K MINI LED VIDAA 65"" SMART TV",65U7Q,65,53999,0,https://tehnomarket.com.mk/product/29403000/hisense-65u7q-uhd-4k-mini-led-vidaa-65-smart-tv,HISENSE_65U7Q
+Tehnomarket,SONY,"TV Sony 55"" K55S35B 4K Smart Led TV",K55S35B,55,54999,0,https://tehnomarket.com.mk/product/29403141/tv-sony-55-k55s35b-4k-smart-led-tv,SONY_K55S35B
+Tehnomarket,PHILIPS,PHILIPS 70PUS7607/12 4K ULTRA HD SMART LED ТЕЛЕВИЗОР,70PUS7607,70,56999,0,https://tehnomarket.com.mk/product/29396921/philips-70pus760712-4k-ultra-hd-smart-led-televizor,PHILIPS_70PUS7607
+Tehnomarket,SONY,SONY KD-55X75WLPAEP TV 55'' 4K ULTRA HD GOOGLE TV,KD-55X75WLPAEP,55,56999,0,https://tehnomarket.com.mk/product/29396993/sony-kd-55x75wlpaep-tv-55-4k-ultra-hd-google-tv,SONY_KD55X75WLPAEP
+Tehnomarket,PHILIPS,PHILIPS 75PUS7608/12 4K ULTRA HD SMART LED ТЕЛЕВИЗОР,75PUS7608,75,60499,0,https://tehnomarket.com.mk/product/29397669/philips-75pus760812-4k-ultra-hd-smart-led-televizor,PHILIPS_75PUS7608
+Tehnomarket,SONY,"SONY KD-55X85J 55"" 4K Ultra HD Smart LED GOOGLE TV",KD-55X85J,55,66999,0,https://tehnomarket.com.mk/product/29387460/sony-kd-55x85j-55-4k-ultra-hd-smart-led-google-tv,SONY_KD55X85J
+Tehnomarket,SONY,"SONY KD-65X80KAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",KD-65X80KAEP,65,66999,0,https://tehnomarket.com.mk/product/29393153/sony-kd-65x80kaep-65-4k-ultra-hd-smart-led-google-tv,SONY_KD65X80KAEP
+Tehnomarket,SAMSUNG,SAMSUNG UE-75U8072FUXXH CRYSTAL 4K SMART LED TV,UE-75U8072FUXXH,75,66999,0,https://tehnomarket.com.mk/product/29402658/samsung-ue-75u8072fuxxh-crystal-4k-smart-led-tv,SAMSUNG_UE75U8072FUXXH
+Tehnomarket,SONY,"TV Sony 65"" K65S35B 4K Smart Led TV",K65S35B,65,67999,0,https://tehnomarket.com.mk/product/29403142/tv-sony-65-k65s35b-4k-smart-led-tv,SONY_K65S35B
+Tehnomarket,SAMSUNG,SAMSUNG UE-75DU7172UXXH CRYSTAL 4K SMART LED TV,UE-75DU7172UXXH,75,68999,0,https://tehnomarket.com.mk/product/29400461/samsung-ue-75du7172uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE75DU7172UXXH
+Tehnomarket,PHILIPS,PHILIPS 75PML8709 4K QD Mini-LED TV,75PML8709 QD Mini,75,69999,0,https://tehnomarket.com.mk/product/29401175/philips-75pml8709-4k-qd-mini-led-tv,PHILIPS_75PML8709QDMINI
+Tehnomarket,HISENSE,"HISENSE 85A6Q UHD 4K VIDAA 85"" Smart TV",85A6Q,85,69999,0,https://tehnomarket.com.mk/product/29402735/hisense-85a6q-uhd-4k-vidaa-85-smart-tv,HISENSE_85A6Q
+Tehnomarket,SONY,SONY KD-65X75WLPAEP TV 65'' 4K ULTRA HD GOOGLE TV,KD-65X75WLPAEP,65,71999,0,https://tehnomarket.com.mk/product/29396994/sony-kd-65x75wlpaep-tv-65-4k-ultra-hd-google-tv,SONY_KD65X75WLPAEP
+Tehnomarket,SONY,"SONY KD-65X80LAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",KD-65X80LAEP,65,82999,0,https://tehnomarket.com.mk/product/29402014/sony-kd-65x80laep-65-4k-ultra-hd-smart-led-google-tv,SONY_KD65X80LAEP
+Tehnomarket,SAMSUNG,SAMSUNG UE-75DU8072UXXH CRYSTAL 4K SMART LED TV,UE-75DU8072UXXH,75,84999,0,https://tehnomarket.com.mk/product/29400398/samsung-ue-75du8072uxxh-crystal-4k-smart-led-tv,SAMSUNG_UE75DU8072UXXH
+Tehnomarket,SONY,"SONY  XR-55X90LAEP 55"" 4K ULTRA HD FULL ARRAY LED GOOGLE TV",XR-55X90LAEP FULL ARRAY,55,86999,0,https://tehnomarket.com.mk/product/29400584/sony-xr-55x90laep-55-4k-ultra-hd-full-array-led-google-tv,SONY_XR55X90LAEPFULLARRAY
+Tehnomarket,SONY,"SONY XR-65X92KAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",XR-65X92KAEP,65,88999,0,https://tehnomarket.com.mk/product/29394527/sony-xr-65x92kaep-65-4k-ultra-hd-smart-led-google-tv,SONY_XR65X92KAEP
+Tehnomarket,SONY,SONY KD-75X75WLPAEP TV 75'' 4K ULTRA HD GOOGLE TV,KD-75X75WLPAEP,75,94999,0,https://tehnomarket.com.mk/product/29396995/sony-kd-75x75wlpaep-tv-75-4k-ultra-hd-google-tv,SONY_KD75X75WLPAEP
+Tehnomarket,SONY,"SONY KD-65X85LAEP 65"" 4K Ultra HD Smart LED GOOGLE TV",KD-65X85LAEP,65,94999,0,https://tehnomarket.com.mk/product/29399811/sony-kd-65x85laep-65-4k-ultra-hd-smart-led-google-tv,SONY_KD65X85LAEP
+Tehnomarket,SONY,"SONY  XR-65X90LAEP 65"" 4K ULTRA HD FULL ARRAY LED GOOGLE TV",XR-65X90LAEP FULL ARRAY,65,102499,0,https://tehnomarket.com.mk/product/29400585/sony-xr-65x90laep-65-4k-ultra-hd-full-array-led-google-tv,SONY_XR65X90LAEPFULLARRAY
+Tehnomarket,PHILIPS,"PHILIPS 65"" 65BDL4152E/00  INTERACTIVE DISPLAY",65BDL4152E,65,103565,0,https://tehnomarket.com.mk/product/29403251/philips-65-65bdl4152e00-interactive-display,PHILIPS_65BDL4152E
+Tehnomarket,SAMSUNG,"SAMSUNG UE-85U8072FUXXH 85"" CRYSTAL 4K SMART LED TV",UE-85U8072FUXXH,85,109999,0,https://tehnomarket.com.mk/product/29403092/samsung-ue-85u8072fuxxh-85-crystal-4k-smart-led-tv,SAMSUNG_UE85U8072FUXXH
+Tehnomarket,SAMSUNG,SAMSUNG UE-85DU8072 CRYSTAL 4K SMART LED TV,UE-85DU8072,85,129999,0,https://tehnomarket.com.mk/product/29400491/samsung-ue-85du8072-crystal-4k-smart-led-tv,SAMSUNG_UE85DU8072
+Tehnomarket,SONY,"SONY XR-85X80LAEP 85"" 4K Ultra HD Smart LED GOOGLE TV",XR-85X80LAEP,85,136999,0,https://tehnomarket.com.mk/product/29399315/sony-xr-85x80laep-85-4k-ultra-hd-smart-led-google-tv,SONY_XR85X80LAEP
+Tehnomarket,SONY,Sony XR-65X95KAEP 4K ULTRA HD MINI LED GOOGLE TV,XR-65X95KAEP,65,157999,0,https://tehnomarket.com.mk/product/29393828/sony-xr-65x95kaep-4k-ultra-hd-mini-led-google-tv,SONY_XR65X95KAEP
+Tehnomarket,SAMSUNG,"SAMSUNG UE-98DU9072UXXH LED TV , 4К UHD Smart TV",UE-98DU9072UXXH,98,199999,0,https://tehnomarket.com.mk/product/29400982/samsung-ue-98du9072uxxh-led-tv-4k-uhd-smart-tv,SAMSUNG_UE98DU9072UXXH
+Tehnomarket,THOMSON,"THOMSON 40QG4S14 40"" QLED FHD GOOGLE TV FRAMELESS",40QG4S14,40,14499,0,https://tehnomarket.com.mk/product/29402747/thomson-40qg4s14-40-qled-fhd-google-tv-frameless,THOMSON_40QG4S14
+Tehnomarket,JVC,JVC LT-43VAQ3300 4k ULTRA HD QLED ANDROID TV,LT-43VAQ3300,43,18999,0,https://tehnomarket.com.mk/product/29402848/jvc-lt-43vaq3300-4k-ultra-hd-qled-android-tv,JVC_LT43VAQ3300
+Tehnomarket,PHILIPS,"PHILIPS 43PUS8400/12 43"" UHD LED SMART TV AMBILIGHT QLED",43PUS8400,43,19999,0,https://tehnomarket.com.mk/product/29404014/philips-43pus840012-43-uhd-led-smart-tv-ambilight-qled,PHILIPS_43PUS8400
+Tehnomarket,JVC,JVC LT-50VAQ3300 4k ULTRA HD QLED ANDROID TV,LT-50VAQ3300,50,20999,0,https://tehnomarket.com.mk/product/29401358/jvc-lt-50vaq3300-4k-ultra-hd-qled-android-tv,JVC_LT50VAQ3300
+Tehnomarket,PHILIPS,"PHILIPS 50PUS7810/12 50"" UHD QLED SMART TV",50PUS7810,50,23999,0,https://tehnomarket.com.mk/product/29403472/philips-50pus781012-50-uhd-qled-smart-tv,PHILIPS_50PUS7810
+Tehnomarket,PHILIPS,"PHILIPS 55PUS7810/12 55"" UHD QLED SMART TV",55PUS7810,55,24999,0,https://tehnomarket.com.mk/product/29403474/philips-55pus781012-55-uhd-qled-smart-tv,PHILIPS_55PUS7810
+Tehnomarket,JVC,JVC LT-55VAQ3300 4K ANDROID QLED TV,LT-55VAQ3300,55,25999,0,https://tehnomarket.com.mk/product/29400597/jvc-lt-55vaq3300-4k-android-qled-tv,JVC_LT55VAQ3300
+Tehnomarket,JVC,JVC LT-50VAQ7200 ANDROID QLED TV,LT-50VAQ7200,50,26999,0,https://tehnomarket.com.mk/product/29397325/jvc-lt-50vaq7200-android-qled-tv,JVC_LT50VAQ7200
+Tehnomarket,HISENSE,"HISENSE 55E7Q UHD 55"" QLED SMART TV",55E7Q,55,26999,0,https://tehnomarket.com.mk/product/29402780/hisense-55e7q-uhd-55-qled-smart-tv,HISENSE_55E7Q
+Tehnomarket,VIVAX,VIVAX Q SERIES 55Q10C 4K QLED АНДРОИД ТЕЛЕВИЗОР,Q 55Q10C,0,27999,0,https://tehnomarket.com.mk/product/29395036/vivax-q-series-55q10c-4k-qled-android-televizor,VIVAX_Q55Q10C
+Tehnomarket,JVC,JVC LT-55VAQ3200 4K ANDROID QLED TV,LT-55VAQ3200,55,28499,0,https://tehnomarket.com.mk/product/29399356/jvc-lt-55vaq3200-4k-android-qled-tv,JVC_LT55VAQ3200
+Tehnomarket,VIVAX,VIVAX Q SERIES 50Q10C 4K QLED АНДРОИД ТЕЛЕВИЗОР,Q 50Q10C,0,32999,0,https://tehnomarket.com.mk/product/29395035/vivax-q-series-50q10c-4k-qled-android-televizor,VIVAX_Q50Q10C
+Tehnomarket,JVC,JVC LT-55VAQ8100 4K ANDROID QLED TV,LT-55VAQ8100,55,33999,0,https://tehnomarket.com.mk/product/29393195/jvc-lt-55vaq8100-4k-android-qled-tv,JVC_LT55VAQ8100
+Tehnomarket,HISENSE,HISENSE 65E7Q QLED 4K  UHD 65″ Smart TV VIDAA,65E7Q,65,35999,0,https://tehnomarket.com.mk/product/29403002/hisense-65e7q-qled-4k-uhd-65-smart-tv-vidaa,HISENSE_65E7Q
+Tehnomarket,PHILIPS,"PHILIPS 55MLED820/12 55"" 4K UHD MiniLED Titan OS",55MLED820,55,35999,0,https://tehnomarket.com.mk/product/29403604/philips-55mled82012-55-4k-uhd-miniled-titan-os,PHILIPS_55MLED820
+Tehnomarket,SAMSUNG,SAMSUNG QE-50Q7F2AAUXXH QLED TV UHD SMART TV TIZEN OS,QE-50Q7F2AAUXXH,50,35999,0,https://tehnomarket.com.mk/product/29403978/samsung-qe-50q7f2aauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE50Q7F2AAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-43Q7FAAUXXH QLED TV UHD SMART TV TIZEN OS,QE-43Q7FAAUXXH,43,36999,0,https://tehnomarket.com.mk/product/29402924/samsung-qe-43q7faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE43Q7FAAUXXH
+Tehnomarket,PHILIPS,"PHILIPS 65PUS7810/12 65"" UHD QLED SMART TV",65PUS7810,65,36999,0,https://tehnomarket.com.mk/product/29403743/philips-65pus781012-65-uhd-qled-smart-tv,PHILIPS_65PUS7810
+Tehnomarket,SAMSUNG,SAMSUNG QE-43Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-43Q7F2AUXXH,43,36999,0,https://tehnomarket.com.mk/product/29403738/samsung-qe-43q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE43Q7F2AUXXH
+Tehnomarket,SAMSUNG,"SAMSUNG QE-50Q67DAUXXH 4K 50"" QLED Q67D Tizen OS Smart TV",QE-50Q67DAUXXH Q67D,50,38999,0,https://tehnomarket.com.mk/product/29400979/samsung-qe-50q67dauxxh-4k-50-qled-q67d-tizen-os-smart-tv,SAMSUNG_QE50Q67DAUXXHQ67D
+Tehnomarket,SAMSUNG,SAMSUNG QE-50Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-50Q8FAAUXXH,50,39999,0,https://tehnomarket.com.mk/product/29403442/samsung-qe-50q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE50Q8FAAUXXH
+Tehnomarket,SAMSUNG,"SAMSUNG QE-55Q67DAUXXH 55"" QLED 4K Q67D Tizen OS Smart TV",QE-55Q67DAUXXH Q67D,55,42999,0,https://tehnomarket.com.mk/product/29400980/samsung-qe-55q67dauxxh-55-qled-4k-q67d-tizen-os-smart-tv,SAMSUNG_QE55Q67DAUXXHQ67D
+Tehnomarket,SAMSUNG,SAMSUNG QE-50Q7FAAUXXH QLED TV UHD  SMART TV TIZEN OS,QE-50Q7FAAUXXH,50,42999,0,https://tehnomarket.com.mk/product/29402843/samsung-qe-50q7faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE50Q7FAAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-55Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-55Q7F2AUXXH,55,42999,0,https://tehnomarket.com.mk/product/29403739/samsung-qe-55q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE55Q7F2AUXXH
+Tehnomarket,HISENSE,"HISENSE 65E7Q PRO QLED 4K UHD 65"" Smart TV VIDAA",65E7Q PRO,65,45999,0,https://tehnomarket.com.mk/product/29403199/hisense-65e7q-pro-qled-4k-uhd-65-smart-tv-vidaa,HISENSE_65E7QPRO
+Tehnomarket,HISENSE,HISENSE 75E7Q  QLED 4K UHD 75″ SMART TV,75E7Q,75,47999,0,https://tehnomarket.com.mk/product/29402786/hisense-75e7q-qled-4k-uhd-75-smart-tv,HISENSE_75E7Q
+Tehnomarket,PHILIPS,"PHILIPS 65MLED820/12  65"" 4K UHD MiniLED Titan OS",65MLED820,65,47999,0,https://tehnomarket.com.mk/product/29403605/philips-65mled82012-65-4k-uhd-miniled-titan-os,PHILIPS_65MLED820
+Tehnomarket,SAMSUNG,SAMSUNG QE-55Q7FAAUXXH QLED TV UltraHD Smart TV Tizen OS,QE-55Q7FAAUXXH,55,48999,0,https://tehnomarket.com.mk/product/29402654/samsung-qe-55q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE55Q7FAAUXXH
+Tehnomarket,JVC,JVC LT-70VAQ7200 4K ANDROID QLED TV,LT-70VAQ7200,70,49999,0,https://tehnomarket.com.mk/product/29400076/jvc-lt-70vaq7200-4k-android-qled-tv,JVC_LT70VAQ7200
+Tehnomarket,PHILIPS,PHILIPS 65PUS8209 4K QLED Ambilight Smart TV,65PUS8209,65,49999,0,https://tehnomarket.com.mk/product/29401552/philips-65pus8209-4k-qled-ambilight-smart-tv,PHILIPS_65PUS8209
+Tehnomarket,SAMSUNG,SAMSUNG QE-55Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-55Q8FAAUXXH,55,49999,0,https://tehnomarket.com.mk/product/29403444/samsung-qe-55q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE55Q8FAAUXXH
+Tehnomarket,PHILIPS,PHILIPS 75MLED820/12 4K UHD MiniLED Titan OS,75MLED820,75,53999,0,https://tehnomarket.com.mk/product/29403606/philips-75mled82012-4k-uhd-miniled-titan-os,PHILIPS_75MLED820
+Tehnomarket,PHILIPS,"PHILIPS 75PUS7810/12 75"" UHD QLED SMART TV",75PUS7810,75,55999,0,https://tehnomarket.com.mk/product/29403475/philips-75pus781012-75-uhd-qled-smart-tv,PHILIPS_75PUS7810
+Tehnomarket,JVC,JVC LT-75VAQ3400 4K ANDROID QLED TV,LT-75VAQ3400,75,59999,0,https://tehnomarket.com.mk/product/29400598/jvc-lt-75vaq3400-4k-android-qled-tv,JVC_LT75VAQ3400
+Tehnomarket,HISENSE,HISENSE 75E7Q PRO QLED 4K UHD 75″ SMART TV,75E7Q PRO,75,59999,0,https://tehnomarket.com.mk/product/29402807/hisense-75e7q-pro-qled-4k-uhd-75-smart-tv,HISENSE_75E7QPRO
+Tehnomarket,SAMSUNG,SAMSUNG QE-65Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-65Q7F2AUXXH,65,59999,0,https://tehnomarket.com.mk/product/29403740/samsung-qe-65q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE65Q7F2AUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-55Q70DATXXH 4K SMART TV QLED TV,QE-55Q70DATXXH,55,63999,0,https://tehnomarket.com.mk/product/29400567/samsung-qe-55q70datxxh-4k-smart-tv-qled-tv,SAMSUNG_QE55Q70DATXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-65Q7FAAUXXH QLED TV UltraHD  Smart TV Tizen OS,QE-65Q7FAAUXXH,65,63999,0,https://tehnomarket.com.mk/product/29402655/samsung-qe-65q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE65Q7FAAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-55QN70FAUXXH 4K SMART TV QLED TV,QE-55QN70FAUXXH,55,67999,0,https://tehnomarket.com.mk/product/29402925/samsung-qe-55qn70fauxxh-4k-smart-tv-qled-tv,SAMSUNG_QE55QN70FAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-65Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-65Q8FAAUXXH,65,69999,0,https://tehnomarket.com.mk/product/29403446/samsung-qe-65q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE65Q8FAAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-75Q7F2AUXXH QLED TV UHD SMART TV TIZEN OS,QE-75Q7F2AUXXH,75,72999,0,https://tehnomarket.com.mk/product/29403741/samsung-qe-75q7f2auxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE75Q7F2AUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-55LS03DAUXXH Q LED THE FRAME 4K SMART LED TV,QE-55LS03DAUXXH Q THE FRAME,55,75999,0,https://tehnomarket.com.mk/product/29399887/samsung-qe-55ls03dauxxh-q-led-the-frame-4k-smart-led-tv,SAMSUNG_QE55LS03DAUXXHQTHEFRAME
+Tehnomarket,SAMSUNG,"SAMSUNG QE-65QN70FAUXXH 65"" QLED Tizen Os Tv",QE-65QN70FAUXXH,65,83999,0,https://tehnomarket.com.mk/product/29402335/samsung-qe-65qn70fauxxh-65-qled-tizen-os-tv,SAMSUNG_QE65QN70FAUXXH
+Tehnomarket,PHILIPS,"PHILIPS 85PUS9010/12 85"" QLED AMBILIGHT SMART TV",85PUS9010,85,84999,0,https://tehnomarket.com.mk/product/29403915/philips-85pus901012-85-qled-ambilight-smart-tv,PHILIPS_85PUS9010
+Tehnomarket,SAMSUNG,SAMSUNG QE-65Q70DATXXH 4K SMART TV QLED TV,QE-65Q70DATXXH,65,89999,0,https://tehnomarket.com.mk/product/29400639/samsung-qe-65q70datxxh-4k-smart-tv-qled-tv,SAMSUNG_QE65Q70DATXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-75Q7FAAUXXH QLED TV UltraHD  Smart TV Tizen OS,QE-75Q7FAAUXXH,75,90999,0,https://tehnomarket.com.mk/product/29403280/samsung-qe-75q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE75Q7FAAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-75Q8FAAUXXH QLED TV UHD SMART TV Tizen OS,QE-75Q8FAAUXXH,75,99999,0,https://tehnomarket.com.mk/product/29403449/samsung-qe-75q8faauxxh-qled-tv-uhd-smart-tv-tizen-os,SAMSUNG_QE75Q8FAAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-75Q70DATXXH 4K SMART TV QLED TV,QE-75Q70DATXXH,75,109990,0,https://tehnomarket.com.mk/product/29400546/samsung-qe-75q70datxxh-4k-smart-tv-qled-tv,SAMSUNG_QE75Q70DATXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-65LS03DAUXXH Q LED THE FRAME 4K SMART LED TV,QE-65LS03DAUXXH Q THE FRAME,65,109999,0,https://tehnomarket.com.mk/product/29400489/samsung-qe-65ls03dauxxh-q-led-the-frame-4k-smart-led-tv,SAMSUNG_QE65LS03DAUXXHQTHEFRAME
+Tehnomarket,SAMSUNG,"SAMSUNG QE-75QN70FAUXXH 75"" QLED Tizen Os Tv",QE-75QN70FAUXXH,75,118999,0,https://tehnomarket.com.mk/product/29404427/samsung-qe-75qn70fauxxh-75-qled-tizen-os-tv,SAMSUNG_QE75QN70FAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-85Q7FAAUXXH QLED TV UltraHD  Smart TV Tizen OS,QE-85Q7FAAUXXH,85,127999,0,https://tehnomarket.com.mk/product/29403281/samsung-qe-85q7faauxxh-qled-tv-ultrahd-smart-tv-tizen-os,SAMSUNG_QE85Q7FAAUXXH
+Tehnomarket,HISENSE,"HISENSE 100E7Q PRO 4K  QLED 100"" Smart TV VIDAA",100E7Q PRO,100,139999,0,https://tehnomarket.com.mk/product/29403652/hisense-100e7q-pro-4k-qled-100-smart-tv-vidaa,HISENSE_100E7QPRO
+Tehnomarket,SAMSUNG,SAMSUNG QE-65QN90DATXXH QLED UHD 4K NEO SMART TV Mini LED,QE-65QN90DATXXH,65,155999,0,https://tehnomarket.com.mk/product/29400396/samsung-qe-65qn90datxxh-qled-uhd-4k-neo-smart-tv-mini-led,SAMSUNG_QE65QN90DATXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-85Q60CAUXXH 4K SMART QLED TV,QE-85Q60CAUXXH,85,179999,0,https://tehnomarket.com.mk/product/29399436/samsung-qe-85q60cauxxh-4k-smart-qled-tv,SAMSUNG_QE85Q60CAUXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE-65QN800DTXXH  8K QLED SMART TV Mini LED,QE-65QN800DTXXH,65,217999,0,https://tehnomarket.com.mk/product/29400399/samsung-qe-65qn800dtxxh-8k-qled-smart-tv-mini-led,SAMSUNG_QE65QN800DTXXH
+Tehnomarket,SAMSUNG,SAMSUNG QE75QN90DATXXH  QLED UHD 4K NEO SMART TV Mini Led,QE75QN90DATXXH,75,219999,0,https://tehnomarket.com.mk/product/29400643/samsung-qe75qn90datxxh-qled-uhd-4k-neo-smart-tv-mini-led,SAMSUNG_QE75QN90DATXXH
+Galerija,SONY,SONY K43S35B,K43S35B,43,36490,39990,https://galerija.com.mk/product/k43s35b/,SONY_K43S35B
+Galerija,SONY,SONY K50S35B,K50S35B,50,38990,45990,https://galerija.com.mk/product/k50s35b/,SONY_K50S35B
+Galerija,SONY,SONY K55S35B,K55S35B,55,41990,51990,https://galerija.com.mk/product/k55s35b/,SONY_K55S35B
+Galerija,SONY,SONY K55XR55B,K55XR55B,55,69990,89990,https://galerija.com.mk/product/k55xr55b/,SONY_K55XR55B
+Galerija,SONY,SONY K55XR80PAEP,K55XR80PAEP,55,102990,114990,https://galerija.com.mk/product/k55xr80p/,SONY_K55XR80PAEP
+Galerija,SONY,SONY K55XR8AP,K55XR8AP,55,86990,89990,https://galerija.com.mk/product/k55xr8ap/,SONY_K55XR8AP
+Galerija,SONY,SONY K55XR8M25BP,K55XR8M25BP,55,125990,142990,https://galerija.com.mk/product/k55xr8m25bp/,SONY_K55XR8M25BP
+Galerija,SONY,SONY K65S35B,K65S35B,65,53990,63990,https://galerija.com.mk/product/k65s35b/,SONY_K65S35B
+Galerija,SONY,SONY K65XR55B,K65XR55B,65,85990,104990,https://galerija.com.mk/product/k65xr55b/,SONY_K65XR55B
+Galerija,SONY,SONY K65XR70PAEP,K65XR70PAEP,65,113990,142990,https://galerija.com.mk/product/k65xr70paep/,SONY_K65XR70PAEP
+Galerija,SONY,SONY K65XR80PAEP,K65XR80PAEP,65,115990,162990,https://galerija.com.mk/product/k65xr80paep/,SONY_K65XR80PAEP
+Galerija,SONY,SONY K65XR8AP,K65XR8AP,65,105990,0,https://galerija.com.mk/product/k65xr8ap/,SONY_K65XR8AP
+Galerija,SONY,SONY K65XR8M25BP,K65XR8M25BP,65,158990,179990,https://galerija.com.mk/product/k65xr8m25bp/,SONY_K65XR8M25BP
+Galerija,SONY,SONY K75S35B,K75S35B,75,76990,84990,https://galerija.com.mk/product/k75s35b/,SONY_K75S35B
+Galerija,SONY,SONY K77XR8AP,K77XR8AP,77,159990,0,https://galerija.com.mk/product/k77xr8ap/,SONY_K77XR8AP
+Galerija,SONY,SONY K85S35BP,K85S35BP,85,111990,0,https://galerija.com.mk/product/k85s35bp/,SONY_K85S35BP
+Galerija,SONY,SONY KD-43X80L,KD-43X80L,43,39990,53990,https://galerija.com.mk/product/kd-43x80l/,SONY_KD43X80L
+Galerija,SONY,SONY KD-85X80L,KD-85X80L,85,79990,149990,https://galerija.com.mk/product/kd-85x80l/,SONY_KD85X80L
+Galerija,VIVAX,VIVAX TV 32LE21K,32LE21K,32,6990,7990,https://galerija.com.mk/product/vivax-tv-32le20k/,VIVAX_32LE21K
+Galerija,VIVAX,VIVAX TV A SERIES 50UHD10K,50UHD10K,50,16990,17990,https://galerija.com.mk/product/vivax-tv-a-series-50uhd10k/,VIVAX_50UHD10K
+Galerija,SONY,SONY XR-55X90L,XR-55X90L,55,64990,82990,https://galerija.com.mk/product/xr-55x90l/,SONY_XR55X90L
+Setec,TELEFUNKEN,TELEFUNKEN 32HE4011,32HE4011,32,4995,11299,https://setec.mk/products/telefunken-32he4011-1,TELEFUNKEN_32HE4011
+Setec,TCL,TCL 32S5400AF,32S5400AF,32,5995,15999,https://setec.mk/products/tcl-32s5400af,TCL_32S5400AF
+Setec,TELEFUNKEN,TELEFUNKEN 32HEA5060F,32HEA5060F,32,5995,14499,https://setec.mk/products/telefunken-32hea5060f,TELEFUNKEN_32HEA5060F
+Setec,PHILIPS,PHILIPS 32PHS6808,32PHS6808,32,5995,15999,https://setec.mk/products/philips-32phs6808-1,PHILIPS_32PHS6808
+Setec,ST,ST-32DH4300,32DH4300,32,5999,9999,https://setec.mk/products/st-32dh4300,ST_32DH4300
+Setec,TELEFUNKEN,TELEFUNKEN 32BRB24,32BRB24,32,5999,8999,https://setec.mk/products/telefunken-32brb24,TELEFUNKEN_32BRB24
+Setec,ST,ST-32DH5800,32DH5800,32,6499,10999,https://setec.mk/products/st-32dh5800,ST_32DH5800
+Setec,ST,ST-32DH5900,32DH5900,32,6499,10999,https://setec.mk/products/st-32dh5900,ST_32DH5900
+Setec,PHILIPS,PHILIPS 32PHS5507,32PHS5507,32,6995,12999,https://setec.mk/products/philips-32phs5507,PHILIPS_32PHS5507
+Setec,BAUTECH,BAUTECH 32BHR45,32BHR45,32,6999,10999,https://setec.mk/products/bautech-32bhr45,BAUTECH_32BHR45
+Setec,BAUTECH,BAUTECH 32BHR55,32BHR55,32,7499,11999,https://setec.mk/products/bautech-32bhr55,BAUTECH_32BHR55
+Setec,ST,ST-43DH7800,43DH7800,43,7795,11999,https://setec.mk/products/st-43dh7800-1,ST_43DH7800
+Setec,ST,ST-43DH7900,43DH7900,43,7995,11999,https://setec.mk/products/st-43dh7900-1,ST_43DH7900
+Setec,TELEFUNKEN,TELEFUNKEN 32RCN24,32RCN24,32,7995,9999,https://setec.mk/products/telefunken-32rcn24,TELEFUNKEN_32RCN24
+Setec,HISENSE,Hisense 32A4N,32A4N,32,7999,10999,https://setec.mk/products/hisense-32a4n-1,HISENSE_32A4N
+Setec,PHILIPS,PHILIPS 32PHS5500,32PHS5500,32,8499,10999,https://setec.mk/products/philips-32phs5500,PHILIPS_32PHS5500
+Setec,PHILIPS,PHILIPS 40PFS6009,40PFS6009,40,8995,17999,https://setec.mk/products/philips-40pfs6009,PHILIPS_40PFS6009
+Setec,PHILIPS,PHILIPS 32PHS6000,32PHS6000,32,9499,11999,https://setec.mk/products/philips-32phs6000,PHILIPS_32PHS6000
+Setec,HISENSE,Hisense 32A4Q,32A4Q,32,9599,10999,https://setec.mk/products/hisense-32a4q,HISENSE_32A4Q
+Setec,HISENSE,Hisense 43A6N,43A6N,43,9995,19999,https://setec.mk/products/hisense-43a6n,HISENSE_43A6N
+Setec,TCL,TCL 40S5400A,40S5400A,40,9995,21999,https://setec.mk/products/tcl-40s5400a,TCL_40S5400A
+Setec,TELEFUNKEN,TELEFUNKEN 40RCN24,40RCN24,40,9995,13999,https://setec.mk/products/telefunken-40rcn24,TELEFUNKEN_40RCN24
+Setec,TCL,TCL 32S41K,32S41K,32,9999,12999,https://setec.mk/products/tcl-32s41k,TCL_32S41K
+Setec,ST,ST-43DH8000,43DH8000,43,10499,11999,https://setec.mk/products/st-43dh8000,ST_43DH8000
+Setec,TELEFUNKEN,TELEFUNKEN 43FAE5510,43FAE5510,43,10995,22999,https://setec.mk/products/telefunken-43fae5510-1,TELEFUNKEN_43FAE5510
+Setec,BAUTECH,BAUTECH 43BFH80,43BFH80,43,10999,13999,https://setec.mk/products/bautech-43bfh80,BAUTECH_43BFH80
+Setec,SAMSUNG,SAMSUNG UE43CU7092UXXH,UE43CU7092UXXH,43,11995,29999,https://setec.mk/products/samsung-ue43cu7092uxxh,SAMSUNG_UE43CU7092UXXH
+Setec,TELEFUNKEN,TELEFUNKEN 43FAE5610,43FAE5610,43,11995,22999,https://setec.mk/products/telefunken-43fae5610,TELEFUNKEN_43FAE5610
+Setec,ST,ST-43DX8000,43DX8000,43,11999,16999,https://setec.mk/products/st-43dx8000,ST_43DX8000
+Setec,HISENSE,Hisense 40A4Q,40A4Q,40,11999,12990,https://setec.mk/products/hisense-40a4q,HISENSE_40A4Q
+Setec,SAMSUNG,SAMSUNG UE43DU7172UXXH,UE43DU7172UXXH,43,12995,29999,https://setec.mk/products/samsung-ue43du7172uxxh-1,SAMSUNG_UE43DU7172UXXH
+Setec,TELEFUNKEN,TELEFUNKEN 43QUA9040,43QUA9040,43,12995,24999,https://setec.mk/products/telefunken-43qua9040,TELEFUNKEN_43QUA9040
+Setec,HISENSE,Hisense 43E7NQ,43E7NQ,43,12995,22999,https://setec.mk/products/hisense-43e7nq,HISENSE_43E7NQ
+Setec,TELEFUNKEN,TELEFUNKEN 43UA9005,43UA9005,43,12995,22999,https://setec.mk/products/telefunken-43ua9005,TELEFUNKEN_43UA9005
+Setec,TELEFUNKEN,TELEFUNKEN 50UA9005,50UA9005,50,12995,27999,https://setec.mk/products/telefunken-50ua9005,TELEFUNKEN_50UA9005
+Setec,SAMSUNG,SAMSUNG UE43DU7192UXXH,UE43DU7192UXXH,43,12995,29999,https://setec.mk/products/samsung-ue43du7192uxxh-1,SAMSUNG_UE43DU7192UXXH
+Setec,TCL,TCL 43V6B,43V6B,43,12995,27999,https://setec.mk/products/tcl-43v6b-1,TCL_43V6B
+Setec,PHILIPS,PHILIPS 40PFS6000,40PFS6000,40,12999,17999,https://setec.mk/products/philips-40pfs6000,PHILIPS_40PFS6000
+Setec,TCL,TCL 40S51K,40S51K,40,12999,15999,https://setec.mk/products/tcl-40s51k,TCL_40S51K
+Setec,SAMSUNG,SAMSUNG UE43DU8072UXXH,UE43DU8072UXXH,43,13995,33999,https://setec.mk/products/samsung-ue43du8072uxxh-1,SAMSUNG_UE43DU8072UXXH
+Setec,ST,ST-50DX7800,50DX7800,50,14499,25999,https://setec.mk/products/st-50dx7800,ST_50DX7800
+Setec,TELEFUNKEN,TELEFUNKEN 42FE5510,42FE5510,42,14499,17999,https://setec.mk/products/telefunken-42fe5510-1,TELEFUNKEN_42FE5510
+Setec,HISENSE,Hisense 43A6Q,43A6Q,43,14499,17990,https://setec.mk/products/hisense-43a6q,HISENSE_43A6Q
+Setec,SAMSUNG,SAMSUNG UE43TU8002KXXH,UE43TU8002KXXH,43,14995,28999,https://setec.mk/products/samsung-ue43tu8002kxxh-1,SAMSUNG_UE43TU8002KXXH
+Setec,SAMSUNG,SAMSUNG UE50DU7172UXXH,UE50DU7172UXXH,50,14995,34999,https://setec.mk/products/samsung-ue50du7172uxxh-1,SAMSUNG_UE50DU7172UXXH
+Setec,TELEFUNKEN,TELEFUNKEN 50QUA9040,50QUA9040,50,14995,31999,https://setec.mk/products/telefunken-50qua9040,TELEFUNKEN_50QUA9040
+Setec,HISENSE,Hisense 50E7NQ,50E7NQ,50,14995,27999,https://setec.mk/products/hisense-50e7nq,HISENSE_50E7NQ
+Setec,TCL,TCL 43C69B,43C69B,43,14995,26999,https://setec.mk/products/tcl-43c69b-1,TCL_43C69B
+Setec,PHILIPS,PHILIPS 43PUS8009,43PUS8009,43,14995,26999,https://setec.mk/products/philips-43pus8009-1,PHILIPS_43PUS8009
+Setec,HISENSE,Hisense 50A6N,50A6N,50,14995,24999,https://setec.mk/products/hisense-50a6n,HISENSE_50A6N
+Setec,TCL,TCL 50V6B,50V6B,50,14995,29999,https://setec.mk/products/tcl-50v6b-1,TCL_50V6B
+Setec,HISENSE,Hisense 43A7NQ,43A7NQ,43,14995,21999,https://setec.mk/products/hisense-43a7nq-1,HISENSE_43A7NQ
+Setec,PHILIPS,PHILIPS 43PUS7000,43PUS7000,43,14999,17999,https://setec.mk/products/philips-43pus7000,PHILIPS_43PUS7000
+Setec,HAIER,Haier H43K85FUX,H43K85FUX,0,14999,19999,https://setec.mk/products/haier-h43k85fux,HAIER_H43K85FUX
+Setec,TCL,TCL 43S51K,43S51K,43,14999,16999,https://setec.mk/products/tcl-43s51k,TCL_43S51K
+Setec,TELEFUNKEN,TELEFUNKEN 55QUA9040,55QUA9040,55,15995,34999,https://setec.mk/products/telefunken-55qua9040-1,TELEFUNKEN_55QUA9040
+Setec,TELEFUNKEN,TELEFUNKEN 55QUA9140,55QUA9140,55,15995,34999,https://setec.mk/products/telefunken-55qua9140-1,TELEFUNKEN_55QUA9140
+Setec,SAMSUNG,SAMSUNG UE50CU7102KXXH,UE50CU7102KXXH,50,15995,36999,https://setec.mk/products/samsung-ue50cu7102kxxh-1,SAMSUNG_UE50CU7102KXXH
+Setec,SAMSUNG,SAMSUNG QE43Q60DAUXXH,QE43Q60DAUXXH,43,15995,38999,https://setec.mk/products/samsung-qe43q60dauxxh,SAMSUNG_QE43Q60DAUXXH
+Setec,TELEFUNKEN,TELEFUNKEN 50UAK9000BX,50UAK9000BX,50,15995,27999,https://setec.mk/products/telefunken-50uak9000bx,TELEFUNKEN_50UAK9000BX
+Setec,HISENSE,Hisense 55A6K,55A6K,55,15995,28999,https://setec.mk/products/hisense-55a6k-1,HISENSE_55A6K
+Setec,SONY,SONY KD43X75WLPAEP,KD43X75WLPAEP,43,15995,40999,https://setec.mk/products/sony-kd43x75wlpaep-1,SONY_KD43X75WLPAEP
+Setec,HISENSE,Hisense 55A6N,55A6N,55,15995,26499,https://setec.mk/products/hisense-55a6n,HISENSE_55A6N
+Setec,PHILIPS,PHILIPS 43PUS7009,43PUS7009,43,15999,20999,https://setec.mk/products/philips-43pus7009,PHILIPS_43PUS7009
+Setec,TCL,TCL 43P61K,43P61K,43,15999,18999,https://setec.mk/products/tcl-43p61k,TCL_43P61K
+Setec,TELEFUNKEN,TELEFUNKEN 55UAK9005BX,55UAK9005BX,55,16995,29999,https://setec.mk/products/telefunken-55uak9005bx,TELEFUNKEN_55UAK9005BX
+Setec,TCL,TCL 55P635,55P635,55,16995,37999,https://setec.mk/products/tcl-55p635,TCL_55P635
+Setec,PHILIPS,PHILIPS 43PUS8118,43PUS8118,43,16995,29999,https://setec.mk/products/philips-43pus8118,PHILIPS_43PUS8118
+Setec,ST,ST-55DX7900,55DX7900,55,16999,28999,https://setec.mk/products/st-55dx7900-1,ST_55DX7900
+Setec,PHILIPS,PHILIPS 50PUS7000,50PUS7000,50,16999,20999,https://setec.mk/products/philips-50pus7000,PHILIPS_50PUS7000
+Setec,PHILIPS,PHILIPS 43PUS8010,43PUS8010,43,16999,18999,https://setec.mk/products/philips-43pus8010,PHILIPS_43PUS8010
+Setec,PHILIPS,PHILIPS 43PUS7810,43PUS7810,43,16999,18999,https://setec.mk/products/philips-43pus7810,PHILIPS_43PUS7810
+Setec,HISENSE,Hisense 43E7Q,43E7Q,43,17490,19999,https://setec.mk/products/hisense-43e7q,HISENSE_43E7Q
+Setec,PHILIPS,PHILIPS 43PUS8400,43PUS8400,43,17499,19499,https://setec.mk/products/philips-43pus8400,PHILIPS_43PUS8400
+Setec,PHILIPS,PHILIPS 55PUS7409,55PUS7409,55,17995,36999,https://setec.mk/products/philips-55pus7409,PHILIPS_55PUS7409
+Setec,SAMSUNG,SAMSUNG UE55CU7092UXXH,UE55CU7092UXXH,55,17995,39999,https://setec.mk/products/samsung-ue55cu7092uxxh-1,SAMSUNG_UE55CU7092UXXH
+Setec,HISENSE,Hisense 55A7KQ,55A7KQ,55,17995,32999,https://setec.mk/products/hisense-55a7kq,HISENSE_55A7KQ
+Setec,HISENSE,Hisense 58A6N,58A6N,58,17995,26999,https://setec.mk/products/hisense-58a6n-1,HISENSE_58A6N
+Setec,TCL,TCL 55C69B,55C69B,55,17995,35999,https://setec.mk/products/tcl-55c69b-1,TCL_55C69B
+Setec,PHILIPS,PHILIPS 50PUS7810,50PUS7810,50,17999,20999,https://setec.mk/products/philips-50pus7810,PHILIPS_50PUS7810
+Setec,SAMSUNG,SAMSUNG UE43U8072FUXXH,UE43U8072FUXXH,43,17999,24299,https://setec.mk/products/samsung-ue43u8072fuxxh,SAMSUNG_UE43U8072FUXXH
+Setec,HISENSE,Hisense 50A6Q,50A6Q,50,17999,24999,https://setec.mk/products/hisense-50a6q,HISENSE_50A6Q
+Setec,SAMSUNG,SAMSUNG UE43U8092FUXXH,UE43U8092FUXXH,43,17999,24999,https://setec.mk/products/samsung-ue43u8092fuxxh,SAMSUNG_UE43U8092FUXXH
+Setec,HAIER,Haier H43Q80FUX,H43Q80FUX,0,17999,21999,https://setec.mk/products/haier-h43q80fux,HAIER_H43Q80FUX
+Setec,HAIER,Haier H50K85FUX,H50K85FUX,0,17999,22999,https://setec.mk/products/haier-h50k85fux,HAIER_H50K85FUX
+Setec,SAMSUNG,SAMSUNG UE55CU8072UXXH,UE55CU8072UXXH,55,18995,49999,https://setec.mk/products/samsung-ue55cu8072uxxh-1,SAMSUNG_UE55CU8072UXXH
+Setec,SAMSUNG,SAMSUNG UE55DU8072UXXH,UE55DU8072UXXH,55,18995,49999,https://setec.mk/products/samsung-ue55du8072uxxh-1,SAMSUNG_UE55DU8072UXXH
+Setec,SAMSUNG,SAMSUNG UE55DU7172UXXH,UE55DU7172UXXH,55,18995,44999,https://setec.mk/products/samsung-ue55du7172uxxh-1,SAMSUNG_UE55DU7172UXXH
+Setec,TELEFUNKEN,TELEFUNKEN 55QUAK9140BX,55QUAK9140BX,55,18995,34999,https://setec.mk/products/telefunken-55quak9140bx,TELEFUNKEN_55QUAK9140BX
+Setec,SAMSUNG,SAMSUNG UE55DU7192UXXH,UE55DU7192UXXH,55,18995,44999,https://setec.mk/products/samsung-ue55du7192uxxh,SAMSUNG_UE55DU7192UXXH
+Setec,TCL,TCL 55V6C,55V6C,55,18998,24999,https://setec.mk/products/tcl-55v6c,TCL_55V6C
+Setec,PHILIPS,PHILIPS 50PUS7609,50PUS7609,50,18999,29999,https://setec.mk/products/philips-50pus7609-1,PHILIPS_50PUS7609
+Setec,SAMSUNG,SAMSUNG UE50CU7092UXXH,UE50CU7092UXXH,50,18999,36999,https://setec.mk/products/samsung-ue50cu7092uxxh,SAMSUNG_UE50CU7092UXXH
+Setec,PHILIPS,PHILIPS 43PUS8079,43PUS8079,43,18999,26999,https://setec.mk/products/philips-43pus8079-1,PHILIPS_43PUS8079
+Setec,TCL,TCL 43P71K,43P71K,43,18999,22999,https://setec.mk/products/tcl-43p71k,TCL_43P71K
+Setec,HAIER,Haier H55K85FUX,H55K85FUX,0,18999,24999,https://setec.mk/products/haier-h55k85fux,HAIER_H55K85FUX
+Setec,HISENSE,Hisense 50E7Q,50E7Q,50,19490,23990,https://setec.mk/products/hisense-50e7q,HISENSE_50E7Q
+Setec,TCL,TCL 55P655,55P655,55,19499,37999,https://setec.mk/products/tcl-55p655-1,TCL_55P655
+Setec,SAMSUNG,SAMSUNG QE50Q67DAUXXH,QE50Q67DAUXXH,50,19995,46999,https://setec.mk/products/samsung-qe50q67dauxxh,SAMSUNG_QE50Q67DAUXXH
+Setec,SAMSUNG,SAMSUNG QE50Q60DAUXXH,QE50Q60DAUXXH,50,19995,46999,https://setec.mk/products/samsung-qe50q60dauxxh,SAMSUNG_QE50Q60DAUXXH
+Setec,TCL,TCL 55C645,55C645,55,19995,45999,https://setec.mk/products/tcl-55c645,TCL_55C645
+Setec,HISENSE,Hisense 55E7KQ,55E7KQ,55,19995,32999,https://setec.mk/products/hisense-55e7kq,HISENSE_55E7KQ
+Setec,TCL,TCL 58P635,58P635,58,19995,39999,https://setec.mk/products/tcl-58p635,TCL_58P635
+Setec,TCL,TCL 55C745,55C745,55,19995,54999,https://setec.mk/products/tcl-55c745-1,TCL_55C745
+Setec,HISENSE,Hisense 55E7NQ,55E7NQ,55,19995,28999,https://setec.mk/products/hisense-55e7nq-1,HISENSE_55E7NQ
+Setec,HISENSE,Hisense 55E7NQ PRO,55E7NQ PRO,55,19995,32999,https://setec.mk/products/hisense-55e7nq-pro,HISENSE_55E7NQPRO
+Setec,HISENSE,Hisense 55U6NQ,55U6NQ,55,19995,35999,https://setec.mk/products/hisense-55u6nq,HISENSE_55U6NQ
+Setec,SONY,SONY KD50X75WLPAEP,KD50X75WLPAEP,50,19995,49999,https://setec.mk/products/sony-kd50x75wlpaep-1,SONY_KD50X75WLPAEP
+Setec,SAMSUNG,SAMSUNG UE50DU7192UXXH,UE50DU7192UXXH,50,19995,34999,https://setec.mk/products/samsung-ue50du7192uxxh-1,SAMSUNG_UE50DU7192UXXH
+Setec,SAMSUNG,SAMSUNG QE43Q67DAUXXH,QE43Q67DAUXXH,43,19995,38999,https://setec.mk/products/samsung-qe43q67dauxxh-1,SAMSUNG_QE43Q67DAUXXH
+Setec,PHILIPS,PHILIPS 50PUS7409,50PUS7409,50,19999,30999,https://setec.mk/products/philips-50pus7409,PHILIPS_50PUS7409
+Setec,PHILIPS,PHILIPS 55PUS7009,55PUS7009,55,19999,28999,https://setec.mk/products/philips-55pus7009,PHILIPS_55PUS7009
+Setec,PHILIPS,PHILIPS 55PUS7609,55PUS7609,55,19999,32999,https://setec.mk/products/philips-55pus7609,PHILIPS_55PUS7609
+Setec,PHILIPS,PHILIPS 50PUS8010,50PUS8010,50,19999,28999,https://setec.mk/products/philips-55pus8110,PHILIPS_50PUS8010
+Setec,PHILIPS,PHILIPS 55PUS7000,55PUS7000,55,19999,29999,https://setec.mk/products/philips-55pus7000,PHILIPS_55PUS7000
+Setec,HISENSE,Hisense 55A6Q,55A6Q,55,19999,24990,https://setec.mk/products/hisense-55a6q,HISENSE_55A6Q
+Setec,TCL,TCL 50P61K,50P61K,50,19999,22999,https://setec.mk/products/tcl-50p61k,TCL_50P61K
+Setec,PHILIPS,PHILIPS 55PUS8009,55PUS8009,55,20995,37999,https://setec.mk/products/philips-55pus8009,PHILIPS_55PUS8009
+Setec,TCL,TCL 55P61K,55P61K,55,20999,26999,https://setec.mk/products/tcl-55p61k,TCL_55P61K
+Setec,SAMSUNG,SAMSUNG UE50U8072FUXXH,UE50U8072FUXXH,50,20999,29999,https://setec.mk/products/samsung-ue50u8072fuxxh,SAMSUNG_UE50U8072FUXXH
+Setec,HISENSE,Hisense 50A7Q,50A7Q,50,20999,25990,https://setec.mk/products/hisense-50a7q,HISENSE_50A7Q
+Setec,SAMSUNG,SAMSUNG UE50U8092FUXXH,UE50U8092FUXXH,50,20999,29999,https://setec.mk/products/samsung-ue50u8092fuxxh,SAMSUNG_UE50U8092FUXXH
+Setec,PHILIPS,PHILIPS 55PUS8919,55PUS8919,55,21995,55999,https://setec.mk/products/philips-55pus8919-1,PHILIPS_55PUS8919
+Setec,PHILIPS,PHILIPS 55PUS8079,55PUS8079,55,21995,37999,https://setec.mk/products/philips-55pus8079,PHILIPS_55PUS8079
+Setec,SAMSUNG,SAMSUNG UE50DU8072UXXH,UE50DU8072UXXH,50,21995,44999,https://setec.mk/products/samsung-ue50du8072uxxh,SAMSUNG_UE50DU8072UXXH
+Setec,SAMSUNG,SAMSUNG QE55Q60DAUXXH,QE55Q60DAUXXH,55,21995,53999,https://setec.mk/products/samsung-qe55q60dauxxh-1,SAMSUNG_QE55Q60DAUXXH
+Setec,TELEFUNKEN,TELEFUNKEN 65UAK9005BX,65UAK9005BX,65,21995,42999,https://setec.mk/products/telefunken-65uak9005bx,TELEFUNKEN_65UAK9005BX
+Setec,TCL,TCL 50C805,50C805,50,21995,45999,https://setec.mk/products/tcl-50c805-1,TCL_50C805
+Setec,PHILIPS,PHILIPS 55PUS8400,55PUS8400,55,21999,26999,https://setec.mk/products/philips-55pus8400,PHILIPS_55PUS8400
+Setec,ST,ST-65DX7800,65DX7800,65,21999,27999,https://setec.mk/products/st-65dx7800,ST_65DX7800
+Setec,SAMSUNG,SAMSUNG UE55U8092FUXXH,UE55U8092FUXXH,55,21999,32999,https://setec.mk/products/samsung-ue55u8092fuxxh,SAMSUNG_UE55U8092FUXXH
+Setec,TCL,TCL 50P71K,50P71K,50,21999,27999,https://setec.mk/products/tcl-50p71k,TCL_50P71K
+Setec,HISENSE,Hisense 55E7Q,55E7Q,55,21999,28999,https://setec.mk/products/hisense-55e7q,HISENSE_55E7Q
+Setec,PHILIPS,PHILIPS 55PUS7810,55PUS7810,55,21999,24999,https://setec.mk/products/philips-55pus7810,PHILIPS_55PUS7810
+Setec,PHILIPS,PHILIPS 55PUS8209,55PUS8209,55,22999,39999,https://setec.mk/products/philips-55pus8209,PHILIPS_55PUS8209
+Setec,HISENSE,Hisense 58E7Q,58E7Q,58,22999,29990,https://setec.mk/products/hisense-58e7q,HISENSE_58E7Q
+Setec,PHILIPS,PHILIPS 55PUS8200,55PUS8200,55,22999,25999,https://setec.mk/products/philips-55pus8200,PHILIPS_55PUS8200
+Setec,TCL,TCL 65P635,65P635,65,23995,53999,https://setec.mk/products/tcl-65p635,TCL_65P635
+Setec,TCL,TCL 50C69B,50C69B,50,23995,32999,https://setec.mk/products/tcl-50c69b-1,TCL_50C69B
+Setec,HISENSE,Hisense 65A6N,65A6N,65,23995,35999,https://setec.mk/products/hisense-65a6n-1,HISENSE_65A6N
+Setec,HISENSE,Hisense 65E7NQ,65E7NQ,65,23995,37999,https://setec.mk/products/hisense-65e7nq-1,HISENSE_65E7NQ
+Setec,TCL,TCL 65V6B,65V6B,65,23995,39999,https://setec.mk/products/tcl-65v6b-1,TCL_65V6B
+Setec,SAMSUNG,SAMSUNG QE43Q7FAAUXXH,QE43Q7FAAUXXH,43,23999,34999,https://setec.mk/products/samsung-qe43q7faauxxh-1,SAMSUNG_QE43Q7FAAUXXH
+Setec,PHILIPS,PHILIPS 55PUS8010,55PUS8010,55,23999,29999,https://setec.mk/products/philips-55pus8010,PHILIPS_55PUS8010
+Setec,TELEFUNKEN,TELEFUNKEN 65QUAK9140BX,65QUAK9140BX,65,24995,47999,https://setec.mk/products/telefunken-65quak9140bx,TELEFUNKEN_65QUAK9140BX
+Setec,TCL,TCL 65C645,65C645,65,24995,44999,https://setec.mk/products/tcl-65c645-1,TCL_65C645
+Setec,SAMSUNG,SAMSUNG QE32LS03CBUXXH,QE32LS03CBUXXH,32,24999,33999,https://setec.mk/products/samsung-qe32ls03cbuxxh-1,SAMSUNG_QE32LS03CBUXXH
+Setec,PHILIPS,PHILIPS 55PML8709,55PML8709,55,24999,42999,https://setec.mk/products/philips-55pml8709,PHILIPS_55PML8709
+Setec,TCL,TCL 55P71K,55P71K,55,24999,31999,https://setec.mk/products/tcl-55p71k,TCL_55P71K
+Setec,ST,ST-65DQ8000,65DQ8000,65,24999,29999,https://setec.mk/products/st-65dq8000,ST_65DQ8000
+Setec,HAIER,Haier H55Q80FUX,H55Q80FUX,0,24999,31999,https://setec.mk/products/haier-h55q80fux,HAIER_H55Q80FUX
+Setec,SAMSUNG,SAMSUNG QE50Q7F2AUXXH,QE50Q7F2AUXXH,50,24999,39999,https://setec.mk/products/samsung-qe50q7f2auxxh,SAMSUNG_QE50Q7F2AUXXH
+Setec,SAMSUNG,SAMSUNG UE65CU8072UXXH,UE65CU8072UXXH,65,25995,63499,https://setec.mk/products/samsung-ue65cu8072uxxh-1,SAMSUNG_UE65CU8072UXXH
+Setec,SAMSUNG,SAMSUNG UE65DU7172UXXH,UE65DU7172UXXH,65,25995,52999,https://setec.mk/products/samsung-ue65du7172uxxh-1,SAMSUNG_UE65DU7172UXXH
+Setec,SAMSUNG,SAMSUNG UE65CU7092UXXH,UE65CU7092UXXH,65,25995,53999,https://setec.mk/products/samsung-ue65cu7092uxxh-1,SAMSUNG_UE65CU7092UXXH
+Setec,TCL,TCL 55C805,55C805,55,25995,49999,https://setec.mk/products/tcl-55c805,TCL_55C805
+Setec,HISENSE,Hisense 55U7NQ,55U7NQ,55,25995,46999,https://setec.mk/products/hisense-55u7nq,HISENSE_55U7NQ
+Setec,SONY,SONY KD55X85LAEP,KD55X85LAEP,55,25995,79999,https://setec.mk/products/sony-kd55x85laep-1,SONY_KD55X85LAEP
+Setec,TCL,TCL 55C809,55C809,55,25995,49999,https://setec.mk/products/tcl-55c809-1,TCL_55C809
+Setec,HISENSE,Hisense 55A7Q,55A7Q,55,25999,27990,https://setec.mk/products/hisense-55a7nq-1,HISENSE_55A7Q
+Setec,SAMSUNG,SAMSUNG QE55Q7F2AUXХH,QE55Q7F2AUXХH,55,25999,45999,https://setec.mk/products/samsung-qe55q7f2auxkhh,SAMSUNG_QE55Q7F2AUXH
+Setec,PHILIPS,PHILIPS 65PUS8518,65PUS8518,65,26995,64999,https://setec.mk/products/philips-65pus8518-1,PHILIPS_65PUS8518
+Setec,TCL,TCL 65C745,65C745,65,26995,74999,https://setec.mk/products/tcl-65c745-1,TCL_65C745
+Setec,SAMSUNG,SAMSUNG QE50Q7FAAUXXH,QE50Q7FAAUXXH,50,26999,39999,https://setec.mk/products/samsung-qe50q7faauxxh-1,SAMSUNG_QE50Q7FAAUXXH
+Setec,SONY,SONY KD65X75WLPAEP,KD65X75WLPAEP,65,27995,66999,https://setec.mk/products/sony-kd65x75wlpaep,SONY_KD65X75WLPAEP
+Setec,PHILIPS,PHILIPS 65PUS7000,65PUS7000,65,27999,34999,https://setec.mk/products/philips-65pus7000,PHILIPS_65PUS7000
+Setec,HISENSE,Hisense 65U6NQ,65U6NQ,65,28995,44990,https://setec.mk/products/hisense-65u6nq-1,HISENSE_65U6NQ
+Setec,PHILIPS,PHILIPS 65PUS7009,65PUS7009,65,28999,39999,https://setec.mk/products/philips-65pus7009,PHILIPS_65PUS7009
+Setec,TCL,TCL 55P81K,55P81K,55,28999,31999,https://setec.mk/products/tcl-55p81k,TCL_55P81K
+Setec,HISENSE,Hisense 65A6Q,65A6Q,65,28999,34990,https://setec.mk/products/hisense-65a6q,HISENSE_65A6Q
+Setec,HISENSE,Hisense 55E7Q PRO,55E7Q PRO,55,28999,34990,https://setec.mk/products/hisense-55e7q-pro,HISENSE_55E7QPRO
+Setec,HAIER,Haier H65K85FUX,H65K85FUX,0,28999,37999,https://setec.mk/products/haier-h65k85fux,HAIER_H65K85FUX
+Setec,SAMSUNG,SAMSUNG QE55QN85CATXXH,QE55QN85CATXXH,55,29995,93999,https://setec.mk/products/samsung-qe55qn85catxxh-1,SAMSUNG_QE55QN85CATXXH
+Setec,SAMSUNG,SAMSUNG QE65Q60CAUXXH,QE65Q60CAUXXH,65,29995,80999,https://setec.mk/products/samsung-qe65q60cauxxh-1,SAMSUNG_QE65Q60CAUXXH
+Setec,SAMSUNG,SAMSUNG QE55Q80DATXXH,QE55Q80DATXXH,55,29995,79999,https://setec.mk/products/samsung-qe55q80datxxh-1,SAMSUNG_QE55Q80DATXXH
+Setec,SAMSUNG,SAMSUNG HG55Q60AAEUXEH,HG55Q60AAEUXEH,0,29995,39999,https://setec.mk/products/samsung-hg55q60aaeuxeh-1,SAMSUNG_HG55Q60AAEUXEH
+Setec,SAMSUNG,SAMSUNG UE65DU8072UXXH,UE65DU8072UXXH,65,29995,56999,https://setec.mk/products/samsung-ue65du8072uxxh,SAMSUNG_UE65DU8072UXXH
+Setec,SAMSUNG,SAMSUNG QE65Q60DAUXXH,QE65Q60DAUXXH,65,29995,69999,https://setec.mk/products/samsung-qe65q60dauxxh,SAMSUNG_QE65Q60DAUXXH
+Setec,SAMSUNG,SAMSUNG QE65Q70DATXXH,QE65Q70DATXXH,65,29995,84999,https://setec.mk/products/samsung-qe65q70datxxh,SAMSUNG_QE65Q70DATXXH
+Setec,SAMSUNG,SAMSUNG QE65Q67DAUXXH,QE65Q67DAUXXH,65,29995,69999,https://setec.mk/products/samsung-qe65q67dauxxh,SAMSUNG_QE65Q67DAUXXH
+Setec,SAMSUNG,SAMSUNG UE75DU7192UXXH,UE75DU7192UXXH,75,29995,67999,https://setec.mk/products/samsung-ue75du7192uxxh-1,SAMSUNG_UE75DU7192UXXH
+Setec,SAMSUNG,SAMSUNG QE43LS03DAUXXH,QE43LS03DAUXXH,43,29995,62999,https://setec.mk/products/samsung-qe43ls03dauxxh-1,SAMSUNG_QE43LS03DAUXXH
+Setec,HISENSE,Hisense 65U7KQ,65U7KQ,65,29995,55999,https://setec.mk/products/hisense-65u7kq,HISENSE_65U7KQ
+Setec,TCL,TCL 75V6B,75V6B,75,29995,59999,https://setec.mk/products/tcl-75v6b-1,TCL_75V6B
+Setec,HISENSE,Hisense 55U8KQ,55U8KQ,55,29995,64999,https://setec.mk/products/hisense-55u8kq-1,HISENSE_55U8KQ
+Setec,HISENSE,Hisense 65E7NQ PRO,65E7NQ PRO,65,29995,43999,https://setec.mk/products/hisense-65e7nq-pro-1,HISENSE_65E7NQPRO
+Setec,HISENSE,Hisense 65U6KQ,65U6KQ,65,29995,37900,https://setec.mk/products/hisense-65u6kq-1,HISENSE_65U6KQ
+Setec,SAMSUNG,SAMSUNG UE65DU7192UXXH,UE65DU7192UXXH,65,29995,52999,https://setec.mk/products/samsung-ue65du7192uxxh-1,SAMSUNG_UE65DU7192UXXH
+Setec,HISENSE,Hisense 75A6N,75A6N,75,29995,42990,https://setec.mk/products/hisense-75a6n,HISENSE_75A6N
+Setec,PHILIPS,PHILIPS 65PUS7409,65PUS7409,65,29999,49999,https://setec.mk/products/philips-65pus7409,PHILIPS_65PUS7409
+Setec,SAMSUNG,SAMSUNG QE55Q7FAAUXXH,QE55Q7FAAUXXH,55,29999,45999,https://setec.mk/products/samsung-qe55q7faauxxh,SAMSUNG_QE55Q7FAAUXXH
+Setec,HAIER,Haier H65Q80FUX,H65Q80FUX,0,29999,39999,https://setec.mk/products/haier-h65q80fux,HAIER_H65Q80FUX
+Setec,PHILIPS,PHILIPS 65PUS8200,65PUS8200,65,29999,34999,https://setec.mk/products/philips-65pus8200,PHILIPS_65PUS8200
+Setec,TCL,TCL 65P61K,65P61K,65,30999,39999,https://setec.mk/products/tcl-65p61k,TCL_65P61K
+Setec,TCL,TCL 55C61K,55C61K,55,31999,36999,https://setec.mk/products/tcl-55c61k,TCL_55C61K
+Setec,PHILIPS,PHILIPS 65PUS7810,65PUS7810,65,31999,36999,https://setec.mk/products/philips-65pus7810,PHILIPS_65PUS7810
+Setec,PHILIPS,PHILIPS 65PUS8010,65PUS8010,65,31999,36999,https://setec.mk/products/philips-65pus8010,PHILIPS_65PUS8010
+Setec,HISENSE,Hisense 55U7KQ,55U7KQ,55,32995,46999,https://setec.mk/products/hisense-55u7kq,HISENSE_55U7KQ
+Setec,TCL,TCL 65C805,65C805,65,32995,64999,https://setec.mk/products/tcl-65c805,TCL_65C805
+Setec,TCL,TCL 65C809,65C809,65,32995,64999,https://setec.mk/products/tcl-65c809-1,TCL_65C809
+Setec,SAMSUNG,SAMSUNG QE55Q8FAAUXХH,QE55Q8FAAUXХH,55,32999,48999,https://setec.mk/products/samsung-qe55q8faauxkhh,SAMSUNG_QE55Q8FAAUXH
+Setec,HISENSE,Hisense 65A7Q,65A7Q,65,32999,38990,https://setec.mk/products/hisense-65a7q,HISENSE_65A7Q
+Setec,PHILIPS,PHILIPS 55MLED820,55MLED820,55,32999,34999,https://setec.mk/products/philips-55mled820,PHILIPS_55MLED820
+Setec,PHILIPS,PHILIPS 65PUS8209,65PUS8209,65,33995,49999,https://setec.mk/products/philips-65pus8209-1,PHILIPS_65PUS8209
+Setec,SONY,SONY KD65X85LAEP,KD65X85LAEP,65,33995,94999,https://setec.mk/products/sony-kd65x85laep,SONY_KD65X85LAEP
+Setec,SAMSUNG,SAMSUNG QE65Q7F2AUXХH,QE65Q7F2AUXХH,65,33999,59999,https://setec.mk/products/samsung-qe65q7f2auxkhh,SAMSUNG_QE65Q7F2AUXH
+Setec,SAMSUNG,SAMSUNG UE65U8092FUXXH,UE65U8092FUXXH,65,33999,44999,https://setec.mk/products/samsung-ue65u8092fuxxh,SAMSUNG_UE65U8092FUXXH
+Setec,TCL,TCL 65P71K,65P71K,65,33999,39999,https://setec.mk/products/tcl-65p71k,TCL_65P71K
+Setec,SAMSUNG,SAMSUNG QE55Q70DATXXH,QE55Q70DATXXH,55,34995,69999,https://setec.mk/products/samsung-qe55q70datxxh-1,SAMSUNG_QE55Q70DATXXH
+Setec,PHILIPS,PHILIPS 65PML8709,65PML8709,65,35999,56999,https://setec.mk/products/philips-65pml8709-1,PHILIPS_65PML8709
+Setec,ST,ST-75DX7900,75DX7900,75,35999,39999,https://setec.mk/products/st-75dx7900-1,ST_75DX7900
+Setec,SAMSUNG,SAMSUNG QE50Q8FAAUXХH,QE50Q8FAAUXХH,50,35999,44999,https://setec.mk/products/samsung-qe50q8faauxkhh,SAMSUNG_QE50Q8FAAUXH
+Setec,HISENSE,Hisense 65E7Q PRO,65E7Q PRO,65,36999,44990,https://setec.mk/products/hisense-65e7q-pro,HISENSE_65E7QPRO
+Setec,HISENSE,Hisense 55U7Q,55U7Q,55,36999,44990,https://setec.mk/products/hisense-55u7q,HISENSE_55U7Q
+Setec,PHILIPS,PHILIPS 75PUS7000,75PUS7000,75,37999,42999,https://setec.mk/products/philips-75pus7000,PHILIPS_75PUS7000
+Setec,SONY,SONY K50S35B.CEI,K50S35B,50,38990,49999,https://setec.mk/products/sony-k50s35bcei,SONY_K50S35B
+Setec,SAMSUNG,SAMSUNG SP-LSP3BLAXXH,SP-LSP3BLAXXH,0,38995,69999,https://setec.mk/products/samsung-sp-lsp3blaxxh-1,SAMSUNG_SPLSP3BLAXXH
+Setec,SAMSUNG,SAMSUNG QE55QN90CATXXH,QE55QN90CATXXH,55,39995,120999,https://setec.mk/products/samsung-qe55qn90catxxh-1,SAMSUNG_QE55QN90CATXXH
+Setec,SAMSUNG,SAMSUNG UE75CU8072UXXH,UE75CU8072UXXH,75,39995,91499,https://setec.mk/products/samsung-ue75cu8072uxxh-1,SAMSUNG_UE75CU8072UXXH
+Setec,SAMSUNG,SAMSUNG QE65Q80CATXXH,QE65Q80CATXXH,65,39995,109999,https://setec.mk/products/samsung-qe65q80catxxh-1,SAMSUNG_QE65Q80CATXXH
+Setec,SAMSUNG,SAMSUNG QE55S90CATXXH,QE55S90CATXXH,55,39995,134999,https://setec.mk/products/samsung-qe55s90catxxh-1,SAMSUNG_QE55S90CATXXH
+Setec,SAMSUNG,SAMSUNG QE55QN85DBTXXH,QE55QN85DBTXXH,55,39995,81999,https://setec.mk/products/samsung-qe55qn85dbtxxh,SAMSUNG_QE55QN85DBTXXH
+Setec,SAMSUNG,SAMSUNG QE55QN90DBTXXH,QE55QN90DBTXXH,55,39995,111999,https://setec.mk/products/samsung-qe55qn90dbtxxh,SAMSUNG_QE55QN90DBTXXH
+Setec,SAMSUNG,SAMSUNG QE65Q80DATXXH,QE65Q80DATXXH,65,39995,89999,https://setec.mk/products/samsung-qe65q80datxxh,SAMSUNG_QE65Q80DATXXH
+Setec,SAMSUNG,SAMSUNG QE55S90DATXXH,QE55S90DATXXH,55,39995,106999,https://setec.mk/products/samsung-qe55s90datxxh,SAMSUNG_QE55S90DATXXH
+Setec,SAMSUNG,SAMSUNG QE75Q60DAUXXH,QE75Q60DAUXXH,75,39995,106999,https://setec.mk/products/samsung-qe75q60dauxxh-1,SAMSUNG_QE75Q60DAUXXH
+Setec,TCL,TCL 65C845,65C845,65,39995,99999,https://setec.mk/products/tcl-65c845,TCL_65C845
+Setec,SONY,SONY KD75X75WLPAEP,KD75X75WLPAEP,75,39995,94999,https://setec.mk/products/sony-kd75x75wlpaep,SONY_KD75X75WLPAEP
+Setec,HISENSE,Hisense 65U7NQ,65U7NQ,65,39995,54999,https://setec.mk/products/hisense-65u7nq-1,HISENSE_65U7NQ
+Setec,TCL,TCL 55A300 Pro,55A300 Pro,55,39995,69999,https://setec.mk/products/tcl-55a300-pro-1,TCL_55A300PRO
+Setec,SAMSUNG,SAMSUNG SP-LFF3CLAXXH,SP-LFF3CLAXXH,0,39999,69999,https://setec.mk/products/samsung-sp-lff3claxxh-1,SAMSUNG_SPLFF3CLAXXH
+Setec,TCL,TCL 55A300W,55A300W,55,39999,52999,https://setec.mk/products/tcl-55a300w-1,TCL_55A300W
+Setec,SAMSUNG,SAMSUNG QE65Q7FAAUXХH,QE65Q7FAAUXХH,65,39999,59999,https://setec.mk/products/samsung-qe65q7faauxkhh,SAMSUNG_QE65Q7FAAUXH
+Setec,TCL,TCL 65C61K,65C61K,65,39999,52999,https://setec.mk/products/tcl-65c61k,TCL_65C61K
+Setec,TCL,TCL 65P81K,65P81K,65,39999,43499,https://setec.mk/products/tcl-65p81k,TCL_65P81K
+Setec,TCL,TCL 75V6C,75V6C,75,39999,59999,https://setec.mk/products/tcl-75v6c,TCL_75V6C
+Setec,TCL,TCL 50C7K,50C7K,50,39999,1667,https://setec.mk/products/tcl-50c7k,TCL_50C7K
+Setec,HISENSE,Hisense 75A6Q,75A6Q,75,40999,44990,https://setec.mk/products/hisense-75a6q,HISENSE_75A6Q
+Setec,SAMSUNG,SAMSUNG QE55QN70FAUXXH,QE55QN70FAUXXH,55,41499,65999,https://setec.mk/products/samsung-qe55qn70fauxxh-1,SAMSUNG_QE55QN70FAUXXH
+Setec,HISENSE,Hisense 75E7Q,75E7Q,75,41990,45990,https://setec.mk/products/hisense-75e7q,HISENSE_75E7Q
+Setec,PHILIPS,PHILIPS 75PUS8510,75PUS8510,75,42999,49999,https://setec.mk/products/philips-75pus8510,PHILIPS_75PUS8510
+Setec,SAMSUNG,SAMSUNG UE75DU7172UXXH,UE75DU7172UXXH,75,42999,67999,https://setec.mk/products/samsung-ue75du7172uxxh,SAMSUNG_UE75DU7172UXXH
+Setec,SAMSUNG,SAMSUNG QE65Q8FAAUXХH,QE65Q8FAAUXХH,65,42999,68999,https://setec.mk/products/samsung-qe65q8faauxkhh,SAMSUNG_QE65Q8FAAUXH
+Setec,SAMSUNG,SAMSUNG QE55S95DATXXH,QE55S95DATXXH,55,43995,136999,https://setec.mk/products/samsung-qe55s95datxxh-1,SAMSUNG_QE55S95DATXXH
+Setec,SAMSUNG,SAMSUNG UE75U8092FUXХH,UE75U8092FUXХH,75,43999,66999,https://setec.mk/products/samsung-ue85u8092fuxkhh,SAMSUNG_UE75U8092FUXH
+Setec,PHILIPS,PHILIPS 75PUS7009,75PUS7009,75,44999,52999,https://setec.mk/products/philips-75pus7009,PHILIPS_75PUS7009
+Setec,TCL,TCL 55C71K,55C71K,55,44999,45999,https://setec.mk/products/tcl-55c71k,TCL_55C71K
+Setec,SONY,SONY K55S35B.CEI,K55S35B,55,45990,54999,https://setec.mk/products/sony-k55s35bcei,SONY_K55S35B
+Setec,SAMSUNG,SAMSUNG QE75Q67DAUXXH,QE75Q67DAUXXH,75,45995,106999,https://setec.mk/products/samsung-qe75q67dauxxh,SAMSUNG_QE75Q67DAUXXH
+Setec,HISENSE,Hisense 85A6N,85A6N,85,45995,69999,https://setec.mk/products/hisense-85a6n,HISENSE_85A6N
+Setec,SONY,SONY XR55A80LAEP,XR55A80LAEP,55,45995,134999,https://setec.mk/products/sony-xr55a80laep-1,SONY_XR55A80LAEP
+Setec,HISENSE,Hisense 65U8NQ,65U8NQ,65,45995,74999,https://setec.mk/products/hisense-65u8nq-1,HISENSE_65U8NQ
+Setec,TCL,TCL 75P71K,75P71K,75,45999,59999,https://setec.mk/products/tcl-75p71k,TCL_75P71K
+Setec,HISENSE,Hisense 65U7Q PRO,65U7Q PRO,65,45999,59990,https://setec.mk/products/hisense-65u7q-pro,HISENSE_65U7QPRO
+Setec,PHILIPS,PHILIPS 75MLED820,75MLED820,75,45999,52999,https://setec.mk/products/philips-75mled820,PHILIPS_75MLED820
+Setec,TCL,TCL 65A300W,65A300W,65,46995,69999,https://setec.mk/products/tcl-65a300w-1,TCL_65A300W
+Setec,SAMSUNG,SAMSUNG QE75Q7F2AUXXH,QE75Q7F2AUXXH,75,46999,90999,https://setec.mk/products/samsung-qe75q7f2auxxh,SAMSUNG_QE75Q7F2AUXXH
+Setec,PHILIPS,PHILIPS 75PML8709,75PML8709,75,47995,69999,https://setec.mk/products/philips-75pml8709,PHILIPS_75PML8709
+Setec,PHILIPS,PHILIPS 65OLED855,65OLED855,65,49995,109999,https://setec.mk/products/philips-65oled855-1,PHILIPS_65OLED855
+Setec,SAMSUNG,SAMSUNG QE75Q70DATXXH,QE75Q70DATXXH,75,49995,109999,https://setec.mk/products/samsung-qe75q70datxxh-1,SAMSUNG_QE75Q70DATXXH
+Setec,SAMSUNG,SAMSUNG QE65QN90DBTXXH,QE65QN90DBTXXH,65,49995,147999,https://setec.mk/products/samsung-qe65qn90dbtxxh-1,SAMSUNG_QE65QN90DBTXXH
+Setec,SAMSUNG,SAMSUNG QE65LS03DAUXXH,QE65LS03DAUXXH,65,49995,103999,https://setec.mk/products/samsung-qe65ls03dauxxh,SAMSUNG_QE65LS03DAUXXH
+Setec,SAMSUNG,SAMSUNG QE65S90DATXXH,QE65S90DATXXH,65,49995,149999,https://setec.mk/products/samsung-qe65s90datxxh-1,SAMSUNG_QE65S90DATXXH
+Setec,TCL,TCL 75C809,75C809,75,49995,94999,https://setec.mk/products/tcl-75c809-1,TCL_75C809
+Setec,TCL,TCL 65C855,65C855,65,49995,89999,https://setec.mk/products/tcl-65c855-1,TCL_65C855
+Setec,TCL,TCL 65A300 Pro,65A300 Pro,65,49995,85999,https://setec.mk/products/tcl-65a300-pro-1,TCL_65A300PRO
+Setec,SAMSUNG,SAMSUNG QE65QN70FAUXXH,QE65QN70FAUXXH,65,49999,83999,https://setec.mk/products/samsung-qe65qn70fauxxh-1,SAMSUNG_QE65QN70FAUXXH
+Setec,SAMSUNG,SAMSUNG QE55QN80FAUXXH,QE55QN80FAUXXH,55,49999,71999,https://setec.mk/products/samsung-qe55qn80fauxxh-1,SAMSUNG_QE55QN80FAUXXH
+Setec,SAMSUNG,SAMSUNG QE75Q7FAAUXXH,QE75Q7FAAUXXH,75,49999,90999,https://setec.mk/products/samsung-qe75q7faauxxh,SAMSUNG_QE75Q7FAAUXXH
+Setec,HISENSE,Hisense 75E7Q PRO,75E7Q PRO,75,49999,59990,https://setec.mk/products/hisense-75e7q-pro,HISENSE_75E7QPRO
+Setec,HISENSE,Hisense 65U7Q,65U7Q,65,49999,54999,https://setec.mk/products/hisense-65u7q,HISENSE_65U7Q
+Setec,TCL,TCL 75P81K,75P81K,75,52999,58499,https://setec.mk/products/tcl-75p81k,TCL_75P81K
+Setec,PHILIPS,PHILIPS 55OLED718,55OLED718,55,54995,79999,https://setec.mk/products/philips-55oled718-1,PHILIPS_55OLED718
+Setec,SAMSUNG,SAMSUNG QE50LS03FAUXXH,QE50LS03FAUXXH,50,54999,59999,https://setec.mk/products/samsung-qe50ls03fauxxh,SAMSUNG_QE50LS03FAUXXH
+Setec,TCL,TCL 85V6B,85V6B,85,55995,79999,https://setec.mk/products/tcl-85v6b-1,TCL_85V6B
+Setec,SAMSUNG,SAMSUNG QE50LS03BGUXXH,QE50LS03BGUXXH,50,55999,65999,https://setec.mk/products/samsung-qe50ls03bguxxh-1,SAMSUNG_QE50LS03BGUXXH
+Setec,TCL,TCL 75C61K,75C61K,75,55999,64999,https://setec.mk/products/tcl-75c61k,TCL_75C61K
+Setec,TCL,TCL 65C71K,65C71K,65,56999,59999,https://setec.mk/products/tcl-65c71k,TCL_65C71K
+Setec,SONY,SONY K65S35B.CEI,K65S35B,65,57990,66999,https://setec.mk/products/sony-k65s35bcei,SONY_K65S35B
+Setec,PHILIPS,PHILIPS 55OLED770,55OLED770,55,57999,64999,https://setec.mk/products/philips-55oled770,PHILIPS_55OLED770
+Setec,SAMSUNG,SAMSUNG QE55LS03FAUXXH,QE55LS03FAUXXH,55,58999,80999,https://setec.mk/products/samsung-qe55ls03fauxxh,SAMSUNG_QE55LS03FAUXXH
+Setec,SAMSUNG,SAMSUNG QE75QN85CATXXH,QE75QN85CATXXH,75,59995,169999,https://setec.mk/products/samsung-qe75qn85catxxh-1,SAMSUNG_QE75QN85CATXXH
+Setec,SAMSUNG,SAMSUNG QE65QN800DTXXH,QE65QN800DTXXH,65,59995,217999,https://setec.mk/products/samsung-qe65qn800dtxxh-1,SAMSUNG_QE65QN800DTXXH
+Setec,SAMSUNG,SAMSUNG UE85DU7172UXXH,UE85DU7172UXXH,85,59995,104999,https://setec.mk/products/samsung-ue85du7172uxxh-1,SAMSUNG_UE85DU7172UXXH
+Setec,SAMSUNG,SAMSUNG QE75Q80DATXXH,QE75Q80DATXXH,75,59995,146999,https://setec.mk/products/samsung-qe75q80datxxh,SAMSUNG_QE75Q80DATXXH
+Setec,SONY,SONY XR65A80LAEP,XR65A80LAEP,65,59995,184999,https://setec.mk/products/sony-xr65a80laep-1,SONY_XR65A80LAEP
+Setec,SAMSUNG,SAMSUNG UE85DU7192UXXH,UE85DU7192UXXH,85,59995,104999,https://setec.mk/products/samsung-ue85du7192uxxh,SAMSUNG_UE85DU7192UXXH
+Setec,SAMSUNG,SAMSUNG QE65QN80FAUXXH,QE65QN80FAUXXH,65,59999,102999,https://setec.mk/products/samsung-qe65qn80fauxxh-1,SAMSUNG_QE65QN80FAUXXH
+Setec,SAMSUNG,SAMSUNG QE75Q8FAAUXХH,QE75Q8FAAUXХH,75,59999,99999,https://setec.mk/products/samsung-qe75q8faauxkhh,SAMSUNG_QE75Q8FAAUXH
+Setec,SAMSUNG,SAMSUNG QE55S85FAUXXH,QE55S85FAUXXH,55,64999,92999,https://setec.mk/products/samsung-qe55s85fauxxh-1,SAMSUNG_QE55S85FAUXXH
+Setec,HISENSE,Hisense 85A6Q,85A6Q,85,64999,69990,https://setec.mk/products/hisense-85a6q,HISENSE_85A6Q
+Setec,HISENSE,Hisense 75U7Q,75U7Q,75,68990,74990,https://setec.mk/products/hisense-75u7q,HISENSE_75U7Q
+Setec,SAMSUNG,SAMSUNG QE65QN95DATXXH,QE65QN95DATXXH,65,69995,186999,https://setec.mk/products/samsung-qe65qn95datxxh,SAMSUNG_QE65QN95DATXXH
+Setec,SONY,SONY K55XR55B.CEI,K55XR55B,55,69999,94999,https://setec.mk/products/sony-k55xr55bcei,SONY_K55XR55B
+Setec,PHILIPS,PHILIPS 65OLED770,65OLED770,65,69999,82999,https://setec.mk/products/philips-65oled770,PHILIPS_65OLED770
+Setec,SAMSUNG,SAMSUNG QE55S90FAEXXH,QE55S90FAEXXH,55,71999,109999,https://setec.mk/products/samsung-qe55s90faexxh,SAMSUNG_QE55S90FAEXXH
+Setec,HISENSE,Hisense 65U8Q,65U8Q,65,73990,79999,https://setec.mk/products/hisense-65u8q,HISENSE_65U8Q
+Setec,TCL,TCL 85C69B,85C69B,85,73999,89999,https://setec.mk/products/tcl-85c69b-1,TCL_85C69B
+Setec,SAMSUNG,SAMSUNG QE75QN70FAUXXH,QE75QN70FAUXXH,75,73999,109999,https://setec.mk/products/samsung-qe75qn70fauxxh,SAMSUNG_QE75QN70FAUXXH
+Setec,PHILIPS,PHILIPS 85PUS9010,85PUS9010,85,73999,79999,https://setec.mk/products/philips-85pus9010,PHILIPS_85PUS9010
+Setec,TCL,TCL 85P81K,85P81K,85,74999,86999,https://setec.mk/products/tcl-85p81k,TCL_85P81K
+Setec,PHILIPS,PHILIPS 65OLED718,65OLED718,65,75995,104999,https://setec.mk/products/philips-65oled718,PHILIPS_65OLED718
+Setec,TCL,TCL 75C71K,75C71K,75,75999,79999,https://setec.mk/products/tcl-75c71k,TCL_75C71K
+Setec,TCL,TCL 65C81K,65C81K,65,75999,79999,https://setec.mk/products/tcl-65c81k,TCL_65C81K
+Setec,SONY,SONY K75S35B.CEI,K75S35B,75,76999,89999,https://setec.mk/products/sony-k75s35bcei,SONY_K75S35B
+Setec,SAMSUNG,SAMSUNG QE65QN900CTXXH,QE65QN900CTXXH,65,79995,299999,https://setec.mk/products/samsung-qe65qn900ctxxh-1,SAMSUNG_QE65QN900CTXXH
+Setec,SAMSUNG,SAMSUNG QE85Q60DAUXXH,QE85Q60DAUXXH,85,79995,152999,https://setec.mk/products/samsung-qe85q60dauxxh-1,SAMSUNG_QE85Q60DAUXXH
+Setec,SAMSUNG,SAMSUNG QE75QN85DBTXXH,QE75QN85DBTXXH,75,79995,159999,https://setec.mk/products/samsung-qe75qn85dbtxxh,SAMSUNG_QE75QN85DBTXXH
+Setec,SAMSUNG,SAMSUNG QE85Q70DATXXH,QE85Q70DATXXH,85,79995,149999,https://setec.mk/products/samsung-qe85q70datxxh-1,SAMSUNG_QE85Q70DATXXH
+Setec,SAMSUNG,SAMSUNG QE65S95CATXXH,QE65S95CATXXH,65,79995,199999,https://setec.mk/products/samsung-qe65s95catxxh-1,SAMSUNG_QE65S95CATXXH
+Setec,TCL,TCL 85C805,85C805,85,79995,139999,https://setec.mk/products/tcl-85c805,TCL_85C805
+Setec,TCL,TCL 98P745,98P745,98,79995,139999,https://setec.mk/products/tcl-98p745-1,TCL_98P745
+Setec,TCL,TCL 85P745,85P745,85,79999,99999,https://setec.mk/products/tcl-85p745-1,TCL_85P745
+Setec,SAMSUNG,SAMSUNG UE85U8072FUXХH,UE85U8072FUXХH,85,79999,109999,https://setec.mk/products/samsung-ue85u8072fuxkhh-1,SAMSUNG_UE85U8072FUXH
+Setec,SAMSUNG,SAMSUNG QE65S85FAEXXH,QE65S85FAEXXH,65,79999,123999,https://setec.mk/products/samsung-qe65s85fauxxh,SAMSUNG_QE65S85FAEXXH
+Setec,SAMSUNG,SAMSUNG QE65LS03FAUXXH,QE65LS03FAUXXH,65,79999,105999,https://setec.mk/products/samsung-qe65ls03fauxxh,SAMSUNG_QE65LS03FAUXXH
+Setec,SAMSUNG,SAMSUNG UE85U8092FUXХH,UE85U8092FUXХH,85,79999,109999,https://setec.mk/products/samsung-ue85u8092fuxkhh-1,SAMSUNG_UE85U8092FUXH
+Setec,TCL,TCL 85C6K,85C6K,85,79999,89999,https://setec.mk/products/tcl-85c6k,TCL_85C6K
+Setec,SAMSUNG,SAMSUNG UE85U8072FUXХH,UE85U8072FUXХH,85,79999,109999,https://setec.mk/products/samsung-ue85u8072fuxkhh,SAMSUNG_UE85U8072FUXH
+Setec,HISENSE,Hisense 85U7Q,85U7Q,85,83990,92990,https://setec.mk/products/hisense-85u7q,HISENSE_85U7Q
+Setec,SONY,SONY K65XR55B.CEI,K65XR55B,65,85999,109999,https://setec.mk/products/sony-k65xr55bcei,SONY_K65XR55B
+Setec,SAMSUNG,SAMSUNG QE65S95DATXXH,QE65S95DATXXH,65,89995,186999,https://setec.mk/products/samsung-qe65s95datxxh,SAMSUNG_QE65S95DATXXH
+Setec,HISENSE,Hisense Smart mini projector C1,mini projector C1,0,89999,99999,https://setec.mk/products/hisense-smart-mini-projector-c1,HISENSE_MINIPROJECTORC1
+Setec,HISENSE,Hisense 75U8Q,75U8Q,75,89999,94999,https://setec.mk/products/hisense-75u8q,HISENSE_75U8Q
+Setec,SAMSUNG,SAMSUNG QE85Q7FAAUXXH,QE85Q7FAAUXXH,85,89999,109999,https://setec.mk/products/samsung-qe85q7faauxxh,SAMSUNG_QE85Q7FAAUXXH
+Setec,SONY,SONY K55XR8AB.CEI,K55XR8AB,55,89999,99999,https://setec.mk/products/sony-k55xr8abcei,SONY_K55XR8AB
+Setec,SAMSUNG,SAMSUNG QE65LS03FWUXXH,QE65LS03FWUXXH,65,93999,109999,https://setec.mk/products/samsung-qe65ls03fwuxxh,SAMSUNG_QE65LS03FWUXXH
+Setec,TCL,TCL 75C81K,75C81K,75,97999,104999,https://setec.mk/products/tcl-75c81k,TCL_75C81K
+Setec,TCL,TCL 98C735,98C735,98,99995,299999,https://setec.mk/products/tcl-98c735,TCL_98C735
+Setec,SAMSUNG,SAMSUNG QE83S90DAEXXH,QE83S90DAEXXH,83,99995,299999,https://setec.mk/products/samsung-qe83s90daexxh-1,SAMSUNG_QE83S90DAEXXH
+Setec,TCL,TCL 85C71K,85C71K,85,99999,109999,https://setec.mk/products/tcl-85c71k,TCL_85C71K
+Setec,SAMSUNG,SAMSUNG QE55S95FATXXH,QE55S95FATXXH,55,99999,119999,https://setec.mk/products/samsung-qe55s95fatxxh,SAMSUNG_QE55S95FATXXH
+Setec,SONY,SONY K55XR80PAEP,K55XR80PAEP,55,103999,122999,https://setec.mk/products/sony-k55xr80paep,SONY_K55XR80PAEP
+Setec,SAMSUNG,SAMSUNG QE65S90FAEXXH,QE65S90FAEXXH,65,104999,129999,https://setec.mk/products/samsung-qe65s90faexxh,SAMSUNG_QE65S90FAEXXH
+Setec,SONY,SONY K65XR8APB.CEI,K65XR8APB,65,105990,119990,https://setec.mk/products/sony-k65xr8apbcei,SONY_K65XR8APB
+Setec,SONY,SONY K65XR80PAEP,K65XR80PAEP,65,105999,164999,https://setec.mk/products/sony-k65xr80paep-1,SONY_K65XR80PAEP
+Setec,TCL,TCL 98C69B,98C69B,98,109999,159999,https://setec.mk/products/tcl-98c69b-1,TCL_98C69B
+Setec,TCL,TCL 98P81K,98P81K,98,109999,139999,https://setec.mk/products/tcl-98p81k,TCL_98P81K
+Setec,HISENSE,Hisense 100E7NQ PRO,100E7NQ PRO,0,114999,139999,https://setec.mk/products/hisense-100e7nq-pro,HISENSE_100E7NQPRO
+Setec,TCL,TCL 98C809,98C809,98,119995,249999,https://setec.mk/products/tcl-98c809-1,TCL_98C809
+Setec,TCL,TCL 98C6K,98C6K,98,119999,154999,https://setec.mk/products/tcl-98c6k,TCL_98C6K
+Setec,SAMSUNG,SAMSUNG QE77S85FAEXXH,QE77S85FAEXXH,77,124999,198999,https://setec.mk/products/samsung-qe77s85faexxh,SAMSUNG_QE77S85FAEXXH
+Setec,HISENSE,Hisense 100E7Q PRO,100E7Q PRO,0,129990,139990,https://setec.mk/products/hisense-100e7q-pro,HISENSE_100E7QPRO
+Setec,SAMSUNG,SAMSUNG QE65QN90FATXXH,QE65QN90FATXXH,65,129999,136999,https://setec.mk/products/samsung-qe65qn90fatxxh,SAMSUNG_QE65QN90FATXXH
+Setec,SAMSUNG,SAMSUNG UE98DU9072UXXH,UE98DU9072UXXH,98,134999,199999,https://setec.mk/products/samsung-ue98du9072uxxh-1,SAMSUNG_UE98DU9072UXXH
+Setec,SAMSUNG,SAMSUNG QE85Q80DATXXH,QE85Q80DATXXH,85,139999,204999,https://setec.mk/products/samsung-qe85q80datxxh-1,SAMSUNG_QE85Q80DATXXH
+Setec,SAMSUNG,SAMSUNG QE77S90FAEXXH,QE77S90FAEXXH,77,139999,229999,https://setec.mk/products/samsung-qe77s90faexxh,SAMSUNG_QE77S90FAEXXH
+Setec,SAMSUNG,SAMSUNG QE65S95FATXXH,QE65S95FATXXH,65,139999,199999,https://setec.mk/products/samsung-qe65s95datxxh-1,SAMSUNG_QE65S95FATXXH
+Setec,SONY,SONY K77XR8AB.CEI,K77XR8AB,77,159990,179990,https://setec.mk/products/sony-k77xr8abcei,SONY_K77XR8AB
+Setec,SAMSUNG,SAMSUNG QE85QN900CTXXH,QE85QN900CTXXH,85,179995,599999,https://setec.mk/products/samsung-qe85qn900ctxxh-1,SAMSUNG_QE85QN900CTXXH
+Setec,SAMSUNG,SAMSUNG QE65QN900FTXXH,QE65QN900FTXXH,65,189999,197999,https://setec.mk/products/samsung-qe65qn900ftxxh,SAMSUNG_QE65QN900FTXXH
+Setec,SAMSUNG,SAMSUNG QE77S95FATXXH,QE77S95FATXXH,77,189999,249999,https://setec.mk/products/samsung-qe77s95fatxxh,SAMSUNG_QE77S95FATXXH
+Setec,SONY,SONY K77XR80PAEP,K77XR80PAEP,77,194999,229999,https://setec.mk/products/sony-k77xr80paep-1,SONY_K77XR80PAEP
+Setec,SAMSUNG,SAMSUNG QE98Q80CATXXH,QE98Q80CATXXH,98,199995,429999,https://setec.mk/products/samsung-qe98q80catxxh,SAMSUNG_QE98Q80CATXXH
+Setec,SAMSUNG,SAMSUNG QE83S85FAEXXH,QE83S85FAEXXH,83,199999,249999,https://setec.mk/products/samsung-qe83s85faexxh,SAMSUNG_QE83S85FAEXXH
+Setec,SAMSUNG,SAMSUNG QE65QN800CTXXH,QE65QN800CTXXH,65,217799,223999,https://setec.mk/products/samsung-qe65qn800ctxxh-1,SAMSUNG_QE65QN800CTXXH
+Setec,SAMSUNG,SAMSUNG QE75QN800CTXXH,QE75QN800CTXXH,75,297799,304999,https://setec.mk/products/samsung-qe75qn800ctxxh-1,SAMSUNG_QE75QN800CTXXH
+Setec,SAMSUNG,SAMSUNG QE75QN900CTXXH,QE75QN900CTXXH,75,408799,419999,https://setec.mk/products/samsung-qe75qn900ctxxh-1,SAMSUNG_QE75QN900CTXXH
+Setec,SAMSUNG,SAMSUNG QE85QN800CTXXH,QE85QN800CTXXH,85,427799,433999,https://setec.mk/products/samsung-qe85qn800ctxxh-1,SAMSUNG_QE85QN800CTXXH
+Neptun,HISENSE,HISENSE 55 E7Q,55 E7Q,55,21999,24999,,HISENSE_55E7Q
+Neptun,HISENSE,HISENSE 65 E7Q,65 E7Q,65,29999,32999,,HISENSE_65E7Q
+Neptun,LG,LG 65 QNED 92A6A,65 QNED 92A6A,65,58999,71999,,LG_65QNED92A6A
+Neptun,HOOBART,HOOBART 32 MC 620 AND T,32 MC 620 AND T,32,7999,7999,,HOOBART_32MC620ANDT
+Neptun,HOOBART,HOOBART 43 MC 620 AND T,43 MC 620 AND T,43,11999,11999,,HOOBART_43MC620ANDT
+Neptun,LG,LG 55 QNED 92A6A,55 QNED 92A6A,55,49999,59999,,LG_55QNED92A6A
+Neptun,LG,LG 65 UA 75003 LA,65 UA 75003 LA,65,39999,39999,,LG_65UA75003LA
+Neptun,TCL,TCL 75 P89K 144Hz,75 P89K,75,52999,53999,,TCL_75P89K
+Neptun,TCL,TCL 85 P89K 144Hz,85 P89K,85,69999,74999,,TCL_85P89K
+Neptun,TCL,TCL 75 C69K 144Hz,75 C69K,75,54999,55999,,TCL_75C69K
+Neptun,TCL,TCL 55 C69K 144Hz,55 C69K,55,30999,31999,,TCL_55C69K
+Neptun,TCL,TCL 65 C69K 144Hz,65 C69K,65,38999,40999,,TCL_65C69K
+Neptun,TCL,TCL 75 P79K,75 P79K,75,45999,49999,,TCL_75P79K
+Neptun,LG,LG 50 QNED 8FA6A,50 QNED 8FA6A,50,28999,29999,,LG_50QNED8FA6A
+Neptun,LG,LG 86 UA 75006 LA,86 UA 75006 LA,86,69999,77999,,LG_86UA75006LA
+Neptun,SAMSUNG,SAMSUNG QE 65 QN85F AUXXH,QE 65 QN85F AUXXH,65,74999,99999,,SAMSUNG_QE65QN85FAUXXH
+Neptun,LG,LG 65 NANO 81A3A,65 NANO 81A3A,65,35999,39999,,LG_65NANO81A3A
+Neptun,HISENSE,HISENSE 75 E7 Q PRO,75 E7 Q PRO,75,49999,54999,,HISENSE_75E7QPRO
+Neptun,HISENSE,HISENSE 65 E7 Q PRO,65 E7 Q PRO,65,41999,41999,,HISENSE_65E7QPRO
+Neptun,LG,LG 55 UA 74003 LB,55 UA 74003 LB,55,22999,25999,,LG_55UA74003LB
+Neptun,LG,LG 43 QNED 70A6A,43 QNED 70A6A,43,22999,25999,,LG_43QNED70A6A
+Neptun,LG,LG 65 UA 74003 LB,65 UA 74003 LB,65,29999,32999,,LG_65UA74003LB
+Neptun,LG,LG 50 QNED 70A6A,50 QNED 70A6A,50,25999,29999,,LG_50QNED70A6A
+Neptun,SAMSUNG,SAMSUNG QE 55Q7F2 AUXXH,QE 55Q7F2 AUXXH,55,26999,37999,,SAMSUNG_QE55Q7F2AUXXH
+Neptun,SAMSUNG,SAMSUNG QE 75Q7F2 AUXXH,QE 75Q7F2 AUXXH,75,47999,72999,,SAMSUNG_QE75Q7F2AUXXH
+Neptun,LG,LG 75 UA 75006 LA,75 UA 75006 LA,75,43999,52999,,LG_75UA75006LA
+Neptun,SAMSUNG,SAMSUNG QE 65Q7F2 AUXXH,QE 65Q7F2 AUXXH,65,32999,59999,,SAMSUNG_QE65Q7F2AUXXH
+Neptun,PHILIPS,PHILIPS 40 PFS 6000,40 PFS 6000,40,13499,15999,,PHILIPS_40PFS6000
+Neptun,PHILIPS,PHILIPS 55 PUS 8510 Ambilight,55 PUS 8510,55,29999,33999,,PHILIPS_55PUS8510
+Neptun,TCL,TCL 43 S59K,43 S59K,43,14499,16999,,TCL_43S59K
+Neptun,TCL,TCL 55 P69K,55 P69K,55,22499,28999,,TCL_55P69K
+Neptun,LG,LG UHD 65 NANO 80A3B,65 NANO 80A3B,65,42999,42999,,LG_65NANO80A3B
+Neptun,LG,LG 43 UA 74003 LB,43 UA 74003 LB,43,17999,20999,,LG_43UA74003LB
+Neptun,LG,LG 65 QNED 86A3A,65 QNED 86A3A,65,49999,69999,,LG_65QNED86A3A
+Neptun,HISENSE,HISENSE 55 U7Q,55 U7Q,55,39999,39999,,HISENSE_55U7Q
+Neptun,HISENSE,HISENSE 65 U7Q,65 U7Q,65,50999,50999,,HISENSE_65U7Q
+Neptun,HISENSE,HISENSE 75 A6Q,75 A6Q,75,42999,42999,,HISENSE_75A6Q
+Neptun,HISENSE,HISENSE 100 E7Q PRO,100 E7Q PRO,0,129999,129999,,HISENSE_100E7QPRO
+Neptun,SAMSUNG,SAMSUNG QE 75 Q8F AAUXXH,QE 75 Q8F AAUXXH,75,59999,99999,,SAMSUNG_QE75Q8FAAUXXH
+Neptun,SAMSUNG,SAMSUNG FRAME QE 55 LS03F AUXXH,FRAME QE 55 LS03F AUXXH,0,58999,80999,,SAMSUNG_FRAMEQE55LS03FAUXXH
+Neptun,SAMSUNG,SAMSUNG FRAME PRO QE 65 LS03F WUXXH,FRAME PRO QE 65 LS03F WUXXH,0,93999,118999,,SAMSUNG_FRAMEPROQE65LS03FWUXXH
+Neptun,SAMSUNG,SAMSUNG QE 55 Q8F AAUXXH,QE 55 Q8F AAUXXH,55,32999,48999,,SAMSUNG_QE55Q8FAAUXXH
+Neptun,SAMSUNG,SAMSUNG QE 65 Q8F AAUXXH,QE 65 Q8F AAUXXH,65,42999,68999,,SAMSUNG_QE65Q8FAAUXXH
+Neptun,SAMSUNG,SAMSUNG QE 85 Q7 FAAUXXH,QE 85 Q7 FAAUXXH,85,89999,127999,,SAMSUNG_QE85Q7FAAUXXH
+Neptun,TCL,TCL 55 P79K,55 P79K,55,23999,29999,,TCL_55P79K
+Neptun,TCL,TCL 65 P79K,65 P79K,65,33999,40999,,TCL_65P79K
+Neptun,TCL,TCL 55 P89K 144Hz,55 P89K,55,28999,34999,,TCL_55P89K
+Neptun,TCL,TCL 65 P89K 144Hz,65 P89K,65,39999,46999,,TCL_65P89K
+Neptun,TCL,TCL 98 P89K 144Hz,98 P89K,98,109999,143999,,TCL_98P89K
+Neptun,SAMSUNG,SAMSUNG QE 75 QN80F AUXXH,QE 75 QN80F AUXXH,75,89999,130999,,SAMSUNG_QE75QN80FAUXXH
+Neptun,HISENSE,HISENSE 55 A6Q,55 A6Q,55,22999,22999,,HISENSE_55A6Q
+Neptun,HISENSE,HISENSE 65 A7Q,65 A7Q,65,35999,35999,,HISENSE_65A7Q
+Neptun,HISENSE,HISENSE 65 A6Q,65 A6Q,65,31999,31999,,HISENSE_65A6Q
+Neptun,LG,LG 43 UA 73003 LA,43 UA 73003 LA,43,17999,19999,,LG_43UA73003LA
+Neptun,LG,LG 43 NANO 81A3A,43 NANO 81A3A,43,20999,22499,,LG_43NANO81A3A
+Neptun,LG,LG 55 QNED 70A6A,55 QNED 70A6A,55,30999,36999,,LG_55QNED70A6A
+Neptun,LG,LG 65 UA 73003 LA,65 UA 73003 LA,65,28999,36999,,LG_65UA73003LA
+Neptun,LG,LG 86 NANO 81A3A,86 NANO 81A3A,86,79999,89999,,LG_86NANO81A3A
+Neptun,SAMSUNG,SAMSUNG UE 43 U8072 FUXXH,UE 43 U8072 FUXXH,43,17999,24299,,SAMSUNG_UE43U8072FUXXH
+Neptun,SAMSUNG,SAMSUNG QE 55 QN85F AUXXH,QE 55 QN85F AUXXH,55,59999,80999,,SAMSUNG_QE55QN85FAUXXH
+Neptun,LG,LG 55 QNED 85A3C,55 QNED 85A3C,55,39999,49999,,LG_55QNED85A3C
+Neptun,FUEGO,FUEGO 55 CH844 GTV,55 CH844 GTV,55,21999,24999,,FUEGO_55CH844GTV
+Neptun,SAMSUNG,SAMSUNG QE 77 S95F ATXXH,QE 77 S95F ATXXH,77,189999,285999,,SAMSUNG_QE77S95FATXXH
+Neptun,LG,LG UHD 55 NANO 80A3B,55 NANO 80A3B,55,32999,32999,,LG_55NANO80A3B
+Neptun,LG,LG OLED 83 G51 LW,83 G51 LW,83,291999,291999,,LG_83G51LW
+Neptun,HISENSE,HISENSE 55 A7Q,55 A7Q,55,25999,25999,,HISENSE_55A7Q
+Neptun,HISENSE,HISENSE 50 A6Q,50 A6Q,50,17999,19999,,HISENSE_50A6Q
+Neptun,HISENSE,HISENSE 85 A6Q,85 A6Q,85,64999,64999,,HISENSE_85A6Q
+Neptun,LG,LG QNED 65 QNED70A6A,QNED 65 QNED70A6A,0,35999,43999,,LG_QNED65QNED70A6A
+Neptun,LG,LG UHD 98 UT91006 LA,98 UT91006 LA,98,109999,113999,,LG_98UT91006LA
+Neptun,LG,LG UHD 50 NANO 81A3A,50 NANO 81A3A,50,25999,27999,,LG_50NANO81A3A
+Neptun,LG,LG UHD 50 UA 73003 LA,50 UA 73003 LA,50,19999,24999,,LG_50UA73003LA
+Neptun,LG,LG 32 LQ 63006 LA,32 LQ 63006 LA,32,12999,19599,,LG_32LQ63006LA
+Neptun,SAMSUNG,SAMSUNG QE 75 Q7F AAUXXH,QE 75 Q7F AAUXXH,75,67999,90999,,SAMSUNG_QE75Q7FAAUXXH
+Neptun,SAMSUNG,SAMSUNG QE 55 QN80F AUXXH,QE 55 QN80F AUXXH,55,49999,71999,,SAMSUNG_QE55QN80FAUXXH
+Neptun,SAMSUNG,SAMSUNG UE 85 U8072F UXXH,UE 85 U8072F UXXH,85,79999,109999,,SAMSUNG_UE85U8072FUXXH
+Neptun,SAMSUNG,SAMSUNG QE 55 S95F ATXXH,QE 55 S95F ATXXH,55,99999,142999,,SAMSUNG_QE55S95FATXXH
+Neptun,SAMSUNG,SAMSUNG UE 50 U8072F UXXH,UE 50 U8072F UXXH,50,20999,29999,,SAMSUNG_UE50U8072FUXXH
+Neptun,LG,LG 55 QNED 82A3B,55 QNED 82A3B,55,35999,40999,,LG_55QNED82A3B
+Neptun,LG,LG 55 G51 LW,55 G51 LW,55,99999,119999,,LG_55G51LW
+Neptun,LG,LG 77 G51 LW,77 G51 LW,77,184999,204999,,LG_77G51LW
+Neptun,SAMSUNG,SAMSUNG QE 65 S90F ATXXH,QE 65 S90F ATXXH,65,88999,142999,,SAMSUNG_QE65S90FATXXH
+Neptun,SAMSUNG,SAMSUNG QE 77 S90 FAEXXH,QE 77 S90 FAEXXH,77,139999,229999,,SAMSUNG_QE77S90FAEXXH
+Neptun,SAMSUNG,SAMSUNG QE 65 QN80F AUXXH,QE 65 QN80F AUXXH,65,59999,102999,,SAMSUNG_QE65QN80FAUXXH
+Neptun,HISENSE,HISENSE 32 A4Q,32 A4Q,32,9599,9599,,HISENSE_32A4Q
+Neptun,HISENSE,HISENSE 40 A4Q,40 A4Q,40,11999,11999,,HISENSE_40A4Q
+Neptun,HISENSE,HISENSE 43 A6Q,43 A6Q,43,14999,16499,,HISENSE_43A6Q
+Neptun,HISENSE,HISENSE 55 E7Q PRO,55 E7Q PRO,55,28999,31999,,HISENSE_55E7QPRO
+Neptun,HISENSE,HISENSE 50 A7Q,50 A7Q,50,20999,23999,,HISENSE_50A7Q
+Neptun,PHILIPS,PHILIPS 32 PHS 6000,32 PHS 6000,32,9999,11999,,PHILIPS_32PHS6000
+Neptun,PHILIPS,PHILIPS 32 PFS 6900 Ambilight,32 PFS 6900,32,14999,16999,,PHILIPS_32PFS6900
+Neptun,PHILIPS,PHILIPS 50 PUS 8510 Ambilight,50 PUS 8510,50,22999,28999,,PHILIPS_50PUS8510
+Neptun,PHILIPS,PHILIPS 55 PUS 9010 Ambilight,55 PUS 9010,55,36999,45999,,PHILIPS_55PUS9010
+Neptun,PHILIPS,PHILIPS 85 PUS 8510 Ambilight,85 PUS 8510,85,71999,79999,,PHILIPS_85PUS8510
+Neptun,SAMSUNG,SAMSUNG QE 65 S95F ATXXH,QE 65 S95F ATXXH,65,136999,198999,,SAMSUNG_QE65S95FATXXH
+Neptun,SAMSUNG,SAMSUNG QE 55 S90F AEXXH,QE 55 S90F AEXXH,55,73999,114999,,SAMSUNG_QE55S90FAEXXH
+Neptun,LG,LG 75 QNED 82A3B,75 QNED 82A3B,75,59999,72999,,LG_75QNED82A3B
+Neptun,SAMSUNG,SAMSUNG UE 55 U8072F UXXH,UE 55 U8072F UXXH,55,22999,32999,,SAMSUNG_UE55U8072FUXXH
+Neptun,LG,LG 75 NANO 81A3A,75 NANO 81A3A,75,54999,59999,,LG_75NANO81A3A
+Neptun,LG,LG 65 G51 LW,65 G51 LW,65,134999,147999,,LG_65G51LW
+Neptun,LG,LG 43 UA 75003 LA,43 UA 75003 LA,43,21999,21999,,LG_43UA75003LA
+Neptun,LG,LG 50 UA 75003 LA,50 UA 75003 LA,50,26999,26999,,LG_50UA75003LA
+Neptun,LG,LG 55 UA 73003 LA,55 UA 73003 LA,55,21499,25999,,LG_55UA73003LA
+Neptun,LG,LG 55 C51 LA,55 C51 LA,55,72999,83999,,LG_55C51LA
+Neptun,LG,LG 65 C51 LA,65 C51 LA,65,99999,111999,,LG_65C51LA
+Neptun,LG,LG 77 C51 LA,77 C51 LA,77,139999,161999,,LG_77C51LA
+Neptun,LG,LG 83 C51 LA,83 C51 LA,83,199999,229999,,LG_83C51LA
+Neptun,LG,LG 65 QNED 80A3A,65 QNED 80A3A,65,54999,54999,,LG_65QNED80A3A
+Neptun,LG,LG 55 QNED 80A3A,55 QNED 80A3A,55,43999,43999,,LG_55QNED80A3A
+Neptun,LG,LG 55 QNED 86A3A,55 QNED 86A3A,55,41999,47999,,LG_55QNED86A3A
+Neptun,LG,LG 55 NANO 81A3A,55 NANO 81A3A,55,28999,30999,,LG_55NANO81A3A
+Neptun,LG,LG 75 QNED 86A3A,75 QNED 86A3A,75,71999,87999,,LG_75QNED86A3A
+Neptun,SAMSUNG,SAMSUNG QE 65 Q7F AAUXXH,QE 65 Q7F AAUXXH,65,39999,59999,,SAMSUNG_QE65Q7FAAUXXH
+Neptun,SAMSUNG,SAMSUNG QE 55 QN90F ATXXH,QE 55 QN90F ATXXH,55,74999,102999,,SAMSUNG_QE55QN90FATXXH
+Neptun,SAMSUNG,SAMSUNG UE 65 U8072F UXXH,UE 65 U8072F UXXH,65,33999,44999,,SAMSUNG_UE65U8072FUXXH
+Neptun,SAMSUNG,SAMSUNG UE 75 U8072F UXXH,UE 75 U8072F UXXH,75,42999,66999,,SAMSUNG_UE75U8072FUXXH
+Neptun,SAMSUNG,SAMSUNG QE 75 QN70F AUXXH,QE 75 QN70F AUXXH,75,73999,118999,,SAMSUNG_QE75QN70FAUXXH
+Neptun,SAMSUNG,SAMSUNG QE 50 Q7F AAUXXH,QE 50 Q7F AAUXXH,50,26999,40999,,SAMSUNG_QE50Q7FAAUXXH
+Neptun,SAMSUNG,SAMSUNG QE 55 Q7F AAUXXH,QE 55 Q7F AAUXXH,55,29999,45999,,SAMSUNG_QE55Q7FAAUXXH
+Neptun,SAMSUNG,SAMSUNG QE 55 QN70F AUXXH,QE 55 QN70F AUXXH,55,41999,65999,,SAMSUNG_QE55QN70FAUXXH
+Neptun,SAMSUNG,SAMSUNG QE 43 Q7F AAUXXH,QE 43 Q7F AAUXXH,43,23999,34999,,SAMSUNG_QE43Q7FAAUXXH
+Neptun,SAMSUNG,SAMSUNG FRAME QE 65 LS03F AUXXH,FRAME QE 65 LS03F AUXXH,0,79999,105999,,SAMSUNG_FRAMEQE65LS03FAUXXH
+Neptun,SAMSUNG,SAMSUNG QE 65 QN70F AUXXH,QE 65 QN70F AUXXH,65,49999,83999,,SAMSUNG_QE65QN70FAUXXH
+Neptun,LG,LG 55 B53 LA,55 B53 LA,55,69999,76999,,LG_55B53LA
+Neptun,LG,LG 65 B53 LA,65 B53 LA,65,86999,99999,,LG_65B53LA
+Neptun,LG,LG 55 UA 75003 LA,55 UA 75003 LA,55,31499,31499,,LG_55UA75003LA
+Neptun,LG,LG 48 C51 LA,48 C51 LA,48,64999,79999,,LG_48C51LA
+Neptun,HOOBART,HOOBART 65 DSU 620 AND T,65 DSU 620 AND T,65,26999,26999,,HOOBART_65DSU620ANDT
+Neptun,FUEGO,FUEGO 75 HKU 720 GTV,75 HKU 720 GTV,75,32999,39999,,FUEGO_75HKU720GTV
+Neptun,TCL,TCL 85 C803,85 C803,85,86995,115999,,TCL_85C803
+Neptun,TCL,TCL NXTFRAME 55 A300 PRO,NXTFRAME 55 A300 PRO,0,49995,66999,,TCL_NXTFRAME55A300PRO
+Neptun,TCL,TCL NXTFRAME 65 A300 PRO,NXTFRAME 65 A300 PRO,0,56995,79999,,TCL_NXTFRAME65A300PRO
+Neptun,GRUNDIG,GRUNDIG 43 GHU 7850 B,43 GHU 7850 B,43,13995,18999,,GRUNDIG_43GHU7850B
+Neptun,HISENSE,"4K Mini LED UHD Smart HISENSE 55 U7 NQ, 55""(139cm)",55 U7 NQ,55,30995,39999,,HISENSE_55U7NQ
+Neptun,FUEGO,"4K UHD Smart FUEGO 85 ELU 720 GTV  85"" (215.9cm)",85 ELU 720 GTV,85,51999,59999,,FUEGO_85ELU720GTV
+Neptun,HISENSE,"4K Mini LED UHD Smart HISENSE 65 U8 NQ, 65""(164cm)",65 U8 NQ,65,55995,69999,,HISENSE_65U8NQ
+Neptun,TCL,"FHD Smart TCL 43 S51B , 43""(109cm)",43 S51B,43,11995,16499,,TCL_43S51B
+Neptun,TCL,"4K UHD Smart QD-Mini LED TCL 65 C855, 65""(165.1cm)",65 C855,65,66999,92499,,TCL_65C855
+Neptun,TCL,"4K UHD Smart QD-Mini LED TCL 75 C855, 75""(190.5cm)",75 C855,75,89999,122999,,TCL_75C855
+Neptun,PHILIPS,"4K Mini LED UHD Smart PHILIPS 65 PML 8709, 65""(164cm)",65 PML 8709,65,32995,54999,,PHILIPS_65PML8709
+Neptun,PHILIPS,"4K UHD Smart PHILIPS 55 PML 8709, 55""(139cm)",55 PML 8709,55,25995,39999,,PHILIPS_55PML8709
+Neptun,HISENSE,"4K QLED UHD Smart HISENSE 55 E7 NQ PRO, 55""(139cm)",55 E7 NQ PRO,55,25995,31999,,HISENSE_55E7NQPRO
+Neptun,FUEGO,"QLED 4K Smart TV FUEGO 55 ELU 820 GTV, 55""(139cm)",55 ELU 820 GTV,55,18499,21999,,FUEGO_55ELU820GTV
+Neptun,FUEGO,QLED 4K Smart TV FUEGO 65 ELU 820 GTV,65 ELU 820 GTV,65,25999,29999,,FUEGO_65ELU820GTV
+Neptun,SAMSUNG,"4К UHD Smart TV SAMSUNG UE 98 DU 9072 UXXH 98"" (248.92cm)",UE 98 DU 9072 UXXH,98,134999,209999,,SAMSUNG_UE98DU9072UXXH
+Neptun,FUEGO,"FHD Smart TV FUEGO 43 EL 720 GTV 43""(109cm)",43 EL 720 GTV,43,9999,11999,,FUEGO_43EL720GTV
+Neptun,FUEGO,"4K UHD Smart TV FUEGO 43 ELU 720 GTV 43""(109cm)",43 ELU 720 GTV,43,10999,13999,,FUEGO_43ELU720GTV
+Neptun,FUEGO,"4K Smart TV FUEGO 50 ELU 720 GTV  50""(127cm)",50 ELU 720 GTV,50,14499,16999,,FUEGO_50ELU720GTV
+Neptun,FUEGO,"HD Smart TV FUEGO 32 EL 720 GTV 32"" (81cm)",32 EL 720 GTV,32,6499,7999,,FUEGO_32EL720GTV
+Neptun,FUEGO,"FHD Smart TV FUEGO 40 EL 720 GTV 40""(100cm)",40 EL 720 GTV,40,8499,10999,,FUEGO_40EL720GTV
+Neptun,FUEGO,"4K Smart TV FUEGO 55 ELU 720 GTV 55""(139cm)",55 ELU 720 GTV,55,16999,19999,,FUEGO_55ELU720GTV
+Neptun,FUEGO,"4K Smart TV FUEGO 65 ELU 720 GTV 65""(165cm)",65 ELU 720 GTV,65,21499,27999,,FUEGO_65ELU720GTV
+Neptun,LG,"4k UHD SMART TV LG 43 UR 78003 LK, 43""(108cm)",43 UR 78003 LK,43,15995,25999,,LG_43UR78003LK
+Neptun,HISENSE,"UHD LED SMART TV HISENSE 50 E7 HQ, 50""(127cm), HDR 10+, Wi-Fi",50 E7 HQ,50,22999,29999,,HISENSE_50E7HQ
+Neptun,SAMSUNG,"8K QLED Neo Smart TV SAMSUNG QE65QN900 ATXXH, 65""(165.1cm), 4900Hz, HDR 3000, Wifi",QE65QN900 ATXXH,65,199995,289999,,SAMSUNG_QE65QN900ATXXH

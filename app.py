@@ -43,47 +43,50 @@ def build_comparison_table(raw_df: pd.DataFrame) -> list[dict]:
     if raw_df.empty:
         return []
 
+    from thefuzz import fuzz
+
     groups = {}
     for _, row in raw_df.iterrows():
-        key = row.get("normalized_key", "")
+        key = str(row.get("normalized_key", ""))
         brand = str(row.get("brand", ""))
         screen = int(row.get("screen_size", 0))
 
         matched_key = None
+        best_score = 0
         for gk, gdata in groups.items():
-            if gdata["brand"] == brand and gdata["screen_size"] == screen and screen > 0:
-                from thefuzz import fuzz
-                if fuzz.ratio(key, gk) >= 75 or fuzz.token_sort_ratio(key, gk) >= 75:
-                    matched_key = gk
-                    break
-            elif gdata["brand"] == brand:
-                from thefuzz import fuzz
-                if fuzz.ratio(key, gk) >= 75 or fuzz.token_sort_ratio(key, gk) >= 75:
-                    matched_key = gk
-                    break
+            if gdata["brand"] != brand:
+                continue
+            score = fuzz.ratio(key, gk)
+            if score > best_score:
+                best_score = score
+                matched_key = gk
 
-        if matched_key:
+        if matched_key and best_score >= 80:
             gk = matched_key
         else:
             gk = key
             groups[gk] = {
                 "brand": brand,
                 "screen_size": screen,
-                "names": [],
+                "models": [],
                 "stores": {},
             }
 
-        groups[gk]["names"].append(str(row.get("name", "")))
+        groups[gk]["models"].append(str(row.get("model", "")))
+        if screen > 0 and groups[gk]["screen_size"] == 0:
+            groups[gk]["screen_size"] = screen
         store = str(row.get("store", ""))
         price = int(row.get("price", 0))
         url = str(row.get("url", ""))
 
-        if store not in groups[gk]["stores"] or (price > 0 and price < groups[gk]["stores"][store]["price"]):
+        if store not in groups[gk]["stores"] or (price > 0 and (
+            groups[gk]["stores"][store]["price"] == 0 or price < groups[gk]["stores"][store]["price"]
+        )):
             groups[gk]["stores"][store] = {"price": price, "url": url}
 
     results = []
     for gk, gdata in groups.items():
-        name = max(gdata["names"], key=len) if gdata["names"] else ""
+        model = max(gdata["models"], key=len) if gdata["models"] else ""
         stores = gdata["stores"]
         prices = {s: d["price"] for s, d in stores.items() if d["price"] > 0}
         min_price = min(prices.values()) if prices else 0
@@ -91,7 +94,7 @@ def build_comparison_table(raw_df: pd.DataFrame) -> list[dict]:
 
         results.append({
             "brand": gdata["brand"],
-            "name": name,
+            "name": model,
             "screen_size": gdata["screen_size"],
             "setec_price": stores.get("Setec", {}).get("price", 0),
             "setec_url": stores.get("Setec", {}).get("url", ""),
