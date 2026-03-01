@@ -7,54 +7,293 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <style>
         :root {
-            --bg: #0f1117; --surface: #1a1d27; --surface2: #242734;
-            --border: #2e3144; --text: #e4e4e7; --text-muted: #9294a0;
-            --accent: #6366f1; --accent-light: #818cf8;
-            --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --surface2: #242734;
+            --border: #2e3144;
+            --text: #e4e4e7;
+            --text-muted: #9294a0;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --green: #22c55e;
+            --red: #ef4444;
+            --orange: #f59e0b;
+            --setec: #f97316;
+            --tehno: #ef4444;
+            --neptun: #3b82f6;
+            --galerija: #8b5cf6;
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
 
         .header {
-            background: var(--surface); border-bottom: 1px solid var(--border);
-            padding: 1.25rem 2rem; display: flex; align-items: center;
-            position: sticky; top: 0; z-index: 100;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .header h1 { font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; gap: .5rem; }
+
+        .header h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .header h1 span { color: var(--accent-light); }
 
-        .main { padding: 1.5rem 2rem 4rem; max-width: 1400px; margin: 0 auto; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+        .main {
+            padding: 1.5rem 2rem 4rem;
+            max-width: 1450px;
+            margin: 0 auto;
+        }
 
         .card {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 12px; padding: 1.25rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
         }
-        .card h3 { font-size: .95rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+
+        .card h3 {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
         .card canvas { max-height: 280px; }
 
-        .stat-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-        .stat-box {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 10px; padding: 1rem 1.25rem; flex: 1; min-width: 150px; text-align: center;
+        .filter-card { margin-bottom: 1rem; }
+        .filter-card h3 {
+            margin-bottom: 0.8rem;
+            text-transform: none;
+            letter-spacing: 0;
+            color: var(--text);
+            font-size: 1rem;
         }
-        .stat-box .val { font-size: 1.8rem; font-weight: 700; color: var(--accent-light); }
-        .stat-box .label { font-size: .8rem; color: var(--text-muted); margin-top: .2rem; }
 
-        .savings-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
-        .savings-table th { background: var(--surface2); padding: .6rem .8rem; text-align: left; color: var(--text-muted); font-size: .78rem; text-transform: uppercase; border-bottom: 1px solid var(--border); }
-        .savings-table td { padding: .55rem .8rem; border-bottom: 1px solid var(--border); }
-        .savings-table tr:hover { background: var(--surface2); }
-        .save-badge { background: rgba(34,197,94,.12); color: var(--green); padding: .15rem .5rem; border-radius: 4px; font-weight: 600; font-size: .8rem; }
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.65rem;
+            margin-bottom: 0.8rem;
+        }
 
-        .cheapest-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
-        .cheapest-table th { background: var(--surface2); padding: .6rem .8rem; text-align: left; color: var(--text-muted); font-size: .78rem; text-transform: uppercase; border-bottom: 1px solid var(--border); }
-        .cheapest-table td { padding: .55rem .8rem; border-bottom: 1px solid var(--border); }
+        .filter-field label {
+            display: block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--text-muted);
+            margin-bottom: 0.22rem;
+            font-weight: 600;
+        }
 
-        .loading { text-align: center; padding: 4rem; color: var(--text-muted); }
-        .loading .spinner { width: 30px; height: 30px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; margin: 0 auto 1rem; }
+        .filter-field select,
+        .filter-field input[type="number"] {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--surface2);
+            color: var(--text);
+            padding: 0.55rem 0.6rem;
+            font-size: 0.84rem;
+            outline: none;
+        }
+
+        .filter-field select:focus,
+        .filter-field input[type="number"]:focus {
+            border-color: var(--accent);
+        }
+
+        .filter-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .toggle input[type="checkbox"] {
+            width: 15px;
+            height: 15px;
+            accent-color: var(--accent);
+        }
+
+        .btn {
+            border: 1px solid var(--accent);
+            background: var(--accent);
+            color: #fff;
+            border-radius: 8px;
+            padding: 0.5rem 0.85rem;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .btn:hover { background: var(--accent-light); }
+
+        .btn.secondary {
+            background: transparent;
+            border-color: var(--border);
+            color: var(--text-muted);
+        }
+
+        .btn.secondary:hover {
+            color: var(--text);
+            border-color: var(--accent);
+        }
+
+        .filter-summary {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            min-height: 1.1rem;
+        }
+
+        .filter-summary b { color: var(--text); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            flex: 1;
+            min-width: 160px;
+            text-align: center;
+        }
+
+        .stat-box .val {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-light);
+        }
+
+        .stat-box .label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .savings-table,
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.84rem;
+        }
+
+        .savings-table th,
+        .detail-table th {
+            background: var(--surface2);
+            padding: 0.6rem 0.7rem;
+            text-align: left;
+            color: var(--text-muted);
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+            letter-spacing: 0.02em;
+        }
+
+        .savings-table td,
+        .detail-table td {
+            padding: 0.52rem 0.7rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        .savings-table tr:hover,
+        .detail-table tr:hover { background: var(--surface2); }
+
+        .save-badge {
+            background: rgba(34, 197, 94, 0.12);
+            color: var(--green);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.79rem;
+            display: inline-block;
+        }
+
+        .rank-badge {
+            background: rgba(99, 102, 241, 0.18);
+            color: var(--accent-light);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.12rem 0.42rem;
+        }
+
+        .store-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.35rem;
+            vertical-align: middle;
+        }
+
+        .setec { background: var(--setec); }
+        .tehnomarket { background: var(--tehno); }
+        .neptun { background: var(--neptun); }
+        .galerija { background: var(--galerija); }
+
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-muted);
+        }
+
+        .loading .spinner {
+            width: 30px;
+            height: 30px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
         @keyframes spin { to { transform: rotate(360deg); } }
+
+        @media (max-width: 900px) {
+            .header, .main { padding-left: 1rem; padding-right: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -68,137 +307,576 @@
 
     <div class="main">
         <div id="loading" class="loading"><div class="spinner"></div>Loading analytics...</div>
+
         <div id="content" style="display:none;">
-
-        <div class="stat-row" id="statRow"></div>
-
-        <div class="grid">
-            <div class="card"><h3>Price Distribution</h3><canvas id="chartPriceBuckets"></canvas></div>
-            <div class="card"><h3>TVs by Display Technology</h3><canvas id="chartTech"></canvas></div>
-            <div class="card"><h3>TVs by Resolution</h3><canvas id="chartRes"></canvas></div>
-            <div class="card"><h3>TVs by Brand (top 15)</h3><canvas id="chartBrand"></canvas></div>
-            <div class="card"><h3>TVs by Screen Size</h3><canvas id="chartSize"></canvas></div>
-            <div class="card"><h3>TVs by Model Year</h3><canvas id="chartYear"></canvas></div>
-            <div class="card"><h3>Avg Price by Display Tech (ден)</h3><canvas id="chartAvgTech"></canvas></div>
-            <div class="card"><h3>Avg Price by Brand (ден)</h3><canvas id="chartAvgBrand"></canvas></div>
-        </div>
-
-        <div class="grid" style="grid-template-columns: 1fr 1fr;">
-            <div class="card">
-                <h3>Cheapest TV per Display Technology</h3>
-                <table class="cheapest-table" id="cheapestTable"></table>
+            <div class="card filter-card">
+                <h3>Analytics Parameters</h3>
+                <div class="filter-grid">
+                    <div class="filter-field">
+                        <label>Brand</label>
+                        <select id="fBrand"></select>
+                    </div>
+                    <div class="filter-field">
+                        <label>Store</label>
+                        <select id="fStore"></select>
+                    </div>
+                    <div class="filter-field">
+                        <label>Display Tech</label>
+                        <select id="fTech"></select>
+                    </div>
+                    <div class="filter-field">
+                        <label>Resolution</label>
+                        <select id="fResolution"></select>
+                    </div>
+                    <div class="filter-field">
+                        <label>Year Min</label>
+                        <select id="fYearMin"></select>
+                    </div>
+                    <div class="filter-field">
+                        <label>Year Max</label>
+                        <select id="fYearMax"></select>
+                    </div>
+                    <div class="filter-field">
+                        <label>Size Min (in)</label>
+                        <input id="fSizeMin" type="number" min="0" placeholder="e.g. 43">
+                    </div>
+                    <div class="filter-field">
+                        <label>Size Max (in)</label>
+                        <input id="fSizeMax" type="number" min="0" placeholder="e.g. 85">
+                    </div>
+                    <div class="filter-field">
+                        <label>Price Min (ден)</label>
+                        <input id="fPriceMin" type="number" min="0" placeholder="e.g. 20000">
+                    </div>
+                    <div class="filter-field">
+                        <label>Price Max (ден)</label>
+                        <input id="fPriceMax" type="number" min="0" placeholder="e.g. 70000">
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <label class="toggle">
+                        <input id="fMultiStoreOnly" type="checkbox">
+                        Multi-store models only
+                    </label>
+                    <label class="toggle">
+                        <input id="fOffersOnly" type="checkbox">
+                        Offers only (discounted listings)
+                    </label>
+                    <button class="btn" id="btnApplyFilters">Apply Filters</button>
+                    <button class="btn secondary" id="btnResetFilters">Reset</button>
+                </div>
             </div>
-            <div class="card">
-                <h3>Store Price Stats (ден)</h3>
-                <table class="cheapest-table" id="storeStats"></table>
+
+            <div id="filterSummary" class="filter-summary"></div>
+            <div class="stat-row" id="statRow"></div>
+
+            <div class="grid">
+                <div class="card"><h3>Price Distribution</h3><canvas id="chartPriceBuckets"></canvas></div>
+                <div class="card"><h3>TVs by Display Technology</h3><canvas id="chartTech"></canvas></div>
+                <div class="card"><h3>TVs by Resolution</h3><canvas id="chartRes"></canvas></div>
+                <div class="card"><h3>TVs by Brand (Top 15)</h3><canvas id="chartBrand"></canvas></div>
+                <div class="card"><h3>TVs by Screen Size</h3><canvas id="chartSize"></canvas></div>
+                <div class="card"><h3>TVs by Model Year</h3><canvas id="chartYear"></canvas></div>
+                <div class="card"><h3>Avg Price by Display Tech (ден)</h3><canvas id="chartAvgTech"></canvas></div>
+                <div class="card"><h3>Avg Price by Brand (ден)</h3><canvas id="chartAvgBrand"></canvas></div>
+                <div class="card"><h3>Store Competitiveness (Avg vs Cheapest %)</h3><canvas id="chartStoreVsCheapest"></canvas></div>
+                <div class="card"><h3>Offer Share by Store (%)</h3><canvas id="chartOfferShare"></canvas></div>
             </div>
-        </div>
 
-        <div class="card" style="margin-top:1.25rem;">
-            <h3>Biggest Cross-Store Price Differences</h3>
-            <table class="savings-table" id="savingsTable"></table>
-        </div>
+            <div class="grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="card">
+                    <h3>Cheapest TV per Display Technology</h3>
+                    <table class="detail-table" id="cheapestTable"></table>
+                </div>
+                <div class="card">
+                    <h3>Store Price & Offer Stats</h3>
+                    <table class="detail-table" id="storeStats"></table>
+                </div>
+            </div>
 
+            <div class="card" style="margin-top:1.25rem;">
+                <h3>Store Offer Performance (Best Average Prices)</h3>
+                <table class="detail-table" id="storeOfferTable"></table>
+            </div>
+
+            <div class="card" style="margin-top:1.25rem;">
+                <h3>Biggest Cross-Store Price Differences</h3>
+                <table class="savings-table" id="savingsTable"></table>
+            </div>
         </div>
     </div>
 
     <script>
     const COLORS = ['#6366f1','#22c55e','#f59e0b','#ef4444','#8b5cf6','#ec4899','#14b8a6','#f97316','#06b6d4','#84cc16','#a855f7','#e11d48','#0ea5e9','#facc15','#64748b'];
+    const STORE_COLORS = { Setec: '#f97316', Tehnomarket: '#ef4444', Neptun: '#3b82f6', Galerija: '#8b5cf6' };
+    const chartRefs = {};
+
     Chart.defaults.color = '#9294a0';
     Chart.defaults.borderColor = '#2e3144';
     Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, sans-serif';
 
+    const el = {
+        loading: document.getElementById('loading'),
+        content: document.getElementById('content'),
+        statRow: document.getElementById('statRow'),
+        filterSummary: document.getElementById('filterSummary'),
+        cheapestTable: document.getElementById('cheapestTable'),
+        storeStats: document.getElementById('storeStats'),
+        savingsTable: document.getElementById('savingsTable'),
+        storeOfferTable: document.getElementById('storeOfferTable'),
+        fBrand: document.getElementById('fBrand'),
+        fStore: document.getElementById('fStore'),
+        fTech: document.getElementById('fTech'),
+        fResolution: document.getElementById('fResolution'),
+        fYearMin: document.getElementById('fYearMin'),
+        fYearMax: document.getElementById('fYearMax'),
+        fSizeMin: document.getElementById('fSizeMin'),
+        fSizeMax: document.getElementById('fSizeMax'),
+        fPriceMin: document.getElementById('fPriceMin'),
+        fPriceMax: document.getElementById('fPriceMax'),
+        fMultiStoreOnly: document.getElementById('fMultiStoreOnly'),
+        fOffersOnly: document.getElementById('fOffersOnly'),
+        btnApplyFilters: document.getElementById('btnApplyFilters'),
+        btnResetFilters: document.getElementById('btnResetFilters'),
+    };
+
+    function parsePositiveInt(v) {
+        const n = parseInt(v, 10);
+        return Number.isFinite(n) && n > 0 ? n : 0;
+    }
+
+    function formatInt(v) {
+        const n = Number(v || 0);
+        return n > 0 ? n.toLocaleString() : '0';
+    }
+
+    function formatPct(v) {
+        const n = Number(v || 0);
+        return `${n.toFixed(2)}%`;
+    }
+
+    function formatIndex(v) {
+        const n = Number(v || 0);
+        return n > 0 ? `${n.toFixed(3)}x` : '—';
+    }
+
+    function destroyChart(id) {
+        if (chartRefs[id]) {
+            chartRefs[id].destroy();
+            delete chartRefs[id];
+        }
+    }
+
+    function renderChart(id, config) {
+        destroyChart(id);
+        chartRefs[id] = new Chart(document.getElementById(id), config);
+    }
+
     function bar(id, labels, values, color) {
-        new Chart(document.getElementById(id), {
-            type: 'bar', data: { labels, datasets: [{ data: values, backgroundColor: color || COLORS[0], borderRadius: 4 }] },
-            options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#2e3144' } }, x: { grid: { display: false } } } }
+        renderChart(id, {
+            type: 'bar',
+            data: { labels, datasets: [{ data: values, backgroundColor: color || COLORS[0], borderRadius: 4 }] },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#2e3144' } },
+                    x: { grid: { display: false } },
+                },
+            },
         });
     }
+
     function doughnut(id, labels, values) {
-        new Chart(document.getElementById(id), {
-            type: 'doughnut', data: { labels, datasets: [{ data: values, backgroundColor: COLORS.slice(0, labels.length), borderWidth: 0 }] },
-            options: { plugins: { legend: { position: 'right', labels: { boxWidth: 12, padding: 8, font: { size: 11 } } } }, cutout: '55%' }
+        renderChart(id, {
+            type: 'doughnut',
+            data: { labels, datasets: [{ data: values, backgroundColor: COLORS.slice(0, labels.length), borderWidth: 0 }] },
+            options: {
+                plugins: { legend: { position: 'right', labels: { boxWidth: 12, padding: 8, font: { size: 11 } } } },
+                cutout: '55%',
+            },
         });
     }
+
     function hbar(id, labels, values, color) {
-        new Chart(document.getElementById(id), {
-            type: 'bar', data: { labels, datasets: [{ data: values, backgroundColor: color || COLORS.slice(0, labels.length), borderRadius: 4 }] },
-            options: { indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, grid: { color: '#2e3144' } }, y: { grid: { display: false } } } }
+        renderChart(id, {
+            type: 'bar',
+            data: { labels, datasets: [{ data: values, backgroundColor: color || COLORS.slice(0, labels.length), borderRadius: 4 }] },
+            options: {
+                indexAxis: 'y',
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true, grid: { color: '#2e3144' } },
+                    y: { grid: { display: false } },
+                },
+            },
         });
     }
 
-    fetch('/api/analytics_data').then(r => r.json()).then(d => {
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('content').style.display = 'block';
+    function chartDataFromObject(obj, opts = {}) {
+        const {
+            sort = null,   // 'asc' | 'desc' | null
+            limit = 0,
+            keepZero = false,
+            numericLabels = false,
+        } = opts;
 
-        // Stat boxes
-        const stores = d.price_by_store || {};
-        let totalTVs = Object.values(stores).reduce((s,v) => s + v.count, 0);
-        document.getElementById('statRow').innerHTML = `
-            <div class="stat-box"><div class="val">${d.total_models}</div><div class="label">Unique Models</div></div>
-            <div class="stat-box"><div class="val">${totalTVs}</div><div class="label">Total Listings</div></div>
-            <div class="stat-box"><div class="val">${d.multi_store_count}</div><div class="label">Multi-Store Models</div></div>
-            <div class="stat-box"><div class="val">${Object.keys(d.brand_counts).length}</div><div class="label">Brands</div></div>
-            <div class="stat-box"><div class="val">${Object.keys(d.tech_counts).length}</div><div class="label">Display Techs</div></div>
+        let entries = Object.entries(obj || {}).filter(([k, v]) => {
+            if (!k) return false;
+            if (keepZero) return true;
+            return Number(v) > 0;
+        });
+
+        if (sort === 'asc') {
+            entries.sort((a, b) => Number(a[1]) - Number(b[1]));
+        } else if (sort === 'desc') {
+            entries.sort((a, b) => Number(b[1]) - Number(a[1]));
+        } else if (numericLabels) {
+            entries.sort((a, b) => Number(a[0]) - Number(b[0]));
+        }
+
+        if (limit > 0) entries = entries.slice(0, limit);
+        if (entries.length === 0) return { labels: ['No data'], values: [0] };
+        return { labels: entries.map(e => e[0]), values: entries.map(e => Number(e[1])) };
+    }
+
+    function setSelectOptions(selectEl, values, allLabel, selectedValue) {
+        const opts = [`<option value="">${allLabel}</option>`];
+        for (const v of values || []) {
+            const vv = String(v);
+            const selected = String(selectedValue || '') === vv ? 'selected' : '';
+            opts.push(`<option value="${vv}" ${selected}>${vv}</option>`);
+        }
+        selectEl.innerHTML = opts.join('');
+    }
+
+    function filtersFromUrl() {
+        const p = new URLSearchParams(window.location.search);
+        return {
+            brand: p.get('brand') || '',
+            store: p.get('store') || '',
+            tech: p.get('tech') || '',
+            resolution: p.get('resolution') || '',
+            year_min: parsePositiveInt(p.get('year_min') || ''),
+            year_max: parsePositiveInt(p.get('year_max') || ''),
+            size_min: parsePositiveInt(p.get('size_min') || ''),
+            size_max: parsePositiveInt(p.get('size_max') || ''),
+            price_min: parsePositiveInt(p.get('price_min') || ''),
+            price_max: parsePositiveInt(p.get('price_max') || ''),
+            multi_store_only: (p.get('multi_store_only') || '') === '1',
+            offers_only: (p.get('offers_only') || '') === '1',
+        };
+    }
+
+    function setNonSelectFilterInputs(filters) {
+        el.fSizeMin.value = filters.size_min || '';
+        el.fSizeMax.value = filters.size_max || '';
+        el.fPriceMin.value = filters.price_min || '';
+        el.fPriceMax.value = filters.price_max || '';
+        el.fMultiStoreOnly.checked = !!filters.multi_store_only;
+        el.fOffersOnly.checked = !!filters.offers_only;
+    }
+
+    function collectFiltersFromInputs() {
+        return {
+            brand: el.fBrand.value.trim(),
+            store: el.fStore.value.trim(),
+            tech: el.fTech.value.trim(),
+            resolution: el.fResolution.value.trim(),
+            year_min: parsePositiveInt(el.fYearMin.value),
+            year_max: parsePositiveInt(el.fYearMax.value),
+            size_min: parsePositiveInt(el.fSizeMin.value),
+            size_max: parsePositiveInt(el.fSizeMax.value),
+            price_min: parsePositiveInt(el.fPriceMin.value),
+            price_max: parsePositiveInt(el.fPriceMax.value),
+            multi_store_only: el.fMultiStoreOnly.checked,
+            offers_only: el.fOffersOnly.checked,
+        };
+    }
+
+    function filtersToParams(filters) {
+        const p = new URLSearchParams();
+        if (filters.brand) p.set('brand', filters.brand);
+        if (filters.store) p.set('store', filters.store);
+        if (filters.tech) p.set('tech', filters.tech);
+        if (filters.resolution) p.set('resolution', filters.resolution);
+        if (filters.year_min) p.set('year_min', String(filters.year_min));
+        if (filters.year_max) p.set('year_max', String(filters.year_max));
+        if (filters.size_min) p.set('size_min', String(filters.size_min));
+        if (filters.size_max) p.set('size_max', String(filters.size_max));
+        if (filters.price_min) p.set('price_min', String(filters.price_min));
+        if (filters.price_max) p.set('price_max', String(filters.price_max));
+        if (filters.multi_store_only) p.set('multi_store_only', '1');
+        if (filters.offers_only) p.set('offers_only', '1');
+        return p;
+    }
+
+    function updateUrl(filters) {
+        const p = filtersToParams(filters).toString();
+        history.replaceState(null, '', p ? `/analytics?${p}` : '/analytics');
+    }
+
+    function populateFilterControls(filterOptions, selectedFilters) {
+        setSelectOptions(el.fBrand, filterOptions.brands || [], 'All Brands', selectedFilters.brand);
+        setSelectOptions(el.fStore, filterOptions.stores || [], 'All Stores', selectedFilters.store);
+        setSelectOptions(el.fTech, filterOptions.techs || [], 'All Display Tech', selectedFilters.tech);
+        setSelectOptions(el.fResolution, filterOptions.resolutions || [], 'All Resolutions', selectedFilters.resolution);
+        setSelectOptions(el.fYearMin, filterOptions.years || [], 'Any Min Year', selectedFilters.year_min ? String(selectedFilters.year_min) : '');
+        setSelectOptions(el.fYearMax, filterOptions.years || [], 'Any Max Year', selectedFilters.year_max ? String(selectedFilters.year_max) : '');
+    }
+
+    function renderFilterSummary(filters, totalListings, totalModels) {
+        const parts = [];
+        if (filters.brand) parts.push(`Brand: <b>${filters.brand}</b>`);
+        if (filters.store) parts.push(`Store: <b>${filters.store}</b>`);
+        if (filters.tech) parts.push(`Tech: <b>${filters.tech}</b>`);
+        if (filters.resolution) parts.push(`Resolution: <b>${filters.resolution}</b>`);
+        if (filters.year_min) parts.push(`Year ≥ <b>${filters.year_min}</b>`);
+        if (filters.year_max) parts.push(`Year ≤ <b>${filters.year_max}</b>`);
+        if (filters.size_min) parts.push(`Size ≥ <b>${filters.size_min}"</b>`);
+        if (filters.size_max) parts.push(`Size ≤ <b>${filters.size_max}"</b>`);
+        if (filters.price_min) parts.push(`Price ≥ <b>${formatInt(filters.price_min)}</b>`);
+        if (filters.price_max) parts.push(`Price ≤ <b>${formatInt(filters.price_max)}</b>`);
+        if (filters.multi_store_only) parts.push('<b>Multi-store only</b>');
+        if (filters.offers_only) parts.push('<b>Offers only</b>');
+
+        const prefix = `Showing <b>${formatInt(totalListings)}</b> listings / <b>${formatInt(totalModels)}</b> models`;
+        if (parts.length === 0) {
+            el.filterSummary.innerHTML = `${prefix} (no filters applied)`;
+        } else {
+            el.filterSummary.innerHTML = `${prefix} · ${parts.join(' · ')}`;
+        }
+    }
+
+    function renderStats(data) {
+        const stores = data.price_by_store || {};
+        const totalListings = data.filtered_listing_count || Object.values(stores).reduce((s, v) => s + Number(v.count || 0), 0);
+        const best = data.best_average_store || {};
+        const bestStore = best.store || '—';
+        const bestStoreLabel = best.store
+            ? `Best Avg Price (${formatIndex(best.avg_price_index)})`
+            : 'Best Avg Price';
+
+        el.statRow.innerHTML = `
+            <div class="stat-box"><div class="val">${formatInt(data.total_models)}</div><div class="label">Unique Models</div></div>
+            <div class="stat-box"><div class="val">${formatInt(totalListings)}</div><div class="label">Listings in Scope</div></div>
+            <div class="stat-box"><div class="val">${formatInt(data.multi_store_count)}</div><div class="label">Multi-Store Models</div></div>
+            <div class="stat-box"><div class="val">${bestStore}</div><div class="label">${bestStoreLabel}</div></div>
+            <div class="stat-box"><div class="val">${formatInt(Object.keys(data.brand_counts || {}).length)}</div><div class="label">Brands</div></div>
+            <div class="stat-box"><div class="val">${formatInt(Object.keys(data.tech_counts || {}).length)}</div><div class="label">Display Techs</div></div>
         `;
 
-        // Charts
-        const pb = d.price_buckets;
-        bar('chartPriceBuckets', Object.keys(pb), Object.values(pb), '#6366f1');
+        return totalListings;
+    }
 
-        const tc = d.tech_counts;
-        doughnut('chartTech', Object.keys(tc), Object.values(tc));
+    function renderCharts(data) {
+        const pb = chartDataFromObject(data.price_buckets || {}, { keepZero: true });
+        bar('chartPriceBuckets', pb.labels, pb.values, '#6366f1');
 
-        const rc = d.resolution_counts;
-        doughnut('chartRes', Object.keys(rc), Object.values(rc));
+        const tc = chartDataFromObject(data.tech_counts || {}, { sort: 'desc' });
+        doughnut('chartTech', tc.labels, tc.values);
 
-        const bc = d.brand_counts;
-        const brandItems = Object.entries(bc).sort((a,b) => b[1]-a[1]).slice(0, 15);
-        hbar('chartBrand', brandItems.map(x=>x[0]), brandItems.map(x=>x[1]));
+        const rc = chartDataFromObject(data.resolution_counts || {}, { sort: 'desc' });
+        doughnut('chartRes', rc.labels, rc.values);
 
-        const sc = d.size_counts;
-        bar('chartSize', Object.keys(sc), Object.values(sc), '#22c55e');
+        const bc = chartDataFromObject(data.brand_counts || {}, { sort: 'desc', limit: 15 });
+        hbar('chartBrand', bc.labels, bc.values);
 
-        const yc = d.year_counts;
-        bar('chartYear', Object.keys(yc), Object.values(yc), '#f59e0b');
+        const sc = chartDataFromObject(data.size_counts || {}, { numericLabels: true });
+        bar('chartSize', sc.labels, sc.values, '#22c55e');
 
-        const at = d.avg_price_by_tech;
-        const techSorted = Object.entries(at).sort((a,b) => b[1]-a[1]);
-        hbar('chartAvgTech', techSorted.map(x=>x[0]), techSorted.map(x=>x[1]));
+        const yc = chartDataFromObject(data.year_counts || {}, { numericLabels: true });
+        bar('chartYear', yc.labels, yc.values, '#f59e0b');
 
-        const ab = d.avg_price_by_brand;
-        const brandPriceSorted = Object.entries(ab).sort((a,b) => b[1]-a[1]).slice(0, 12);
-        hbar('chartAvgBrand', brandPriceSorted.map(x=>x[0]), brandPriceSorted.map(x=>x[1]), '#8b5cf6');
+        const at = chartDataFromObject(data.avg_price_by_tech || {}, { sort: 'desc' });
+        hbar('chartAvgTech', at.labels, at.values, '#06b6d4');
 
-        // Cheapest per tech table
-        const cpt = d.cheapest_per_tech;
-        let chtml = '<tr><th>Technology</th><th>Brand</th><th>Model</th><th>Size</th><th>Price</th><th>Store</th></tr>';
-        for (const [tech, info] of Object.entries(cpt).sort((a,b) => a[1].price - b[1].price)) {
-            chtml += `<tr><td>${tech}</td><td>${info.brand}</td><td>${info.model}</td><td>${info.size}"</td><td style="color:var(--green);font-weight:600">${info.price.toLocaleString()} ден</td><td>${info.store}</td></tr>`;
+        const ab = chartDataFromObject(data.avg_price_by_brand || {}, { sort: 'desc', limit: 12 });
+        hbar('chartAvgBrand', ab.labels, ab.values, '#8b5cf6');
+
+        const storePerf = (data.store_offer_analytics || []).filter(x => Number(x.comparable_models || 0) > 0);
+        const perfLabels = storePerf.map(x => x.store);
+        const perfValues = storePerf.map(x => Number(x.avg_vs_cheapest_pct || 0));
+        const perfColors = storePerf.map(x => STORE_COLORS[x.store] || '#6366f1');
+        if (storePerf.length > 0) {
+            hbar('chartStoreVsCheapest', perfLabels, perfValues, perfColors);
+        } else {
+            hbar('chartStoreVsCheapest', ['No comparable models'], [0], '#64748b');
         }
-        document.getElementById('cheapestTable').innerHTML = chtml;
 
-        // Store stats table
-        let shtml = '<tr><th>Store</th><th>TVs</th><th>Avg</th><th>Median</th><th>Min</th><th>Max</th></tr>';
-        for (const [store, info] of Object.entries(stores)) {
-            shtml += `<tr><td>${store}</td><td>${info.count}</td><td>${info.avg.toLocaleString()}</td><td>${info.median.toLocaleString()}</td><td>${info.min.toLocaleString()}</td><td>${info.max.toLocaleString()}</td></tr>`;
+        const offerRows = data.store_offer_analytics || [];
+        const offerLabels = offerRows.map(x => x.store);
+        const offerValues = offerRows.map(x => Number(x.offer_share_pct || 0));
+        const offerColors = offerRows.map(x => STORE_COLORS[x.store] || '#6366f1');
+        if (offerRows.length > 0) {
+            bar('chartOfferShare', offerLabels, offerValues, offerColors);
+        } else {
+            bar('chartOfferShare', ['No data'], [0], '#64748b');
         }
-        document.getElementById('storeStats').innerHTML = shtml;
+    }
 
-        // Savings table
-        const savings = d.biggest_savings || [];
-        let savhtml = '<tr><th>Model</th><th>Cheapest</th><th>Price</th><th>Most Expensive</th><th>Price</th><th>You Save</th></tr>';
-        for (const s of savings.slice(0, 15)) {
-            savhtml += `<tr>
-                <td>${s.brand} ${s.model}</td>
-                <td style="color:var(--green)">${s.cheapest}</td>
-                <td style="color:var(--green);font-weight:600">${s.cheapest_price.toLocaleString()}</td>
-                <td style="color:var(--red)">${s.most_expensive}</td>
-                <td style="color:var(--text-muted)">${s.expensive_price.toLocaleString()}</td>
-                <td><span class="save-badge">${s.diff.toLocaleString()} ден (${s.pct}%)</span></td>
-            </tr>`;
+    function renderCheapestPerTechTable(data) {
+        const cpt = Object.entries(data.cheapest_per_tech || {}).sort((a, b) => Number(a[1].price || 0) - Number(b[1].price || 0));
+        let html = '<tr><th>Technology</th><th>Brand</th><th>Model</th><th>Size</th><th>Price</th><th>Store</th></tr>';
+        if (cpt.length === 0) {
+            html += '<tr><td colspan="6">No data for current filters.</td></tr>';
+        } else {
+            for (const [tech, info] of cpt) {
+                html += `<tr>
+                    <td>${tech}</td>
+                    <td>${info.brand || '—'}</td>
+                    <td>${info.model || '—'}</td>
+                    <td>${info.size ? `${info.size}"` : '—'}</td>
+                    <td style="color:var(--green);font-weight:600">${formatInt(info.price)} ден</td>
+                    <td>${info.store || '—'}</td>
+                </tr>`;
+            }
         }
-        document.getElementById('savingsTable').innerHTML = savhtml;
+        el.cheapestTable.innerHTML = html;
+    }
+
+    function renderStoreStatsTable(data) {
+        const stores = data.price_by_store || {};
+        let html = '<tr><th>Store</th><th>TVs</th><th>Avg</th><th>Median</th><th>Min</th><th>Max</th><th>Offers</th><th>Avg Discount</th></tr>';
+        const entries = Object.entries(stores);
+        if (entries.length === 0) {
+            html += '<tr><td colspan="8">No data for current filters.</td></tr>';
+        } else {
+            for (const [store, info] of entries) {
+                const dotClass = store.toLowerCase();
+                html += `<tr>
+                    <td><span class="store-dot ${dotClass}"></span>${store}</td>
+                    <td>${formatInt(info.count)}</td>
+                    <td>${formatInt(info.avg)}</td>
+                    <td>${formatInt(info.median)}</td>
+                    <td>${formatInt(info.min)}</td>
+                    <td>${formatInt(info.max)}</td>
+                    <td>${formatInt(info.offer_count)} (${formatPct(info.offer_share_pct)})</td>
+                    <td>${formatPct(info.avg_discount_pct)}</td>
+                </tr>`;
+            }
+        }
+        el.storeStats.innerHTML = html;
+    }
+
+    function renderStoreOfferTable(data) {
+        const rows = data.store_offer_analytics || [];
+        let html = '<tr><th>Rank</th><th>Store</th><th>Comparable Models</th><th>Avg Price Index</th><th>Avg vs Cheapest</th><th>Cheapest Wins</th><th>Win Rate</th><th>Offers</th><th>Avg Discount</th></tr>';
+        if (rows.length === 0) {
+            html += '<tr><td colspan="9">No data for current filters.</td></tr>';
+        } else {
+            rows.forEach((r, idx) => {
+                const rank = idx + 1;
+                const rankBadge = rank === 1 && Number(r.comparable_models || 0) > 0
+                    ? `<span class="rank-badge">#${rank}</span>`
+                    : `#${rank}`;
+                const dotClass = (r.store || '').toLowerCase();
+                html += `<tr>
+                    <td>${rankBadge}</td>
+                    <td><span class="store-dot ${dotClass}"></span>${r.store}</td>
+                    <td>${formatInt(r.comparable_models)}</td>
+                    <td>${formatIndex(r.avg_price_index)}</td>
+                    <td>${formatPct(r.avg_vs_cheapest_pct)}</td>
+                    <td>${Number(r.win_points || 0).toFixed(2)}</td>
+                    <td>${formatPct(r.win_rate_pct)}</td>
+                    <td>${formatInt(r.offer_count)} (${formatPct(r.offer_share_pct)})</td>
+                    <td>${formatPct(r.avg_discount_pct)}</td>
+                </tr>`;
+            });
+        }
+        el.storeOfferTable.innerHTML = html;
+    }
+
+    function renderSavingsTable(data) {
+        const savings = (data.biggest_savings || []).slice(0, 15);
+        let html = '<tr><th>Model</th><th>Cheapest</th><th>Price</th><th>Most Expensive</th><th>Price</th><th>You Save</th></tr>';
+        if (savings.length === 0) {
+            html += '<tr><td colspan="6">No cross-store savings found for current filters.</td></tr>';
+        } else {
+            for (const s of savings) {
+                html += `<tr>
+                    <td>${s.brand} ${s.model}</td>
+                    <td style="color:var(--green)">${s.cheapest}</td>
+                    <td style="color:var(--green);font-weight:600">${formatInt(s.cheapest_price)} ден</td>
+                    <td style="color:var(--red)">${s.most_expensive}</td>
+                    <td>${formatInt(s.expensive_price)} ден</td>
+                    <td><span class="save-badge">${formatInt(s.diff)} ден (${s.pct}%)</span></td>
+                </tr>`;
+            }
+        }
+        el.savingsTable.innerHTML = html;
+    }
+
+    function renderAll(data, filters) {
+        const totalListings = renderStats(data);
+        renderFilterSummary(filters, totalListings, data.total_models || 0);
+        renderCharts(data);
+        renderCheapestPerTechTable(data);
+        renderStoreStatsTable(data);
+        renderStoreOfferTable(data);
+        renderSavingsTable(data);
+    }
+
+    async function loadAnalytics(filters, syncUrl = true) {
+        if (syncUrl) updateUrl(filters);
+        el.loading.style.display = 'block';
+        el.content.style.display = 'none';
+
+        const params = filtersToParams(filters).toString();
+        const url = params ? `/api/analytics_data?${params}` : '/api/analytics_data';
+        const res = await fetch(url);
+        const data = await res.json();
+
+        populateFilterControls(data.filter_options || {}, filters);
+        setNonSelectFilterInputs(filters);
+        renderAll(data, filters);
+
+        el.loading.style.display = 'none';
+        el.content.style.display = 'block';
+    }
+
+    function currentEmptyFilters() {
+        return {
+            brand: '',
+            store: '',
+            tech: '',
+            resolution: '',
+            year_min: 0,
+            year_max: 0,
+            size_min: 0,
+            size_max: 0,
+            price_min: 0,
+            price_max: 0,
+            multi_store_only: false,
+            offers_only: false,
+        };
+    }
+
+    el.btnApplyFilters.addEventListener('click', () => {
+        const filters = collectFiltersFromInputs();
+        loadAnalytics(filters, true).catch(console.error);
+    });
+
+    el.btnResetFilters.addEventListener('click', () => {
+        const filters = currentEmptyFilters();
+        setNonSelectFilterInputs(filters);
+        loadAnalytics(filters, true).catch(console.error);
+    });
+
+    [el.fSizeMin, el.fSizeMax, el.fPriceMin, el.fPriceMax].forEach(input => {
+        input.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Enter') {
+                ev.preventDefault();
+                const filters = collectFiltersFromInputs();
+                loadAnalytics(filters, true).catch(console.error);
+            }
+        });
+    });
+
+    const initialFilters = filtersFromUrl();
+    setNonSelectFilterInputs(initialFilters);
+    loadAnalytics(initialFilters, false).catch(err => {
+        console.error('Analytics load failed', err);
+        el.loading.innerHTML = 'Failed to load analytics. Please refresh.';
     });
     </script>
 </body>
