@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK TV Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --bg: #0f1117; --surface: #1a1d27; --surface2: #242734;
+            --border: #2e3144; --text: #e4e4e7; --text-muted: #9294a0;
+            --accent: #6366f1; --accent-light: #818cf8;
+            --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); }
+
+        .header {
+            background: var(--surface); border-bottom: 1px solid var(--border);
+            padding: 1.25rem 2rem; display: flex; align-items: center;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .header h1 { font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; gap: .5rem; }
+        .header h1 span { color: var(--accent-light); }
+
+        .main { padding: 1.5rem 2rem 4rem; max-width: 1400px; margin: 0 auto; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+
+        .card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; padding: 1.25rem;
+        }
+        .card h3 { font-size: .95rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+        .card canvas { max-height: 280px; }
+
+        .stat-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .stat-box {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 10px; padding: 1rem 1.25rem; flex: 1; min-width: 150px; text-align: center;
+        }
+        .stat-box .val { font-size: 1.8rem; font-weight: 700; color: var(--accent-light); }
+        .stat-box .label { font-size: .8rem; color: var(--text-muted); margin-top: .2rem; }
+
+        .savings-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+        .savings-table th { background: var(--surface2); padding: .6rem .8rem; text-align: left; color: var(--text-muted); font-size: .78rem; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+        .savings-table td { padding: .55rem .8rem; border-bottom: 1px solid var(--border); }
+        .savings-table tr:hover { background: var(--surface2); }
+        .save-badge { background: rgba(34,197,94,.12); color: var(--green); padding: .15rem .5rem; border-radius: 4px; font-weight: 600; font-size: .8rem; }
+
+        .cheapest-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+        .cheapest-table th { background: var(--surface2); padding: .6rem .8rem; text-align: left; color: var(--text-muted); font-size: .78rem; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+        .cheapest-table td { padding: .55rem .8rem; border-bottom: 1px solid var(--border); }
+
+        .loading { text-align: center; padding: 4rem; color: var(--text-muted); }
+        .loading .spinner { width: 30px; height: 30px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; margin: 0 auto 1rem; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📺 <span>MK</span> TV Price Comparator</h1>
+        <nav style="display:flex;gap:.5rem;margin-left:1.5rem;">
+            <a href="/" style="padding:.35rem .8rem;border-radius:6px;background:var(--surface2);color:var(--text-muted);text-decoration:none;font-size:.82rem;font-weight:600;border:1px solid var(--border);">Compare</a>
+            <a href="/analytics" style="padding:.35rem .8rem;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;">Analytics</a>
+        </nav>
+    </div>
+
+    <div class="main">
+        <div id="loading" class="loading"><div class="spinner"></div>Loading analytics...</div>
+        <div id="content" style="display:none;">
+
+        <div class="stat-row" id="statRow"></div>
+
+        <div class="grid">
+            <div class="card"><h3>Price Distribution</h3><canvas id="chartPriceBuckets"></canvas></div>
+            <div class="card"><h3>TVs by Display Technology</h3><canvas id="chartTech"></canvas></div>
+            <div class="card"><h3>TVs by Resolution</h3><canvas id="chartRes"></canvas></div>
+            <div class="card"><h3>TVs by Brand (top 15)</h3><canvas id="chartBrand"></canvas></div>
+            <div class="card"><h3>TVs by Screen Size</h3><canvas id="chartSize"></canvas></div>
+            <div class="card"><h3>TVs by Model Year</h3><canvas id="chartYear"></canvas></div>
+            <div class="card"><h3>Avg Price by Display Tech (ден)</h3><canvas id="chartAvgTech"></canvas></div>
+            <div class="card"><h3>Avg Price by Brand (ден)</h3><canvas id="chartAvgBrand"></canvas></div>
+        </div>
+
+        <div class="grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="card">
+                <h3>Cheapest TV per Display Technology</h3>
+                <table class="cheapest-table" id="cheapestTable"></table>
+            </div>
+            <div class="card">
+                <h3>Store Price Stats (ден)</h3>
+                <table class="cheapest-table" id="storeStats"></table>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:1.25rem;">
+            <h3>Biggest Cross-Store Price Differences</h3>
+            <table class="savings-table" id="savingsTable"></table>
+        </div>
+
+        </div>
+    </div>
+
+    <script>
+    const COLORS = ['#6366f1','#22c55e','#f59e0b','#ef4444','#8b5cf6','#ec4899','#14b8a6','#f97316','#06b6d4','#84cc16','#a855f7','#e11d48','#0ea5e9','#facc15','#64748b'];
+    Chart.defaults.color = '#9294a0';
+    Chart.defaults.borderColor = '#2e3144';
+    Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, sans-serif';
+
+    function bar(id, labels, values, color) {
+        new Chart(document.getElementById(id), {
+            type: 'bar', data: { labels, datasets: [{ data: values, backgroundColor: color || COLORS[0], borderRadius: 4 }] },
+            options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#2e3144' } }, x: { grid: { display: false } } } }
+        });
+    }
+    function doughnut(id, labels, values) {
+        new Chart(document.getElementById(id), {
+            type: 'doughnut', data: { labels, datasets: [{ data: values, backgroundColor: COLORS.slice(0, labels.length), borderWidth: 0 }] },
+            options: { plugins: { legend: { position: 'right', labels: { boxWidth: 12, padding: 8, font: { size: 11 } } } }, cutout: '55%' }
+        });
+    }
+    function hbar(id, labels, values, color) {
+        new Chart(document.getElementById(id), {
+            type: 'bar', data: { labels, datasets: [{ data: values, backgroundColor: color || COLORS.slice(0, labels.length), borderRadius: 4 }] },
+            options: { indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, grid: { color: '#2e3144' } }, y: { grid: { display: false } } } }
+        });
+    }
+
+    fetch('/api/analytics_data').then(r => r.json()).then(d => {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+
+        // Stat boxes
+        const stores = d.price_by_store || {};
+        let totalTVs = Object.values(stores).reduce((s,v) => s + v.count, 0);
+        document.getElementById('statRow').innerHTML = `
+            <div class="stat-box"><div class="val">${d.total_models}</div><div class="label">Unique Models</div></div>
+            <div class="stat-box"><div class="val">${totalTVs}</div><div class="label">Total Listings</div></div>
+            <div class="stat-box"><div class="val">${d.multi_store_count}</div><div class="label">Multi-Store Models</div></div>
+            <div class="stat-box"><div class="val">${Object.keys(d.brand_counts).length}</div><div class="label">Brands</div></div>
+            <div class="stat-box"><div class="val">${Object.keys(d.tech_counts).length}</div><div class="label">Display Techs</div></div>
+        `;
+
+        // Charts
+        const pb = d.price_buckets;
+        bar('chartPriceBuckets', Object.keys(pb), Object.values(pb), '#6366f1');
+
+        const tc = d.tech_counts;
+        doughnut('chartTech', Object.keys(tc), Object.values(tc));
+
+        const rc = d.resolution_counts;
+        doughnut('chartRes', Object.keys(rc), Object.values(rc));
+
+        const bc = d.brand_counts;
+        const brandItems = Object.entries(bc).sort((a,b) => b[1]-a[1]).slice(0, 15);
+        hbar('chartBrand', brandItems.map(x=>x[0]), brandItems.map(x=>x[1]));
+
+        const sc = d.size_counts;
+        bar('chartSize', Object.keys(sc), Object.values(sc), '#22c55e');
+
+        const yc = d.year_counts;
+        bar('chartYear', Object.keys(yc), Object.values(yc), '#f59e0b');
+
+        const at = d.avg_price_by_tech;
+        const techSorted = Object.entries(at).sort((a,b) => b[1]-a[1]);
+        hbar('chartAvgTech', techSorted.map(x=>x[0]), techSorted.map(x=>x[1]));
+
+        const ab = d.avg_price_by_brand;
+        const brandPriceSorted = Object.entries(ab).sort((a,b) => b[1]-a[1]).slice(0, 12);
+        hbar('chartAvgBrand', brandPriceSorted.map(x=>x[0]), brandPriceSorted.map(x=>x[1]), '#8b5cf6');
+
+        // Cheapest per tech table
+        const cpt = d.cheapest_per_tech;
+        let chtml = '<tr><th>Technology</th><th>Brand</th><th>Model</th><th>Size</th><th>Price</th><th>Store</th></tr>';
+        for (const [tech, info] of Object.entries(cpt).sort((a,b) => a[1].price - b[1].price)) {
+            chtml += `<tr><td>${tech}</td><td>${info.brand}</td><td>${info.model}</td><td>${info.size}"</td><td style="color:var(--green);font-weight:600">${info.price.toLocaleString()} ден</td><td>${info.store}</td></tr>`;
+        }
+        document.getElementById('cheapestTable').innerHTML = chtml;
+
+        // Store stats table
+        let shtml = '<tr><th>Store</th><th>TVs</th><th>Avg</th><th>Median</th><th>Min</th><th>Max</th></tr>';
+        for (const [store, info] of Object.entries(stores)) {
+            shtml += `<tr><td>${store}</td><td>${info.count}</td><td>${info.avg.toLocaleString()}</td><td>${info.median.toLocaleString()}</td><td>${info.min.toLocaleString()}</td><td>${info.max.toLocaleString()}</td></tr>`;
+        }
+        document.getElementById('storeStats').innerHTML = shtml;
+
+        // Savings table
+        const savings = d.biggest_savings || [];
+        let savhtml = '<tr><th>Model</th><th>Cheapest</th><th>Price</th><th>Most Expensive</th><th>Price</th><th>You Save</th></tr>';
+        for (const s of savings.slice(0, 15)) {
+            savhtml += `<tr>
+                <td>${s.brand} ${s.model}</td>
+                <td style="color:var(--green)">${s.cheapest}</td>
+                <td style="color:var(--green);font-weight:600">${s.cheapest_price.toLocaleString()}</td>
+                <td style="color:var(--red)">${s.most_expensive}</td>
+                <td style="color:var(--text-muted)">${s.expensive_price.toLocaleString()}</td>
+                <td><span class="save-badge">${s.diff.toLocaleString()} ден (${s.pct}%)</span></td>
+            </tr>`;
+        }
+        document.getElementById('savingsTable').innerHTML = savhtml;
+    });
+    </script>
+</body>
+</html>

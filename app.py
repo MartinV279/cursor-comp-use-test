@@ -1,0 +1,336 @@
+#!/usr/bin/env python3
+"""
+Flask web UI for the TV Price Comparator.
+Loads scraped data from CSV and provides search/filter/compare functionality.
+"""
+
+import os
+import subprocess
+import sys
+import threading
+
+import pandas as pd
+from flask import Flask, render_template, request, jsonify
+
+app = Flask(__name__)
+
+DATA_LOCK = threading.Lock()
+RAW_CSV = "tv_all_raw.csv"
+COMPARISON_CSV = "tv_comparison.csv"
+
+
+def load_raw_data() -> pd.DataFrame:
+    if not os.path.exists(RAW_CSV):
+        return pd.DataFrame()
+    df = pd.read_csv(RAW_CSV)
+    df = df.fillna("")
+    for col in ["price", "old_price", "screen_size"]:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0).astype(int)
+    return df
+
+
+def build_comparison_table(raw_df: pd.DataFrame) -> list[dict]:
+    """Group by exact normalized_key — no fuzzy matching."""
+    if raw_df.empty:
+        return []
+
+    groups: dict[str, dict] = {}
+    for _, row in raw_df.iterrows():
+        key = str(row.get("normalized_key", ""))
+        brand = str(row.get("brand", ""))
+        screen = int(row.get("screen_size", 0))
+
+        if key not in groups:
+            groups[key] = {
+                "brand": brand,
+                "screen_size": screen,
+                "models": [],
+                "stores": {},
+            }
+
+        groups[key]["models"].append(str(row.get("model", "")))
+        if screen > 0 and groups[key]["screen_size"] == 0:
+            groups[key]["screen_size"] = screen
+
+        res = str(row.get("resolution", ""))
+        if res and not groups[key].get("resolution"):
+            groups[key]["resolution"] = res
+        dt = str(row.get("display_tech", ""))
+        if dt and not groups[key].get("display_tech"):
+            groups[key]["display_tech"] = dt
+        rr = int(row.get("refresh_rate", 0))
+        if rr > 0 and not groups[key].get("refresh_rate"):
+            groups[key]["refresh_rate"] = rr
+        yr = int(row.get("year", 0))
+        if yr > 0 and not groups[key].get("year"):
+            groups[key]["year"] = yr
+
+        store = str(row.get("store", ""))
+        price = int(row.get("price", 0))
+        url = str(row.get("url", ""))
+        old_price = int(row.get("old_price", 0))
+
+        if store not in groups[key]["stores"] or (price > 0 and (
+            groups[key]["stores"][store]["price"] == 0 or price < groups[key]["stores"][store]["price"]
+        )):
+            groups[key]["stores"][store] = {"price": price, "old_price": old_price, "url": url}
+
+    results = []
+    for gk, gdata in groups.items():
+        model = max(gdata["models"], key=len) if gdata["models"] else ""
+        stores = gdata["stores"]
+        prices = {s: d["price"] for s, d in stores.items() if d["price"] > 0}
+        min_price = min(prices.values()) if prices else 0
+        best_store = min(prices, key=prices.get) if prices else ""
+
+        results.append({
+            "brand": gdata["brand"],
+            "name": model,
+            "screen_size": gdata["screen_size"],
+            "resolution": gdata.get("resolution", ""),
+            "display_tech": gdata.get("display_tech", ""),
+            "refresh_rate": gdata.get("refresh_rate", 0),
+            "year": gdata.get("year", 0),
+            "setec_price": stores.get("Setec", {}).get("price", 0),
+            "setec_old": stores.get("Setec", {}).get("old_price", 0),
+            "setec_url": stores.get("Setec", {}).get("url", ""),
+            "tehnomarket_price": stores.get("Tehnomarket", {}).get("price", 0),
+            "tehnomarket_old": stores.get("Tehnomarket", {}).get("old_price", 0),
+            "tehnomarket_url": stores.get("Tehnomarket", {}).get("url", ""),
+            "neptun_price": stores.get("Neptun", {}).get("price", 0),
+            "neptun_old": stores.get("Neptun", {}).get("old_price", 0),
+            "neptun_url": stores.get("Neptun", {}).get("url", ""),
+            "galerija_price": stores.get("Galerija", {}).get("price", 0),
+            "galerija_old": stores.get("Galerija", {}).get("old_price", 0),
+            "galerija_url": stores.get("Galerija", {}).get("url", ""),
+            "store_count": len(stores),
+            "min_price": min_price,
+            "best_store": best_store,
+        })
+
+    results.sort(key=lambda r: (r["brand"], -r["screen_size"], r["min_price"]))
+    return results
+
+
+scrape_status = {"running": False, "message": ""}
+
+
+@app.route("/")
+def index():
+    raw_df = load_raw_data()
+    data = build_comparison_table(raw_df)
+
+    brands = sorted(set(r["brand"] for r in data if r["brand"]))
+    sizes = sorted(set(r["screen_size"] for r in data if r["screen_size"] > 0))
+
+    store_counts = {}
+    for _, row in raw_df.iterrows():
+        s = str(row.get("store", ""))
+        store_counts[s] = store_counts.get(s, 0) + 1
+
+    return render_template(
+        "index.html",
+        data=data,
+        brands=brands,
+        sizes=sizes,
+        total=len(data),
+        store_counts=store_counts,
+        has_data=len(data) > 0,
+        scrape_running=scrape_status["running"],
+    )
+
+
+@app.route("/api/search")
+def api_search():
+    raw_df = load_raw_data()
+    data = build_comparison_table(raw_df)
+
+    q = request.args.get("q", "").strip().lower()
+    brand = request.args.get("brand", "").strip()
+    size = request.args.get("size", "").strip()
+    multi_only = request.args.get("multi_only", "").strip() == "1"
+    sort_by = request.args.get("sort", "brand")
+
+    filtered = data
+    if q:
+        filtered = [r for r in filtered if q in r["name"].lower() or q in r["brand"].lower()]
+    if brand:
+        filtered = [r for r in filtered if r["brand"] == brand]
+    if size:
+        try:
+            size_int = int(size)
+            filtered = [r for r in filtered if r["screen_size"] == size_int]
+        except ValueError:
+            pass
+    if multi_only:
+        filtered = [r for r in filtered if r["store_count"] >= 2]
+
+    if sort_by == "price_asc":
+        filtered.sort(key=lambda r: r["min_price"] if r["min_price"] > 0 else 999999)
+    elif sort_by == "price_desc":
+        filtered.sort(key=lambda r: -r["min_price"])
+    elif sort_by == "size_asc":
+        filtered.sort(key=lambda r: r["screen_size"] if r["screen_size"] > 0 else 999)
+    elif sort_by == "size_desc":
+        filtered.sort(key=lambda r: -r["screen_size"])
+    elif sort_by == "stores":
+        filtered.sort(key=lambda r: -r["store_count"])
+    else:
+        filtered.sort(key=lambda r: (r["brand"], -r["screen_size"]))
+
+    return jsonify({"results": filtered, "count": len(filtered)})
+
+
+@app.route("/analytics")
+def analytics():
+    raw_df = load_raw_data()
+    return render_template("analytics.html", has_data=len(raw_df) > 0)
+
+
+@app.route("/api/analytics_data")
+def api_analytics_data():
+    raw_df = load_raw_data()
+    if raw_df.empty:
+        return jsonify({})
+
+    data = build_comparison_table(raw_df)
+
+    price_by_store = {}
+    for store in ["Setec", "Tehnomarket", "Neptun", "Galerija"]:
+        sub = raw_df[raw_df["store"] == store]
+        prices = sub[sub["price"] > 0]["price"].tolist()
+        price_by_store[store] = {
+            "count": len(sub),
+            "prices": prices,
+            "avg": int(sub[sub["price"] > 0]["price"].mean()) if prices else 0,
+            "median": int(sub[sub["price"] > 0]["price"].median()) if prices else 0,
+            "min": int(min(prices)) if prices else 0,
+            "max": int(max(prices)) if prices else 0,
+        }
+
+    tech_counts = raw_df["display_tech"].value_counts().to_dict()
+    resolution_counts = raw_df.get("resolution", pd.Series(dtype=str)).value_counts().to_dict()
+    brand_counts = raw_df["brand"].value_counts().to_dict()
+
+    year_counts = {}
+    if "year" in raw_df.columns:
+        ydf = raw_df[raw_df["year"] > 0]
+        year_counts = ydf["year"].value_counts().sort_index().to_dict()
+        year_counts = {str(k): v for k, v in year_counts.items()}
+
+    size_counts = {}
+    sdf = raw_df[raw_df["screen_size"] > 0]
+    size_counts = sdf["screen_size"].value_counts().sort_index().to_dict()
+    size_counts = {str(k): v for k, v in size_counts.items()}
+
+    price_buckets = {"Under 10K": 0, "10-20K": 0, "20-40K": 0, "40-80K": 0, "80-150K": 0, "150K+": 0}
+    for p in raw_df[raw_df["price"] > 0]["price"]:
+        if p < 10000:
+            price_buckets["Under 10K"] += 1
+        elif p < 20000:
+            price_buckets["10-20K"] += 1
+        elif p < 40000:
+            price_buckets["20-40K"] += 1
+        elif p < 80000:
+            price_buckets["40-80K"] += 1
+        elif p < 150000:
+            price_buckets["80-150K"] += 1
+        else:
+            price_buckets["150K+"] += 1
+
+    avg_price_by_tech = {}
+    for tech, grp in raw_df[raw_df["price"] > 0].groupby("display_tech"):
+        avg_price_by_tech[tech] = int(grp["price"].mean())
+
+    avg_price_by_brand = {}
+    for brand, grp in raw_df[raw_df["price"] > 0].groupby("brand"):
+        if len(grp) >= 3:
+            avg_price_by_brand[brand] = int(grp["price"].mean())
+
+    cheapest_per_tech = {}
+    for tech, grp in raw_df[raw_df["price"] > 0].groupby("display_tech"):
+        best = grp.loc[grp["price"].idxmin()]
+        cheapest_per_tech[tech] = {
+            "brand": best["brand"], "model": best["model"],
+            "price": int(best["price"]), "store": best["store"],
+            "size": int(best["screen_size"]),
+        }
+
+    multi_store = [r for r in data if r["store_count"] >= 2]
+    biggest_savings = []
+    for r in multi_store:
+        store_prices = {}
+        for s in ["setec", "tehnomarket", "neptun", "galerija"]:
+            p = r.get(f"{s}_price", 0)
+            if p and p > 0:
+                store_prices[s.capitalize()] = p
+        if len(store_prices) >= 2:
+            prices = list(store_prices.values())
+            diff = max(prices) - min(prices)
+            pct = round(diff * 100 / max(prices))
+            if diff > 1000:
+                biggest_savings.append({
+                    "brand": r["brand"], "model": r["name"],
+                    "diff": diff, "pct": pct,
+                    "cheapest": min(store_prices, key=store_prices.get),
+                    "cheapest_price": min(prices),
+                    "most_expensive": max(store_prices, key=store_prices.get),
+                    "expensive_price": max(prices),
+                })
+    biggest_savings.sort(key=lambda x: -x["diff"])
+
+    return jsonify({
+        "price_by_store": price_by_store,
+        "tech_counts": tech_counts,
+        "resolution_counts": resolution_counts,
+        "brand_counts": brand_counts,
+        "year_counts": year_counts,
+        "size_counts": size_counts,
+        "price_buckets": price_buckets,
+        "avg_price_by_tech": avg_price_by_tech,
+        "avg_price_by_brand": avg_price_by_brand,
+        "cheapest_per_tech": cheapest_per_tech,
+        "biggest_savings": biggest_savings[:20],
+        "total_models": len(data),
+        "multi_store_count": len(multi_store),
+    })
+
+
+@app.route("/api/scrape", methods=["POST"])
+def api_scrape():
+    if scrape_status["running"]:
+        return jsonify({"status": "already_running", "message": "Scrape already in progress..."})
+
+    def run_scrape():
+        scrape_status["running"] = True
+        scrape_status["message"] = "Scraping in progress..."
+        try:
+            env = os.environ.copy()
+            env["PATH"] = os.path.expanduser("~/.local/bin") + ":" + env.get("PATH", "")
+            result = subprocess.run(
+                [sys.executable, "scraper.py"],
+                capture_output=True, text=True, timeout=300,
+                env=env,
+            )
+            if result.returncode == 0:
+                scrape_status["message"] = "Scrape completed successfully!"
+            else:
+                scrape_status["message"] = f"Scrape failed: {result.stderr[-500:]}"
+        except Exception as e:
+            scrape_status["message"] = f"Scrape error: {e}"
+        finally:
+            scrape_status["running"] = False
+
+    t = threading.Thread(target=run_scrape, daemon=True)
+    t.start()
+    return jsonify({"status": "started", "message": "Scraping started..."})
+
+
+@app.route("/api/scrape_status")
+def api_scrape_status():
+    return jsonify({"running": scrape_status["running"], "message": scrape_status["message"]})
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
