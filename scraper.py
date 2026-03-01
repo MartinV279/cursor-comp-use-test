@@ -20,7 +20,6 @@ from dataclasses import dataclass, field
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-from thefuzz import fuzz
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
 
 logging.basicConfig(
@@ -615,48 +614,34 @@ def scrape_galerija() -> list[TV]:
 # Matching & Comparison
 # ---------------------------------------------------------------------------
 
-def fuzzy_match_tvs(all_tvs: list[TV], threshold: int = 80) -> pd.DataFrame:
-    """
-    Group TVs across stores by fuzzy-matching their normalized keys.
-    Returns a DataFrame with one row per unique TV model showing prices
-    from each store.
+def group_tvs(all_tvs: list[TV]) -> pd.DataFrame:
+    """Group TVs by exact normalized_key.
+
+    Each unique normalized_key becomes one row showing prices from
+    whichever stores carry that exact model.  No fuzzy matching —
+    models must have identical alphanumeric keys to be grouped.
     """
     groups: dict[str, list[TV]] = {}
-
     for tv in all_tvs:
-        best_score = 0
-        best_key = None
-        for key in list(groups.keys()):
-            rep = groups[key][0]
-            if tv.brand != rep.brand:
-                continue
-            score = fuzz.ratio(tv.normalized_key, key)
-            if score > best_score:
-                best_score = score
-                best_key = key
-        if best_key and best_score >= threshold:
-            groups[best_key].append(tv)
-        else:
-            groups[tv.normalized_key] = [tv]
+        groups.setdefault(tv.normalized_key, []).append(tv)
 
     rows = []
     for key, group in groups.items():
-        brands = set(tv.brand for tv in group)
-        brand = max(brands, key=lambda b: sum(1 for tv in group if tv.brand == b))
-
+        brand = group[0].brand
         sizes = [tv.screen_size for tv in group if tv.screen_size > 0]
         screen_size = max(set(sizes), key=sizes.count) if sizes else 0
-
         models = [tv.model for tv in group]
         representative_model = max(models, key=len) if models else ""
 
         store_prices: dict[str, int] = {}
+        store_old: dict[str, int] = {}
         store_urls: dict[str, str] = {}
         for tv in group:
             if tv.store not in store_prices or (
                 tv.price > 0 and (store_prices[tv.store] == 0 or tv.price < store_prices[tv.store])
             ):
                 store_prices[tv.store] = tv.price
+                store_old[tv.store] = tv.old_price
                 store_urls[tv.store] = tv.url
 
         positive_prices = [p for p in store_prices.values() if p > 0]
@@ -759,7 +744,7 @@ def main():
 
     log.info(f"Total TVs scraped: {len(all_tvs)}")
 
-    df = fuzzy_match_tvs(all_tvs)
+    df = group_tvs(all_tvs)
 
     csv_path = "tv_comparison.csv"
     df.to_csv(csv_path, index=False)

@@ -30,61 +30,38 @@ def load_raw_data() -> pd.DataFrame:
     return df
 
 
-def load_comparison_data() -> pd.DataFrame:
-    if not os.path.exists(COMPARISON_CSV):
-        return pd.DataFrame()
-    df = pd.read_csv(COMPARISON_CSV)
-    df = df.fillna("")
-    return df
-
-
 def build_comparison_table(raw_df: pd.DataFrame) -> list[dict]:
-    """Build a list of dicts for the comparison view from raw data."""
+    """Group by exact normalized_key — no fuzzy matching."""
     if raw_df.empty:
         return []
 
-    from thefuzz import fuzz
-
-    groups = {}
+    groups: dict[str, dict] = {}
     for _, row in raw_df.iterrows():
         key = str(row.get("normalized_key", ""))
         brand = str(row.get("brand", ""))
         screen = int(row.get("screen_size", 0))
 
-        matched_key = None
-        best_score = 0
-        for gk, gdata in groups.items():
-            if gdata["brand"] != brand:
-                continue
-            score = fuzz.ratio(key, gk)
-            if score > best_score:
-                best_score = score
-                matched_key = gk
-
-        if matched_key and best_score >= 80:
-            gk = matched_key
-        else:
-            gk = key
-            groups[gk] = {
+        if key not in groups:
+            groups[key] = {
                 "brand": brand,
                 "screen_size": screen,
                 "models": [],
                 "stores": {},
             }
 
-        groups[gk]["models"].append(str(row.get("model", "")))
-        if screen > 0 and groups[gk]["screen_size"] == 0:
-            groups[gk]["screen_size"] = screen
+        groups[key]["models"].append(str(row.get("model", "")))
+        if screen > 0 and groups[key]["screen_size"] == 0:
+            groups[key]["screen_size"] = screen
+
         store = str(row.get("store", ""))
         price = int(row.get("price", 0))
         url = str(row.get("url", ""))
-
         old_price = int(row.get("old_price", 0))
 
-        if store not in groups[gk]["stores"] or (price > 0 and (
-            groups[gk]["stores"][store]["price"] == 0 or price < groups[gk]["stores"][store]["price"]
+        if store not in groups[key]["stores"] or (price > 0 and (
+            groups[key]["stores"][store]["price"] == 0 or price < groups[key]["stores"][store]["price"]
         )):
-            groups[gk]["stores"][store] = {"price": price, "old_price": old_price, "url": url}
+            groups[key]["stores"][store] = {"price": price, "old_price": old_price, "url": url}
 
     results = []
     for gk, gdata in groups.items():
