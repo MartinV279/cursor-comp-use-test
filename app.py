@@ -53,6 +53,9 @@ def build_comparison_table(raw_df: pd.DataFrame) -> list[dict]:
         if screen > 0 and groups[key]["screen_size"] == 0:
             groups[key]["screen_size"] = screen
 
+        res = str(row.get("resolution", ""))
+        if res and not groups[key].get("resolution"):
+            groups[key]["resolution"] = res
         dt = str(row.get("display_tech", ""))
         if dt and not groups[key].get("display_tech"):
             groups[key]["display_tech"] = dt
@@ -85,6 +88,7 @@ def build_comparison_table(raw_df: pd.DataFrame) -> list[dict]:
             "brand": gdata["brand"],
             "name": model,
             "screen_size": gdata["screen_size"],
+            "resolution": gdata.get("resolution", ""),
             "display_tech": gdata.get("display_tech", ""),
             "refresh_rate": gdata.get("refresh_rate", 0),
             "year": gdata.get("year", 0),
@@ -176,6 +180,121 @@ def api_search():
         filtered.sort(key=lambda r: (r["brand"], -r["screen_size"]))
 
     return jsonify({"results": filtered, "count": len(filtered)})
+
+
+@app.route("/analytics")
+def analytics():
+    raw_df = load_raw_data()
+    return render_template("analytics.html", has_data=len(raw_df) > 0)
+
+
+@app.route("/api/analytics_data")
+def api_analytics_data():
+    raw_df = load_raw_data()
+    if raw_df.empty:
+        return jsonify({})
+
+    data = build_comparison_table(raw_df)
+
+    price_by_store = {}
+    for store in ["Setec", "Tehnomarket", "Neptun", "Galerija"]:
+        sub = raw_df[raw_df["store"] == store]
+        prices = sub[sub["price"] > 0]["price"].tolist()
+        price_by_store[store] = {
+            "count": len(sub),
+            "prices": prices,
+            "avg": int(sub[sub["price"] > 0]["price"].mean()) if prices else 0,
+            "median": int(sub[sub["price"] > 0]["price"].median()) if prices else 0,
+            "min": int(min(prices)) if prices else 0,
+            "max": int(max(prices)) if prices else 0,
+        }
+
+    tech_counts = raw_df["display_tech"].value_counts().to_dict()
+    resolution_counts = raw_df.get("resolution", pd.Series(dtype=str)).value_counts().to_dict()
+    brand_counts = raw_df["brand"].value_counts().to_dict()
+
+    year_counts = {}
+    if "year" in raw_df.columns:
+        ydf = raw_df[raw_df["year"] > 0]
+        year_counts = ydf["year"].value_counts().sort_index().to_dict()
+        year_counts = {str(k): v for k, v in year_counts.items()}
+
+    size_counts = {}
+    sdf = raw_df[raw_df["screen_size"] > 0]
+    size_counts = sdf["screen_size"].value_counts().sort_index().to_dict()
+    size_counts = {str(k): v for k, v in size_counts.items()}
+
+    price_buckets = {"Under 10K": 0, "10-20K": 0, "20-40K": 0, "40-80K": 0, "80-150K": 0, "150K+": 0}
+    for p in raw_df[raw_df["price"] > 0]["price"]:
+        if p < 10000:
+            price_buckets["Under 10K"] += 1
+        elif p < 20000:
+            price_buckets["10-20K"] += 1
+        elif p < 40000:
+            price_buckets["20-40K"] += 1
+        elif p < 80000:
+            price_buckets["40-80K"] += 1
+        elif p < 150000:
+            price_buckets["80-150K"] += 1
+        else:
+            price_buckets["150K+"] += 1
+
+    avg_price_by_tech = {}
+    for tech, grp in raw_df[raw_df["price"] > 0].groupby("display_tech"):
+        avg_price_by_tech[tech] = int(grp["price"].mean())
+
+    avg_price_by_brand = {}
+    for brand, grp in raw_df[raw_df["price"] > 0].groupby("brand"):
+        if len(grp) >= 3:
+            avg_price_by_brand[brand] = int(grp["price"].mean())
+
+    cheapest_per_tech = {}
+    for tech, grp in raw_df[raw_df["price"] > 0].groupby("display_tech"):
+        best = grp.loc[grp["price"].idxmin()]
+        cheapest_per_tech[tech] = {
+            "brand": best["brand"], "model": best["model"],
+            "price": int(best["price"]), "store": best["store"],
+            "size": int(best["screen_size"]),
+        }
+
+    multi_store = [r for r in data if r["store_count"] >= 2]
+    biggest_savings = []
+    for r in multi_store:
+        store_prices = {}
+        for s in ["setec", "tehnomarket", "neptun", "galerija"]:
+            p = r.get(f"{s}_price", 0)
+            if p and p > 0:
+                store_prices[s.capitalize()] = p
+        if len(store_prices) >= 2:
+            prices = list(store_prices.values())
+            diff = max(prices) - min(prices)
+            pct = round(diff * 100 / max(prices))
+            if diff > 1000:
+                biggest_savings.append({
+                    "brand": r["brand"], "model": r["name"],
+                    "diff": diff, "pct": pct,
+                    "cheapest": min(store_prices, key=store_prices.get),
+                    "cheapest_price": min(prices),
+                    "most_expensive": max(store_prices, key=store_prices.get),
+                    "expensive_price": max(prices),
+                })
+    biggest_savings.sort(key=lambda x: -x["diff"])
+
+    return jsonify({
+        "price_by_store": price_by_store,
+        "tech_counts": tech_counts,
+        "resolution_counts": resolution_counts,
+        "brand_counts": brand_counts,
+        "year_counts": year_counts,
+        "size_counts": size_counts,
+        "price_buckets": price_buckets,
+        "avg_price_by_tech": avg_price_by_tech,
+        "avg_price_by_brand": avg_price_by_brand,
+        "cheapest_per_tech": cheapest_per_tech,
+        "biggest_savings": biggest_savings[:20],
+        "total_models": len(data),
+        "multi_store_count": len(multi_store),
+    })
 
 
 @app.route("/api/scrape", methods=["POST"])

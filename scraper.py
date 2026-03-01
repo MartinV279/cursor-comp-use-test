@@ -85,6 +85,7 @@ class TV:
     screen_size: int = 0  # inches
     display_tech: str = ""  # LED, OLED, QLED, Mini LED, etc.
     refresh_rate: int = 0   # Hz (e.g. 60, 100, 120, 144)
+    resolution: str = ""    # HD, FHD, 4K, 8K
     year: int = 0           # production year (e.g. 2024)
     normalized_key: str = ""
 
@@ -392,12 +393,77 @@ def extract_year(raw_name: str, brand: str, model_code: str) -> int:
     return 0
 
 
+def extract_resolution(raw_name: str, brand: str, model_code: str, screen_size: int) -> str:
+    """Infer resolution (HD, FHD, 4K, 8K) from name, model, and screen size."""
+    raw = raw_name.upper()
+    mkey = model_to_key(model_code).upper()
+
+    if re.search(r"\b8K\b", raw) or re.search(r"QN[89]00", mkey):
+        return "8K"
+
+    if re.search(r"\b4K\b|\bUHD\b|\bULTRA\s*HD\b", raw):
+        return "4K"
+
+    if re.search(r"\bFULL\s*HD\b|\bFHD\b|\b1080[PI]?\b", raw):
+        return "FHD"
+
+    if re.search(r"\bHD\s*READY\b", raw):
+        return "HD"
+
+    if brand == "PHILIPS":
+        if re.search(r"PUS|PML", mkey):
+            return "4K"
+        if re.search(r"PFS", mkey):
+            return "FHD"
+        if re.search(r"PHS", mkey):
+            return "HD"
+
+    if brand == "SAMSUNG":
+        if re.search(r"^QE|^QA|^QN", mkey):
+            return "4K"
+        if screen_size >= 43:
+            return "4K"
+        return "FHD" if screen_size >= 32 else "HD"
+
+    if brand == "LG":
+        if re.search(r"QNED|NANO|OLED|UA7[5-9]|UA8|UR7[8-9]|UR8", mkey):
+            return "4K"
+        if re.search(r"UA7[0-4]|LQ", mkey):
+            return "FHD" if screen_size >= 40 else "HD"
+
+    if brand == "SONY":
+        if re.search(r"^K\d|^KD|^XR", mkey):
+            return "4K"
+
+    if brand == "HISENSE":
+        if re.search(r"[EU]\d", mkey) or screen_size >= 43:
+            return "4K"
+        if re.search(r"A4", mkey) and screen_size <= 40:
+            return "FHD" if screen_size >= 40 else "HD"
+
+    if brand == "TCL":
+        if screen_size >= 43:
+            return "4K"
+        return "FHD" if screen_size >= 32 else "HD"
+
+    if screen_size >= 50:
+        return "4K"
+    if screen_size >= 40:
+        return "FHD"
+    if screen_size > 0:
+        return "HD"
+
+    return "4K"
+
+
 def enrich_tv(tv: TV) -> None:
-    """Fill in display_tech, refresh_rate, year from name + model."""
+    """Fill in display_tech, refresh_rate, resolution, year from name + model."""
     if not tv.display_tech:
         tv.display_tech = extract_display_tech(tv.name, tv.brand, tv.model)
     if not tv.refresh_rate:
         tv.refresh_rate = extract_refresh_rate(tv.name, tv.model)
+    if not tv.resolution:
+        tv.resolution = extract_resolution(tv.name, tv.brand, tv.model, tv.screen_size)
     if not tv.year:
         tv.year = extract_year(tv.name, tv.brand, tv.model)
 
@@ -828,6 +894,8 @@ def group_tvs(all_tvs: list[TV]) -> pd.DataFrame:
         models = [tv.model for tv in group]
         representative_model = max(models, key=len) if models else ""
 
+        resolutions = [tv.resolution for tv in group if tv.resolution]
+        resolution = max(set(resolutions), key=resolutions.count) if resolutions else ""
         techs = [tv.display_tech for tv in group if tv.display_tech]
         display_tech = max(set(techs), key=techs.count) if techs else ""
         rates = [tv.refresh_rate for tv in group if tv.refresh_rate > 0]
@@ -852,6 +920,7 @@ def group_tvs(all_tvs: list[TV]) -> pd.DataFrame:
             "Brand": brand,
             "Model": representative_model,
             "Screen": f'{screen_size}"' if screen_size else "?",
+            "Resolution": resolution,
             "Tech": display_tech,
             "Hz": refresh_rate if refresh_rate else "",
             "Year": year if year else "",
@@ -968,6 +1037,7 @@ def main():
             "model": tv.model,
             "screen_size": tv.screen_size,
             "display_tech": tv.display_tech,
+            "resolution": tv.resolution,
             "refresh_rate": tv.refresh_rate,
             "year": tv.year,
             "price": tv.price,

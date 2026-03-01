@@ -383,7 +383,11 @@
 <body>
     <div class="header">
         <h1>📺 <span>MK</span> TV Price Comparator</h1>
-        <div class="stats">
+        <nav style="display:flex;gap:.5rem;margin-left:1.5rem;">
+            <a href="/" style="padding:.35rem .8rem;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;">Compare</a>
+            <a href="/analytics" style="padding:.35rem .8rem;border-radius:6px;background:var(--surface2);color:var(--text-muted);text-decoration:none;font-size:.82rem;font-weight:600;border:1px solid var(--border);">Analytics</a>
+        </nav>
+        <div class="stats" style="margin-left:auto;">
             {% for store, count in store_counts.items() %}
             <div class="pill"><span class="store-dot {{ store|lower }}"></span> {{ store }}: <b>{{ count }}</b></div>
             {% endfor %}
@@ -454,6 +458,7 @@
                     <tr>
                         <th>TV Model</th>
                         <th>Size</th>
+                        <th>Res</th>
                         <th>Tech</th>
                         <th>Hz</th>
                         <th>Year</th>
@@ -478,6 +483,7 @@
                             <span style="color:var(--text-muted)">—</span>
                             {% endif %}
                         </td>
+                        <td class="info-muted">{{ row.resolution or '—' }}</td>
                         <td>
                             {% if row.display_tech %}
                             {% set tc = row.display_tech|lower|replace(' ','')|replace('-','') %}
@@ -587,9 +593,12 @@
                     ? `<span class="best-badge">${r.best_store}</span>`
                     : '';
 
+                const resHtml = r.resolution || '—';
+
                 html += `<tr>
                     <td class="tv-name"><span class="brand-badge">${r.brand}</span>${r.name}</td>
                     <td>${sizeHtml}</td>
+                    <td class="info-muted">${resHtml}</td>
                     <td>${techHtml}</td>
                     <td class="info-muted">${hzHtml}</td>
                     <td class="info-muted">${yearHtml}</td>
